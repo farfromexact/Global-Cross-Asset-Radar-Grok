@@ -26,7 +26,7 @@ Each run writes these six paths on `main`, then re-reads them before claiming su
 
 ## Layout / 目录
 
-- `prompts/` — research prompts. Interim copies; see `prompts/PROMPT_SOURCE.md`.
+- `prompts/` — evening is Cong's `radar_2026-10-12_stock_v1`. Morning is a stub until he uploads that edition. See `prompts/PROMPT_SOURCE.md`.
 - `reports/YYYY/MM/` — historical reports. Placeholder for `2026/10` only. No market reports are included.
 - `latest/` — latest successful morning/evening pair, once a real run exists.
 - `status/` — per-edition archive status.
@@ -42,4 +42,4 @@ This repository was intended to be **private**. It is currently **public** on Gi
 
 ## Source / 来源
 
-Prompts, schemas, templates, and archive instructions were copied from the public sibling `farfromexact/Global-Cross-Asset-Radar` and retargeted to `farfromexact/Global-Cross-Asset-Radar-Grok`. Historical `reports/` from that sibling were not copied. Market content belongs only in files a real run writes later.
+Schemas, templates, and archive instructions were copied from the public sibling `farfromexact/Global-Cross-Asset-Radar` and retargeted to `farfromexact/Global-Cross-Asset-Radar-Grok`. The evening prompt is Cong's 2026-10-29 upload. Historical `reports/` from the sibling were not copied. Market content belongs only in files a real run writes later.

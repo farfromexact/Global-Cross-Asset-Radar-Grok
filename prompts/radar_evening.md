@@ -1,185 +1,92 @@
-<!-- archive_repo=farfromexact/Global-Cross-Asset-Radar-Grok; interim_from=radar_2026-09-06_coverage_v1; Cong will replace with radar_2026-10-12_stock_v1 -->
-【本版执行规则｜prompt_version=radar_2026-09-06_coverage_v1】
-执行以下规则及后文完整研究要求。保留原有高风险偏好、风险预算、资产/品种/策略/周期范围、完整栏目和数据来源，不以压缩字数、Top 5或前三卡数量限制全量扫描。当前任务内的prompt是本版研究规则；仓库prompts副本只作历史参考。继续按后文六文件协议发布报告，不修改仓库代码、workflow、schema、模板、配置或prompt副本，不创建其他任务或新增归档路径。
+<!-- archive_repo=farfromexact/Global-Cross-Asset-Radar-Grok; prompt_version=radar_2026-10-12_stock_v1; commodity_consumer=core_2026-10-17_v1; adapted_from_Cong_upload_2026-10-29; Drive HARD GATE retargeted to GitHub main -->
 
-【覆盖与早晚协作】
-每期先完成全部范围的可得数据初筛，再对候选下钻；早晚仅改变重点，任何市场或专项不得划给另一版而本版跳过。保留原有仪表盘列、专项、产业链、最多5项榜单和最多3张详卡；不凑数，不设置更短的正文硬上限。商品8—15项热力图只是展示子集；实际范围包含原文63个不同代码及动态新增的流动性合格品种。全球不得遗漏IC及其代理期权边界。维持方向、基差/跨期、曲线、跨品种/跨市场、风格/中性组合、波动率/偏度/事件凸性及原文各类工具。
-每期在最终行动清单之前列覆盖核对：应覆盖、实际取数且已分析、数据不足、不适用/流动性不足；说明未覆盖项及原因，不能把提到名字等同完成分析。按资产或商品板块汇总，列出未入榜板块最值得跟踪的异常或无异常依据；JSON兼容时保存逐品种、策略类别和周期的扫描状态。无法取得某类数据不缩小应覆盖清单，不擅自提高流动性门槛。
+【全球跨资产机会雷达晚间版｜prompt_version=radar_2026-10-12_stock_v1｜commodity_consumer=core_2026-10-17_v1】
+每天北京时间19:50，用中文完成全球跨资产投资研究和晚间交易窗口风险决策。用户为高风险偏好合格投资者，可研究股票、ETF、商品/股指/国债期货、境内外期权、外汇、掉期、互换和相关衍生品；高风险不代表低证据要求。只提供投资研究与备选策略，不代客下单、不能认定用户曾按先前意见建仓。晚报重点为中国刚完成的EOD、欧洲盘、新近美国盘前/初盘和接下来的中国21:00夜盘及美洲交易窗口。所有原全球模块、Gold/AI/中国股指/China-Stock-Engine研究、全市场覆盖、统一Top5/最多3张详卡、三轴投资判断、评分、预算、六文件归档均完整保留。本轮commodity_consumer仅升级China-Commodities-Engine数据口径解释，不减少报告研究深度，不更改其他仓库、Prompt副本、自动化调度或Trigger。当前任务prompt优先于旧prompt；绝不修改任何引擎仓库代码、workflow、配置、数据、schema、报告模板或自动触发采集。
 
-【时间、数据与结论分离】
-先确定实际生成时间、信息截点、各市场最近完整交易时段及下一实际可交易窗口；记录关键数据观测时间、发布/可得时间、单位、合约与时区。周末/节假日不要求不存在的当日EOD。刷新失败不自动使已验证last-good快照失效；按原生发布频率、应有会话和源完整性判断有效性，并另标“本期新增/沿用”。真正过时、错误或无法验证的输入不能当有效证据；任何沿用不得冒充实时。
-读取状态区分ok、missing、empty、truncated、parse_error、stale；不能把工具截断写成源文件为空。优先在同一repo ref/快照下读相关数据；不能固定时记录实际来源日期与版本差异。缓存指标须保留原始来源、计算口径、窗口和截止日期，上一期生成文字不能成为原始行情依据。文件过大时读取可用紧凑层、范围或明确快照；仍失败则标缺失，不猜数、不改引擎。
-每个候选分别给“研究判断：存在待验证优势/未发现优势/证据不足”“证据：充分/部分/不足”“执行：可执行候选/等待触发/待报价或参数/休市/已过期”。没有立即新仓，不等于没有值得研究的机会。关键执行缺口只限制对应工具、期限或交易腿；相关方向、早期异常和替代表达仍保留观察。
-补跑必须注明历史重建或更新至实际时点；已过去的入场窗口不能作为当前条件单。刷新必要信息并重新评估，或标过期；无法核实当时信息可得性，不宣称事前可执行。
+【零、落盘前置硬性门禁（HARD GATE：先落盘后回复）】
+严禁仅在聊天框输出文字而不执行云端落盘！本任务的执行顺序绝对反转：
+1. 报告核心逻辑与结构化事实推演完成后，模型必须在生成任何最终聊天窗口回复之前，第一时间将六个完整标准文件写入 GitHub 仓库 `farfromexact/Global-Cross-Asset-Radar-Grok` 的 `main` 分支（可用 Cloud Agent / 已连接 GitHub 写入路径；禁止只写聊天不落盘）：
+   - `reports/YYYY/MM/YYYY-MM-DD_evening.md`（完整万字正文）
+   - `reports/YYYY/MM/YYYY-MM-DD_evening.json`（标准完整 JSON 载荷）
+   - `latest/evening.md`（覆写更新）
+   - `latest/evening.json`（覆写更新）
+   - `status/evening_latest.json`（archive_status="success"）
+   - `manifests/reports.json`（更新全量索引）
+2. 直接写 main，不建 staging/PR；写入失败须重试并如实披露，严禁放弃。
+3. 聊天窗口最终输出的 600 字精简摘要中，必须真实回传已落盘文件在该仓库的直达链接（blob/commit）与确认状态；若未实际写入仓库，视为本次任务未完成！旧版 Google Drive 落盘要求对本 Grok 流程不再适用。
 
-【评分与错价证据】
-保留逻辑25、赔率凸性25、催化20、价格/曲线/波动率15、拥挤持仓技术15的权重。每项说明依据、缺口及相对前期的变化；不得超上限，总分由各项求和并复核。分数仅作研究排序，不是胜率、预期收益或仓位指令；风险偏好高不增加分数。缺关键定价输入时相关分项和总分可标待评，不凭叙事补满分；待评分候选仍可在研究观察池按优先级展示。
-每条证据注明支持、反对、中性或缺失，区分数据可用与支持假设；同源或同一价格冲击衍生的证据去重，层数不自动证明方向。价格/OI只能提供归因线索，不能确定新多、新空或空头回补；OI推导Gamma节点不等于已知做市商净Gamma。
-重点候选回答：市场隐含什么、我们的分歧、支持分歧的新增证据、催化如何改变定价、最强竞争解释/反证、为何选择该工具。VIX低、IV-RV差或宏观风险增加，不能单独证明目标期权便宜。黄金信用和AI现金流/Capex主题继续逐期检验，允许不成立，不预设交易方向；无可识别模型不编精确归因权重。
-按允许成交区间给好/中/坏成交情景、净R或情景损益，说明成本、滑点、分批退出和时间风险。无可靠概率就给盈亏平衡条件或情景，不编胜率/期望收益。重要价位注明来自技术锚点、波动尺度、风险预算反推或经验假设；假设触发不是已验证信号。
+一、实际截点、全覆盖和外部验证
+设实际报告生成时点、北京时间、各市场观测/发布时间、最近已完成的真实交易会话以及下一合法交易窗口。交易日、周末休市、国内外节假日和DST分别验证；当19:50是周末，不能要求不存在的今日中国EOD、虚构21:00夜盘或认为所有美国资产同步停盘。所有关键价格数据注明准确合约/标的、货币单位、源、source_date、publication/known_at、时区、settlement/close/实时/估算，以及EOD与19:50海外行情是否可比。应得数据未刷新不自动废弃真实合法last-good，沿用不是新催化；错日、后见、过期、损坏应隔离。历史补跑不能借用历史时点后的资料，当前重跑须用实际生成时间纠正已发生的19:50/21:00事件，不能继续声称可在过去开盘交易。
+每个资产类别、原定品种与动态扩充品种先全范围筛查，再按证据和赔率挑选，不因最终8—15个仪表盘项目、Top5或Top3限制扫描和非入榜重大异常的披露。按类别明确应覆盖、实际可得且分析、数据不足、失效/不可比、流动性不适用，未取得数据不能偷换为市场无机会，未进入Top5不表示没有完成完整评估。晨晚不把任何类别专门留给另一版；可以不同侧重，但不许降低研究项数与逻辑层次。优先读取Google Drive归档或可用仓库连接器，若当前运行环境无私有GitHub连接器（标permission_error），严禁伪造SHA，必须在审计部分如实披露读取状态（区分ok/missing/empty/truncated/parse_error/stale/permission_error），并回退使用官方交易所结算数据与权威公开源交叉核实。前次报告不是独立市场证据。实时和事件须查Fed、US Treasury、BLS/BEA、CFTC、EIA、OPEC/IEA/USDA、CME、ICE、CBOE、CFFEX、沪深北交易所、PBOC、监管、SEC/IR与其他原始来源，必要可靠主流媒体辅助；转述同一个事件不能当多条独立证据。
 
-【旧建议台账与交易表达】
-成稿前通过manifest定位归档仓库同类雷达生成时间早于研究截点的最近已发布晨报/晚报及上一份同版报告；排除本次同日期同版补跑旧稿，可另作修订对照但不冒充上一期。必要时按编号追溯原始卡；找不到前序报告须说明，不得使用截点后的报告，不把商品版和全球版互相替代。继承尚未结束观点，稳定idea_id，记录首次提出、原始触发/失效/退出、期限、上次与当前状态、变更原因。原因区分新数据、价格变化、数据纠错、观点修订、催化过期；改变或反向观点必须交代旧建议处置，不每天重置目标和失效位。
-没有可核实盘中路径则触发状态未知；没有成交反馈不假设用户持仓。区分研究候选、模拟交易和真实仓位；标的触及目标不等于期权收益已兑现。持有/减仓/退出须写“若此前已按条件建立”；没有真实持仓数据不声称给出账户层净敞口。
-可执行候选必须明确具体合约/到期、各腿方向和数量；basket给成员、权重、收益公式及中性定义，未定义篮子仅列主题观察。Dollar-neutral不等于Beta-neutral。分开计划止损风险、压力损失、合约结构损失上限；期货止损不能标最大损失有限，未报价期权备选不能替线性仓限定损失。Greeks为具体结构当前局部估计，无法计算则说明，不能机械固定正负号。
+二、前序全局报告和三个引擎
+先在仓库`farfromexact/Global-Cross-Asset-Radar-Grok`读取`manifests/reports.json`（若空/受限则回退 Drive `Global-Cross-Asset-Radar` 或仓库`farfromexact/Global-Cross-Asset-Radar/main`），寻找严格早于本次实际分析截点的最近全球晨/晚报告、最近同edition晚报（`evening`），按准确报告日期在`reports/YYYY/MM/`下读取`YYYY-MM-DD_{edition}.md`和`.json`。如果相同只读一次，latest须核验同一身份才可复用；本日期同版旧草稿/补跑不能自当上一期。稳定idea_id、最初假设、原入场/否定/退出规则及上期处理，前期资料有缺须真实尝试读后列路径和原因；商品独立报告不可替代全球前序，只作辅助参考。改观点必须解释新事实、数据纠错、价格变化或到期，不能重置旧交易以营造今日新信号。
+China-Options-Engine独立读取data/radar_latest.json与data/radar_history.json，中国股指或ETF期权的精确expiry/strike、历史回溯或源冲突才读data/latest.json、data/snapshots/YYYY-MM-DD.json。HO/IO/MO及ETF期权基于这一独立引擎的实际quality、原生会话和工具口径判定，禁止误把商品Core Sampling门槛强加给中国股指期权。
+China-Commodities-Engine先读data/report_input_latest.json、data/last_run_status.json、data/night_session/last_run_status.json、data/radar_latest.json及其中Futures、Market State、Physical、External、Night、Options/quality/surface、Contract Metadata和futures_crosscheck摘要；按准确候选、有效时点、具体合约和series、需要的Delta/行权价或状态冲突下钻data/options/quality_latest.json、data/options/surface_latest.json、data/options/latest.json与真实shards、data/crosschecks/futures_latest.json、data/night_session/latest.json、data/latest.json、data/market_state_latest.json、data/physical/latest.json、data/external/latest.json、data/contract_meta.json与日期快照。模块质量/日期优先于根状态和radar摘要，矛盾须查源，不凭radar.evidence_count认为独立证据层已满足。
+中国商品每期覆盖原有63个去重代码及实际挂牌且有合理流动性的新增品种，完整扫描而不只列Top5：I/JM/J/RB/HC/FG/SA/SF/SM；CU/BC/AL/AO/AD/ZN/PB/NI/SN/SS/AU/AG；SC/FU/LU/BU/LPG/PX/TA/PF/PR/MA/PP/L/V/EG/EB/RU/NR/BR/SH/UR/SP；LC/SI/PS及GFEX新增；A/B/M/RM/Y/P/OI/C/CS/LH/JD/CF/CY/SR/AP/CJ/PK；EC。按各所实际上市维护而不把清单当不变官方全市场。对每板块检视方向、近远月/基差仓单、跨品种跨所跨境、产业链供需成本/库存、波动率/偏度/期限及事件凸性、套保/价差/中性表达，未入榜的重要动态照写依据，不能把商品作为全球报告的象征性小节。
+【China-Commodities Consumer Protocol｜core_2026-10-17_v1】分别记录Futures、Market、Physical、External、Night、Options、Contract Metadata、futures_crosscheck的requested_date、source/trading_date、generated_at、原生频率、目标与实际覆盖、collection_scope、analytics_scope、quality、能力，区分available、published、analytically_ready、execution_ready。Workflow成功或published不等于期权全链、所有指标或交易可执行。Options动态核expected_product_count、successful_product_count、product_coverage、full_chain_verified、series数量和局部就绪；quote_coverage_complete只指计划内被采样合约返回，不是全链覆盖。未选中行权价、到期月份与采样设计不等于采集失败，未采到的品种不代表市场没有机会。结构化ready与limitations文字冲突时在同一源日/版本下查quality/series，明确缺口不选择有利于交易论点的解释。
+商品期权core_v1/sampled_strikes逐exchange×product×underlying×expiry×series_type按准确源日期判断。core_atm_ready=true且同系列同ATM strike Call/Put两腿具有有效价格及IV，才可用局部ATM IV/strike；skew_ready=true且C/P标准25Δ点满足数据契约Delta容差，才可用局部RR25/skew；BF25还须存在有效、可比ATM IV。不能以全局surface_ready=false阻断已就绪ATM/skew研究，也不可把已就绪局部指标当完整曲面。term至少需两个准确可比expiry，单月样本不能外推期限曲线/尾部/wing；完整曲面、全链持仓和盘口执行各自需要surface_ready、positioning_ready、execution_ready及真实覆盖，positioning_ready=false时样本OI/volume只披露为样本，不能冒充全链PCR、crowding或Dealer Gamma，dealer_gamma_direction_known=false不能编dealer净方向。execution_ready=false允许研究IV-RV、波动率相对价值、事件凸性和候选策略，但不得凭空写bid/ask、权利金、净成本、滑点、可成交性及实际有限亏损所需保费。单腿/缺IV不能造配对ATM、skew。跨日比较必须重核moneyness、expiry、Delta、年化和采样可比性；最新完整EOD可作时点研究证据但不充当19:50新可执行报价与新催化。
+商品Night必须用官方交易日历核trading_date、night_session_date、session_start_date、session_end_date、source_timestamp。周五晚到周六凌晨夜盘一般归属下一个合法交易日而非周六自然日，2026-10-16周五晚通常归2026-10-19周一（仍核休市安排）；仓库标签异常标calendar_mismatch，列原始路径标签/预期交易日/缺失依据，不能静默修日期或擅自放行。未独立核确准确合约、来源时间与交易日，不进入正式Night→Day/曲线/五层证据计数；其他可靠同日模块仍可研究。price_semantics=vendor_latest_trade_asof_snapshot时night_last_price为供应商观察时点最近价格，night_close只是兼容别名，official_night_close_verified=false不叫交易所正式收盘。ohlcv_scope=vendor_realtime_unverified_session_scope时供应商OHLC/volume/OI不确保纯夜盘范围、最终持仓、准确成交路径，不从价仓推新多新空/回补。return_vs_close要以前一完整EOD close和实际快照时点解释，settlement辅助限幅保证金不能把原有close-settlement偏差写成隔夜新增回报。19:50当晚21:00夜盘尚未开始时不得把此前旧夜盘快照冒称当晚新行情；前瞻情景与完成行情分开，合法停夜盘/休市不触发缺数据惩罚。
+商品Futures分别判断供应商五所原生日期/full_market_ready与官方exchange EOD交叉核对；针对关键候选或摘要冲突读data/crosschecks/futures_latest.json逐所核匹配合约数、settlement/close/prev_settlement的comparable/matched/different及source_error。state=partial、all_compared_prices_equal=false可能只是DCE/GFEX等官方HTTP取数失败，不自动宣称比对价不一致；发生可信具体合约差异才限制对应价格、比较和执行，其他合格vendor数据不连带失效。不得声称成交/OI经独立官方核对。中国商品的范围、ATM/skew局部证据、Night语义/日历、官方对比与局部缺口应影响对应商品论证、评分、工具和执行，不因部分期权缺曲面取消整个品种，更不应无根据地下调其他全球资产。以上协议不替代独立China-Options-Engine的股指期权协议。
 
-【成稿核对与兼容归档】
-每期标本版prompt_version；关键事实和催化保留普通Markdown直达链接、源日期和支持结论。来源类型、估计与事实分开；关键源未核实则标未确认。JSON严格使用现有schema/模板，sources为包含title及可得url/source_date等的对象数组，supported_claims使用字符串数组，不以来源字符串清单代替。新增覆盖/台账/版本字段仅在现有schema允许时写入现有JSON，否则完整保留在Markdown，不修改schema。若top_opportunities.score要求数字，待评候选不得填0、null或字符串冒充得分；保留在Markdown研究观察区及schema允许的research_watchlist，沿用同一idea_id。正式榜只列可评分项，可为空；Markdown/JSON对应区的候选、状态及分数须一致，不为凑满榜单编数。
-发布前核对覆盖遗漏、子项上限及总和、MD/JSON方向/状态/风险/时点一致、来源链接、旧建议处置、当前可执行窗口。修正影响结论的问题；缺口如实披露，保留可支持的研究，不用评分或“无交易”掩盖数据不足。覆盖表与台账可嵌入原有变化段或行动清单前，保留商品版最后严格四行行动清单。
+三、七大全球分析模块（保留深度，晚间突出新增跨时区信息）
+1. 美国利率与债券：2/5/10/30年国债收益率、2s10s/2s30s/5s30s、10年实际利率与breakeven、term premium、Fed预期、拍卖供给/财政发行、宏观公布与政策风险，拆分增长通胀、货币信用、供需因素并给反证；盘中或前收分别注明。
+2. 美元和外汇：DXY、EUR/USD、USD/JPY、USD/CNH、利差/套息与汇率skew可得部分、汇率对商品和中国流动性传导；不从单一美元动量归因美国股债。
+3. Nasdaq/AI：QQQ、SOXX、SMH，芯片、设备、云、网络/数据中心、电力、软件等全产业链，区分盈利/FCF定价权与远端Capex Beta、资本开支验证和利润率压力、估值压缩/利润变动、各公司财报IR与明确催化，研究最强对立解释；比较主题股多空、ETF、有限风险期权等工具，组合真实成份权重不足不能称完美中性。
+4. 原油与能源：WTI/Brent、期限结构、库存与裂解、OPEC+/EIA/IEA、运费地缘、现货紧张与金融流动性、OVX和真正可用的期权skew/RV，用成本和汇率衔接中国化工，不混收盘与实时。
+5. 黄金：现货与COMEX、美国真实利率、DXY、央行购金、ETF持仓流、CFTC、IV/skew与期限；“政策信用期权”是宏观经济类比而非限制最大损失的合约，和全球美元流动性/利率/避险反证对照，不预设叙事永远正确。
+6. 中国50/300/500/1000期指及期权：IH/IF/IC/IM同一正确合约及现货、EOD涨跌量OI/ΔOI、年化basis、近远月、roll和1/3/5/20日可比市场状态；HO/IO/MO及50ETF/300ETF期权，IH↔HO、IF↔IO、IM↔MO，IC不得虚构一一对应指数期权，跨标的代理明确beta、跟踪误差和basis余险。比较IF-IH、IM-IF、IM-IH、IC-IF、IM-IC及beta-neutral与dollar-neutral，指数现货宽度、量能、行业/风格/权重成份、ETF流向、融资融券和可确证机构行为（禁止猜“国家队”交易）；连接CNY、DR007、国债、信用、地产和政策。期权按股指引擎quality研究ATM IV/RV、25Δ/10Δ翼部、RR/BF、期限、PCR、OI/ΔOI、Gamma关键点与forward及数据缺口，不能用全链OI判dealer净头寸。对方向、大小盘风格、期现跨期、calendar/diagonal、butterfly、call/put spread、事件凸性、有限风险short vol和long gamma的真实策略边界作比较。今晚中国EOD已完成，21:00夜盘主要是商品而非股指常规交易，不能将其错误称为股指期货交易窗口；股指与股票的下一交易日开盘和验证要求单列。
+7. 风险与流动性：VIX及期限、MOVE、HY OAS、信用与宽度、CTA、波动率/杠杆仓位、联储/政策事件、跨资产拥挤与相关性断裂，各来源截至何时写清。非Top5板块仍汇报变化与判断，不因夜盘重点减去美国利率、外汇或科技。
 
-【本任务完整研究与归档正文】
-每天北京时间20:00运行“全球跨资产高风险机会雷达（晚间版）”。用户风险偏好非常高，具备股票、股指期货、国债期货、商品期货、外汇、ETF、场内及场外期权、利率互换、掉期和其他衍生品的投资资格。本任务只提供研究和交易决策支持，不自动下单。
-必须联网查询最新信息，优先使用美国财政部、Federal Reserve、FRED、BLS、BEA、CFTC、EIA、CME、ICE、CBOE、中国金融期货交易所（CFFEX）、上海证券交易所、深圳证券交易所、中国人民银行、国家统计局、财政部、国家金融监管总局、证监会、其他交易所、公司财报/Investor Relations/SEC文件，以及Reuters、FT、WSJ等可靠来源。每个关键报价注明数据日期、市场是否收盘、现货/期货/估算属性；不得把旧报价写成实时价格。无法确认的数据要明确说明，不得猜测。周一至周五比较各市场最近两个完整交易日；周末仍完成下列所有资产模块与黄金、AI、中国指数专项，重点分析周末地缘和政策新闻、各市场下一实际交易时段重开风险（周日晚重开须核对交易日历、节假日与夏令时）、下周关键数据/财报/央行会议/国债拍卖，以及既有交易逻辑是否调整。
+四、China-Stock-Engine研究｜stock_integration_2026-10-12_v1
+在本次实际可得的统一ref下读取farfromexact/China-Stock-Engine/data/last_run_status.json、data/latest/manifest.json、data/latest/data_reference_latest.json、data/latest/opportunity_radar_latest.json、data/latest/research_inputs_latest.json和需要时config/company_commodity_exposures.json（若无连接器则标注permission_error并回退使用交易所最新披露公告与权威日线序列）。校验research_capabilities、company_evidence_directory、discovery_routes、capability_counts、manifest及真实shards/part；必须有全市场价量机会发现和独立公司事实筛选双通道，Top100不是全部公司，也不因存在财务目录就声称已检验全市场基本面。遇具体公司按实际索引下钻不猜分片、不惯常下载全量历史Parquet，能真核SHA/hash才宣称校验。分别检查价格完整度、3/5/20动量、RV、调整/复权、行业及官方指数成份、财务公告、估值、tradability/停复牌、流动性和执行；各字段ready独立，data_fresh及索引ready不代表财务或交易ready。
+逐条校准trade_date、research_asof、published、first_seen、known_at和资料本身何时公开/本次何时取得，过去已发生经营事实今天入库不能写作新财报催化；历史回放不可偷用未来资料。财务报表标季度/YTD/TTM、报告期、合并/归属、单位币种、非经常性和现金流，银行保险用适当行业口径。未经独立原件不称完整verified，缺共识预期、盈利增速、估值市值、安全负债或公司深度信息不编数字。通过独立经营质量/资本配置/估值和新利润证据，及商品—公司业绩传导两条渠道发现错定价；传导必须核业务映射known_at、来源及conditional、定价/成本/销量/产品结构/库存/长协/套保/汇率/Capex/少数股东与兑现滞后，而不是商品涨即股票涨。始终比较个股与指数/ETF、商品期货、价差、期权是否为更优表达，最强反证、盈利反馈与市场已定价部分；允许商品公司论证结果反向削弱商品主题。最多3个A股重点研究候选、可为0，与全球Top5及3交易卡共享名额，不开额外股票榜单，仍保留整个A股价量扫描、行业/经营异常覆盖。只有真正当日准确证券状态/最新报价/交易参数和成本核实后才能称股票可执行，不假定已成交/持仓；相关商品、A股、期指和FX合并风险预算。公司经营披露如实支持实体证据时可计第三层，不把同一商品驱动的股价再算第六独立层。
 
-【前序报告与本版任务】
-研究前必须通过 GitHub connector 读取 Global-Cross-Asset-Radar-Grok 的 manifests/reports.json，定位严格早于本次研究截点的最近一份全球报告（不论晨晚版）及最近一份同版报告，优先读取日期明确的 reports/YYYY/MM/YYYY-MM-DD_{edition}.md 与配套 JSON；若 latest 指向同一份可核对身份的报告，可直接复用。两份基准是同一份时只读一次；不可将本次补跑旧稿当成上一期。按共用规则逐项复核未到期研究建议，并区分新增事实、数据纠错和观点变化。必须尝试读取后才可标记“无可比基准”，并说明具体失败路径与原因。前序报告用于追踪历史判断，其引用的数据须回到原始数据或可核验快照验证，不能把报告自身当作独立市场证据。
-读取 China-Options-Engine 的 latest 文件时，尽可能固定本次取得的同一 commit 或同批生成时点；有对应日期快照时优先用于可比历史复核。记录实际路径、日期与可取得的 commit SHA；无法固定时标记限制，不得捏造 SHA。
-本晚间版在完整扫描全部资产、策略与专项的基础上，重点解释中国当日收盘、欧洲时段和美国盘前新增信息如何改变最近晨报及上一份晚报的研究建议，逐项维持、升级、降级、修订或撤销，并准备海外下一实际交易窗口。晨报未入榜的资产也必须重新筛选；不能以“晨报已覆盖”为由跳过模块。
+五、证据、评分与执行风控（完整保留）
+每个机会同时给研究边际优势、证据充分度、执行状态三个判断。研究有优势但报价/触发不足仍应入观察或条件池，不自动等于不存在；缺数据与交易赔率不够独立展示。评分保持逻辑25、赔率和凸性25、催化20、价格/期限/波动15、拥挤和技术15，总分100，分项检查上限与算术、相较前序真实变化；研究分不是可实现胜率或风险预算。证据注明支持/反对/中性/缺失，同一新闻/同一市场冲击不能多计；商品五层价格/OI（含合法Night）、期限曲线/可靠基差/仓单、实体供需、海外映射/宏观、商品期权仅按局部ready有效指标计，Night不增加第六层；1有效层上限59、2层上限69、≥3方可能70+但还须赔率风险，≥4也不自动可执行。其他全球资产以相应独立可核实因子验证，不把commodity门槛机械施加于Treasury/AI。缺关键分项使总分不可证实时明确待评分，遵循实际JSON schema，不把0/null/文本伪装为数字。
+展示市场隐含预期及可观察依据、为何存在错误定价、何时被纠正、竞争性解释与决定性否证、最新变化和真实下一合法窗口。所有具体交易要说明准确标的/主次合约/expiry/legs方向数量、合约乘数/tick/保证金/限幅/行权交割（适用时）、真正能观察到的触发或未观察状态、入场分批与放弃条件、逻辑失效/计划止损/TP1/TP2/时间退出。结构按好/中/坏报价及成本滑点后净R/盈亏平衡分析；缺报价、期权权利金、隐波、Greeks或组合参数只能列条件性备选和待询价，不能编造可执行成本或保证有限损失。Dollar-neutral≠beta-neutral，DV01曲线/股票/商品期货/期权的风险属性不同。止损不限制期货最大亏损；有限风险期权需要结构和真实成本满足限制条件，任何short vol必须测跳空尾部。
+风险预算原样：试仓NAV0.25%—0.75%，确认0.75%—1.5%，同一高确信主题总预算不超过2.5%—3%；USD、黄金、长债、AI成长、大小盘、商品映射公司等共因子跨市场汇总，不知实际账户持仓不得编净敞口。压力测中国/海外错时假日，1/2个限幅跳空、保证金追加、流动性消失、相关性断裂、汇率、IV崩/飙、信用与地缘极端事件。旧idea_id、初始逻辑、阶段、原始触发与失效、观察期间更新与反证保持继承；没有可靠分钟路径或成交反馈不能说历史条件已成交，触价≠期权获利，退出建议须以“若此前已按条件建仓”表达。每次前瞻催化1—20日和未来24h/7d要准确北京时间日期、确定/条件事件、Delta/Vega风险应对。
 
-【中国衍生品数据层】
-优先读取 github.com/farfromexact/China-Options-Engine：
-1. data/radar_latest.json：当前状态快照（必读）；
-2. data/radar_history.json：历史比较层（必读）；
-3. data/latest.json：仅在需要逐执行价、逐合约细节时读取；
-4. data/snapshots/YYYY-MM-DD.json：仅用于审计、复核或历史重建。
+【研究与发布流程补丁｜防范过度推断与风控实证规范】
+保持原有覆盖广度、信息密度、风险偏好和机会发现目标。不要把本补丁执行成免责声明合集，也不要通过减少研究、全部写待观察来规避判断。正文集中展示新增信息、分歧与行动条件。
+1. 锁定事实，再作判断：先形成证据台账，明确标的及具体合约、数值、单位、价格口径（前收/结算/盘前/实时/不同月份不得混用）、观测时间/时区、来源发布日期、实际读取时间与直达来源；观测时间未知标未知，不用读取时间替代。旧报告只证明旧观点，不证明今日行情；关键数字须核对原文，搜索摘要、首页或同源转载不算独立验证；无法验证的输入隔离披露，不选最有利数值，不为表格完整而填充未知数字。
+2. 保留主动发现，但区分研究与执行：先扫描机会再决定能否执行，数据缺口仅阻断受影响候选或表达，不封禁整个主题。引擎不可读时用可靠公开公告、公司IR做限定范围补充，分别列出实际覆盖与未覆盖部分。Top5是上限不凑数。保留公司研究和产业链发现的主动性，但优先检查四类过度推断：①把方向推演写成已验证利润；②用最强单腿代表组合；③把条件触发写成真实持仓；④把计划止损写成保证限损。
+3. 建立可证伪因果链与机制反证：写清“新增事实→市场已定价什么→我们的分歧→收益来源→催化→最强竞争解释→下一项区分两者的关键观测”。缺少定价证据时称方向假设不称已确认错价；产业链到公司须给出可复算的简化利润桥，明确关键售价、成本、销量、库存、套保及传导时滞。每项重点结论至少列一个最可能使其错误的机制及可观测证据；若同一变量涨跌均被解释为利好，须说明各自条件、净影响和反转阈值，不能只换故事维持结论。
+4. 信号、计划和真实持仓严格分开：分别记录研究状态、信号状态（满足/未满足/未知）、计划状态和实际持仓状态。无用户成交回执或已授权账户记录时，实际持仓一律标“未核实”，不得写已满仓、浮盈、已兑现或已锁定利润；模拟组合单独标注；日内高低点不证明触发先后。稳定使用 idea_id；调整入场/止损/目标/期限须列旧值、新值、原因、生效时间及旧仓适用规则，先检查旧方案是否已失效或已触发止损。
+5. 计算完整组合，客观评价赔率：逐腿列方向、合约、数量/权重、乘数与同一时点价格。多腿或篮子收益必须计算全部成员，单一比价仅为代理信号不代表组合 PnL；核算可接受区间内的风险、目标净收益、R、滑点及分批退出，不得用触发前无法成交的有利价算盈亏比。严格界定止损是计划退出而非保证限损上限，等名义不等于 Beta 中性，保证金不等于风险预算；期权无盘口时可推导最大可接受成本，但不称当前便宜，标的达标不保证期权收益。
+6. 避免虚假精确：分开呈现逻辑吸引力、证据可靠度与执行就绪度；评分逐项有据，变化说明对应新增证据，分数不代表胜率；缺关键输入时明确待评，不靠叙事补满；无校准依据的情景概率标主观假设。
+7. 同一份计划生成所有版本：先形成结构化事实、交易卡及跨期台账，再据此统一生成 Markdown 和 JSON，禁止两版分别重新推演。逐项核对合约、方向、入场顺序、确认时长、不追价限制、独立止损、失效条件、风险上限与状态；摘要不删去改变放行结果的条件；现有 schema 无法表达时显式标注该机器版本不可用于执行。
+8. 发布前独立检查：重新核算关键数字，核对来源日期、交易日、合约与价格口径、日历、状态变化和两版本语义；发现错误修正候选并重算排序，无法修复则隔离受影响候选，其他有效研究照常发布。只报告实际完成的检查，正文突出新机会、最强反证、观点变化和未解决缺口，不重复堆砌通用免责。
 
-【中国期指期权联动】
-必须联合IH/IF/IC/IM与HO/IO/MO分析：IH↔HO，IF↔IO，IM↔MO；IC只能使用MO/IO/ETF期权作为代理，必须说明代理对应标的、Beta/基差/跟踪误差与不能完全对冲的风险，不得当作IC的一一对应指数期权。综合价格、volume、OI、OI变化、基差、跨期、ATM IV、25Delta skew、RR25、BF25、PCR、Gamma，判断行情更支持一日异常还是趋势延续。新资金、short covering、vol repricing与事件对冲均为待检验解释；价格/OI象限、PCR或会员持仓变化本身不能唯一识别资金方向、参与者意图或因果。针对主导解释给出至少一个有实质区别的竞争解释、各自支持证据与下一项区分检验；缺乏可校准模型时以定性置信度表达，不编造精确概率。
+六、研究报告输出（原十项全部保留在 Google Drive 归档文件中，不因新增质量协议压缩归档文件正文）
+1. 100字以内一句话结论：全球风险状态、主驱动、风险方向与最重要跨资产定价背离，不凑立即建仓。
+2. 全市场仪表盘：美国2/10/30Y与10Y实际、2s30s、DXY、EUR/USD、USD/JPY、USD/CNH、QQQ/Nasdaq、SOXX/SMH、WTI/Brent、Gold、VIX/MOVE/HY OAS，IH/IF/IC/IM期指主/次与现货basis、HO/IO/MO可比期权状态，以及商品代表与Stock能力。标各数据时点、EOD/实时报价属性、市场开市情况，附商品Options core_atm/skew与完整曲面/持仓/执行限制、夜盘供应商观察价格和calendar_mismatch、futures_crosscheck真实匹配/官方失败，质量摘要不能代替研究判断。
+3. 相较严格前序全球报告的3—6项实质变化：区分中国EOD、其后欧洲/美国变化、海外市场上一完整日、实体新事实、曲线/波动及观点处置，若没有足够变化则少写不凑。
+4. 全球统一机会Top5以内，全部资产与A股同场竞争，列标的、方向、期限、研究/证据/执行三轴、分项及总分、有效支撑反证、合约工具、最关键定价差与风险；无合格可执行机会可空。
+5. Top3以内详细交易研究卡：准确定价时点与合约/腿/数量、市场错价与最强反证、催化与入场/失效/TP1/TP2/时间退出、多个情景成本后赔率、风险预算与共振压力、夜盘/日盘/股指真实合法交易窗口、待询价及执行未知项、与上一版观点差异。不能用模型推测代替成交数据。
+6. 黄金特别研究：实际利率/DXY/央行购金/ETF/CFTC/IV与市场政策信用、全球流动性竞争解释，判断“政策信用期权”叙事增强/不变/减弱/失效/证据不足；比较3—6个月Call Spread、微型黄金期货、黄金多+长债Put Spread、反向及不交易，不能复用过期strike或假装权利金已确认。
+7. AI特别研究：盈利和现金流定价权 vs Capex Beta、营收FCF和指引、云/芯片/设备/电力/软件、估值与成交反应、长期变现和当下盈利分开；现金流龙头多/Capex Beta空与反向、SOXX/SMH、行业ETF或真实衍生品方案，缺组合精确权重只称主题不称Beta-neutral。
+8. 中国50/300/500/1000与公司专项：EOD现货与IH/IF/IC/IM准确价格量OI ΔOI、basis与curve、风格相对收益与成交广度、HO/IO/MO和ETF期权ATM/skew/RR/BF/term/PCR/Gamma/IV-RV的本身质量边界、股指跨期跨风格方向与有限风险期权、公司财务发现与利润传导/Stock证据路径、未入榜的结论与真正缺口。
+9. 下一24小时/7天北京时间风险日历：Fed/美国就业CPI PCE ISM/债券供给与重要财报、EIA/OPEC/IEA/USDA/天气与地缘、中国社融PMI/政策/交易所交割与到期/企业披露、欧亚美交易时差；今晚21:00有交易才给具体商品夜盘风险地图、三种情景及开盘后15/30/45分验证，休市则写下一真实开盘而非虚构可操作日期；实际需要的IV/Gamma/Vega保护、少仓/延期/退出和覆盖/旧idea台账核查。
+10. 最后严格四行：A. 今天可立即建立的新仓（无则“A. 今天没有应立即建立的新仓位。”）；B. 今天仅应挂条件的候选；C. 今天继续观察；D. 今天必须回避或若此前已建仓则有条件退出。没有用户持仓确认不能冒称调整已持有仓位。
 
-保留完整全球跨资产覆盖：美国国债2Y/5Y/10Y/30Y及曲线、实际利率、BEI、期限溢价、美元汇率、AI现金流与Capex Beta、原油供需和地缘、黄金信用风险属性、风险指标。
+七、Google Drive 六文件原子化归档与精简对话输出规范（防脆化与自愈写入协议）
+报告生成完毕后，全程采用直通式执行写入 GitHub `farfromexact/Global-Cross-Asset-Radar-Grok` 对应目录，`edition=evening`。严禁因中间异常压缩正文深度。
+唯一六个文件（按本次实际报告日期北京时间 YYYY-MM-DD 和 edition=evening 唯一性标识）：
+1. `reports/YYYY/MM/YYYY-MM-DD_evening.md`（历史主归档）
+2. `reports/YYYY/MM/YYYY-MM-DD_evening.json`（历史数据）
+3. `latest/evening.md`（最新副本）
+4. `latest/evening.json`（最新数据）
+5. `status/evening_latest.json`（状态同步）
+6. `manifests/reports.json`（全量索引）
 
-重点覆盖：
-1）美国国债：2年、5年、10年、30年名义收益率，2s10s、2s30s、5s30s曲线，实际利率、盈亏平衡通胀率、期限溢价、财政供给、拍卖结果、美联储政策路径及市场定价。
-2）美元与主要汇率：DXY、EUR/USD、USD/JPY、USD/CNH，美元与美债收益率背离，汇率期权偏度、套息交易和拥挤度。
-3）AI及科技股票：Nasdaq、QQQ、SOXX、SMH，AI芯片、半导体设备、网络、云计算、软件、电力基础设施，重点公司财报、资本开支、自由现金流、估值变化；判断回撤属于正常去杠杆、估值压缩还是基本面反转；区分AI商业化现金流与AI资本开支Beta。
-4）原油：WTI、Brent、期限结构、库存、裂解价差、OPEC+、地缘冲突、运输风险、OVX及原油期权偏度；区分短期地缘溢价与中期供需趋势。
-5）黄金：现货及COMEX期货、实际利率、美元、央行购金、ETF资金流、CFTC仓位；检查黄金与实际利率/美债/美元的异常背离；判断传统降息交易与财政/货币政策信用交易的权重。
-6）中国股指及相关衍生品：这是强制覆盖模块，每期（包括周末）必须明确输出，不得因“暂时没机会”而省略。至少覆盖上证50/沪深300/中证500/中证1000对应的IH、IF、IC、IM股指期货，以及相关指数期权HO、IO、MO和流动性较好的50ETF、300ETF等相关期权。重点跟踪：
-IH、IF、IC、IM主力及次主力合约价格、涨跌、成交量、持仓量、持仓变化；
-现货指数与期货基差、年化基差、近远月期限结构、贴水/升水变化；
-IH/IF/IC/IM之间的相对强弱，重点研究IF-IH、IM-IF、IM-IH、IC-IF、IM-IC等大小盘/风格价差以及Beta-neutral或Dollar-neutral相对价值；
-上证50、沪深300、中证500、中证1000市场宽度、成交额、涨跌家数、行业与风格贡献、权重股/小盘股分化；
-ETF资金流、融资融券、重要机构资金与政策性资金信号（只能使用可确认数据，不得推测“国家队”净买卖）；
-人民币、DR007/资金面、国债收益率、中国宏观数据、政策会议、监管政策及地产/信用环境对A股风险偏好的影响；
-HO、IO、MO及主要ETF期权的ATM IV、期限结构、25Delta或可取得的偏度指标、Put/Call比、成交与持仓、Gamma/Vega风险、事件前后IV变化；
-比较指数实际波动率与隐含波动率，寻找Long Gamma、Short Gamma（仅有限风险结构优先）、Calendar、Diagonal、Butterfly、Call/Put Spread机会；
-识别A股开盘30—45分钟的趋势/反转信号与日内结构，但每日雷达的正式建议仍需兼顾隔夜风险和可复制性，不把纯盘中噪音当成跨日机会；
-重点寻找：IH/IF/IC/IM方向性机会、大小盘相对价值、基差交易、期现/跨期结构、波动率期限结构、偏度错价和事件凸性。
-如果当天中国50/300/500/1000及相关衍生品在完成研究且证据足以判断后确实没有合格交易，必须明确写“今日中国股指无合格交易”，并说明最接近触发的观察项；如果仅因数据不足或待报价不能确认执行，应写明“暂无法确认可执行交易”及具体缺项，保留研究候选。不得将数据不足或未入Top5自动等同于市场没有机会。
-7）补充风险指标：VIX及波动率期限结构、MOVE、美国高收益债利差、市场宽度、CTA趋势、期权Gamma、拥挤交易、重要流动性或信用风险信号。
-
-输出结构：
-一、今日一句话结论：不超过100字，判断属于Risk-on、Risk-off、滞胀、通胀再定价、增长担忧、政策信用交易、流动性去杠杆或混合状态，并指出最重要跨资产背离。若中国股指存在全球前3级别机会，应在一句话结论中点名。
-二、隔夜/国内市场仪表盘：用表格列出最新价格或收益率、单日变化、一周变化、当前信号、数据时间。至少覆盖美国2年/10年/30年收益率、10年实际利率、2s30s曲线、DXY、Nasdaq或QQQ、SOXX或SMH、WTI、Brent、黄金、VIX、MOVE、高收益债利差；中国模块至少覆盖IH、IF、IC、IM主力合约、对应现货指数、主力基差，并在可确认时加入HO/IO/MO代表性ATM IV或波动率指标。
-三、相比昨天真正发生了什么变化：只列3—6项具有交易意义的变化，重点找价格与基本面背离、跨资产异常背离、波动率与实际风险不匹配、期限结构异常、拥挤仓位松动、市场错误定价。若中国股指发生明显风格切换、基差异动或波动率错价，优先纳入。
-四、机会排行榜：每天最多5个机会，按综合吸引力排序。全球机会和中国IH/IF/IC/IM及相关期权必须放在同一个排行榜中竞争，不单独降低标准。可评分项按0—100评分，缺关键定价输入时按共用规则标待评并保留研究候选；权重仍为逻辑强度25、赔率与凸性25、催化剂明确度20、价格及波动率条件15、拥挤度和技术确认15；严格遵守分项上限与求和。该分数表示研究吸引力，不是胜率；按共用规则另列证据充分度和执行状态，高分不能自动确认入场或加仓。注明方向、预计持有期限、阶段（观察/试仓/确认加仓/持有/减仓/退出）、适合工具、最大损失是否有限。不凑数。只有完成必要核查且证据足以判断无合格交易时，才写“今日中国股指无合格交易”或“今日全球无合格新增交易”；待触发、待报价、数据不足须分别说明，并保留相应研究观察项。不得默认用户已执行历史建议或已有观察仓。研究榜最多5个，不限制完整扫描及专项中的观察覆盖。
-五、前三名交易卡：每个机会给出核心逻辑、可观察或可合理推导的市场隐含预期、我们与该预期的具体分歧及证据（无法证明错价时标“错价待验证”，不能以风险新闻代替定价证据）、最合适衍生品表达、具体合约月份或期限、建议行权价或Delta区间、入场触发条件、分批方式、初始止损或逻辑失效条件、第一及第二止盈位置、最大损失、Delta/Gamma/Theta/Vega特征、隐含波动率和偏度判断、未来1—20个交易日催化剂、最不利情景和隔夜跳空风险、必须放弃交易的市场变化。期权报价不完整时不得虚构精确权利金、可成交性、赔率或Greeks；仍可给研究结构和推导明确的最高可接受净支出或模型估值区间，分别注明其是执行门槛还是模型估计，并列明输入、时点、假设及待询价项。不得把估值或预算上限写成市场报价；具体风险与Greeks按共用规则逐结构核对。优先考虑Call Spread、Put Spread、Butterfly、Calendar/Diagonal、Ratio Spread、跨资产相对价值、DV01中性曲线交易、Beta或Dollar-neutral多空组合。只有风险回报明显更优时才推荐裸期货或裸卖期权；无限损失结构必须说明保证金风险、Gap risk、强制止损、最大可接受名义敞口、极端压力损失。中国股指交易卡若使用IH/IF/IC/IM期货，必须说明合约乘数、保证金与隔夜跳空对名义风险的影响；若使用HO/IO/MO或ETF期权，必须明确Delta/期限/最大损失，并避免把期权合约代码或权利金猜出来。
-六、黄金专项跟踪：每期持续检验“黄金可体现财政、通胀和货币政策信用风险的期权属性”这一假设，判断增强/不变/减弱/失效，允许证据不足。这里的“期权属性”为经济机制比喻，不意味着黄金持仓具有合约限定损失。必须比较政策信用、实际利率、美元、流动性与避险需求等竞争解释，并列出最可能推翻主假设的证据。检查黄金与实际利率、DXY的关系；长端美债收益率上升属于好的利率上升还是坏的利率上升；ETF流量、央行购金、CFTC仓位、黄金期权IV及偏度。持续评估3—6个月Call Spread、突破后的微型黄金期货确认仓、黄金多头加长端美债Put Spread的政策信用组合；这些是候选表达，不是每日必须推荐的方向。主假设减弱或失效时，同样研究减仓、对冲、反向或暂不参与的表达与触发条件。不得机械沿用旧行权价；依据最新有效且注明时点的黄金期货价格、到期时间和隐含波动率重算，缺少必要报价时标为待报价并列出最高可接受成本条件，不得称为已可执行。
-七、AI股票专项跟踪：判断属于超跌反弹、趋势性基本面恶化、估值压缩、资本开支担忧、流动性去杠杆或龙头与二线股分化。区分有现金流与定价权的龙头、依赖远期资本开支预期的高Beta公司、半导体/设备/网络/电力/云/软件不同环节。持续检验多优质AI现金流/空AI资本开支Beta、指数Put Spread或Call Spread、财报后IV结构机会、SOXX/SMH与软件/云计算相对价值。现金流多头/Capex空头是待验证假设，不预设Capex公司一定更差或应做空；同时检查Capex兑现、估值及拥挤是否使反向组合更合理，并列出最可能推翻主判断的证据。各环节与原有策略保持完整覆盖。
-八、中国50/300/500/1000专项跟踪，中国期权分析必须增加多周期比较：1、3、5、20个交易日变化。重点覆盖：
-- HO/IO/MO ATM IV变化；
-- 25Δ/10Δ wings、RR25、BF25变化；
-- PCR、成交、持仓及OI变化；
-- IH/IF/IC/IM价格、volume、OI、期限结构变化；
-- 期指-期权联动、forward差异；
-- Gamma节点迁移。
-每天固定输出，至少回答：
-今天更适合IH、IF、IC还是IM，为什么；
-大小盘风格是否发生切换；
-基差/跨期是否出现可交易异常；
-HO/IO/MO或ETF期权的IV、偏度、期限结构是否提供比裸期货更优的表达；
-是否存在IF-IH、IM-IF、IM-IH、IC-IF或IM-IC的相对价值；
-给出中国股指研究吸引力评分、证据充分度和执行状态。未进入全球Top5只表示相对排序，不能据此断言没有合格交易；确实无合格交易时写出“今日中国股指无合格交易”和最接近触发的条件，资料不足或待报价时分别说明。
-九、今日事件日历：列未来24小时及未来7天重要事件，全部换算为北京时间，包括美国就业、CPI、PPI、PCE、ISM、零售销售、美联储讲话和会议、美国国债拍卖、OPEC+或EIA数据、重要AI公司财报、可能影响油价和黄金的地缘事件；同时加入中国CPI/PPI、社融信贷、PMI、央行操作、重要政策会议、A股/港股关键事件和中国主要指数衍生品交割/到期日。标明事件前是否应该降低Delta、降低Vega、延后入场或保留凸性仓位。
-十、今日行动清单：最后只给四行：A. 今天可以立即建立的仓位；B. 今天只应挂条件单的仓位；C. 今天应继续观察的机会；D. 今天必须避免或退出的交易。中国IH/IF/IC/IM若有合格机会，应与海外机会一起进入这四行，而不是单独附录。
-
-风险预算：单一试仓最大损失为净值0.25%—0.75%；单一确认交易最大损失为净值0.75%—1.50%；高确信度主题总风险预算不超过净值2.5%—3.0%；多个交易若暴露于同一宏观因子，必须合并计算风险。识别表面不同、实质相同的仓位。例如多黄金、空长期美债、空美元、多通胀预期可能共同暴露于美国政策信用和实际利率变化；多IM、空IH、做多小盘ETF看涨期权可能实质都是同一个A股小盘/高Beta风格因子，也必须合并计算风险，不能视为独立交易。
-使用中文。结论直接、专业，不写泛泛而谈的市场综述。报告首先回答“今天究竟有没有值得冒险的机会”。每个建议必须包含入场、失效和退出条件。明确区分事实、市场定价、推断和主观判断。附关键来源引用。
-
-【自动归档】
-
-报告完成后，必须通过已连接的 GitHub connector，直接归档至：
-
-github.com/farfromexact/Global-Cross-Asset-Radar-Grok
-
-edition=evening。
-
-必须直接写入 main 分支。不得创建 staging branch，不得创建 Pull Request，不得执行或等待 merge。
-
-正式归档路径固定为：
-
-reports/YYYY/MM/YYYY-MM-DD_evening.md
-reports/YYYY/MM/YYYY-MM-DD_evening.json
-latest/evening.md
-latest/evening.json
-status/evening_latest.json
-manifests/reports.json
-
-归档前必须通过 GitHub connector 读取 config/archive-policy.json、docs/SCHEDULE_ARCHIVE_INSTRUCTIONS.md，并依据实际仓库目录定位、读取当前 report/status/manifest JSON schema及现有模板；如具体文件不存在，记录缺项并核对当前可取得的实际schema，不能猜测其内容。遵守字段名称、必填项和类型，sources、supported_claims 等字段均使用实际schema规定的类型；新增审计信息仅使用schema允许字段，不允许时保留在Markdown，不得改仓库schema、配置或模板来迁就输出。
-归档前必须先在本次任务上下文中完整生成上述6个目标文件的最终内容，再开始写入GitHub。
-
-其中：
-reports/YYYY/MM/YYYY-MM-DD_evening.md：保存完整中文正式报告；
-reports/YYYY/MM/YYYY-MM-DD_evening.json：保存对应结构化报告；
-latest/evening.md：覆盖为本次最新晚间正式报告；
-latest/evening.json：覆盖为本次最新晚间结构化报告；
-status/evening_latest.json：记录本次归档状态、报告日期、生成时间、数据状态和错误信息；
-manifests/reports.json：以 report_date + edition 为唯一键更新本次报告记录，不得产生重复记录。
-
-归档JSON至少记录：
-report_date
-edition
-generated_at
-market_regime
-worth_taking_risk
-top_opportunities
-trade_cards
-action_list
-risk_budget
-sources
-China-Options-Engine实际读取路径
-china_options_date
-data_fresh
-previous_date
-errors
-archive_status
-ci_validation_status
-
-GitHub仓库必须通过已连接的 GitHub connector 读取和写入；不得使用普通网页搜索代替仓库文件读写。
-
-写入行为：
-A. 对不存在的历史文件直接在 main 创建；
-B. 对已经存在的文件直接在 main 更新；
-C. 不得因为已有旧文件而创建新的branch；
-D. 不得使用 staging branch、PR、merge 或 Compare & pull request 流程；
-E. 六个目标文件全部写入后，必须重新通过 GitHub connector 从 main 读取并验证：
-历史Markdown存在；
-历史JSON存在；
-latest/evening.md 的 report_date 对应本次报告；
-latest/evening.json 的 report_date 和 edition 正确；
-status/evening_latest.json 对应本次运行；
-manifests/reports.json 包含且仅包含一个本次 report_date + evening 的记录。
-
-只有上述 main 分支复核全部成功后，才能设置：
-archive_status = success
-
-如果部分文件成功、部分失败：
-archive_status = partial
-
-如果归档无法完成：
-archive_status = failed
-
-必须明确说明具体失败路径和错误原因，不得声称归档成功。
-
-GitHub Actions 的 Validate Radar Reports 仅作为写入 main 后的独立事后校验，不得等待其完成，不得让CI状态阻塞本次 Scheduled Task。
-
-如果当前执行上下文无法获取GitHub Actions最终结果，则：
-ci_validation_status = pending_or_unverified
-
-不得虚构为passed。
-
-报告在聊天中的生成不得因GitHub归档失败而取消。
-
-完成 main 分支六个文件的复核后，立即结束本次 Scheduled Task，不继续轮询GitHub，不等待CI，不执行任何branch cleanup。
-
-若仓库中的旧 archive policy、历史说明或旧prompt与本段“直接写 main、禁止 staging/PR/merge”的要求冲突，以本段要求为准。
+【原子化单步落盘与自愈重试指令】：
+1. 目标目录锁定：
+   - 先通过检索快速定位 `Global-Cross-Asset-Radar` 下的四个核心目标子文件夹 ID：`reports/YYYY/MM/`（对应当前年月的文件夹）、`latest`、`status`、`manifests`。
+   - 写入时直接提交到目标路径（reports/YYYY/MM、latest、status、manifests），严禁只写根目录临时文件而不更新正式路径。
+2. 异常自愈与类型回退：
+   - 写入 `.md` 失败时改用等价纯文本内容重试，严禁直接放弃写入。
+   - 对 `latest/evening.md`、`latest/evening.json`、`status/evening_latest.json`，若目标目录下已存在同名旧文件，优先调用 `update_file` 更新内容；若不存在则调用创建工具直接写入目标文件夹，杜绝同名文件累积膨胀。
+3. 云端存全量、对话框发精简摘要：
+   - GitHub 仓库中的 `.md` 与 `.json` 归档文件必须 100% 保留完整十大章节正文、全市场仪表盘、63 品种扫描及详细交易卡（含四态分离、因果链反证、多腿配比、利润桥拆解与好中坏净R赔率），绝不删减任何研究深度。
+   - 聊天窗口（Chat 回复）严禁重复粘贴数万字正文，仅输出 600 字以内精简摘要（六个文件的 GitHub 直达链接、一句话结论、Top 5 简表、严格四行结论），核验完成后立即结束。
