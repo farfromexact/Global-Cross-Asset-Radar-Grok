@@ -1,16 +1,20 @@
 {
   "schema_version": "1.0",
   "edition": "evening",
-  "archive_status": "empty",
-  "report_date": null,
-  "generated_at_bjt": null,
-  "markdown_path": null,
-  "json_path": null,
+  "archive_status": "success",
+  "report_date": "2026-10-29",
+  "generated_at_bjt": "2026-10-29T19:52:00+08:00",
+  "as_of_bjt": "2026-10-29T19:52:00+08:00",
+  "scheduled_slot_bjt": "19:50",
+  "actual_generation_note": "Evening slot. China cash EOD and the Europe cash session are complete. China commodity night at 21:00 BJT and the US cash open at about 21:30 BJT had not started. Cutoff follows the research packet target 19:52 BJT. No night-session or US cash prints are included.",
+  "markdown_path": "reports/2026/10/2026-10-29_evening.md",
+  "json_path": "reports/2026/10/2026-10-29_evening.json",
   "latest_markdown_path": "latest/evening.md",
   "latest_json_path": "latest/evening.json",
   "status_path": "status/evening_latest.json",
   "manifest_path": "manifests/reports.json",
-  "ci_validation_status": null,
+  "ci_validation_status": "pending_or_unverified",
+  "worth_taking_risk": false,
   "errors": [],
-  "note": "Scaffold only. No report has been archived."
+  "note": "archive_status=success means the six paths for 2026-10-29 evening were written. It does not mean CI passed or that any order is executable. Holdings are unverified. No WeChat escalation."
 }
