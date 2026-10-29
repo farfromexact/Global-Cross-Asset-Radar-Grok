@@ -25,5 +25,5 @@ Grok Bot (gemini monitor) runs on weekdays only:
 - No orders. Research and decision support only. Do not place, route, or simulate a fill as if it were an account instruction.
 - Do not invent prices, quotes, fills, or data dates. If a figure is missing, say so.
 - Do not copy historical reports from `farfromexact/Global-Cross-Asset-Radar` into this repo to fill `reports/` or `latest/`.
-- Evening uses Cong's `radar_2026-10-12_stock_v1` prompt (`commodity_consumer=core_2026-10-17_v1`) and writes this repo's `main`. Morning is a stub until Cong uploads the 2026-10-12 morning prompt. See `prompts/PROMPT_SOURCE.md`.
+- Morning and evening both use Cong's `radar_2026-10-12_stock_v1` prompts (`commodity_consumer=core_2026-10-17_v1`) and write this repo's `main`. See `prompts/PROMPT_SOURCE.md`.
 - This repository was intended to be private. It may still be public. Do not write secrets.
