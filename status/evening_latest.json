@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "edition": "evening",
+  "archive_status": "empty",
+  "report_date": null,
+  "generated_at_bjt": null,
+  "markdown_path": null,
+  "json_path": null,
+  "latest_markdown_path": "latest/evening.md",
+  "latest_json_path": "latest/evening.json",
+  "status_path": "status/evening_latest.json",
+  "manifest_path": "manifests/reports.json",
+  "ci_validation_status": null,
+  "errors": [],
+  "note": "Scaffold only. No report has been archived."
+}

@@ -1,0 +1,28 @@
+# OS junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+.Python
+.venv/
+venv/
+
+# Secrets and local credentials
+.env
+.env.*
+secrets/
+credentials.json
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.token
