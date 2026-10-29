@@ -1,5 +1,31 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": null,
-  "reports": []
+  "updated_at_bjt": "2026-10-29T08:52:12+08:00",
+  "reports": [
+    {
+      "report_date": "2026-10-29",
+      "edition": "morning",
+      "generated_at_bjt": "2026-10-29T08:52:12+08:00",
+      "markdown_path": "reports/2026/10/2026-10-29_morning.md",
+      "json_path": "reports/2026/10/2026-10-29_morning.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "post_fomc_hold_with_hawkish_dissent_curve_steepening_ai_cashflow_split_china_day_session_not_yet_open",
+      "worth_taking_risk": false,
+      "top_opportunity": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "china_index_score": null,
+      "china_options_date": "2026-10-28",
+      "china_options_fresh": true,
+      "china_commodities_date": "2026-10-28",
+      "china_commodities_fresh": false,
+      "commodity_history_record_count": 20,
+      "stock_trade_date": "2026-10-21",
+      "stock_research_asof": "2026-10-22T07:34:51+08:00",
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "commit_sha": null,
+      "revision": 1
+    }
+  ]
 }

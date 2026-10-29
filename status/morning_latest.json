@@ -1,16 +1,20 @@
 {
   "schema_version": "1.0",
   "edition": "morning",
-  "archive_status": "empty",
-  "report_date": null,
-  "generated_at_bjt": null,
-  "markdown_path": null,
-  "json_path": null,
+  "archive_status": "success",
+  "report_date": "2026-10-29",
+  "generated_at_bjt": "2026-10-29T08:52:12+08:00",
+  "as_of_bjt": "2026-10-29T08:52:12+08:00",
+  "scheduled_slot_bjt": "07:50",
+  "actual_generation_note": "Mid-morning rerun. Not the 07:50 slot. China day session had not opened at as_of.",
+  "markdown_path": "reports/2026/10/2026-10-29_morning.md",
+  "json_path": "reports/2026/10/2026-10-29_morning.json",
   "latest_markdown_path": "latest/morning.md",
   "latest_json_path": "latest/morning.json",
   "status_path": "status/morning_latest.json",
   "manifest_path": "manifests/reports.json",
-  "ci_validation_status": null,
+  "ci_validation_status": "pending_or_unverified",
+  "worth_taking_risk": false,
   "errors": [],
-  "note": "Scaffold only. No report has been archived."
+  "note": "archive_status=success means the six paths for 2026-10-29 morning were written. It does not mean CI passed or that any order is executable."
 }
