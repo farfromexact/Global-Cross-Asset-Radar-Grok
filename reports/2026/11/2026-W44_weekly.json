@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "status": "published",
+  "edition": "weekly",
+  "report_week": "2026-W44",
+  "report_date": "2026-11-01",
+  "week_start": "2026-10-26",
+  "week_end": "2026-11-01",
+  "generated_at_bjt": "2026-11-01T20:15:00+08:00",
+  "as_of_bjt": "2026-11-01T20:15:00+08:00",
+  "title": "全球跨资产高风险机会雷达｜周报",
+  "one_sentence_conclusion": "AI现金流vs资本开支裂口加深但现金确认窗未触发；甲醇铜AND与沥青回撤前提失败；Fed/ECB/BoJ Hold后进入NFP周观察，不立即建仓。",
+  "regime": "partial_week_archive_ai_cashflow_vs_capex_split_china_growth_selloff_commodity_and_gates_failed_post_fomc_ecb_boj_holds_worth_taking_risk_false",
+  "worth_taking_risk": false,
+  "wechat_escalate": false,
+  "prompt_version": "weekly_v1",
+  "hit_rate": {
+    "definition": "among_active_Top5_with_testable_trigger_in_archived_days",
+    "sample_trading_days_archived": 2,
+    "coverage_note": "Only 2026-10-29 and 2026-10-30 Grok dailies exist; Mon–Wed 2026-10-26..28 missing",
+    "active_top5_count": 5,
+    "triggered": 0,
+    "invalidated": 3,
+    "still_waiting": 2,
+    "triggered_rate_among_resolved": 0.0,
+    "resolved_count": 3,
+    "formula": "triggered / (triggered + invalidated) among Top5 that faced a testable gate this week; waiting excluded from resolved rate",
+    "retired_or_paused_excluded_from_rate": [
+      "CN-IDX-IH-LONG-IM-SHORT-20261027",
+      "COM-E-SC2612-CONTANGO-REVERSAL-SHORT-20261026"
+    ]
+  },
+  "candidates_outcomes": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "name": "微软多/谷歌空：现金流 vs 资本开支 Beta",
+      "ranks": {
+        "2026-10-29_morning": 3,
+        "2026-10-29_evening": 1,
+        "2026-10-30_morning": 1,
+        "2026-10-30_evening": 1
+      },
+      "scores": {
+        "2026-10-29_morning": 64,
+        "2026-10-29_evening": 66,
+        "2026-10-30_morning": 66,
+        "2026-10-30_evening": 70
+      },
+      "trigger": "美股现金开盘后约30分钟：MSFT相对GOOGL/QQQ仍呈现金流腿韧性 vs 资本开支贝塔弱势",
+      "outcome": "still_waiting",
+      "evidence": [
+        "2026-10-29 晚：盘前 MSFT +2.7%~+3.6%、GOOGL -9%~-10.2%，现金未开→不可执行",
+        "2026-10-30 晨：美现金收盘簇 NASDAQ 26184.72 (−1.38%)；GOOGL −12.64%、AMZN −4.25%；盘后 AMZN/INTC 加深裂口（二级）",
+        "2026-10-30 晚：盘前 NQ≈−2.5%、ES≈−1.1%（二级），score→70，仍等现金确认；周五夜盘未开"
+      ],
+      "status_note": "研究优先级上升，但本周无一次满足「现金+30分钟」入场打印"
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "name": "MA701 条件多（油化价差留存）",
+      "ranks": {
+        "2026-10-29_morning": 1,
+        "2026-10-29_evening": 2,
+        "2026-10-30_morning": 2,
+        "2026-10-30_evening": 2
+      },
+      "scores": {
+        "2026-10-29_morning": 68,
+        "2026-10-29_evening": 58,
+        "2026-10-30_morning": 58,
+        "2026-10-30_evening": 56
+      },
+      "trigger": "MA收盘≥3485 AND PX收盘≥9850 AND 近远月≥4.50% 同时满足",
+      "outcome": "invalidated",
+      "evidence": [
+        "2026-10-29 日盘：MA701 收 3413<3485；近远月 3.671%<4.50%；PX612 收 9780<9850（三条失败）",
+        "2026-10-29 夜盘快照：MA 夜价约 3429，仍远低于 3485（vendor）",
+        "2026-10-30 日盘：MA2701 收 3480<3485；曲线 1.96%<4.50%；PX2612 收 9874 单腿过 9850，AND 仍失败"
+      ],
+      "status_note": "本周可检验触发均失败打印；保留观察但门槛未过"
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "name": "CU2612 条件多",
+      "ranks": {
+        "2026-10-29_morning": 2,
+        "2026-10-29_evening": 3,
+        "2026-10-30_morning": 3,
+        "2026-10-30_evening": 3
+      },
+      "scores": {
+        "2026-10-29_morning": 67,
+        "2026-10-29_evening": 56,
+        "2026-10-30_morning": 56,
+        "2026-10-30_evening": 53
+      },
+      "trigger": "CU2612≥109600 AND 曲线≥0.65%（理想含 LME3M≥14500）",
+      "outcome": "invalidated",
+      "evidence": [
+        "2026-10-29 日盘：收 108660<109600；近远月 0.624%<0.65%；LME 缺失",
+        "2026-10-29 夜盘快照：约 108410（进一步远离）",
+        "2026-10-30 日盘：收 108050<109600；曲线 0.76% 单腿过 0.65%，AND 仍失败"
+      ],
+      "status_note": "价格腿持续失败；曲线偶发单过不算触发"
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "name": "EC2612 趋势+contango 空",
+      "ranks": {
+        "2026-10-29_morning": 5,
+        "2026-10-29_evening": 5,
+        "2026-10-30_morning": 5,
+        "2026-10-30_evening": 4
+      },
+      "scores": {
+        "2026-10-29_morning": 62,
+        "2026-10-29_evening": 51,
+        "2026-10-30_morning": 51,
+        "2026-10-30_evening": 50
+      },
+      "trigger": "趋势空需价格走弱且 contango/曲线条件可核验；禁止无曲线追空",
+      "outcome": "still_waiting",
+      "evidence": [
+        "2026-10-29：收 2681.5（+1.28%），近远月 −15.491% 深 contango；价格上涨削弱空头",
+        "2026-10-30：新浪二级收 2625（日盘回落）；曲线/contango 当晚 packet 未核实"
+      ],
+      "status_note": "仍观察；曲线未核实故不记为触发也不记为失效"
+    },
+    {
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "name": "BU2701 强曲线回撤多",
+      "ranks": {
+        "2026-10-29_morning": 4,
+        "2026-10-29_evening": 4,
+        "2026-10-30_morning": 4,
+        "2026-10-30_evening": 5
+      },
+      "scores": {
+        "2026-10-29_morning": 64,
+        "2026-10-29_evening": 52,
+        "2026-10-30_morning": 52,
+        "2026-10-30_evening": 47
+      },
+      "trigger": "回撤多前提：价格回踩而非追涨；另需曲线/Brent 等相关 AND",
+      "outcome": "invalidated",
+      "evidence": [
+        "2026-10-29：收 5110 / 结算 5106，日涨约 +3.34%，回踩逻辑被打偏；近远月 4.716%<5.50%；Brent 二级约 114.88 未过 115.5",
+        "2026-10-30：新浪二级收 5284 / 高 5364 vs 前结 5106 = chase day，回撤前提否决；曲线 packet 缺失"
+      ],
+      "status_note": "回撤前提本周被否决"
+    },
+    {
+      "idea_id": "CN-IDX-IH-LONG-IM-SHORT-20261027",
+      "name": "多IH空IM（已退休）",
+      "ranks": {},
+      "scores": {},
+      "trigger": "风格对冲框架",
+      "outcome": "invalidated",
+      "evidence": [
+        "2026-10-29/30 日报均标记失效且不复活；IM/IC 领跌、IH 相对防守，但不复活旧 id"
+      ],
+      "status_note": "永久归档候选，不复活"
+    },
+    {
+      "idea_id": "COM-E-SC2612-CONTANGO-REVERSAL-SHORT-20261026",
+      "name": "SC2612 contango 反转空（暂停）",
+      "ranks": {},
+      "scores": {},
+      "trigger": "暂停，不重启",
+      "outcome": "still_waiting",
+      "evidence": [
+        "2026-10-29：曲线约 −0.87% contango，明确不重启",
+        "2026-10-30：SC2612 日盘约 −1.13%，仍暂停不复活"
+      ],
+      "status_note": "暂停态；不计入本周可检验触发样本"
+    }
+  ],
+  "cross_asset_weekly": [
+    {
+      "asset": "US_equities",
+      "week_change_pct": {
+        "DJIA": -0.85,
+        "SPX": -0.57,
+        "NASDAQ": -2.0,
+        "S&P_MidCap_400": 1.26,
+        "Russell_2000": 1.3
+      },
+      "friday_close": {
+        "DJIA": 51770.31,
+        "SPX": 7580.07,
+        "NASDAQ": 25437.0,
+        "S&P_MidCap_400": 3662.2,
+        "Russell_2000": 2811.85
+      },
+      "levels_note": "大盘成长/AI 前半周反弹后尾盘回吐；中小盘相对强",
+      "flows_style": "large-cap value > growth 连续第四周（FactSet/T.Rowe 叙述）",
+      "as_of": "week_ending_2026-10-30",
+      "source": "https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html",
+      "publisher": "T. Rowe Price / FactSet (Reuters via Yahoo/Bloomberg closes 16:00 ET)",
+      "coverage": "OK"
+    },
+    {
+      "asset": "China_HK_equities",
+      "week_change_pct": {
+        "CSI300": -2.92,
+        "Shanghai_Composite": -2.48,
+        "Hang_Seng": 0.87
+      },
+      "radar_eod_path": {
+        "2026-10-29": {
+          "SSE": 3651.43,
+          "CSI300": 4041.84,
+          "ChiNext_chg_pct": -4.45,
+          "STAR50_chg_pct": -4.46
+        },
+        "2026-10-30": {
+          "SSE": 3599.02,
+          "CSI300": 3985.5,
+          "ChiNext": 2413.63,
+          "STAR50": 1160.84,
+          "ChiNext_chg_pct": -4.13,
+          "STAR50_chg_pct": -5.48
+        }
+      },
+      "levels_note": "陆股科技/算力重挫，港股周五局部反弹带动全周小涨；CFFEX IM/IC 领跌、IH 相对防守",
+      "as_of": "week_ending_2026-10-30",
+      "source": "T. Rowe Price FactSet weekly + Grok radar EOD 2026-10-29/30",
+      "coverage": "OK_week_pct_from_FactSet; daily_path_from_radar"
+    },
+    {
+      "asset": "US_rates",
+      "week_change": "10Y yield ~5.0% prior Friday → ~4.92% Friday afternoon (T.Rowe); secondary clusters ~4.93–4.94",
+      "radar_note": "Official US CMT often missing in evening packets; CFFEX TL2612 2026-10-30 close_return −0.94%",
+      "as_of": "2026-10-30 afternoon ET / BJT evening packets",
+      "source": "T. Rowe Price weekly; TD Bottom Line secondary 10Y ~4.94; radar missing_or_unverified CMT",
+      "coverage": "PARTIAL_COVERAGE_official_CMT"
+    },
+    {
+      "asset": "USD_CNH",
+      "prints": {
+        "2026-10-29_morning_radar": 6.6614,
+        "2026-10-30_evening_radar_secondary": 6.6508
+      },
+      "week_change_pct": null,
+      "as_of": "radar secondary only",
+      "source": "Grok morning/evening dashboards (aggregator/fx_secondary)",
+      "coverage": "PARTIAL_COVERAGE_no_official_week_change"
+    },
+    {
+      "asset": "Gold",
+      "week_change_secondary": "spot XAU roughly −3.0% to ~3876; Dec futures settle cited ~3898.90 (−3.29% Fri d/d in some wraps)",
+      "radar_reconcile": "2026-10-30 evening GC_premarket_secondary ~3976.68 was PRE-US-cash Friday; not the week close. SHFE AU2612 day close 855.18 on 2026-10-30 vs 867.26 on 2026-10-29.",
+      "as_of": "secondary week wraps 2026-10-30/31; radar day closes",
+      "source": "1trader/TradingEconomics-style secondary; Northgate/eOption Dec settle note; Grok radar AU2612",
+      "coverage": "PARTIAL_COVERAGE_secondary_conflicts_label_required",
+      "conflict_note": "Do not blend Friday premarket GC~3976 with ~3876 week-close spot; different timestamps"
+    },
+    {
+      "asset": "Crude",
+      "week_change_secondary": "WTI Dec ~104.12 week +~0.8%; Brent Dec settle Fri 117.64 cited in EnergyNow/Northgate",
+      "radar_reconcile": "2026-10-30 evening CL_premarket_secondary ~104.189 ≈ Friday WTI neighborhood; SC2612 day close 742.4 (−1.13% ret1d radar)",
+      "as_of": "2026-10-30 settlements / radar",
+      "source": "secondary weekly forex/energy wraps; Grok radar SC/CL_premarket",
+      "coverage": "PARTIAL_COVERAGE_secondary_ok_directionally"
+    },
+    {
+      "asset": "Industrial_metals",
+      "radar_path": {
+        "CU2612": {
+          "2026-10-29_close": 108660,
+          "2026-10-30_close": 108050,
+          "gate_109600": "fail_both_days"
+        },
+        "LME": "missing_in_radar_packets"
+      },
+      "td_secondary_copper": {
+        "week_ago": 14472.0,
+        "current": 14579.2,
+        "note": "TD Bottom Line 2026-10-30 table; OTHER_SECONDARY"
+      },
+      "as_of": "2026-10-29/30 radar + TD secondary",
+      "source": "Grok commodities day prints; TD Economics Bottom Line PDF table",
+      "coverage": "PARTIAL_COVERAGE_LME_missing_SHFE_ok"
+    }
+  ],
+  "framework_review": {
+    "archive_permanently_no_revival": [
+      {
+        "idea_id": "CN-IDX-IH-LONG-IM-SHORT-20261027",
+        "reason": "已失效；即便 IH 相对 IM 更强也不复活旧框架"
+      },
+      {
+        "idea_id": "COM-E-SC2612-CONTANGO-REVERSAL-SHORT-20261026",
+        "reason": "暂停且本周明确不重启；曲线回到 contango 也不足以复活旧空"
+      }
+    ],
+    "themes_strengthened": [
+      "AI 现金流 vs 资本开支分裂（MSFT/GOOGL → AMZN/INTC 加深；中国科创/创业板共振下跌）",
+      "中国成长/中小盘期货（IM/IC）相对银行/IH 的防守分化"
+    ],
+    "themes_weakened_or_blocked": [
+      "甲醇/铜条件多：连续日盘 AND 失败，从「差一点」变成明确失败打印",
+      "沥青回撤多：变成追涨日，回撤前提否决",
+      "黄金「政策信用」叙事：跟踪-only，不占 Top5；不因 TL 波动抢跑宽松"
+    ],
+    "threshold_adjustments": [
+      "MA：维持 3485 / PX9850 / 曲线4.50% 三 AND；失败后必须用新成交重核，禁止用结算偷换收盘门槛",
+      "CU：维持 109600 + 曲线0.65%；LME 缺失则催化层不加分",
+      "BU：回撤多需显式「非 chase」过滤器（例如相对前结涨幅上限）后再谈曲线/Brent",
+      "AI：入场窗仍锁定现金开盘+30分钟相对方向；盘前/盘后只升研究优先级",
+      "EC：无核验曲线不做空；价格单日涨跌不足以触发"
+    ]
+  },
+  "next_week_calendar": [
+    {
+      "date": "2026-11-02",
+      "bjt_note": "周一",
+      "event": "BoJ Outlook for Economic Activity and Prices (October 2026, full text) 14:00 JST",
+      "source": "https://www.boj.or.jp/en/about/calendar/",
+      "affects": [
+        "JPY",
+        "rates",
+        "gold_track"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-02",
+      "bjt_note": "周一美盘日",
+      "event": "ISM Manufacturing PMI (Oct); S&P Global US Manufacturing PMI final",
+      "source": "TD Economics upcoming table 2026-10-30; Kiplinger calendar",
+      "affects": [
+        "US_equities",
+        "rates",
+        "AI-CASHFLOW-VS-CAPEX-BETA-20261028"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-02",
+      "bjt_note": "中国商品",
+      "event": "上周五夜盘若有成交映射交易日 2026-11-02；重核 MA/CU/BU/EC AND",
+      "source": "Grok 2026-10-30 evening night_calendar",
+      "affects": [
+        "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+        "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+        "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+        "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-03",
+      "event": "JOLTS / Factory Orders / Durable Goods (Sep)",
+      "source": "TD / Kiplinger",
+      "affects": [
+        "rates",
+        "US_equities"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-04",
+      "event": "ADP employment; US Trade Balance; ISM Services; Eurozone CPI flash estimate",
+      "source": "TD Economics upcoming Nov 2–6",
+      "affects": [
+        "rates",
+        "EUR",
+        "US_equities"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-05",
+      "event": "Initial jobless claims; Q3 productivity/unit labor costs; BoE Bank Rate decision (TD table)",
+      "source": "TD Economics; Kiplinger (Hammack speak)",
+      "affects": [
+        "GBP",
+        "rates"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-06",
+      "event": "US Nonfarm Payrolls / unemployment / AHE (Oct)",
+      "source": "TD / Kiplinger",
+      "affects": [
+        "US_equities",
+        "rates",
+        "USD_CNH",
+        "gold_track",
+        "AI-CASHFLOW-VS-CAPEX-BETA-20261028"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-10",
+      "event": "BoJ Summary of Opinions (Oct 29–30 MPM)",
+      "source": "BoJ release schedule",
+      "affects": [
+        "JPY",
+        "rates"
+      ],
+      "verified": true
+    },
+    {
+      "date": "2026-11-18",
+      "event": "FOMC Minutes (Oct 27–28) — NOT next week; listed to avoid false expectation",
+      "source": "https://federalreserve.gov/newsevents/2026-november.htm",
+      "affects": [
+        "rates"
+      ],
+      "verified": true
+    },
+    {
+      "date": "OTHER_BOT_CLAIM",
+      "event": "Mission Control week-6: BoJ Outlook ~11-02 JST; FOMC minutes TBD/not this week — cross-check only",
+      "source": "reports/2026/11/2026-11-01_weekly-review.md",
+      "affects": [],
+      "verified": false,
+      "claim_class": "OTHER_BOT_CLAIM"
+    }
+  ],
+  "action_list": {
+    "A": "下周开盘前没有应立即建立的新仓位；不推送微信；本周报只归档研究结论。",
+    "B": "AI 相对价值仅在美股现金开盘后约30分钟相对方向仍成立时可讨论探针；MA2701/CU2612 仅在新成交同时满足全部 AND 后可讨论；BU 回撤前提已否决，须重新定义非 chase 过滤器后才可谈。",
+    "C": "继续观察 EC2612 曲线/contango、IH 相对 IM 风格（不复活旧 id）、黄金与 TL/美债、NFP 周波动、日银 Outlook 全文措辞。",
+    "D": "回避追涨 BU、追多 IM/科创硬件、裸卖波动、复活多IH空IM、重启已暂停 SC 旧空；持仓未核实，不声称调整已有仓位。"
+  },
+  "coverage_note": "Only Grok dailies for 2026-10-29 and 2026-10-30 exist in-repo; Mon–Wed 2026-10-26..28 missing because radar started mid-week. Mission Control reports/2026/11/2026-11-01_weekly-* are OTHER_BOT_CLAIM for calendar cross-check only and must not be overwritten or used as sole price primary.",
+  "sources": [
+    {
+      "title": "Global Markets Weekly Update",
+      "publisher": "T. Rowe Price / FactSet",
+      "url": "https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html",
+      "as_of": "week_ending_2026-10-30",
+      "supports": [
+        "US/EU/JP/CN weekly equity moves",
+        "Fed/ECB/BoJ holds",
+        "10Y ~4.92%"
+      ]
+    },
+    {
+      "title": "Grok radar dailies",
+      "publisher": "farfromexact/Global-Cross-Asset-Radar-Grok",
+      "url": "https://github.com/farfromexact/Global-Cross-Asset-Radar-Grok/tree/main/reports/2026/10",
+      "as_of": "2026-10-29/30",
+      "supports": [
+        "candidate gates",
+        "China EOD",
+        "commodity AND prints"
+      ]
+    },
+    {
+      "title": "BoJ Release Schedule",
+      "publisher": "Bank of Japan",
+      "url": "https://www.boj.or.jp/en/about/calendar/",
+      "as_of": "updated_2026-10-30",
+      "supports": [
+        "Outlook full text Nov 2 14:00 JST",
+        "SoO Nov 10"
+      ]
+    },
+    {
+      "title": "Fed November 2026 calendar",
+      "publisher": "Federal Reserve",
+      "url": "https://federalreserve.gov/newsevents/2026-november.htm",
+      "as_of": "2026-11",
+      "supports": [
+        "FOMC minutes Nov 18"
+      ]
+    },
+    {
+      "title": "Upcoming Economic Releases Nov 2-6 2026",
+      "publisher": "TD Economics",
+      "url": "https://economics.td.com/domains/economics.td.com/documents/reports/bottom-line/tables/2026-10-30/upcoming.htm",
+      "as_of": "2026-10-30",
+      "supports": [
+        "ISM/ADP/NFP/EZ CPI/BoE"
+      ]
+    },
+    {
+      "title": "Weekly Forex Recap 26–30 Oct 2026",
+      "publisher": "1trader secondary",
+      "url": "https://1trader.com/en/forex-weekly-2026-10-30/",
+      "as_of": "2026-10-31",
+      "supports": [
+        "gold ~-3% / WTI ~+0.8% secondary"
+      ],
+      "quality": "secondary"
+    },
+    {
+      "title": "Mission Control weekly-review",
+      "publisher": "OTHER_BOT_CLAIM",
+      "url": "reports/2026/11/2026-11-01_weekly-review.md",
+      "as_of": "2026-11-01",
+      "supports": [
+        "calendar cross-check only"
+      ],
+      "claim_class": "OTHER_BOT_CLAIM"
+    }
+  ],
+  "archive": {
+    "markdown_path": "reports/2026/11/2026-W44_weekly.md",
+    "json_path": "reports/2026/11/2026-W44_weekly.json",
+    "latest_markdown_path": "latest/weekly.md",
+    "latest_json_path": "latest/weekly.json",
+    "status_path": "status/weekly_latest.json",
+    "manifest_path": "manifests/reports.json",
+    "prompt_path": "prompts/weekly_v1.md"
+  },
+  "machine_execution_note": "Box write only. No CloudAgent, no push, no user message, no WeChat. worth_taking_risk=false.",
+  "prior_dailies": [
+    "reports/2026/10/2026-10-29_morning.json",
+    "reports/2026/10/2026-10-29_evening.json",
+    "reports/2026/10/2026-10-30_morning.json",
+    "reports/2026/10/2026-10-30_evening.json"
+  ]
+}

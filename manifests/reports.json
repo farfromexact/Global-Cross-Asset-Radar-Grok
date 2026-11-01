@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-10-30T19:50:00+08:00",
+  "updated_at_bjt": "2026-11-01T20:15:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -84,9 +84,31 @@
       "prompt_version": "radar_2026-10-12_stock_v1",
       "data_protocol_version": "core_2026-10-17_v1",
       "commit_sha": null,
+      "revision": 1
+    },
+    {
+      "report_date": "2026-11-01",
+      "report_week": "2026-W44",
+      "edition": "weekly",
+      "generated_at_bjt": "2026-11-01T20:15:00+08:00",
+      "markdown_path": "reports/2026/11/2026-W44_weekly.md",
+      "json_path": "reports/2026/11/2026-W44_weekly.json",
+      "latest_markdown_path": "latest/weekly.md",
+      "latest_json_path": "latest/weekly.json",
+      "status_path": "status/weekly_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "partial_week_archive_ai_cashflow_vs_capex_split_china_growth_selloff_commodity_and_gates_failed_post_fomc_ecb_boj_holds_worth_taking_risk_false",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "hit_rate_triggered_among_resolved": 0.0,
+      "prompt_version": "weekly_v1",
+      "commit_sha": null,
       "revision": 1,
-      "note": "local_box_archive_not_on_main_yet"
+      "coverage_note": "Oct26-28 Grok dailies missing; first weekly install"
     }
   ],
-  "merge_note": "Oct29 morning+evening (github) + Oct30 morning (local deferred) + Oct30 evening (this run); commit_sha null until push"
+  "merge_note": "Preserved Oct29–30 morning/evening entries from remote manifests/reports.json; upserted 2026-W44 weekly. Do not drop dailies."
 }
