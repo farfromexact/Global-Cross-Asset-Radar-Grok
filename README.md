@@ -36,6 +36,10 @@ Each run writes these six paths on `main`, then re-reads them before claiming su
 - `schemas/` — report and manifest JSON Schema.
 - `templates/` — empty report templates, not published reports.
 
+## Weekly reviews (Mission Control)
+
+`reports/2026/11/` — Mission Control 周复盘 markdown (week 6, 2026-11-01). Outside the morning/evening six-file protocol; not indexed in `manifests/reports.json`.
+
 ## Privacy / 可见性
 
 This repository was intended to be **private**. It is currently **public** on GitHub. Do not put secrets, account data, or credentials here.
