@@ -1,0 +1,916 @@
+{
+  "schema_version": "1.0",
+  "status": "published",
+  "report_date": "2026-11-02",
+  "edition": "morning",
+  "generated_at_bjt": "2026-11-02T07:55:00+08:00",
+  "as_of_bjt": "2026-11-02T07:55:00+08:00",
+  "scheduled_slot_bjt": "07:50",
+  "weekend_mode": false,
+  "title": "全球跨资产高风险机会雷达｜晨间版",
+  "one_sentence_conclusion": "周五美股确认硬件偏弱但微软谷歌配对未触发，美债收益率下行而金银夜盘大跌，甲醇跳空仍缺曲线，周一早盘不建仓。",
+  "regime": "friday_us_cash_ai_hardware_weaker_than_msft_googl_pair_trigger_failed_yields_down_gold_silver_night_dump_ma_gap_curve_missing_china_day_not_open",
+  "worth_taking_risk": false,
+  "prompt_version": "radar_2026-10-12_stock_v1",
+  "commodity_consumer_version": "core_2026-10-17_v1",
+  "wechat_escalate": false,
+  "holdings_status": "未核实",
+  "archive_status": "success",
+  "orders": false,
+  "machine_execution_note": "研究载荷。缺07:55电子盘报价、缺权利金、缺保证金参数、持仓未核实。不可用于下单。",
+  "data_cutoff": {
+    "beijing_time": "2026-11-02T07:55:00+08:00",
+    "scheduled_slot_bjt": "07:50",
+    "actual_not_nominal_slot": true,
+    "us_cash_market": "friday_2026-10-30_closed",
+    "europe_cash_market": "friday_2026-10-30_closed",
+    "china_cash_market": "not_open_day_session_0900_0930",
+    "china_commodity_night_completed_for_trading_date": "2026-11-02",
+    "cme_globex_reopen_bjt": "2026-11-02T07:00:00+08:00",
+    "cme_clock_note": "US DST ended 2026-11-01. Sunday 17:00 CT standard time equals Monday 07:00 Beijing, not 06:00.",
+    "asia_electronic_quote_0755": "unknown",
+    "us_cash_open_bjt": "22:30",
+    "notes": [
+      "Friday night China commodity session maps to trading date 2026-11-02.",
+      "China day session is a regular trading day; SHFE 2026 holiday list does not include Nov 2.",
+      "No timestamped Globex quote was verified at 07:55."
+    ]
+  },
+  "input_snapshots": {
+    "china_options_repository": "farfromexact/China-Options-Engine",
+    "china_options_commit": "4bf945a6f7794f6b54892e09d2e4e634bd4525c0",
+    "china_options_path": "data/radar_latest.json",
+    "china_options_date": "2026-10-30",
+    "china_options_generated_at": "2026-10-31T06:22:33.472155+08:00",
+    "china_options_fresh": true,
+    "china_options_read_status": "ok",
+    "china_commodities": {
+      "repository": "farfromexact/China-Commodities-Engine",
+      "commit": "b47ce2ddc3367f8b254f9edf6ef2f926f33e741e",
+      "read_status": "ok",
+      "trade_date": "2026-10-30",
+      "generated_at": "2026-11-02T06:01:51.747373+08:00",
+      "report_input_generated_at": "2026-11-02T06:03:16.738810+08:00",
+      "data_fresh": true,
+      "official_complete": false,
+      "full_market_ready": true,
+      "futures_crosscheck_state": "partial",
+      "all_compared_prices_equal": false,
+      "dce_official": "source_error_http_412",
+      "shfe_ine_gfex_czce_settle_close_diffs_on_comparable": 0,
+      "czce_close_comparable": 182,
+      "czce_close_matched_contracts": 243,
+      "options_surface_ready": false,
+      "options_execution_ready": false,
+      "options_positioning_ready": false,
+      "core_atm_ready_count": 44,
+      "skew_ready_count": 24,
+      "product_coverage": 0.703125,
+      "night": {
+        "trading_date": "2026-11-02",
+        "night_session_date": "2026-10-30",
+        "session_start_date": "2026-10-30",
+        "session_end_date": "2026-10-31",
+        "generated_at": "2026-10-31T05:58:24.825184+08:00",
+        "coverage_pct": 51.1166,
+        "official_night_close_verified": false,
+        "price_semantics": "vendor_latest_trade_asof_snapshot",
+        "calendar_mismatch": false
+      }
+    },
+    "china_stock": {
+      "repository": "farfromexact/China-Stock-Engine",
+      "commit": "00eba0ae980e3426d2b5576725d5198f59b7fb3c",
+      "read_status": "ok",
+      "trade_date": "2026-10-30",
+      "data_fresh": true,
+      "candidate_union_count": 0,
+      "signal_counts_NONE": 5577,
+      "none_reason": "adjustment_missing_and_current_bar_unverified_not_absence_of_moves",
+      "advancers": 893,
+      "decliners": 4602,
+      "unchanged": 76,
+      "median_1d_pct": -3.129346,
+      "equal_weight_1d_pct": -3.036287,
+      "median_20d_pct": -13.347609,
+      "turnover_cny": 1687710160982.29,
+      "hash_note": "last_run_status artifact sha256 bfa7de9d differs from manifest sha256 0c4ce441 for opportunity_radar_latest.json; breadth figures agree",
+      "financials_state": "partial_collected_2026-10-12",
+      "tradability": "missing",
+      "a_share_focus_candidates": 0
+    },
+    "prior_global_report": {
+      "evening": "reports/2026/10/2026-10-30_evening.md",
+      "morning": "reports/2026/10/2026-10-30_morning.md",
+      "weekly": "reports/2026/11/2026-W44_weekly.md",
+      "used_as": "idea_inheritance_not_price_evidence"
+    }
+  },
+  "source_status": {
+    "engines": "ok",
+    "permission_error": false,
+    "permission_errors": [],
+    "us_treasury_par_2026_10_30": "ok_csv",
+    "h15_nominal_through": "2026-10-29",
+    "h15_real_2026_10_30": "missing",
+    "vix_official": "missing_secondary_conflict_19.42_vs_22.63",
+    "move": "missing",
+    "hy_oas": "missing",
+    "dxy_engine": "unavailable",
+    "usdcnh_engine": "unavailable",
+    "eurusd": "secondary_conflict_not_used",
+    "usdjpy": "secondary_conflict_not_used",
+    "asia_electronic_0755": "unknown",
+    "wti_brent_single_number": "not_used_contract_identity_conflict",
+    "comex_gold_single_settlement": "not_used_level_conflict",
+    "ec_night": "missing",
+    "dce_official_crosscheck": "source_error",
+    "commodity_option_premiums": "missing_bid_ask_zero"
+  },
+  "dashboard": [
+    {
+      "asset": "US2Y",
+      "latest": 4.56,
+      "prev": 4.61,
+      "unit": "percent",
+      "data_time": "2026-10-30",
+      "data_attribute": "US_Treasury_par_yield",
+      "source": "treasury_csv"
+    },
+    {
+      "asset": "US5Y",
+      "latest": 4.71,
+      "prev": 4.78,
+      "unit": "percent",
+      "data_time": "2026-10-30",
+      "data_attribute": "US_Treasury_par_yield",
+      "source": "treasury_csv"
+    },
+    {
+      "asset": "US10Y",
+      "latest": 4.94,
+      "prev": 4.98,
+      "unit": "percent",
+      "data_time": "2026-10-30",
+      "data_attribute": "US_Treasury_par_yield",
+      "source": "treasury_csv"
+    },
+    {
+      "asset": "US30Y",
+      "latest": 5.31,
+      "prev": 5.32,
+      "unit": "percent",
+      "data_time": "2026-10-30",
+      "data_attribute": "US_Treasury_par_yield",
+      "source": "treasury_csv"
+    },
+    {
+      "asset": "US20Y",
+      "latest": 5.34,
+      "prev": 5.35,
+      "unit": "percent",
+      "data_time": "2026-10-30",
+      "data_attribute": "US_Treasury_par_yield",
+      "note": "above_30y"
+    },
+    {
+      "asset": "2s10s_bp",
+      "latest": 38,
+      "prev": 37,
+      "unit": "bp",
+      "data_time": "2026-10-30"
+    },
+    {
+      "asset": "2s30s_bp",
+      "latest": 75,
+      "unit": "bp",
+      "data_time": "2026-10-30"
+    },
+    {
+      "asset": "5s30s_bp",
+      "latest": 60,
+      "prev": 54,
+      "unit": "bp",
+      "data_time": "2026-10-30"
+    },
+    {
+      "asset": "US10Y_real",
+      "latest": 2.63,
+      "unit": "percent",
+      "data_time": "2026-10-29",
+      "data_attribute": "H15_TIPS",
+      "note": "Oct30_missing"
+    },
+    {
+      "asset": "US10Y_breakeven",
+      "latest": 2.35,
+      "unit": "percent",
+      "data_time": "2026-10-29",
+      "note": "4.98_minus_2.63_same_day_only"
+    },
+    {
+      "asset": "DXY",
+      "latest": null,
+      "note": "secondary_small_down_level_unverified_engine_unavailable"
+    },
+    {
+      "asset": "EURUSD",
+      "latest": null,
+      "note": "conflict_not_used"
+    },
+    {
+      "asset": "USDJPY",
+      "latest": null,
+      "note": "conflict_not_used"
+    },
+    {
+      "asset": "USDCNH",
+      "latest": 6.6529,
+      "range": [
+        6.6525,
+        6.6533
+      ],
+      "data_time": "2026-10-30",
+      "data_attribute": "secondary_ny_close_cluster",
+      "engine": "unavailable"
+    },
+    {
+      "asset": "DJI",
+      "latest": 51770.31,
+      "change_1d_pct": -1.09,
+      "data_time": "2026-10-30",
+      "data_attribute": "cash_close"
+    },
+    {
+      "asset": "SPX",
+      "latest": 7580.07,
+      "change_1d_pct": -1.82,
+      "data_time": "2026-10-30",
+      "data_attribute": "cash_close"
+    },
+    {
+      "asset": "IXIC",
+      "latest": 25437.0,
+      "change_1d_pct": -2.86,
+      "data_time": "2026-10-30",
+      "data_attribute": "cash_close"
+    },
+    {
+      "asset": "NDX",
+      "latest": 28384.8,
+      "change_1d_pct": -3.46,
+      "data_attribute": "secondary_not_official"
+    },
+    {
+      "asset": "VIX",
+      "latest": null,
+      "note": "19.42_vs_22.63_conflict"
+    },
+    {
+      "asset": "MSFT",
+      "latest": 521.91,
+      "change_1d_pct": -1.55,
+      "data_time": "2026-10-30",
+      "data_attribute": "cash_close"
+    },
+    {
+      "asset": "GOOGL",
+      "latest": 279.84,
+      "change_1d_pct": -1.4,
+      "prev_close": 283.82,
+      "data_time": "2026-10-30",
+      "note": "minus_12.64pct_was_2026-10-29_324.89_to_283.82"
+    },
+    {
+      "asset": "AMZN",
+      "latest": 240.35,
+      "change_1d_pct": -1.41,
+      "data_time": "2026-10-30"
+    },
+    {
+      "asset": "NVDA",
+      "latest": 204.64,
+      "change_1d_pct": -4.22,
+      "data_time": "2026-10-30",
+      "source": "CNBC"
+    },
+    {
+      "asset": "ASML",
+      "latest": 1565.9,
+      "change_1d_pct": -6.55,
+      "data_time": "2026-10-30",
+      "source": "CNBC"
+    },
+    {
+      "asset": "WTI",
+      "latest": null,
+      "engine_context_only": 102.94,
+      "secondary_dec_settlement_cluster": 104.12,
+      "note": "do_not_average"
+    },
+    {
+      "asset": "BRENT",
+      "latest": null,
+      "engine_context_only": 113.4,
+      "note": "secondary_conflict_117.64_112.51_113.43"
+    },
+    {
+      "asset": "COMEX_GOLD",
+      "latest": null,
+      "engine_context_only": 3884.4,
+      "secondary_settlement_cluster": 3898.9,
+      "spot_secondary": 3875,
+      "note": "direction_down_level_not_unique"
+    },
+    {
+      "asset": "AU2612_day_close",
+      "latest": 855.18,
+      "settle": 861.9,
+      "data_time": "2026-10-30",
+      "data_attribute": "SHFE_day_close"
+    },
+    {
+      "asset": "AU2612_night_last",
+      "latest": 831.68,
+      "return_vs_close_pct": -2.748,
+      "source_timestamp": "2026-10-31T02:30:00+08:00",
+      "official_night_close_verified": false
+    },
+    {
+      "asset": "AG2612_night_last",
+      "latest": 11532.0,
+      "return_vs_close_pct": -4.639,
+      "source_timestamp": "2026-10-31T02:30:00+08:00",
+      "official_night_close_verified": false
+    },
+    {
+      "asset": "IH2612",
+      "close": 2700.8,
+      "settle": 2704.6,
+      "change_pct": -0.0058160936464697515,
+      "oi_change": 3762,
+      "cash": 2742.11,
+      "cash_change_pct": -0.0075
+    },
+    {
+      "asset": "IF2612",
+      "close": 3928.0,
+      "settle": 3940.4,
+      "change_pct": -0.014204688048988584,
+      "oi_change": 1117,
+      "cash": 3985.5,
+      "cash_change_pct": -0.0139
+    },
+    {
+      "asset": "IC2612",
+      "close": 6187.2,
+      "settle": 6231.6,
+      "change_pct": -0.03079670415739847,
+      "oi_change": 8540,
+      "cash": 6266.19,
+      "cash_change_pct": -0.0291,
+      "direct_option": false
+    },
+    {
+      "asset": "IM2612",
+      "close": 6081.0,
+      "settle": 6138.0,
+      "change_pct": -0.03745093073318988,
+      "oi_change": 9900,
+      "cash": 6161.23,
+      "cash_change_pct": -0.0341
+    },
+    {
+      "asset": "HO2612_atm_iv",
+      "latest": 0.16428302761179805,
+      "rr25": -0.01420707991249509,
+      "pcr_oi": 0.6216574458275703
+    },
+    {
+      "asset": "IO2612_atm_iv",
+      "latest": 0.20832942935226156,
+      "rr25": -0.023997751139993112,
+      "atm_iv_change_1d": 0.009427071196693004,
+      "rr25_change_1d": -0.006077917219476564
+    },
+    {
+      "asset": "MO2612_atm_iv",
+      "latest": 0.3662743144128623,
+      "rr25": -0.03255383482397206,
+      "atm_iv_change_1d": 0.03528333359590374,
+      "rr25_change_1d": 0.014213864062310844
+    },
+    {
+      "asset": "CU2612_day_close",
+      "latest": 108050.0,
+      "settle": 108190.0,
+      "curve_pct": 0.7579258711526019,
+      "night_last": 107250.0,
+      "gate": 109600,
+      "gate_pass": false
+    },
+    {
+      "asset": "MA2701_day_close",
+      "latest": 3480.0,
+      "settle": 3463.0,
+      "curve_pct": 1.9613337069207062,
+      "night_last": 3613.0,
+      "gate_close": 3485,
+      "gate_curve": 4.5,
+      "and_pass": false,
+      "engine_code": "MA701"
+    },
+    {
+      "asset": "PX2612_day_close",
+      "latest": 9874.0,
+      "night_last": 10054.0,
+      "engine_code": "PX612"
+    },
+    {
+      "asset": "BU2701",
+      "day_close": 5284.0,
+      "night_last": 5304.0,
+      "pullback": false
+    },
+    {
+      "asset": "SC2612",
+      "day_close": 742.4,
+      "night_last": 758.5,
+      "old_short": "remain_paused"
+    },
+    {
+      "asset": "EC2612",
+      "day_close": 2625.0,
+      "settle": 2648.0,
+      "curve_pct": -14.218277945619334,
+      "curve_observations": 4,
+      "curve_z": null,
+      "night": "missing"
+    },
+    {
+      "asset": "China_mfg_PMI",
+      "latest": 49.3,
+      "delta": -0.8,
+      "large": 50.2,
+      "medium": 48.4,
+      "small": 47.5,
+      "production": 49.8,
+      "new_orders": 49.4,
+      "published": "2026-10-31T09:30+08:00",
+      "source": "NBS"
+    },
+    {
+      "asset": "China_non_mfg_PMI",
+      "latest": 49.7,
+      "delta": -0.5,
+      "services": 50.0,
+      "construction": 48.0,
+      "construction_delta": -2.3,
+      "composite_output": 49.7,
+      "source": "NBS_commentary"
+    }
+  ],
+  "meaningful_changes": [
+    {
+      "change": "US cash closed and AI pair trigger failed",
+      "evidence": "MSFT -1.55 vs GOOGL -1.40; NVDA -4.22; Nasdaq -2.86",
+      "implication": "score 70 to 55; do not retarget idea to NVDA"
+    },
+    {
+      "change": "GOOGL -12.64% date correction",
+      "evidence": "2026-10-29 324.89 to 283.82; 2026-10-30 only -1.40% to 279.84",
+      "implication": "weekly attribution corrected"
+    },
+    {
+      "change": "nominal yields down, long end sticky",
+      "evidence": "2Y -5bp 5Y -7bp 10Y -4bp 30Y -1bp; 5s30s 54 to 60",
+      "implication": "not a full-curve easing bid; real yield Oct30 missing"
+    },
+    {
+      "change": "gold and silver dumped on the night session",
+      "evidence": "AU 831.68 -2.75% vs prior close; AG 11532 -4.64%",
+      "implication": "policy-credit narrative weakened for this window; no trade"
+    },
+    {
+      "change": "MA night gap without curve",
+      "evidence": "vendor last 3613 vs close 3480; PX 10054; day curve 1.96%",
+      "implication": "AND still fails; gap is chase"
+    },
+    {
+      "change": "CU night farther from gate",
+      "evidence": "107250 vs 109600",
+      "implication": "AND fail reconfirmed"
+    },
+    {
+      "change": "DST shifts US cash open to 22:30 Beijing",
+      "evidence": "DST ended 2026-11-01",
+      "implication": "clock change only"
+    },
+    {
+      "change": "China October PMI released Saturday",
+      "evidence": "mfg 49.3 small 47.5 non-mfg 49.7 construction 48.0",
+      "implication": "do not buy small-cap dip Monday"
+    },
+    {
+      "change": "BoJ Outlook already dated Oct 30",
+      "evidence": "gor2610a.pdf",
+      "implication": "do not treat Nov 2 14:00 JST as unpublished"
+    },
+    {
+      "change": "FOMC minutes are Nov 6 14:00 ET not Nov 18",
+      "evidence": "federalreserve.gov November 2026 calendar",
+      "implication": "weekly calendar corrected; Nov 18 is Beige Book"
+    }
+  ],
+  "top_opportunities": [
+    {
+      "rank": 1,
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "name": "微软多/谷歌空",
+      "score": 55,
+      "prior_score": 70,
+      "score_components": {
+        "logic": 14,
+        "odds_and_convexity": 10,
+        "catalyst": 14,
+        "price_term_vol": 8,
+        "crowding_and_technical": 9
+      },
+      "direction": "long_MSFT_short_GOOGL_theme_pair_not_beta_neutral",
+      "holding_period": "days_to_2_weeks",
+      "stage": "friday_cash_trigger_failed_wait_monday_2230",
+      "execution_state": "not_executable_now",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "theme_alive_pair_failed",
+        "evidence": "cash_closes_verified_relative_not_met",
+        "execution": "closed_until_2026-11-02T22:30+08:00"
+      },
+      "score_change_reason": "Friday cash relative failed; hardware weaker than the named pair; -12.6% GOOGL move was Thursday"
+    },
+    {
+      "rank": 2,
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "name": "MA2701条件多",
+      "score": 52,
+      "prior_score": 56,
+      "score_components": {
+        "logic": 13,
+        "odds_and_convexity": 9,
+        "catalyst": 11,
+        "price_term_vol": 11,
+        "crowding_and_technical": 8
+      },
+      "direction": "conditional_long_MA2701",
+      "stage": "night_price_gap_curve_missing_and_fail",
+      "execution_state": "not_executable",
+      "axes": {
+        "research_edge": "price_snapshot_only",
+        "evidence": "vendor_night_not_official_close",
+        "execution": "wait_0900_new_prints"
+      },
+      "gates": {
+        "day_close": 3480,
+        "day_close_ge_3485": false,
+        "night_last": 3613,
+        "night_official_close": false,
+        "px_day_close": 9874,
+        "px_night_last": 10054,
+        "ma_curve_day_pct": 1.9613,
+        "ma_curve_ge_4_50": false,
+        "night_curve": "unobserved",
+        "and": false
+      }
+    },
+    {
+      "rank": 3,
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "name": "CU2612条件多",
+      "score": 48,
+      "prior_score": 53,
+      "score_components": {
+        "logic": 11,
+        "odds_and_convexity": 9,
+        "catalyst": 10,
+        "price_term_vol": 10,
+        "crowding_and_technical": 8
+      },
+      "direction": "conditional_long_CU2612",
+      "stage": "price_leg_worse",
+      "execution_state": "not_executable",
+      "gates": {
+        "day_close": 108050,
+        "night_last": 107250,
+        "gate": 109600,
+        "day_curve_pct": 0.7579,
+        "day_curve_pass": true,
+        "night_curve": "unobserved",
+        "and": false
+      },
+      "axes": {
+        "research_edge": "price_fail",
+        "evidence": "night_and_day",
+        "execution": "closed"
+      }
+    },
+    {
+      "rank": 4,
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "name": "EC2612条件空",
+      "score": 44,
+      "prior_score": 50,
+      "score_components": {
+        "logic": 10,
+        "odds_and_convexity": 8,
+        "catalyst": 9,
+        "price_term_vol": 9,
+        "crowding_and_technical": 8
+      },
+      "direction": "conditional_short_EC2612",
+      "stage": "contango_unverified",
+      "execution_state": "not_a_live_candidate",
+      "curve_pct": -14.218,
+      "curve_observations": 4,
+      "curve_z": null,
+      "night": "missing"
+    },
+    {
+      "rank": 5,
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "name": "BU2701回撤多",
+      "score": 42,
+      "prior_score": 47,
+      "score_components": {
+        "logic": 9,
+        "odds_and_convexity": 8,
+        "catalyst": 8,
+        "price_term_vol": 9,
+        "crowding_and_technical": 8
+      },
+      "direction": "pullback_long_BU2701",
+      "stage": "pullback_still_failed",
+      "execution_state": "not_a_live_candidate",
+      "day_close": 5284,
+      "night_last": 5304
+    }
+  ],
+  "top_trade_cards": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "rules_changed": false,
+      "clock_change": "next US cash open 22:30 Beijing after DST, was 21:30 during EDT",
+      "trigger_friday": "not_met",
+      "msft": {
+        "close": 521.91,
+        "pct": -1.55
+      },
+      "googl": {
+        "close": 279.84,
+        "pct": -1.4
+      },
+      "quantity": 0,
+      "position_status": "未核实",
+      "signal_status": "not_met",
+      "plan_status": "no_order",
+      "research_status": "active",
+      "net_r": "not_computable",
+      "beta_neutral": false,
+      "max_loss_limited": false,
+      "next_window_bjt": "2026-11-02T22:30:00+08:00"
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "rules_changed": false,
+      "trigger": "new day prints MA close>=3485 AND PX>=9850 AND MA near-far>=4.50; night gap is not a fill",
+      "and": false,
+      "quantity": 0,
+      "position_status": "未核实",
+      "signal_status": "and_fail",
+      "plan_status": "no_order_until_0900_recheck",
+      "net_r": "not_computable",
+      "option_premium": null,
+      "max_loss_limited": false
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "rules_changed": false,
+      "trigger": "CU2612>=109600 AND curve>=0.65",
+      "and": false,
+      "quantity": 0,
+      "position_status": "未核实",
+      "signal_status": "price_leg_fail",
+      "plan_status": "no_order",
+      "net_r": "not_computable",
+      "atm_iv_percent_cu2612_nov24_strike_108000": 13.355,
+      "skew_ready": false,
+      "max_loss_limited": false
+    }
+  ],
+  "gold_tracking": {
+    "narrative": "减弱_for_friday_to_saturday_night_window",
+    "multi_month": "证据不足",
+    "trade": "none",
+    "shfe_night_last": 831.68,
+    "real_yield_oct30": "missing",
+    "cftc": "missing",
+    "etf_flow": "missing",
+    "official_cb_buying": "missing",
+    "au_option_atm_iv_percent": 20.265,
+    "au_option_rr25": -0.94,
+    "au_option_note": "day session local sample, not the post-dump executable quote"
+  },
+  "ai_tracking": {
+    "pair_trigger": "not_met",
+    "hardware_weaker": true,
+    "do_not_retarget_to_nvda": true,
+    "soxx_smh_official": "missing",
+    "sox_single_secondary_pct": -7.2,
+    "a_share_hardware_dip_buy": false
+  },
+  "china_tracking": {
+    "style": "large_cap_relative_small_cap_down",
+    "revive_ih_im": false,
+    "pmi_supports_not_chasing_small_caps": true,
+    "etf_flows": "tencent_estimate_not_exchange_official",
+    "company_candidates": 0
+  },
+  "commodities_tracking": {
+    "products_scanned": 77,
+    "original_list_covered": true,
+    "night_products_with_representative": 37,
+    "fu_curve_anomaly": 38.27,
+    "jd_curve_anomaly": 8.34,
+    "physical_fundamental_score": null,
+    "physical_missing": [
+      "SC",
+      "LU"
+    ],
+    "external_missing": [
+      "DUBAI_OMAN",
+      "SINGAPORE_HSFO",
+      "SINGAPORE_VLSFO",
+      "USDCNH",
+      "DXY"
+    ]
+  },
+  "event_calendar": [
+    {
+      "bjt": "2026-11-02T09:00+08:00",
+      "event": "China commodity day open",
+      "status": "not_yet_open"
+    },
+    {
+      "bjt": "2026-11-02T09:30+08:00",
+      "event": "A-share and index futures open",
+      "status": "not_yet_open"
+    },
+    {
+      "bjt": "2026-11-02T22:30+08:00",
+      "event": "US cash open after DST",
+      "status": "ai_pair_observation"
+    },
+    {
+      "bjt": "2026-11-03T03:00+08:00",
+      "event": "ISM manufacturing if 14:00 ET",
+      "status": "not_released",
+      "previous": 54.5
+    },
+    {
+      "bjt": "2026-11-03",
+      "event": "US midterm election day",
+      "status": "calendar"
+    },
+    {
+      "bjt": "2026-11-02",
+      "event": "Treasury financing estimates",
+      "status": "treasury_page_says_nov_2_text_not_open"
+    },
+    {
+      "bjt": "2026-11-06T21:30+08:00",
+      "event": "NFP conventional 08:30 ET",
+      "status": "bls_page_not_opened_this_run"
+    },
+    {
+      "bjt": "2026-11-07T03:00+08:00",
+      "event": "FOMC minutes 2026-11-06 14:00 ET",
+      "status": "fed_calendar_ok"
+    },
+    {
+      "bjt": "2026-11-18",
+      "event": "Beige Book 14:00 ET",
+      "status": "not_fomc_minutes"
+    }
+  ],
+  "action_list": {
+    "A": "A. 今天没有应立即建立的新仓位。",
+    "B": "B. 今天仅应挂条件的候选：微软/谷歌配对只在北京时间22:30美股现金开盘后约30分钟、且微软相对谷歌仍表现为现金流腿更抗跌时，才可讨论探针；MA2701只在今日09:00后的新成交同时满足收盘≥3485、PX≥9850、近远月≥4.50%，且不得把周五夜盘跳空当成已成交；CU2612只在新成交≥109600且近远月≥0.65%时才可讨论。",
+    "C": "C. 今天继续观察：EC2612曲线、黄金相对10月30日实际利率缺口、IH相对IM但不复活旧编号、ISM与美国中期选举、财政部融资估计。",
+    "D": "D. 今天必须回避或若此前已建仓则有条件退出：追涨沥青、追多IM或科创、抄底黄金、裸卖波动、复活多IH空IM与原油旧空；持仓未核实，不声称调整已有仓位。"
+  },
+  "four_lines": [
+    "A. 今天没有应立即建立的新仓位。",
+    "B. 今天仅应挂条件的候选：微软/谷歌配对只在北京时间22:30美股现金开盘后约30分钟、且微软相对谷歌仍表现为现金流腿更抗跌时，才可讨论探针；MA2701只在今日09:00后的新成交同时满足收盘≥3485、PX≥9850、近远月≥4.50%，且不得把周五夜盘跳空当成已成交；CU2612只在新成交≥109600且近远月≥0.65%时才可讨论。",
+    "C. 今天继续观察：EC2612曲线、黄金相对10月30日实际利率缺口、IH相对IM但不复活旧编号、ISM与美国中期选举、财政部融资估计。",
+    "D. 今天必须回避或若此前已建仓则有条件退出：追涨沥青、追多IM或科创、抄底黄金、裸卖波动、复活多IH空IM与原油旧空；持仓未核实，不声称调整已有仓位。"
+  ],
+  "risk_budget": {
+    "probe_nav_pct": [
+      0.25,
+      0.75
+    ],
+    "confirm_nav_pct": [
+      0.75,
+      1.5
+    ],
+    "theme_cap_nav_pct": [
+      2.5,
+      3.0
+    ],
+    "deployed_today": 0,
+    "holdings": "未核实",
+    "worth_taking_risk": false
+  },
+  "idea_ledger": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "rules_changed": false,
+      "status": "trigger_not_met",
+      "score": 55,
+      "prior": 70
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "rules_changed": false,
+      "status": "and_fail_night_gap",
+      "score": 52,
+      "prior": 56
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "rules_changed": false,
+      "status": "price_leg_fail",
+      "score": 48,
+      "prior": 53
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "rules_changed": false,
+      "status": "contango_unverified",
+      "score": 44,
+      "prior": 50
+    },
+    {
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "rules_changed": false,
+      "status": "pullback_failed",
+      "score": 42,
+      "prior": 47
+    },
+    {
+      "idea_id": "CN-IDX-IH-LONG-IM-SHORT-20261027",
+      "rules_changed": false,
+      "status": "retired_do_not_revive",
+      "score": null
+    },
+    {
+      "idea_id": "COM-E-SC2612-CONTANGO-REVERSAL-SHORT-20261026",
+      "rules_changed": false,
+      "status": "paused_do_not_revive",
+      "score": null
+    }
+  ],
+  "missing_or_unverified": [
+    "permission_error: none",
+    "VIX official, MOVE, HY OAS",
+    "Oct 30 TIPS and breakeven",
+    "DXY and USD/CNH inside commodity external module",
+    "EURUSD and USDJPY single level",
+    "07:55 Globex quote",
+    "WTI/Brent/COMEX unique settlement",
+    "EC night print",
+    "DCE official crosscheck",
+    "commodity option bid/ask and premiums",
+    "contract multiplier tick margin for execution",
+    "CFFEX bond futures re-extract",
+    "Apple earnings date via IR",
+    "BLS calendar page",
+    "Hormuz mine claim not adopted"
+  ],
+  "sources": [
+    "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+    "https://www.federalreserve.gov/releases/h15/",
+    "https://www.federalreserve.gov/newsevents/2026-november.htm",
+    "https://www.stats.gov.cn/zwfwck/sjfb/202610/t20261031_1965718.html",
+    "https://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
+    "https://apnews.com/article/wall-street-stocks-dow-nasdaq-a01d3551e794fed1a0c317c20bc3f0a2",
+    "farfromexact/China-Options-Engine@4bf945a6",
+    "farfromexact/China-Commodities-Engine@b47ce2dd",
+    "farfromexact/China-Stock-Engine@00eba0ae"
+  ],
+  "archive": {
+    "markdown_path": "reports/2026/11/2026-11-02_morning.md",
+    "json_path": "reports/2026/11/2026-11-02_morning.json",
+    "latest_markdown_path": "latest/morning.md",
+    "latest_json_path": "latest/morning.json"
+  }
+}

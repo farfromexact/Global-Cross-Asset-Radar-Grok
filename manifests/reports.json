@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-01T20:15:00+08:00",
+  "updated_at_bjt": "2026-11-02T07:55:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -108,6 +108,32 @@
       "commit_sha": null,
       "revision": 1,
       "coverage_note": "Oct26-28 Grok dailies missing; first weekly install"
+    },
+    {
+      "report_date": "2026-11-02",
+      "edition": "morning",
+      "generated_at_bjt": "2026-11-02T07:55:00+08:00",
+      "markdown_path": "reports/2026/11/2026-11-02_morning.md",
+      "json_path": "reports/2026/11/2026-11-02_morning.json",
+      "latest_markdown_path": "latest/morning.md",
+      "latest_json_path": "latest/morning.json",
+      "status_path": "status/morning_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "friday_us_cash_ai_hardware_weaker_than_msft_googl_pair_trigger_failed_yields_down_gold_silver_night_dump_ma_gap_curve_missing_china_day_not_open",
+      "worth_taking_risk": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "china_options_date": "2026-10-30",
+      "china_options_fresh": true,
+      "china_commodities_date": "2026-10-30",
+      "china_commodities_night_trading_date": "2026-11-02",
+      "china_commodities_fresh": true,
+      "china_commodities_official_complete": false,
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "commit_sha": null,
+      "revision": 1
     }
   ],
   "merge_note": "Preserved Oct29–30 morning/evening entries from remote manifests/reports.json; upserted 2026-W44 weekly. Do not drop dailies."
