@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "edition": "morning",
   "archive_status": "success",
-  "report_date": "2026-11-03",
-  "generated_at_bjt": "2026-11-03T07:55:00+08:00",
-  "as_of_bjt": "2026-11-03T07:55:00+08:00",
+  "report_date": "2026-11-04",
+  "generated_at_bjt": "2026-11-04T08:05:00+08:00",
+  "as_of_bjt": "2026-11-04T08:05:00+08:00",
   "scheduled_slot_bjt": "07:50",
-  "actual_generation_note": "Tuesday 07:55 Asia/Shanghai. China day session not open (09:00/09:30 ahead). Monday US cash is done. China night for trading_date 2026-11-03 is unpublished at 0% coverage. Morning futures refetch hit iFinD device limit. US midterm election day.",
-  "markdown_path": "reports/2026/11/2026-11-03_morning.md",
-  "json_path": "reports/2026/11/2026-11-03_morning.json",
+  "actual_generation_note": "Wednesday 08:05 Asia/Shanghai. China day session not open (09:00/09:30 ahead). Tuesday US cash is done. China night for trading_date 2026-11-04 is unpublished at 0% coverage. Public night prints only SC 678.8, AU 845.2, AG 11856. Futures refetch hit iFinD device limit. US midterms 0 House and 0 Senate called in the brief; no winners named.",
+  "markdown_path": "reports/2026/11/2026-11-04_morning.md",
+  "json_path": "reports/2026/11/2026-11-04_morning.json",
   "latest_markdown_path": "latest/morning.md",
   "latest_json_path": "latest/morning.json",
   "status_path": "status/morning_latest.json",
@@ -17,9 +17,39 @@
   "worth_taking_risk": false,
   "wechat_escalate": false,
   "holdings_status": "未核实",
+  "orders": false,
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
-  "regime": "monday_us_cash_done_msft_lagged_googl_pair_failed_again_oil_sc_night_crash_au_ag_night_rebound_commodity_and_still_fail_night_engine_coverage_0_ifind_device_limit_china_day_not_open_midterm_day",
+  "top5_scores": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "score": 50
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "score": 45
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "score": 42
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "score": 41
+    },
+    {
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "score": 29
+    }
+  ],
+  "one_sentence_conclusion": "隔夜标普与半导体反弹、微软相对谷歌转强，但两院选举均未开出结果，SC夜盘续跌、甲醇与铜门槛未齐过且夜盘引擎覆盖为0，中国日盘未开，不建仓。",
+  "four_lines": [
+    "A. 今天没有应立即建立的新仓位。",
+    "B. 今天仅应挂条件的候选：MA2701只在今日09:00后可核验的新成交同时满足收盘≥3485、结算≥3485、PX主连≥9850（昨日PX701收盘9194、PX612收盘9340均远低于9850）且近远月≥4.50%并经引擎曲线核验时才可讨论；夜盘甲醇未核实，不得用连续报价或昨日日盘收盘过线代替。CU2612只在新成交≥109600且近远月≥0.65%且曲线经引擎核验时才可讨论，夜盘铜收盘未核实。微软/谷歌不因周二现金相对强弱或AMD业绩自动进入条件单。",
+    "C. 今天继续观察：微软相对谷歌（周二现金微软强于谷歌约2.37个百分点，但周一失败仍在台账，触发未满足；众议院0/435、参议院0/35未定）、SOXX/SMH相对QQQ的半导体反弹能否在22:30后延续、SC夜盘678.8之后的再定价、EC2612的contango（引擎曲线未核）、沪金沪银夜盘相对结算的小幅走弱与10Y约4.95%、DXY次级约101.8、IH相对IM但不复活旧编号、09:15/09:25竞价与开盘后15/30/45分钟。",
+    "D. 今天必须回避或若此前已建仓则有条件退出：追空已连跌的SC与原油、把沥青或油化急跌当成回撤多、追空科创与创业板、复活多IH空IM、把配对改写成空英伟达、抄底或追多金银、裸卖波动、把预测市场蓝潮概率当成已定结果；若此前已按微软相对抗跌建仓，周一现金已否定该条件，按原规则计划退出。持仓未核实。"
+  ],
+  "regime": "us_tue_cash_semis_rebound_msft_gt_googl_does_not_clear_monday_failure_midterms_0_called_sc_night_678_8_au_ag_soft_vs_settle_ma_cu_night_unverified_and_false_ifind_device_limit_night_coverage_0_china_day_not_open",
   "errors": [],
   "permission_errors": [],
-  "note": "archive_status=success means six paths written; not CI pass or executable orders."
+  "note": "archive_status=success means six paths written; not CI pass or executable orders. worth_taking_risk=false. wechat_escalate=false."
 }
