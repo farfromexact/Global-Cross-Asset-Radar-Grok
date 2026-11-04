@@ -1,0 +1,1699 @@
+{
+  "schema_version": "1.0",
+  "status": "published",
+  "report_date": "2026-11-04",
+  "edition": "evening",
+  "generated_at_bjt": "2026-11-04T19:55:00+08:00",
+  "as_of_bjt": "2026-11-04T19:55:00+08:00",
+  "scheduled_slot_bjt": "19:50",
+  "weekend_mode": false,
+  "title": "全球跨资产高风险机会雷达｜晚间版",
+  "one_sentence_conclusion": "A股成长暴力反弹且美期指偏强、媒体投影民主党两院，但MA/CU门槛未过、商品引擎仍0条、夜盘与美股未开，不建仓。",
+  "one_sentence_conclusion_en": "Violent China growth rebound + Dem midterm projection do not clear MA/CU AND or AI pair; engines still zero; no new risk tonight.",
+  "regime": "china_growth_violent_rebound_star_chi_next_lead_dem_midterms_dual_chamber_projected_ma_cu_and_false_commodities_engine_still_0_night_not_started_us_cash_2230_observe_only",
+  "worth_taking_risk": false,
+  "prompt_version": "radar_2026-10-12_stock_v1",
+  "commodity_consumer_version": "core_2026-10-17_v1",
+  "wechat_escalate": false,
+  "holdings_status": "未核实",
+  "archive_status": "success",
+  "orders": false,
+  "ci_validation_status": "pending_or_unverified",
+  "machine_execution_note": "研究载荷。商品期货引擎0条、商品期权不可执行、股指期权引擎停在2026-11-03、缺权利金、缺保证金、持仓未核实。不可用于下单。",
+  "data_cutoff": {
+    "beijing_time": "2026-11-04T19:55:00+08:00",
+    "scheduled_slot_bjt": "19:50",
+    "actual_not_nominal_slot": true,
+    "us_cash_market": "not_open_opens_2230_bjt",
+    "europe_cash_market": "intraday_not_closed_at_cutoff",
+    "china_cash_market": "day_session_closed",
+    "china_commodity_day_session": "closed_2026-11-04",
+    "china_commodity_night_tonight": "not_started",
+    "china_commodity_night_engine_snapshot": "prior_night_tue_2100_to_wed_early_coverage_0_not_tonight",
+    "us_cash_open_bjt_next": "2026-11-04T22:30:00+08:00",
+    "us_cash_open_note": "DST ended 2026-11-01. Cash open is 22:30 BJT, not 21:30. Not open at cutoff.",
+    "notes": [
+      "China equity day session is closed. CFFEX official CSV is empty; sina continuous is a proxy.",
+      "Tonight 21:00 commodity night has not started. The night-session file generated_at 2026-11-04T06:04:59+08:00 maps to the prior night.",
+      "Sina overseas futures clocks read about 19:54. They are pre-US-cash snapshots, not settlements.",
+      "Commodity engine futures are 0 records at 2026-11-04T19:06:21+08:00. SHFE kx20261104.dat is the official day fallback for CU AU AG BU RB EC SC. CZCE and CFFEX official HTTP empty. INE dat 404.",
+      "US midterms dual-chamber Democratic control is a media projection, not exchange data."
+    ]
+  },
+  "input_snapshots": {
+    "china_options_repository": "farfromexact/China-Options-Engine",
+    "china_options_path": "data/radar_latest.json",
+    "china_options_blob_sha": null,
+    "china_options_commit": null,
+    "china_options_date": "2026-11-03",
+    "china_options_generated_at": null,
+    "china_options_fresh": false,
+    "china_options_official_coverage": null,
+    "china_options_read_status": "stale_for_2026-11-04_evening",
+    "china_options_previous_date": "2026-11-02",
+    "china_options_note": "Parent pre-check: trade_date still 2026-11-03, stale versus 2026-11-04 EOD. Morning archive recorded blob e25a168749f467ffd35f997ac3b336e235d64636 generated 2026-11-04T07:19:48+08:00 for date 2026-11-03. Not re-hashed tonight. Not used as tonight option quotes. No 2026-11-04 HO/IO/MO file in this packet.",
+    "china_commodities": {
+      "repository": "farfromexact/China-Commodities-Engine",
+      "branch": "main",
+      "last_run_status_path": "data/last_run_status.json",
+      "radar_latest_path": "data/radar_latest.json",
+      "radar_history_path": "data/radar_history.json",
+      "trade_date": "2026-11-04",
+      "generated_at": "2026-11-04T19:06:21+08:00",
+      "data_fresh": false,
+      "official_complete": false,
+      "source_date_match_pct": null,
+      "full_market_ready": false,
+      "critical_module_errors": null,
+      "history_record_count": null,
+      "module_quality": {
+        "futures": "error_records_0_ifind_device_limit",
+        "contract_meta": "partial_error",
+        "warehouse": "partial_error",
+        "options_chain": "not_ready",
+        "options_surface": "not_ready"
+      },
+      "included_exchanges": [
+        "SHFE",
+        "INE",
+        "DCE",
+        "CZCE",
+        "GFEX"
+      ],
+      "actual_read_paths": [
+        "data/last_run_status.json",
+        "data/night_session/last_run_status.json"
+      ],
+      "radar_latest_read_this_run": false,
+      "last_run_status_blob_sha": null,
+      "futures_fetch": "all five exchanges error records=0 iFinD HTTP 401 errorcode -1303 Device exceed limit at generated_at 2026-11-04T19:06:21+08:00",
+      "options_core_sample_records": 0,
+      "options_surface_ready": false,
+      "options_execution_ready": false,
+      "options_positioning_ready": false,
+      "options_full_chain_verified": false,
+      "contract_info_records": {
+        "SHFE": null,
+        "INE": null,
+        "CZCE": null,
+        "DCE": 0,
+        "GFEX_source_date_match": false,
+        "note": "SHFE INE CZCE marked ok; record counts not in the evening packet. Do not reuse morning 301/63/243."
+      },
+      "warehouse_records": {
+        "CZCE": 23,
+        "SHFE": 0,
+        "DCE": 0,
+        "GFEX": 0,
+        "levels_read": false
+      },
+      "night": {
+        "trading_date": "2026-11-04",
+        "night_session_date": "2026-11-03",
+        "session_start_date": "2026-11-03",
+        "session_end_date": "2026-11-04",
+        "generated_at": "2026-11-04T06:04:59+08:00",
+        "coverage_pct": 0.0,
+        "published": false,
+        "data_fresh": false,
+        "validation_passed": false,
+        "query_error_count": null,
+        "previous_valid_snapshot_retained": true,
+        "official_night_close_verified": false,
+        "blob_sha": null,
+        "blob_sha_note": "not_rehashed_tonight; morning archive of the same generated_at recorded fa70c9142596f1baabad17710583f165e84a2e89 and query_error_count 806",
+        "do_not_use_retained_snapshot_as_tonight": true,
+        "tonight_21_00_started": false,
+        "maps_to": "prior_night_not_tonight"
+      },
+      "day_prices_used": "official_shfe_kx20261104_dat_for_CU_AU_AG_BU_RB_EC_SC; sina_proxy_MA_PX_TA; czce_cffex_official_empty; ine_http_404"
+    },
+    "china_stock": {
+      "repository": "farfromexact/China-Stock-Engine",
+      "path": "data/last_run_status.json",
+      "blob_sha": null,
+      "blob_sha_note": "not_in_evening_packet; morning archive recorded 0b293eae9ee93334febfbc56d13863eefce979e7",
+      "read_status": "provider_error",
+      "state": "failed_backfill",
+      "error": "iFinD HTTP 401 code -1303 Device exceed limit",
+      "last_valid_trade_date": "2026-10-30",
+      "data_fresh": false,
+      "fresh_vs_2026_11_04_cash": false,
+      "a_share_focus_candidates": 0,
+      "fallback": "public sina EOD only; eastmoney push 502 unused"
+    },
+    "prior_global_report": {
+      "strict_prior_same_day_morning": "reports/2026/11/2026-11-04_morning.md",
+      "strict_prior_same_day_morning_commit": "4849571102bc0f869e9bfc341f66560753da32ed",
+      "strict_prior_evening": "reports/2026/11/2026-11-03_evening.md",
+      "used_as": "idea_inheritance_not_today_prices"
+    },
+    "cffex_csv": "http://www.cffex.com.cn/sj/hqsj/rtj/202611/04/20261104_1.csv",
+    "cffex_csv_status": "empty_or_500",
+    "shfe_daily": "https://www.shfe.com.cn/data/tradedata/future/dailydata/kx20261104.dat",
+    "shfe_daily_update": "20261104 15:30:30",
+    "ine_daily": "https://www.ine.cn/data/tradedata/dailydata/kx20261104.dat",
+    "ine_daily_status": "404_html",
+    "czce_daily_status": "empty_or_500",
+    "dce_daily": "not_fetched"
+  },
+  "source_status": {
+    "engines": "mixed",
+    "permission_error": true,
+    "permission_errors": [
+      "China-Commodities-Engine futures all five exchanges iFinD Device exceed limit records=0",
+      "China-Stock-Engine backfill Device exceed limit"
+    ],
+    "china_commodities_day": "engine_0_records_shfe_dat_ok_czce_cffex_empty_ine_404",
+    "china_commodities_night": "unpublished_prior_night_coverage_0_tonight_not_started",
+    "china_options": "stale_2026-11-03",
+    "china_stock_engine": "stale_2026-10-30_backfill_failed",
+    "cffex_csv_20261104": "empty_or_500_sina_continuous_proxy",
+    "shfe_daily": "parsed_official_kx20261104",
+    "ine_daily": "404_sc_taken_from_shfe_dat",
+    "czce_daily": "empty_or_500_ma_px_sina_proxy",
+    "dce_gfex_daily": "missing",
+    "us_treasury_par_2026_11_04": "missing_csv_body_empty_http_200",
+    "us_treasury_par_2026_11_03": "stale_ref_from_morning_brief_4_61_4_95_5_32",
+    "h15_real_yield": "not_refetched_last_cited_2026-10-29_2_63",
+    "vix_official": "missing",
+    "move": "missing",
+    "hy_oas": "missing_tonight",
+    "dxy_official": "missing",
+    "brent": "missing_sina_hf_bz_empty",
+    "eurusd": "sina_1_1256_1954",
+    "usdjpy": "sina_158_43_1954",
+    "usdcnh": "sina_6_6706_1954",
+    "wti_brent_official_settle": "not_used",
+    "comex_gold_official": "not_used",
+    "commodity_option_premiums": "missing",
+    "index_option_iv_today": "not_computed_engine_stale_2026-11-03",
+    "breadth_counts": "not_retrieved",
+    "midterms": "media_projection_not_exchange_data",
+    "eastmoney": "502_unused",
+    "yahoo_finance_chart_api": "failed_from_box",
+    "stoxx600": "yahoo_snippet_medium_confidence"
+  },
+  "dashboard": [
+    {
+      "asset": "SSE",
+      "latest": 3686.1725,
+      "prev_close": 3608.0976,
+      "change_1d": 2.16,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close",
+      "signal": "closed_on_day_high_not_a_star_chase"
+    },
+    {
+      "asset": "SZSE",
+      "latest": 11335.69,
+      "change_1d": 4.22,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close"
+    },
+    {
+      "asset": "SSE50",
+      "latest": 2808.5359,
+      "change_1d": 1.45,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close",
+      "signal": "lagged_growth"
+    },
+    {
+      "asset": "CSI300",
+      "latest": 4101.335,
+      "prev_close": 4008.8748,
+      "change_1d": 2.31,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close"
+    },
+    {
+      "asset": "CSI500",
+      "latest": 6622.0295,
+      "prev_close": 6327.0499,
+      "change_1d": 4.66,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close"
+    },
+    {
+      "asset": "CSI1000",
+      "latest": 6511.8065,
+      "prev_close": 6221.2322,
+      "change_1d": 4.67,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close",
+      "signal": "do_not_revive_ih_im"
+    },
+    {
+      "asset": "STAR50",
+      "latest": 1265.4717,
+      "prev_close": 1151.2826,
+      "change_1d": 9.92,
+      "open": 1152.335,
+      "high": 1271.2667,
+      "low": 1149.0973,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close",
+      "signal": "do_not_chase"
+    },
+    {
+      "asset": "ChiNext",
+      "latest": 2544.73,
+      "prev_close": 2391.652,
+      "change_1d": 6.4,
+      "high": 2559.092,
+      "low": 2376.283,
+      "unit": "index",
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_close",
+      "signal": "do_not_chase"
+    },
+    {
+      "asset": "TURNOVER_SINA_AMOUNT_FIELDS",
+      "sse_amount_field": 95326516,
+      "szse_amount_field": 108442657,
+      "unit": "sina_amount_wanyuan_scale_ambiguous",
+      "data_attribute": "approximate_2_trillion_cny_class_only"
+    },
+    {
+      "asset": "HSI",
+      "latest": 23919.5,
+      "prev_close": 23525.969,
+      "change_1d": 1.67,
+      "data_time": "2026-11-04T16:08:34",
+      "data_attribute": "sina_hk"
+    },
+    {
+      "asset": "HSTECH",
+      "latest": 3936.02,
+      "prev_close": 3867.73,
+      "change_1d": 1.77,
+      "data_attribute": "sina_hk_last_field_ambiguity_use_3936_02"
+    },
+    {
+      "asset": "HSI_fut",
+      "latest": 24116.32,
+      "data_time": "2026-11-04T19:51:00+08:00",
+      "data_attribute": "sina_hf_not_cash_close"
+    },
+    {
+      "asset": "IH_continuous",
+      "latest": 2776.0,
+      "settle_proxy": 2776.0,
+      "open": 2733.2,
+      "high": 2786.4,
+      "low": 2718.0,
+      "volume": 51793,
+      "oi": 70869,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_continuous_not_cffex_csv",
+      "signal": "official_csv_empty"
+    },
+    {
+      "asset": "IF_continuous",
+      "latest": 4071.2,
+      "settle_proxy": 4071.2,
+      "open": 3970.0,
+      "high": 4089.8,
+      "low": 3952.2,
+      "volume": 117612,
+      "oi": 190412,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_continuous_not_cffex_csv"
+    },
+    {
+      "asset": "IC_continuous",
+      "latest": 6578.8,
+      "settle_proxy": 6578.8,
+      "open": 6286.2,
+      "high": 6614.4,
+      "low": 6250.0,
+      "volume": 178923,
+      "oi": 196253,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_continuous_not_cffex_csv"
+    },
+    {
+      "asset": "IM_continuous",
+      "latest": 6469.2,
+      "settle_proxy": 6469.2,
+      "open": 6180.0,
+      "high": 6509.6,
+      "low": 6151.2,
+      "volume": 320249,
+      "oi": 320908,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_continuous_not_cffex_csv",
+      "signal": "do_not_revive_ih_long_im_short"
+    },
+    {
+      "asset": "MA2701",
+      "latest": 3402,
+      "settle": 3402,
+      "pre_settle": 3447,
+      "open": 3472,
+      "high": 3488,
+      "low": 3319,
+      "volume": 907843,
+      "oi": 4130245,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_proxy_czce_official_empty",
+      "signal": "close_and_settle_fail_3485_px_fail_curve_unverified",
+      "verified_official": false
+    },
+    {
+      "asset": "PX2701",
+      "latest": 8930,
+      "settle": 8930,
+      "pre_settle": 9142,
+      "open": 9124,
+      "high": 9166,
+      "low": 8888,
+      "volume": 84495,
+      "oi": 114866,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_proxy_czce_official_empty",
+      "signal": "fails_9850",
+      "verified_official": false
+    },
+    {
+      "asset": "CU2612",
+      "latest": 106170,
+      "settle": 106230,
+      "pre_settle": 107230,
+      "open": 106400,
+      "high": 107160,
+      "low": 105350,
+      "volume": 170590,
+      "oi": 200081,
+      "oi_change": 9294,
+      "zd1": -1060,
+      "zd2": -1000,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "price_fail_curve_unverified",
+      "sina_settle_not_used": 106170
+    },
+    {
+      "asset": "AU2612",
+      "latest": 867.46,
+      "settle": 852.8,
+      "pre_settle": 846.12,
+      "open": 846,
+      "high": 867.6,
+      "low": 843.14,
+      "volume": 336193,
+      "oi": 158870,
+      "oi_change": -1597,
+      "zd1": 21.34,
+      "zd2": 6.68,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "close_settle_gap_do_not_chase",
+      "sina_settle_not_used": 867.46
+    },
+    {
+      "asset": "AG2612",
+      "latest": 12420,
+      "settle": 11999,
+      "pre_settle": 12013,
+      "open": 11800,
+      "high": 12463,
+      "low": 11644,
+      "volume": 660211,
+      "oi": 189158,
+      "oi_change": -19859,
+      "zd1": 407,
+      "zd2": -14,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "close_settle_gap_do_not_chase",
+      "sina_last_not_used": 12453
+    },
+    {
+      "asset": "SC2612",
+      "latest": 681.6,
+      "settle": 676.2,
+      "pre_settle": 694.9,
+      "open": 686.1,
+      "high": 693.8,
+      "low": 660,
+      "volume": 159859,
+      "oi": 22037,
+      "oi_change": -2077,
+      "zd1": -13.3,
+      "zd2": -18.7,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_dat_print_ine_http_404",
+      "signal": "soft_do_not_chase_short",
+      "prior_night_public_print": 678.8
+    },
+    {
+      "asset": "BU2701",
+      "latest": 4876,
+      "settle": 4913,
+      "pre_settle": 5018,
+      "open": 5008,
+      "high": 5029,
+      "low": 4834,
+      "volume": 420928,
+      "oi": 208996,
+      "oi_change": -1240,
+      "zd1": -142,
+      "zd2": -105,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "further_soft_not_pullback"
+    },
+    {
+      "asset": "EC2612",
+      "latest": 2425,
+      "settle": 2433,
+      "pre_settle": 2428,
+      "open": 2465,
+      "high": 2473.5,
+      "low": 2404,
+      "volume": 7489,
+      "oi": 17201,
+      "oi_change": 93,
+      "zd1": -3,
+      "zd2": 5,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "observe_curve_unverified"
+    },
+    {
+      "asset": "RB2701",
+      "latest": 3008,
+      "settle": 2999,
+      "pre_settle": 3002,
+      "open": 2991,
+      "high": 3013,
+      "low": 2988,
+      "volume": 565993,
+      "oi": 1855150,
+      "oi_change": -23356,
+      "zd1": 6,
+      "zd2": -3,
+      "data_time": "2026-11-04",
+      "data_attribute": "shfe_official_close",
+      "signal": "flatish"
+    },
+    {
+      "asset": "TA_continuous",
+      "latest": 6306,
+      "settle_proxy": 6306,
+      "pre_settle": 6422,
+      "data_time": "2026-11-04",
+      "data_attribute": "sina_proxy_not_czce_official"
+    },
+    {
+      "asset": "US2Y",
+      "latest": null,
+      "stale_ref": 4.61,
+      "stale_ref_date": "2026-11-03",
+      "data_time": "2026-11-04",
+      "data_attribute": "official_missing_not_carried_as_today"
+    },
+    {
+      "asset": "US10Y",
+      "latest": null,
+      "stale_ref": 4.95,
+      "stale_ref_date": "2026-11-03",
+      "data_attribute": "official_missing"
+    },
+    {
+      "asset": "US30Y",
+      "latest": null,
+      "stale_ref": 5.32,
+      "stale_ref_date": "2026-11-03",
+      "data_attribute": "official_missing"
+    },
+    {
+      "asset": "US10Y_real",
+      "latest": null,
+      "data_attribute": "not_refetched"
+    },
+    {
+      "asset": "DXY",
+      "latest": null,
+      "data_attribute": "official_missing"
+    },
+    {
+      "asset": "EURUSD",
+      "latest": 1.1256,
+      "data_time": "2026-11-04T19:54:51+08:00",
+      "data_attribute": "sina_fx"
+    },
+    {
+      "asset": "USDJPY",
+      "latest": 158.43,
+      "data_time": "2026-11-04T19:54:49+08:00",
+      "data_attribute": "sina_fx"
+    },
+    {
+      "asset": "USDCNH",
+      "latest": 6.6706,
+      "data_time": "2026-11-04T19:54:48+08:00",
+      "data_attribute": "sina_fx"
+    },
+    {
+      "asset": "ES_fut",
+      "latest": 7686.16,
+      "ref_prior": 7596.75,
+      "data_time": "2026-11-04T19:54:56+08:00",
+      "data_attribute": "sina_hf_not_settle",
+      "signal": "bid_us_cash_closed"
+    },
+    {
+      "asset": "NQ_fut",
+      "latest": 28591.16,
+      "ref_prior": 28305.75,
+      "data_time": "2026-11-04T19:54:57+08:00",
+      "data_attribute": "sina_hf_not_settle",
+      "signal": "bid_us_cash_closed"
+    },
+    {
+      "asset": "YM_fut",
+      "latest": 52720.0,
+      "data_attribute": "sina_hf_not_settle"
+    },
+    {
+      "asset": "WTI_fut",
+      "latest": 95.15,
+      "ref_prior": 96.09,
+      "data_attribute": "sina_hf_CL_not_cme_settle"
+    },
+    {
+      "asset": "BRENT",
+      "latest": null,
+      "data_attribute": "missing_sina_hf_bz_empty"
+    },
+    {
+      "asset": "COMEX_GOLD_fut",
+      "latest": 4051.81,
+      "ref_prior": 3940.4,
+      "data_time": "2026-11-04T19:54:52+08:00",
+      "data_attribute": "sina_hf_GC_not_official"
+    },
+    {
+      "asset": "COMEX_SILVER_fut",
+      "latest": 52.05,
+      "ref_prior": 49.75,
+      "data_attribute": "sina_hf_SI_not_official"
+    },
+    {
+      "asset": "VIX",
+      "latest": null,
+      "data_attribute": "official_missing"
+    },
+    {
+      "asset": "DAX_intraday",
+      "latest": 26258.26,
+      "change_1d": 1.52,
+      "ref_prior_close_field": 25864.62,
+      "data_attribute": "sina_last_1955_not_close"
+    },
+    {
+      "asset": "FTSE_intraday",
+      "latest": 10771.76,
+      "change_1d": 1.25,
+      "ref_prior_close_field": 10638.43,
+      "data_attribute": "sina_last_1955_not_close"
+    },
+    {
+      "asset": "CAC_intraday",
+      "latest": 8137.9,
+      "change_1d": 1.47,
+      "data_attribute": "sina_last_1955_not_close"
+    },
+    {
+      "asset": "STOXX600",
+      "latest": 653.99,
+      "change_1d": 1.29,
+      "data_attribute": "yahoo_snippet_medium_confidence"
+    },
+    {
+      "asset": "MSFT",
+      "latest": 520.99,
+      "change_1d": 2.74,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today",
+      "signal": "pair_not_triggered"
+    },
+    {
+      "asset": "GOOGL",
+      "latest": 280.03,
+      "change_1d": 0.37,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today"
+    },
+    {
+      "asset": "NVDA",
+      "latest": 206.69,
+      "change_1d": 2.29,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today",
+      "signal": "do_not_retarget"
+    },
+    {
+      "asset": "AVGO",
+      "latest": 332.13,
+      "change_1d": 3.07,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today"
+    },
+    {
+      "asset": "SMH",
+      "latest": 518.52,
+      "change_1d": 2.01,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today"
+    },
+    {
+      "asset": "QQQ",
+      "latest": 685.28,
+      "change_1d": 0.62,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today"
+    },
+    {
+      "asset": "SPY",
+      "latest": 754.35,
+      "change_1d": 0.3,
+      "data_time": "2026-11-03",
+      "data_attribute": "last_us_cash_close_not_today"
+    },
+    {
+      "asset": "SPX_cash",
+      "latest": 7568.92,
+      "change_1d": 0.36,
+      "data_time": "2026-11-03",
+      "data_attribute": "morning_brief_cnbc_ap_not_today"
+    },
+    {
+      "asset": "NDX_cash",
+      "latest": 28180.26,
+      "change_1d": 0.68,
+      "data_time": "2026-11-03",
+      "data_attribute": "morning_brief_not_today"
+    }
+  ],
+  "meaningful_changes": [
+    {
+      "change": "China growth day rebound printed",
+      "evidence": "SSE 3686.1725 +2.16; STAR50 1265.4717 +9.92; ChiNext 2544.73 +6.40; CSI1000 +4.67; SSE50 +1.45",
+      "implication": "reverses Tuesday dump; do not chase STAR50 or ChiNext"
+    },
+    {
+      "change": "MA AND failed harder on both close and settle",
+      "evidence": "MA2701 close=settle 3402 vs pre 3447; high 3488 is not the close; PX2701 8930; morning still cited Nov3 close 3506 pass",
+      "implication": "score 45 to 38; suspended; AND false"
+    },
+    {
+      "change": "Copper still far from 109600 on official prints",
+      "evidence": "CU2612 close 106170 settle 106230 pre 107230; Tuesday close was 106090",
+      "implication": "score 42 to 40; curve unverified; AND false"
+    },
+    {
+      "change": "Midterms shifted from zero called races to a media dual-chamber Democratic projection",
+      "evidence": "AP Guardian NBC NYT; Guardian tally about 228D-139R House with 367/435 called and Senate about 54D-44R with 33/35 called; AK and MS uncalled in some tallies",
+      "implication": "label media not exchange; not an AI pair fill"
+    },
+    {
+      "change": "US futures bid while cash is closed",
+      "evidence": "ES 7686.16 vs 7596.75; NQ 28591.16 vs 28305.75 around 19:54 BJT",
+      "implication": "observe 22:30; do not trade the pair on futures"
+    },
+    {
+      "change": "Commodity futures engine still zero after 19:06 refetch",
+      "evidence": "five exchanges records=0 iFinD -1303; SHFE dat ok; CZCE CFFEX empty; INE 404",
+      "implication": "no commodity options; curves unverified"
+    },
+    {
+      "change": "Gold and silver closes surged with settlement lag",
+      "evidence": "AU2612 close 867.46 settle 852.8; AG2612 close 12420 settle 11999; GC fut 4051.81",
+      "implication": "track only; do not chase the close"
+    },
+    {
+      "change": "Oil complex still soft",
+      "evidence": "SC2612 close 681.6 settle 676.2 after morning-verified night 678.8; BU2701 close 4876 settle 4913",
+      "implication": "BU 29 to 27 pullback premise failed; SC short stays paused"
+    }
+  ],
+  "top_opportunities": [
+    {
+      "rank": 1,
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "name": "微软多/谷歌空：现金流 vs 资本开支 Beta",
+      "score": 52,
+      "prior_score": 50,
+      "prior_rank": 1,
+      "score_components": {
+        "research": 18,
+        "evidence": 17,
+        "execution": 17
+      },
+      "five_bucket_split": "not_reissued_this_cut",
+      "max_loss_limited": false,
+      "direction": "observe_long_MSFT_short_GOOGL_theme_pair",
+      "holding_period": "days_to_2_weeks",
+      "stage": "observe_into_us_cash_2230_pair_not_triggered_monday_failure_not_cleared",
+      "instruments": [
+        "MSFT",
+        "GOOGL"
+      ],
+      "score_change_reason": "Packet +2. Media dual-chamber projection reduces the morning zero-called fog and ES/NQ are bid, so the observe case is slightly stronger. Execution is unchanged: US cash is closed, Monday MSFT -2.83 vs GOOGL -0.30 is not cleared, Tuesday full-day MSFT +2.74 vs GOOGL +0.37 is not a 30-minute trigger. Do not retarget to NVDA or AMD. STAR50 +9.92 is not a substitute.",
+      "research_edge": "theme_alive_cash_trigger_not_met",
+      "evidence_sufficiency": "tuesday_cash_and_futures_snapshot_no_wednesday_cash",
+      "execution_state": "not_executable_us_cash_closed",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "theme_alive_cash_trigger_not_met",
+        "evidence": "tuesday_cash_plus_futures_not_a_fill",
+        "execution": "observe_only"
+      }
+    },
+    {
+      "rank": 2,
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "name": "CU2612 条件多",
+      "score": 40,
+      "prior_score": 42,
+      "prior_rank": 3,
+      "score_components": {
+        "research": 15,
+        "evidence": 14,
+        "execution": 11
+      },
+      "five_bucket_split": "not_reissued_this_cut",
+      "max_loss_limited": false,
+      "direction": "watch_not_execute",
+      "holding_period": "days_to_2_weeks",
+      "stage": "and_gates_failed",
+      "instruments": [
+        "CU2612"
+      ],
+      "score_change_reason": "Official close 106170 and settle 106230 remain far below 109600 (gaps 3430 and 3370). Curve engine unverified. Rank rose only because MA fell harder.",
+      "research_edge": "price_leg_fail",
+      "evidence_sufficiency": "official_close_curve_series_missing",
+      "execution_state": "and_gates_failed",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "price_leg_fail",
+        "evidence": "shfe_official_day",
+        "execution": "and_gates_failed"
+      }
+    },
+    {
+      "rank": 3,
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "name": "EC2612 趋势+contango 空",
+      "score": 40,
+      "prior_score": 41,
+      "prior_rank": 4,
+      "score_components": {
+        "research": 15,
+        "evidence": 13,
+        "execution": 12
+      },
+      "five_bucket_split": "not_reissued_this_cut",
+      "max_loss_limited": false,
+      "direction": "observe_short_contango",
+      "holding_period": "days_to_2_weeks",
+      "stage": "observe_not_execute_curve_unverified",
+      "instruments": [
+        "EC2612"
+      ],
+      "score_change_reason": "Close 2425 is mildly soft versus previous settlement 2428; settlement 2433 is slightly above previous settlement. Engine curve missing. Stays observe-only.",
+      "research_edge": "mild_soft_close_curve_unverified",
+      "evidence_sufficiency": "official_closes_engine_curve_missing",
+      "execution_state": "observe_not_execute",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "mild_soft_close_curve_unverified",
+        "evidence": "shfe_official_day",
+        "execution": "observe_not_execute"
+      }
+    },
+    {
+      "rank": 4,
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "name": "MA2701 条件多（油化价差留存）",
+      "score": 38,
+      "prior_score": 45,
+      "prior_rank": 2,
+      "score_components": {
+        "research": 14,
+        "evidence": 14,
+        "execution": 10
+      },
+      "five_bucket_split": "not_reissued_this_cut",
+      "max_loss_limited": false,
+      "direction": "suspended_and_fail",
+      "holding_period": "days_to_2_weeks",
+      "stage": "and_gates_failed_harder",
+      "instruments": [
+        "MA2701",
+        "PX2701"
+      ],
+      "score_change_reason": "Morning still cited Nov3 close 3506 above 3485. Today sina proxy close and settle are both 3402, so the close leg fails as well as the settle leg. PX2701 8930 fails 9850. Official CZCE file empty. Engine curve unavailable. Intraday high 3488 is not a close pass.",
+      "research_edge": "close_and_settle_and_px_fail",
+      "evidence_sufficiency": "sina_proxy_official_czce_missing_direction_of_failure_clear",
+      "execution_state": "and_gates_failed",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "close_and_settle_and_px_fail",
+        "evidence": "sina_proxy_not_czce_official",
+        "execution": "suspended"
+      }
+    },
+    {
+      "rank": 5,
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "name": "BU2701 强曲线回撤多",
+      "score": 27,
+      "prior_score": 29,
+      "prior_rank": 5,
+      "score_components": {
+        "research": 10,
+        "evidence": 10,
+        "execution": 7
+      },
+      "five_bucket_split": "not_reissued_this_cut",
+      "max_loss_limited": false,
+      "direction": "avoid_pullback_long",
+      "holding_period": "days_to_2_weeks",
+      "stage": "pullback_premise_failed",
+      "instruments": [
+        "BU2701"
+      ],
+      "score_change_reason": "Close 4876 and settle 4913 are softer than Tuesday close 5044 / settle 5018, with SC settle 676.2 also soft. That is a continued oil-complex decline, not a clean pullback. Not flipped into a chase short.",
+      "research_edge": "premise_failed",
+      "evidence_sufficiency": "official_day_further_soft",
+      "execution_state": "pullback_premise_failed",
+      "beta_neutral": false,
+      "axes": {
+        "research_edge": "premise_failed",
+        "evidence": "shfe_official_day",
+        "execution": "avoid"
+      }
+    }
+  ],
+  "top_trade_cards": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "name": "微软多/谷歌空：现金流 vs 资本开支 Beta",
+      "direction": "observe_long_MSFT_short_GOOGL_theme_pair",
+      "rules_changed": false,
+      "trigger": "US cash after 22:30 BJT plus about 30 minutes and MSFT still more resilient than GOOGL under the existing pair rule. Monday failure is not cleared. Do not use NVDA or AMD as substitutes. Tuesday full-day relative strength is not the trigger.",
+      "msft": {
+        "close": 520.99,
+        "pct": 2.74,
+        "session": "2026-11-03"
+      },
+      "googl": {
+        "close": 280.03,
+        "pct": 0.37,
+        "session": "2026-11-03"
+      },
+      "nvda": {
+        "close": 206.69,
+        "pct": 2.29,
+        "session": "2026-11-03",
+        "retarget": false
+      },
+      "monday_pair_trigger": "failed_not_cleared",
+      "tuesday_full_day_relative": "msft_stronger_by_about_2_37pp_not_a_30m_trigger",
+      "beta_neutral": false,
+      "quantity": 0,
+      "options_premium": null,
+      "net_r": "not_computable",
+      "max_loss_limited": false,
+      "position_status": "未核实",
+      "signal_status": "not_met",
+      "plan_status": "no_order",
+      "research_status": "active_observe_into_2230",
+      "holdings_assumed": false,
+      "source": "Sina gb last closes for 2026-11-03; no Wednesday cash"
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "name": "CU2612 条件多",
+      "direction": "watch_not_execute",
+      "rules_changed": false,
+      "trigger": "New verified prints: CU2612>=109600 AND curve>=0.65% with engine verification. Night 21:00 has not started. Do not pre-position.",
+      "max_loss_limited": false,
+      "quantity": 0,
+      "net_r": "not_computable",
+      "option_premium": null,
+      "position_status": "未核实",
+      "signal_status": "and_fail_price_106170_settle_106230_curve_unverified",
+      "plan_status": "no_order_until_and_pass_on_new_prints",
+      "research_status": "active_watch",
+      "holdings_assumed": false,
+      "source": "SHFE kx20261104.dat update 20261104 15:30:30",
+      "gates_today": {
+        "as_of_trade_date": "2026-11-04",
+        "cu_close": 106170,
+        "cu_settle": 106230,
+        "cu_pre_settle": 107230,
+        "cu_close_ge_109600": false,
+        "cu_settle_ge_109600": false,
+        "cu_curve_engine": null,
+        "cu_curve_engine_status": "unverified",
+        "and": false
+      }
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "name": "MA2701 条件多",
+      "direction": "suspended_and_fail",
+      "rules_changed": false,
+      "trigger": "New verified day or post-21:00 prints simultaneously: MA close>=3485 AND settle>=3485 AND PX>=9850 AND near-far>=4.50% with engine curve. High 3488 is not the close. Settlement is not a substitute for a failed close. Sina proxy is not CZCE official.",
+      "max_loss_limited": false,
+      "quantity": 0,
+      "net_r": "not_computable",
+      "option_premium": null,
+      "position_status": "未核实",
+      "signal_status": "and_fail_close_3402_settle_3402_px_8930_curve_unverified",
+      "plan_status": "suspended_no_order",
+      "research_status": "suspended_until_and_clears",
+      "holdings_assumed": false,
+      "source": "sina nf_MA2701 and nf_PX2701; CZCE official HTTP empty",
+      "gates_today": {
+        "as_of_trade_date": "2026-11-04",
+        "ma_contract": "MA2701",
+        "ma_close": 3402,
+        "ma_settle": 3402,
+        "ma_high": 3488,
+        "ma_close_ge_3485": false,
+        "ma_settle_ge_3485": false,
+        "high_is_not_close": true,
+        "verified_official": false,
+        "ma_curve_engine": null,
+        "ma_curve_engine_status": "unverified",
+        "ma_curve_ge_4_50": false,
+        "px_contract": "PX2701",
+        "px_close": 8930,
+        "px_close_ge_9850": false,
+        "and": false
+      }
+    }
+  ],
+  "gold_tracking": {
+    "narrative": "证据不足",
+    "trade": "none",
+    "AU2612_close": 867.46,
+    "AU2612_settle": 852.8,
+    "AU2612_prev_settle": 846.12,
+    "AU2612_zd1": 21.34,
+    "AU2612_zd2": 6.68,
+    "AU2612_close_minus_settle": 14.66,
+    "AU2612_oi": 158870,
+    "AU2612_oi_chg": -1597,
+    "AG2612_close": 12420,
+    "AG2612_settle": 11999,
+    "AG2612_prev_settle": 12013,
+    "AG2612_zd1": 407,
+    "AG2612_zd2": -14,
+    "AG2612_oi": 189158,
+    "AG2612_oi_chg": -19859,
+    "AG_sina_last_not_used": 12453,
+    "usd_gold_sina_fut": 4051.81,
+    "usd_gold_ref_prior_field": 3940.4,
+    "usd_gold_morning_asia_secondary_range": "3931-3945",
+    "usd_silver_sina_fut": 52.05,
+    "official_comex_settle": null,
+    "real_yield_today": "missing",
+    "dxy_official": "missing",
+    "cftc": "missing",
+    "etf_flow": "missing",
+    "official_cb_buying": "missing",
+    "stance": "track_only_do_not_chase",
+    "policy_credit_narrative": "证据不足"
+  },
+  "ai_tracking": {
+    "top_idea": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+    "pair_trigger": false,
+    "us_cash_pair_trigger": false,
+    "msft_close": 520.99,
+    "msft_pct": 2.74,
+    "googl_close": 280.03,
+    "googl_pct": 0.37,
+    "msft_googl_session": "2026-11-03",
+    "monday_failure_cleared": false,
+    "nvda_close": 206.69,
+    "nvda_pct": 2.29,
+    "avgo_pct": 3.07,
+    "smh_pct": 2.01,
+    "qqq_pct": 0.62,
+    "do_not_retarget_to_nvda": true,
+    "do_not_substitute_amd": true,
+    "beta_neutral": false,
+    "china_star50_pct": 9.92,
+    "china_chinext_pct": 6.4,
+    "do_not_chase_star_chinext_as_pair_substitute": true,
+    "entry_rule": "observe_into_2230_not_a_fill"
+  },
+  "china_tracking": {
+    "qualified_trade": false,
+    "score": null,
+    "preferred_future": null,
+    "style": "growth_and_small_cap_led_violent_rebound_large_cap_lagged",
+    "revive_ih_im": false,
+    "sse": {
+      "close": 3686.1725,
+      "chg_pct": 2.16
+    },
+    "sse50": {
+      "close": 2808.5359,
+      "chg_pct": 1.45
+    },
+    "szse": {
+      "close": 11335.69,
+      "chg_pct": 4.22
+    },
+    "csi300": {
+      "close": 4101.335,
+      "chg_pct": 2.31
+    },
+    "csi500": {
+      "close": 6622.0295,
+      "chg_pct": 4.66
+    },
+    "csi1000": {
+      "close": 6511.8065,
+      "chg_pct": 4.67
+    },
+    "star50": {
+      "close": 1265.4717,
+      "chg_pct": 9.92
+    },
+    "chinext": {
+      "close": 2544.73,
+      "chg_pct": 6.4
+    },
+    "cffex_official_csv": "empty_or_500",
+    "annualized_basis_pct": null,
+    "annualized_basis_note": "not_computed_official_dated_contracts_missing",
+    "options_engine_date": "2026-11-03",
+    "options_execution_ready": false,
+    "cffex_option_rows_today": null,
+    "stock_engine_stale": true,
+    "stock_engine_last_valid_trade_date": "2026-10-30",
+    "company_candidates": 0,
+    "retired_ih_im_idea": "CN-IDX-IH-LONG-IM-SHORT-20261027_still_invalid"
+  },
+  "commodities_tracking": {
+    "data_quality": {
+      "status": "stale_or_partial",
+      "price_source": "SHFE kx20261104.dat for CU AU AG BU RB EC SC; INE official 404; CZCE and CFFEX official empty; MA PX TA sina proxy; engine futures 0",
+      "curve_definition": "near_minus_next_futures_curve_not_spot_basis",
+      "basis_status": "not_in_packet",
+      "warehouse_status": "czce_23_records_ok_levels_not_read_shfe_dce_gfex_failed",
+      "member_rankings_status": "not_in_packet",
+      "options_chain_status": "not_ready",
+      "options_surface_status": "not_ready",
+      "history_comparison_status": "stale_or_partial",
+      "available_horizons": [
+        "1D"
+      ],
+      "comparative_metrics": [
+        {
+          "product": "MA",
+          "trade_date": "2026-11-04",
+          "close": 3402,
+          "settle": 3402,
+          "pre_settle": 3447,
+          "engine_curve_pct": null,
+          "verified_official": false,
+          "note": "high_3488_is_not_close"
+        },
+        {
+          "product": "CU",
+          "trade_date": "2026-11-04",
+          "close": 106170,
+          "settle": 106230,
+          "pre_settle": 107230,
+          "prior_day_close": 106090,
+          "engine_curve_pct": null,
+          "note": "adjacent_curve_not_recomputed"
+        },
+        {
+          "product": "EC",
+          "trade_date": "2026-11-04",
+          "close": 2425,
+          "settle": 2433,
+          "pre_settle": 2428,
+          "engine_curve_pct": null
+        },
+        {
+          "product": "BU",
+          "trade_date": "2026-11-04",
+          "close": 4876,
+          "settle": 4913,
+          "pre_settle": 5018,
+          "engine_curve_pct": null
+        },
+        {
+          "product": "SC",
+          "trade_date": "2026-11-04",
+          "close": 681.6,
+          "settle": 676.2,
+          "pre_settle": 694.9,
+          "prior_night_public": 678.8
+        },
+        {
+          "product": "AU",
+          "trade_date": "2026-11-04",
+          "close": 867.46,
+          "settle": 852.8,
+          "pre_settle": 846.12
+        },
+        {
+          "product": "AG",
+          "trade_date": "2026-11-04",
+          "close": 12420,
+          "settle": 11999,
+          "pre_settle": 12013
+        }
+      ]
+    },
+    "market_dashboard": [
+      {
+        "product": "MA",
+        "main_contract": "MA2701",
+        "close": 3402,
+        "settle": 3402,
+        "trade_date": "2026-11-04",
+        "and_pass": false,
+        "verified_official": false
+      },
+      {
+        "product": "PX",
+        "main_contract": "PX2701",
+        "close": 8930,
+        "trade_date": "2026-11-04",
+        "verified_official": false
+      },
+      {
+        "product": "CU",
+        "main_contract": "CU2612",
+        "close": 106170,
+        "settle": 106230,
+        "trade_date": "2026-11-04",
+        "and_pass": false
+      },
+      {
+        "product": "BU",
+        "main_contract": "BU2701",
+        "close": 4876,
+        "settle": 4913,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "EC",
+        "main_contract": "EC2612",
+        "close": 2425,
+        "settle": 2433,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "SC",
+        "main_contract": "SC2612",
+        "close": 681.6,
+        "settle": 676.2,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "AU",
+        "main_contract": "AU2612",
+        "close": 867.46,
+        "settle": 852.8,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "AG",
+        "main_contract": "AG2612",
+        "close": 12420,
+        "settle": 11999,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "RB",
+        "main_contract": "RB2701",
+        "close": 3008,
+        "settle": 2999,
+        "trade_date": "2026-11-04"
+      },
+      {
+        "product": "TA",
+        "main_contract": "TA_continuous_sina",
+        "close": 6306,
+        "trade_date": "2026-11-04",
+        "verified_official": false
+      }
+    ],
+    "supply_chain_map": [
+      {
+        "chain": "crude_to_china_oil_chem",
+        "fact": "SC settle 676.2, BU settle 4913, PX proxy 8930, TA proxy 6306, MA proxy 3402 all below their previous settlements; MA close fails 3485; PX fails 9850; engine curve missing",
+        "trade": "none"
+      },
+      {
+        "chain": "copper_shfe",
+        "fact": "CU2612 official close 106170 settle 106230; no fresh LME or COMEX copper print in this packet",
+        "trade": "none"
+      },
+      {
+        "chain": "gold_usd_to_shfe",
+        "fact": "GC fut 4051.81; AU close 867.46 vs settle 852.8",
+        "trade": "none"
+      }
+    ],
+    "options_surface": {
+      "status": "not_ready",
+      "available_metrics": [],
+      "tradeable_structures": [],
+      "research_priority_when_ready": [
+        "MA2701",
+        "CU2612",
+        "AU2612"
+      ]
+    },
+    "night_session_risk_map": [
+      {
+        "product": "MA",
+        "confidence": "sina_proxy_day_night_not_started",
+        "action": "and_fail_until_new_verified_prints_clear_close_settle_px_and_curve"
+      },
+      {
+        "product": "CU",
+        "confidence": "day_official_night_not_started",
+        "action": "wait_for_109600_and_verified_curve"
+      },
+      {
+        "product": "SC",
+        "confidence": "day_shfe_dat_print",
+        "action": "do_not_chase_short"
+      },
+      {
+        "product": "BU",
+        "confidence": "day_official",
+        "action": "pullback_long_failed"
+      },
+      {
+        "product": "EC",
+        "confidence": "day_official_curve_series_missing",
+        "action": "observe"
+      },
+      {
+        "product": "AU",
+        "confidence": "day_official_close_settle_gap",
+        "action": "track_only"
+      },
+      {
+        "product": "AG",
+        "confidence": "day_official_close_settle_gap",
+        "action": "track_only"
+      }
+    ],
+    "engine_futures_records": 0,
+    "engine_recovered": false,
+    "products_with_day_number_this_run": "shfe_dat_plus_sina_proxy_ma_px_ta",
+    "dce_gfex": "missing",
+    "scan_63_note": "Codes without a 2026-11-04 print in this packet are not retrieved. Tuesday official prices are not reused as today."
+  },
+  "event_calendar": [
+    {
+      "bjt": "2026-11-04T15:30:30+08:00",
+      "event": "SHFE daily dat update kx20261104",
+      "status": "released"
+    },
+    {
+      "bjt": "2026-11-04T19:06:21+08:00",
+      "event": "Commodities engine refetch still futures 0 records",
+      "status": "failed_device_limit",
+      "impact": "process_risk_not_a_trade"
+    },
+    {
+      "bjt": "2026-11-04T19:55:00+08:00",
+      "event": "This report cutoff",
+      "status": "night_not_started_us_cash_not_open_europe_intraday"
+    },
+    {
+      "bjt": "2026-11-04T21:00:00+08:00",
+      "event": "China commodity night, maps toward trading date 2026-11-05",
+      "status": "not_started",
+      "impact": "recheck MA CU BU EC SC AU AG on new prints only"
+    },
+    {
+      "bjt": "2026-11-04T22:30:00+08:00",
+      "event": "US cash open",
+      "status": "not_open",
+      "impact": "first_msft_googl_observation_window_not_an_automatic_order"
+    },
+    {
+      "bjt": "2026-11-04_night",
+      "event": "US midterm uncalled seats including AK and MS in some media tallies",
+      "status": "media_counts_move",
+      "impact": "not_exchange_data"
+    },
+    {
+      "bjt": "2026-11-05T09:00:00+08:00",
+      "event": "Next China commodity day session",
+      "status": "not_started"
+    },
+    {
+      "bjt": "next_7d_macro",
+      "event": "Fed and data calendar",
+      "status": "not_rescraped_this_run",
+      "impact": "missing_exact_stamps"
+    }
+  ],
+  "action_list": {
+    "A": "A. 今晚没有应立即建立的新仓位。",
+    "B": "B. 仅条件观察：MA/CU须日盘或21:00后可核验成交同时过AND；美股22:30后按MSFT/GOOGL配对规则观察，周一失败未清除。",
+    "C": "C. 观察两院易主投影后美债美元科技贴现、ES/NQ、SC/BU软、EC曲线、AU/AG结算缺口、科创冲高回吐。",
+    "D": "D. 回避追多科创创业板与金银、BU回撤多、追空SC、复活IH/IM、裸卖波动；引擎0条不下商品期权；持仓未核实。"
+  },
+  "four_lines": [
+    "A. 今晚没有应立即建立的新仓位。",
+    "B. 仅条件观察：MA/CU须日盘或21:00后可核验成交同时过AND；美股22:30后按MSFT/GOOGL配对规则观察，周一失败未清除。",
+    "C. 观察两院易主投影后美债美元科技贴现、ES/NQ、SC/BU软、EC曲线、AU/AG结算缺口、科创冲高回吐。",
+    "D. 回避追多科创创业板与金银、BU回撤多、追空SC、复活IH/IM、裸卖波动；引擎0条不下商品期权；持仓未核实。"
+  ],
+  "risk_budget": {
+    "probe_nav_pct": [
+      0.25,
+      0.75
+    ],
+    "confirm_nav_pct": [
+      0.75,
+      1.5
+    ],
+    "theme_cap_nav_pct": [
+      2.5,
+      3.0
+    ],
+    "deployed_today": 0,
+    "holdings": "未核实",
+    "holdings_known": false,
+    "worth_taking_risk": false,
+    "wechat_escalate": false,
+    "orders": false,
+    "shared_factors": [
+      "MSFT/GOOGL/Nasdaq/China tech",
+      "WTI/SC/MA/PX/BU",
+      "gold/silver/US rates",
+      "IH/IM"
+    ]
+  },
+  "idea_ledger": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "rules_changed": false,
+      "status": "observe_into_2230_monday_failure_not_cleared",
+      "score": 52,
+      "prior": 50,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "rules_changed": false,
+      "status": "and_gates_failed",
+      "score": 40,
+      "prior": 42,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "rules_changed": false,
+      "status": "observe",
+      "score": 40,
+      "prior": 41,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "rules_changed": false,
+      "status": "and_gates_failed_harder_suspended",
+      "score": 38,
+      "prior": 45,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "rules_changed": false,
+      "status": "pullback_premise_failed",
+      "score": 27,
+      "prior": 29,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "CN-IDX-IH-LONG-IM-SHORT-20261027",
+      "rules_changed": false,
+      "status": "retired_do_not_revive",
+      "score": null,
+      "position_status": "未核实"
+    },
+    {
+      "idea_id": "COM-E-SC2612-CONTANGO-REVERSAL-SHORT-20261026",
+      "rules_changed": false,
+      "status": "paused_do_not_chase",
+      "score": null,
+      "position_status": "未核实"
+    }
+  ],
+  "gates_summary": {
+    "MA_AND": false,
+    "CU_AND": false,
+    "BU_pullback_premise": false,
+    "EC_high_conviction": false,
+    "night_tonight_started": false,
+    "us_cash_pair_trigger": false,
+    "MA_close_ge_3485": false,
+    "MA_settle_ge_3485": false,
+    "MA_curve_ge_4_50": false,
+    "MA_curve_engine_verified": false,
+    "PX_ge_9850": false,
+    "CU_close_ge_109600": false,
+    "CU_settle_ge_109600": false,
+    "CU_curve_ge_0_65": false,
+    "CU_curve_engine_verified": false,
+    "night_engine_published_for_prior_mapped_session": false,
+    "gates_trade_date": "2026-11-04",
+    "thresholds_unchanged": true,
+    "evidence": {
+      "MA2701_close": 3402,
+      "MA2701_settle": 3402,
+      "PX2701_close": 8930,
+      "CU2612_close": 106170,
+      "CU2612_settle": 106230,
+      "threshold_MA": 3485,
+      "threshold_PX": 9850,
+      "threshold_CU": 109600
+    }
+  },
+  "missing_or_unverified": [
+    "Official CFFEX 20261104 CSV (HTTP 500/empty)",
+    "Official CZCE daily for MA/PX (HTTP empty/500)",
+    "Official INE kx dat (404 HTML)",
+    "DCE official daily",
+    "GFEX official daily",
+    "Fresh Treasury 2/10/30 for 2026-11-04",
+    "DXY / VIX / Brent / MOVE / HY OAS tonight",
+    "Yahoo Finance chart API failed from box",
+    "Eastmoney push API 502",
+    "China-Options-Engine 2026-11-04 HO/IO/MO",
+    "China-Stock-Engine post-2026-10-30",
+    "Engine futures/curve/warehouse freshness and tonnage",
+    "Engine near-far curve series for MA CU EC BU",
+    "Commodity option premiums and index option IV for 2026-11-04",
+    "Member rankings and spot basis",
+    "Exact House/Senate final uncalled seat list (media tallies move)",
+    "US cash Nov4 prices (market not open)",
+    "CME WTI ICE Brent COMEX gold official settlements",
+    "Fed/data calendar exact stamps not re-scraped",
+    "Holdings 未核实",
+    "Blob SHAs for the 19:06 commodities run (not in packet; not invented)"
+  ],
+  "sources": [
+    {
+      "title": "SHFE daily market kx20261104.dat",
+      "publisher": "Shanghai Futures Exchange",
+      "url": "https://www.shfe.com.cn/data/tradedata/future/dailydata/kx20261104.dat",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "exchange",
+      "supported_claims": [
+        "CU2612 close 106170 settle 106230",
+        "AU2612 close 867.46 settle 852.8",
+        "AG2612 close 12420 settle 11999",
+        "BU2701 close 4876 settle 4913",
+        "RB2701 close 3008 settle 2999",
+        "EC2612 close 2425 settle 2433",
+        "SC2612 close 681.6 settle 676.2 printed in this file",
+        "update 20261104 15:30:30"
+      ]
+    },
+    {
+      "title": "INE daily kx20261104.dat",
+      "publisher": "Shanghai International Energy Exchange",
+      "url": "https://www.ine.cn/data/tradedata/dailydata/kx20261104.dat",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "exchange",
+      "supported_claims": [
+        "HTTP 404 HTML; SC taken from SHFE dat print"
+      ]
+    },
+    {
+      "title": "CFFEX daily CSV 2026-11-04",
+      "publisher": "China Financial Futures Exchange",
+      "url": "http://www.cffex.com.cn/sj/hqsj/rtj/202611/04/20261104_1.csv",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "exchange",
+      "supported_claims": [
+        "empty or HTTP 500; IH IF IC IM from sina continuous only"
+      ]
+    },
+    {
+      "title": "Sina hq parent snapshot",
+      "publisher": "Sina",
+      "url": "https://hq.sinajs.cn/",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "vendor",
+      "supported_claims": [
+        "SSE 3686.1725 STAR50 1265.4717 ChiNext 2544.73",
+        "MA2701 3402 PX2701 8930 unverified official",
+        "ES 7686.16 NQ 28591.16 GC 4051.81",
+        "EURUSD 1.1256 USDJPY 158.43 USDCNH 6.6706"
+      ]
+    },
+    {
+      "title": "AP midterm live",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/live/midterm-election-2026",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "media",
+      "supported_claims": [
+        "Democrats projected House and Senate control; not exchange data"
+      ]
+    },
+    {
+      "title": "Guardian midterm interactive",
+      "publisher": "The Guardian",
+      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/nov/03/midterm-elections-full-results-senate-house-governor-races",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "media",
+      "supported_claims": [
+        "House about 228D vs 139R with 367/435 called; Senate about 54D vs 44R with 33/35 called; counts move"
+      ]
+    },
+    {
+      "title": "NBC4 Washington midterms",
+      "publisher": "NBC",
+      "url": "https://www.nbcwashington.com/elections/election-day-after-2026-midterms-congress-results-live-updates/4177248/",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "media",
+      "supported_claims": [
+        "media projection of Democratic congressional control"
+      ]
+    },
+    {
+      "title": "NYT midterm live",
+      "publisher": "The New York Times",
+      "url": "https://www.nytimes.com/live/2026/11/04/us/midterm-election-results-democrats",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "media",
+      "supported_claims": [
+        "media projection; flips cited include Kansas Iowa Texas Ohio Maine North Carolina South Carolina"
+      ]
+    },
+    {
+      "title": "China-Commodities-Engine last_run_status.json",
+      "publisher": "farfromexact/China-Commodities-Engine",
+      "url": "https://github.com/farfromexact/China-Commodities-Engine/blob/main/data/last_run_status.json",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "engine",
+      "supported_claims": [
+        "generated_at 2026-11-04T19:06:21+08:00 futures records 0 iFinD -1303"
+      ]
+    },
+    {
+      "title": "China-Commodities-Engine night last_run_status.json",
+      "publisher": "farfromexact/China-Commodities-Engine",
+      "url": "https://github.com/farfromexact/China-Commodities-Engine/blob/main/data/night_session/last_run_status.json",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "engine",
+      "supported_claims": [
+        "trading_date 2026-11-04 night_session_date 2026-11-03 generated_at 2026-11-04T06:04:59+08:00 coverage 0 published false"
+      ]
+    },
+    {
+      "title": "China-Options-Engine parent pre-check",
+      "publisher": "farfromexact/China-Options-Engine",
+      "url": "https://github.com/farfromexact/China-Options-Engine/blob/main/data/radar_latest.json",
+      "source_date": "2026-11-03",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "engine",
+      "supported_claims": [
+        "trade_date still 2026-11-03 stale for this evening"
+      ]
+    },
+    {
+      "title": "China-Stock-Engine last_run_status.json",
+      "publisher": "farfromexact/China-Stock-Engine",
+      "url": "https://github.com/farfromexact/China-Stock-Engine",
+      "source_date": "2026-10-30",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "engine",
+      "supported_claims": [
+        "failed_backfill last_valid_trade_date 2026-10-30 iFinD -1303"
+      ]
+    },
+    {
+      "title": "Prior morning archive 2026-11-04",
+      "publisher": "Global-Cross-Asset-Radar-Grok",
+      "url": "https://github.com/farfromexact/Global-Cross-Asset-Radar-Grok/blob/main/reports/2026/11/2026-11-04_morning.md",
+      "source_date": "2026-11-04",
+      "accessed_at_bjt": "2026-11-04T19:55:00+08:00",
+      "source_type": "prior_archive",
+      "supported_claims": [
+        "commit 4849571102bc0f869e9bfc341f66560753da32ed",
+        "morning scores AI 50 MA 45 CU 42 EC 41 BU 29",
+        "Tuesday cash and Nov3 Treasury 4.61/4.95/5.32 as stale context",
+        "SC night 678.8 inherited not tonight"
+      ]
+    }
+  ],
+  "archive": {
+    "markdown_path": "reports/2026/11/2026-11-04_evening.md",
+    "json_path": "reports/2026/11/2026-11-04_evening.json",
+    "latest_markdown_path": "latest/evening.md",
+    "latest_json_path": "latest/evening.json",
+    "status_path": "status/evening_latest.json",
+    "manifest_path": "manifests/reports.json",
+    "archive_status": "success",
+    "commit_sha": null,
+    "ci_validation_status": "pending_or_unverified",
+    "error": null
+  }
+}

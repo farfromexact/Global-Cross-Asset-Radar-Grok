@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-04T08:05:00+08:00",
+  "updated_at_bjt": "2026-11-04T19:55:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -243,7 +243,34 @@
       "data_protocol_version": "core_2026-10-17_v1",
       "commit_sha": null,
       "revision": 1
+    },
+    {
+      "report_date": "2026-11-04",
+      "edition": "evening",
+      "generated_at_bjt": "2026-11-04T19:55:00+08:00",
+      "markdown_path": "reports/2026/11/2026-11-04_evening.md",
+      "json_path": "reports/2026/11/2026-11-04_evening.json",
+      "latest_markdown_path": "latest/evening.md",
+      "latest_json_path": "latest/evening.json",
+      "status_path": "status/evening_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "china_growth_violent_rebound_star_chi_next_lead_dem_midterms_dual_chamber_projected_ma_cu_and_false_commodities_engine_still_0_night_not_started_us_cash_2230_observe_only",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "china_options_date": "2026-11-03",
+      "china_options_fresh": false,
+      "china_commodities_date": "2026-11-04",
+      "china_commodities_fresh": false,
+      "china_commodities_official_complete": false,
+      "china_commodities_night_tonight": "not_started",
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "commit_sha": null,
+      "revision": 1
     }
   ],
-  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03; upserted morning 2026-11-04."
+  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning 2026-11-04; upserted evening 2026-11-04."
 }
