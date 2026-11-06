@@ -592,16 +592,19 @@ class ReaderTest(unittest.TestCase):
             transport,
             contents_transport="handoff",
             transport_label_commits="github_api",
-            transport_label_contents="connector_handoff",
+            transport_label_contents="contents",
             fixture_mode=False,
             handoff=handoff,
         )
         self.assertFalse(result["fixture_mode"])
         self.assertEqual(result["commits_transport"], "github_api")
-        self.assertEqual(result["contents_transport"], "connector_handoff")
+        self.assertEqual(result["contents_transport"], "contents")
         good_receipt = self._path(result, "commodities", "data/last_run_status.json")
         self.assertEqual(good_receipt["read_status"], "ok")
-        self.assertEqual(good_receipt["read_method"], "connector_get_file_contents")
+        self.assertEqual(good_receipt["transport"], "contents")
+        self.assertEqual(good_receipt["read_method"], "contents")
+        self.assertEqual(good_receipt["media"], "raw")
+        self.assertFalse(good_receipt["streaming"])
         self.assertEqual(good_receipt["sha256"], sha256_hex(good))
         self.assertEqual(good_receipt["sha"], git_blob_sha1(good))
         mismatch = self._path(result, "stock", "data/last_run_status.json")
@@ -625,7 +628,7 @@ class ReaderTest(unittest.TestCase):
         result = self._run(
             self._routes({}),
             contents_transport="handoff",
-            transport_label_contents="connector_handoff",
+            transport_label_contents="contents",
             transport_label_commits="fixture",
             fixture_mode=False,
             handoff=handoff,
@@ -665,7 +668,7 @@ class ReaderTest(unittest.TestCase):
             commits_transport="handoff",
             contents_transport="handoff",
             transport_label_commits="connector_list_commits",
-            transport_label_contents="connector_handoff",
+            transport_label_contents="contents",
             fixture_mode=True,
             handoff=handoff,
         )
@@ -679,7 +682,65 @@ class ReaderTest(unittest.TestCase):
         self.assertIsNone(stock["resolved_commit"])
         options = self._path(result, "options", "data/radar_latest.json")
         self.assertEqual(options["read_status"], "ok")
+        self.assertEqual(options["transport"], "contents")
+        self.assertEqual(options["blob_sha_source"], "pinned_tree")
         self.assertEqual(options["sha256"], sha256_hex(payload))
+        self.assertFalse(options["streaming"])
+
+    def test_cursor_asset_filename_must_match_raw_sha256(self):
+        payload = _json_bytes({"fixture": "synthetic", "label": "raw_media"})
+        digest = sha256_hex(payload)
+        asset_dir = self.out / "assets"
+        asset_dir.mkdir()
+        named = asset_dir / f"{digest}.txt"
+        named.write_bytes(payload)
+        wrong = asset_dir / f"{'ab' * 32}.txt"
+        wrong.write_bytes(payload)
+        handoff = {
+            "commits": {repo: {"resolved_commit": SHA[role], "commit_time": WHEN} for role, repo in REPOS.items()},
+            "files": [
+                {
+                    "repo": REPOS["options"],
+                    "path": "data/radar_latest.json",
+                    "commit": SHA["options"],
+                    "asset_path": str(named),
+                    "declared_size": len(payload),
+                }
+            ],
+        }
+        result = self._run(
+            MapTransport({}),
+            commits_transport="handoff",
+            contents_transport="handoff",
+            transport_label_commits="connector_list_commits",
+            transport_label_contents="contents",
+            fixture_mode=False,
+            handoff=handoff,
+        )
+        receipt = self._path(result, "options", "data/radar_latest.json")
+        self.assertEqual(receipt["transport"], "contents")
+        self.assertEqual(receipt["media"], "raw")
+        self.assertEqual(receipt["sha256"], digest)
+        self.assertEqual(receipt["sha"], git_blob_sha1(payload))
+        self.assertTrue(receipt["asset_name_sha256_ok"])
+        self.assertEqual(receipt["blob_sha_source"], "computed")
+        self.assertEqual(receipt["tree_metadata"], "not_supplied")
+        self.assertFalse(receipt["streaming"])
+        handoff["files"][0]["asset_path"] = str(wrong)
+        bad = self._run(
+            MapTransport({}),
+            commits_transport="handoff",
+            contents_transport="handoff",
+            transport_label_commits="connector_list_commits",
+            transport_label_contents="contents",
+            fixture_mode=False,
+            handoff=handoff,
+        )
+        mismatch = self._path(bad, "options", "data/radar_latest.json")
+        self.assertEqual(mismatch["read_status"], "partial_validated")
+        self.assertEqual(mismatch["error_class"], "asset_name_mismatch")
+        self.assertFalse(mismatch["asset_name_sha256_ok"])
+        self.assertFalse(mismatch["research_usable"])
 
     def test_naive_cutoff_and_output_guard_and_cli_fixture(self):
         self.assertEqual(parse_instant("2026-11-06T07:50:00").isoformat(), "2026-11-06T07:50:00+08:00")

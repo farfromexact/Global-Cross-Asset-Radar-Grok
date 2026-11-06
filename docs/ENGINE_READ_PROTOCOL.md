@@ -67,7 +67,9 @@ python3 -m engine_read --cutoff 2026-11-06T07:50:00+08:00 \
 
 `--fixture` forces `fixture_mode: true` and labels both transports `fixture`. A cached connector replay passed with `"fixture_mode": true` in the handoff is also `fixture_mode: true`. It is not labeled `github_api`.
 
-API transports are labeled `github_api` only when that transport was actually selected. Handoff contents are labeled `connector_handoff`. Handoff commit metadata is labeled `connector_list_commits`.
+The routine contents path is a connector file from `get_file_contents` plus `write_to_file`: full raw bytes, not base64 and not a chat clip. The handoff reads that path and sets `transport` to `contents`. Size, sha256, and the git blob sha are computed from those bytes. A filename stem of 64 hex characters must equal the sha256. `declared_sha`, when the parent got it from a pinned tree, is checked and recorded as `blob_sha_source=pinned_tree`. If it is absent, the blob sha is only the computed value and `tree_metadata` is `not_supplied`. This read is `Path.read_bytes()` of the whole file. Streaming is not implemented.
+
+`github_api` is the label only when the optional unauthenticated HTTP transport was actually selected. It is not the routine contents path. Handoff commit metadata is labeled `connector_list_commits`.
 
 ## Handoff manifest
 

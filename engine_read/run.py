@@ -938,12 +938,40 @@ def _read_asset(ctx: Ctx, receipt: dict, item: dict) -> dict:
         return _fail(ctx, receipt, "read_failed", "declared_size_invalid", None)
     if declared_sha is not None and not isinstance(declared_sha, str):
         return _fail(ctx, receipt, "read_failed", "declared_sha_invalid", None)
-    receipt["read_method"] = "connector_get_file_contents"
-    receipt["transport"] = ctx.config.transport_label_contents
     file_commit = item.get("commit")
     if file_commit != receipt["resolved_commit"]:
         return _fail(ctx, receipt, "read_failed", "pin_mismatch", "handoff commit does not match resolved commit")
-    _finalize_bytes(ctx, receipt, data, declared_size if isinstance(declared_size, int) else len(data) if declared_size is None else declared_size, declared_sha if isinstance(declared_sha, str) else None, "connector_get_file_contents")
+    computed_sha256 = sha256_hex(data)
+    computed_blob = git_blob_sha1(data)
+    stem = Path(asset).stem.lower()
+    name_is_sha256 = len(stem) == 64 and all(ch in "0123456789abcdef" for ch in stem)
+    receipt["transport"] = "contents"
+    receipt["media"] = "raw"
+    receipt["streaming"] = False
+    receipt["identity_source"] = "computed"
+    receipt["actual_size"] = len(data)
+    receipt["sha256"] = computed_sha256
+    receipt["sha"] = computed_blob
+    receipt["asset_name_sha256_ok"] = (stem == computed_sha256) if name_is_sha256 else None
+    if name_is_sha256 and stem != computed_sha256:
+        receipt["complete"] = False
+        receipt["read_method"] = "contents"
+        return _fail(ctx, receipt, "partial_validated", "asset_name_mismatch", "asset filename is not the sha256 of the raw bytes")
+    size_arg = declared_size if isinstance(declared_size, int) else len(data)
+    sha_arg = declared_sha if isinstance(declared_sha, str) else computed_blob
+    _finalize_bytes(ctx, receipt, data, size_arg, sha_arg, "contents")
+    receipt["transport"] = "contents"
+    receipt["read_method"] = "contents"
+    receipt["media"] = "raw"
+    receipt["streaming"] = False
+    receipt["identity_source"] = "computed"
+    if isinstance(declared_sha, str):
+        receipt["blob_sha_source"] = "pinned_tree" if receipt.get("complete") else "pinned_tree_mismatch"
+    else:
+        receipt["blob_sha_source"] = "computed"
+        receipt["tree_metadata"] = "not_supplied"
+    receipt["sha256"] = computed_sha256
+    receipt["sha"] = computed_blob
     return receipt
 
 
@@ -1319,7 +1347,7 @@ def config_from_args(args, handoff: dict | None) -> RunConfig:
         commits_transport = args.commits_transport
         contents_transport = args.contents_transport
         commits_label = "github_api" if commits_transport == "api" else "connector_list_commits"
-        contents_label = "github_api" if contents_transport == "api" else "connector_handoff"
+        contents_label = "github_api" if contents_transport == "api" else "contents"
         if commits_transport == "handoff" and contents_transport == "handoff" and handoff and handoff.get("fixture_mode") is True:
             fixture_mode = True
     fetched = parse_instant(args.fetched_at) if args.fetched_at else None
