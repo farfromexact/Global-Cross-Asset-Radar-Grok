@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "edition": "evening",
   "archive_status": "success",
-  "report_date": "2026-11-05",
-  "generated_at_bjt": "2026-11-05T20:00:00+08:00",
-  "as_of_bjt": "2026-11-05T19:59:00+08:00",
+  "report_date": "2026-11-06",
+  "generated_at_bjt": "2026-11-06T19:58:00+08:00",
+  "as_of_bjt": "2026-11-06T19:58:00+08:00",
   "scheduled_slot_bjt": "19:50",
-  "actual_generation_note": "Weekday 19:50 slot. China day closed. Night 21:00 not started. US cash not open (22:30 BJT). Commodity day engine recovered, 806 contracts at 19:03. Mapped Wed-Thu night coverage 0%. No 2026-11-05 morning archive. CZCE and CFFEX official HTTP empty. Yahoo 403 for DXY/UST/VIX. Holdings unverified.",
-  "markdown_path": "reports/2026/11/2026-11-05_evening.md",
-  "json_path": "reports/2026/11/2026-11-05_evening.json",
+  "actual_generation_note": "Friday 19:58 Asia/Shanghai. China equity day closed (ChiNext -3.96%). Night 21:00 not started. US October NFP not released (21:30 BJT). US cash not open (22:30 BJT). CU iFinD 104260 and MA iFinD 3263 are not exchange-verified. EC and BU Friday prices missing. No engine data files in this repo. Holdings unverified.",
+  "markdown_path": "reports/2026/11/2026-11-06_evening.md",
+  "json_path": "reports/2026/11/2026-11-06_evening.json",
   "latest_markdown_path": "latest/evening.md",
   "latest_json_path": "latest/evening.json",
   "status_path": "status/evening_latest.json",
@@ -21,67 +21,65 @@
   "prompt_version": "radar_2026-10-12_stock_v1",
   "commodity_consumer_version": "core_2026-10-17_v1",
   "missing_morning_2026_11_05": true,
-  "prior_evening_commit": "da8bfff91c3ea559b7f5fc893c4f2fdae398521b",
+  "prior_morning_commit": "24ef434e7868684bc5f0bb5f6f10bf6116043474",
+  "prior_evening_commit": "06944dca8a6014ec700123b2f98ff86bd02621f2",
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
   "top5_scores": {
-    "AI": 54,
-    "EC": 43,
-    "CU": 39,
-    "MA": 33,
-    "BU": 23
+    "AI": 46,
+    "EC": 40,
+    "CU": 34,
+    "MA": 32,
+    "BU": 20
   },
   "top5": [
     {
       "id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
       "ticker": "MSFT/GOOGL",
-      "score": 54,
+      "score": 46,
       "direction": "observe"
     },
     {
       "id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
       "ticker": "EC2612",
-      "score": 43,
+      "score": 40,
       "direction": "observe"
     },
     {
       "id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
       "ticker": "CU2612",
-      "score": 39,
+      "score": 34,
       "direction": "watch"
     },
     {
       "id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
       "ticker": "MA2701",
-      "score": 33,
+      "score": 32,
       "direction": "suspended"
     },
     {
       "id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
       "ticker": "BU2701",
-      "score": 23,
+      "score": 20,
       "direction": "avoid"
     }
   ],
-  "one_sentence_conclusion": "A股消化昨日反弹且港股大涨、商品引擎日盘已恢复806条，但油化暴跌使MA/CU门槛更远、夜盘与美股未开，今晚仍不建仓。",
-  "one_sentence_conclusion_en": "China digests growth rebound and commodities day-engine recovered (806), but oil/chem dump pushes MA/CU AND further from gates; night and US cash not open — no new risk.",
+  "one_sentence_conclusion": "A股随美股AI崩盘下跌（创业板-3.96%）、日韩暴跌6%，沪铜跌破10.5万且现货高升水back、甲醇3263远低门槛，今晚21:30非农与22:30美股开盘前不建仓。",
+  "one_sentence_conclusion_en": "A-shares followed the US AI crash (ChiNext -3.96%); Japan and Korea fell about 6%; SHFE copper main 104260 broke below 105k with a high spot premium and backwardation; methanol 3263 is far under 3485. No new risk before 21:30 NFP and the 22:30 US cash open.",
   "four_lines": [
     "A. 今晚没有应立即建立的新仓位。",
-    "B. 仅条件观察：MA/CU日盘AND仍未过；EC contango已由引擎核验但仍等21:00后可成交打印；美股22:30后按MSFT/GOOGL配对规则观察（周三现金相对改善未等于触发）。",
-    "C. 观察油化暴跌后夜盘能否止跌、AU/AG高位回吐、ES/NQ与美债贴现、科创消化、港股大涨后接力。",
-    "D. 回避追多金银与科创、BU/SC/MA抄底、复活IH/IM、裸卖波动；期权引擎未execution_ready；持仓未核实；勿虚构今早晨报。"
+    "B. 仅条件观察：21:30非农后、22:30美股现金开盘约30分钟按MSFT/GOOGL配对规则观察；CU/MA门槛均未过，21:00夜盘只看不追。",
+    "C. 观察非农对加息预期与美债、NQ盘前反弹能否守住、SOX/NVDA修复持续性、铜现货升水与back结构、日韩崩跌后周一亚洲接力。",
+    "D. 回避抄底半导体/科创、追空已暴跌的AI硬件、CU/MA逆门槛抄底、裸卖波动（VIX~28）；持仓未核实。"
   ],
-  "regime": "china_digest_after_growth_rebound_oil_chem_violent_dump_ma_cu_and_false_commodities_engine_day_recovered_806_night_not_started_us_wed_msft_rip_thu_2230_observe_only",
+  "regime": "china_fri_eod_followthrough_ai_crash_chinext_minus_3_96_nikkei_kospi_minus_6_cu_104260_spot_back_ma_3263_gate_false_ec_bu_missing_nfp_2130_not_released_us_cash_2230_not_open_night_not_started_no_risk",
   "engine_notes": {
-    "commodities_day_2026-11-05": "RECOVERED; 5 exchanges ok records SHFE238/INE63/DCE214/CZCE243/GFEX48; contract_count 806; generated_at 2026-11-05T19:03:55+08:00",
-    "commodities_night": "mapped Wed→Thu night coverage 0% published=false; tonight 21:00 not_started",
-    "options": "China-Options-Engine trade_date 2026-11-04 (lag vs Thu); commodities-engine options surface_ready=false execution_ready=false",
-    "stock": "failed_backfill last_valid 2026-10-30 iFinD device limit; public EOD only",
-    "official_fallback": "SHFE+INE kx20261105.dat OK; CZCE/CFFEX official HTTP empty/500 — used engine+sina for CZCE and sina for CFFEX continuous"
+    "commodities_day": "NOT_READ_THIS_RUN. No engine files in this repo. Morning 806-contract read is stale versus Friday 19:58.",
+    "commodities_night": "tonight 21:00 not_started. Morning prior-night coverage about 52% is not tonight.",
+    "options": "not re-read; no Friday premium",
+    "stock": "not re-read; last archived valid trade date 2026-10-30",
+    "official_fallback": "Exchange Friday files not fetched. CU/MA are iFinD. EC/BU missing."
   },
-  "permission_errors": [
-    "China-Stock-Engine iFinD device exceed limit (-1303)",
-    "Yahoo finance chart API 403 for VIX/TNX/IRX/TYX/DXY/BZ"
-  ],
+  "permission_errors": [],
   "gates": {
     "MA_AND": false,
     "CU_AND": false,
@@ -89,13 +87,17 @@
     "MA_settle_ge_3485": false,
     "PX_ge_9850": false,
     "CU_close_ge_109600": false,
+    "CU_settle_ge_109600": false,
     "CU_curve_contango_ge_0_65pct": false,
+    "CU_curve_engine_verified": false,
+    "MA_curve_engine_verified": false,
     "BU_pullback_long": false,
     "EC_high_conviction_execute": false,
     "night_tonight_started": false,
     "us_cash_pair_trigger": false,
-    "us_cash_open": false
+    "us_cash_open": false,
+    "nfp_released": false
   },
   "errors": [],
-  "note": "archive_status=success means six paths written; not CI pass, not WeChat delivery, and not executable orders. No 2026-11-05 morning file was created."
+  "note": "archive_status=success means six paths written; not CI pass, not WeChat delivery, and not executable orders. EC and BU Friday prices are missing. No engine SHA was invented. No 2026-11-05 morning file was created."
 }

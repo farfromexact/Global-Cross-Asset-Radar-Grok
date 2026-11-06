@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-06T07:57:00+08:00",
+  "updated_at_bjt": "2026-11-06T19:58:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -327,7 +327,39 @@
       "data_protocol_version": "core_2026-10-17_v1",
       "commit_sha": null,
       "revision": 1
+    },
+    {
+      "report_date": "2026-11-06",
+      "edition": "evening",
+      "generated_at_bjt": "2026-11-06T19:58:00+08:00",
+      "markdown_path": "reports/2026/11/2026-11-06_evening.md",
+      "json_path": "reports/2026/11/2026-11-06_evening.json",
+      "latest_markdown_path": "latest/evening.md",
+      "latest_json_path": "latest/evening.json",
+      "status_path": "status/evening_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "china_fri_eod_followthrough_ai_crash_chinext_minus_3_96_nikkei_kospi_minus_6_cu_104260_spot_back_ma_3263_gate_false_ec_bu_missing_nfp_2130_not_released_us_cash_2230_not_open_night_not_started_no_risk",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "china_options_date": null,
+      "china_options_fresh": false,
+      "china_commodities_date": null,
+      "china_commodities_fresh": false,
+      "china_commodities_official_complete": false,
+      "china_commodities_night_tonight": "not_started",
+      "missing_morning_2026_11_05": true,
+      "prior_morning_commit": "24ef434e7868684bc5f0bb5f6f10bf6116043474",
+      "prior_evening_commit": "06944dca8a6014ec700123b2f98ff86bd02621f2",
+      "nfp_released": false,
+      "us_cash_open": false,
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "commit_sha": null,
+      "revision": 1
     }
   ],
-  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, and evening 2026-11-05; upserted morning 2026-11-06. No 2026-11-05 morning entry because that archive does not exist. Do not invent a 2026-11-05 morning file."
+  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, evening 2026-11-05, and morning 2026-11-06; upserted evening 2026-11-06. No 2026-11-05 morning entry because that archive does not exist. Do not invent a 2026-11-05 morning file."
 }
