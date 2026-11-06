@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "edition": "morning",
   "archive_status": "success",
-  "report_date": "2026-11-04",
-  "generated_at_bjt": "2026-11-04T08:05:00+08:00",
-  "as_of_bjt": "2026-11-04T08:05:00+08:00",
+  "report_date": "2026-11-06",
+  "generated_at_bjt": "2026-11-06T07:57:00+08:00",
+  "as_of_bjt": "2026-11-06T07:57:00+08:00",
   "scheduled_slot_bjt": "07:50",
-  "actual_generation_note": "Wednesday 08:05 Asia/Shanghai. China day session not open (09:00/09:30 ahead). Tuesday US cash is done. China night for trading_date 2026-11-04 is unpublished at 0% coverage. Public night prints only SC 678.8, AU 845.2, AG 11856. Futures refetch hit iFinD device limit. US midterms 0 House and 0 Senate called in the brief; no winners named.",
-  "markdown_path": "reports/2026/11/2026-11-04_morning.md",
-  "json_path": "reports/2026/11/2026-11-04_morning.json",
+  "actual_generation_note": "Friday 07:57 Asia/Shanghai. China day session not open (09:00/09:30 ahead). Thursday US cash is done: SPX 7353.73 -4.36%, Nasdaq composite 24314.997 -5.52%, Dow 51523.06 -3.44%, VIX 28.18 +11.57 points. MSFT underperformed GOOGL. Night trading_date 2026-11-06 published at about 52.11% coverage with official_night_close_verified false. No 2026-11-05 morning archive. Holdings unverified.",
+  "markdown_path": "reports/2026/11/2026-11-06_morning.md",
+  "json_path": "reports/2026/11/2026-11-06_morning.json",
   "latest_markdown_path": "latest/morning.md",
   "latest_json_path": "latest/morning.json",
   "status_path": "status/morning_latest.json",
@@ -16,40 +16,89 @@
   "ci_validation_status": "pending_or_unverified",
   "worth_taking_risk": false,
   "wechat_escalate": false,
-  "holdings_status": "未核实",
   "orders": false,
+  "holdings_status": "未核实",
+  "prompt_version": "radar_2026-10-12_stock_v1",
+  "commodity_consumer_version": "core_2026-10-17_v1",
+  "missing_morning_2026_11_05": true,
+  "prior_evening_commit": "06944dca8a6014ec700123b2f98ff86bd02621f2",
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
-  "top5_scores": [
+  "top5_scores": {
+    "AI": 48,
+    "EC": 42,
+    "CU": 36,
+    "MA": 31,
+    "BU": 21
+  },
+  "top5": [
     {
-      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
-      "score": 50
+      "id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "ticker": "MSFT/GOOGL",
+      "score": 48,
+      "direction": "observe"
     },
     {
-      "idea_id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
-      "score": 45
+      "id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "ticker": "EC2612",
+      "score": 42,
+      "direction": "observe"
     },
     {
-      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
-      "score": 42
+      "id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "ticker": "CU2612",
+      "score": 36,
+      "direction": "watch"
     },
     {
-      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
-      "score": 41
+      "id": "COM-M-MA701-OIL-CHEMICAL-GAP-RETENTION-20261024",
+      "ticker": "MA2701",
+      "score": 31,
+      "direction": "suspended"
     },
     {
-      "idea_id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
-      "score": 29
+      "id": "COM-E-BU2701-STRONG-CURVE-PULLBACK-LONG-20261026",
+      "ticker": "BU2701",
+      "score": 21,
+      "direction": "avoid"
     }
   ],
-  "one_sentence_conclusion": "隔夜标普与半导体反弹、微软相对谷歌转强，但两院选举均未开出结果，SC夜盘续跌、甲醇与铜门槛未齐过且夜盘引擎覆盖为0，中国日盘未开，不建仓。",
+  "one_sentence_conclusion": "美股周四AI崩盘纳指进入修正、MSFT弱于GOOGL使配对失败；商品夜盘覆盖回升约52%，但CU更远离门槛、MA/PX仍远低于门槛，A股日盘未开，今早不建仓。",
+  "one_sentence_conclusion_en": "US Thu AI crash (Nasdaq correction; MSFT underperformed GOOGL) kills the pair trigger; China night engine ~52% coverage but CU night further from 109600 and MA/PX still far below gates; China day not open — no new risk.",
   "four_lines": [
-    "A. 今天没有应立即建立的新仓位。",
-    "B. 今天仅应挂条件的候选：MA2701只在今日09:00后可核验的新成交同时满足收盘≥3485、结算≥3485、PX主连≥9850（昨日PX701收盘9194、PX612收盘9340均远低于9850）且近远月≥4.50%并经引擎曲线核验时才可讨论；夜盘甲醇未核实，不得用连续报价或昨日日盘收盘过线代替。CU2612只在新成交≥109600且近远月≥0.65%且曲线经引擎核验时才可讨论，夜盘铜收盘未核实。微软/谷歌不因周二现金相对强弱或AMD业绩自动进入条件单。",
-    "C. 今天继续观察：微软相对谷歌（周二现金微软强于谷歌约2.37个百分点，但周一失败仍在台账，触发未满足；众议院0/435、参议院0/35未定）、SOXX/SMH相对QQQ的半导体反弹能否在22:30后延续、SC夜盘678.8之后的再定价、EC2612的contango（引擎曲线未核）、沪金沪银夜盘相对结算的小幅走弱与10Y约4.95%、DXY次级约101.8、IH相对IM但不复活旧编号、09:15/09:25竞价与开盘后15/30/45分钟。",
-    "D. 今天必须回避或若此前已建仓则有条件退出：追空已连跌的SC与原油、把沥青或油化急跌当成回撤多、追空科创与创业板、复活多IH空IM、把配对改写成空英伟达、抄底或追多金银、裸卖波动、把预测市场蓝潮概率当成已定结果；若此前已按微软相对抗跌建仓，周一现金已否定该条件，按原规则计划退出。持仓未核实。"
+    "A. 今早没有应立即建立的新仓位（中国日盘未开；美股配对与MA/CU门槛均未过）。",
+    "B. 仅条件观察：夜盘后CU更远/MA仍远；EC日盘contango仍观察等09:00后可成交打印；美股MSFT/GOOGL周四双跌且MSFT更弱，配对触发失败，仅继续规则观察。",
+    "C. 观察09:00油化/铜对夜盘的承接、AU/AG回吐、A股对美股崩盘的开盘反应、VIX 28后的波动贴现；民主党已掌控两院（个别议席未定）。",
+    "D. 回避追空美股AI/半导体、追多金银与科创、BU/SC/MA抄底、复活IH/IM、裸卖波动；期权未execution_ready；持仓未核实；勿虚构11-05晨报。"
   ],
-  "regime": "us_tue_cash_semis_rebound_msft_gt_googl_does_not_clear_monday_failure_midterms_0_called_sc_night_678_8_au_ag_soft_vs_settle_ma_cu_night_unverified_and_false_ifind_device_limit_night_coverage_0_china_day_not_open",
+  "regime": "us_thu_ai_crash_nasdaq_correction_vix_28_msft_underperforms_googl_pair_false_china_night_coverage_52pct_cu_night_worse_ma_px_gates_false_day_not_open_no_risk",
+  "engine_notes": {
+    "commodities_day_2026-11-05": "OK refreshed; 806 contracts; full_market_ready=true; options_surface/execution not ready; official_complete=false; generated_at 2026-11-06T06:05:56+08:00",
+    "commodities_night_trading_date_2026-11-06": "RECOVERED published=true coverage≈52.11% (420/806; 214 unresolved); official_night_close_verified=false; generated_at 2026-11-06T05:59:29+08:00",
+    "options": "China-Options-Engine trade_date 2026-11-05; CFFEX eod 760; data_fresh=true @07:18",
+    "stock": "failed_backfill last_valid 2026-10-30 iFinD -1303"
+  },
+  "gates": {
+    "MA_AND": false,
+    "CU_AND": false,
+    "MA_close_ge_3485": false,
+    "MA_settle_ge_3485": false,
+    "PX_ge_9850": false,
+    "CU_close_ge_109600": false,
+    "CU_curve_contango_ge_0_65pct": false,
+    "BU_pullback_long": false,
+    "EC_high_conviction_execute": false,
+    "us_cash_pair_trigger": false,
+    "china_day_open": false,
+    "night_session_published_2026_11_06": true
+  },
   "errors": [],
-  "permission_errors": [],
-  "note": "archive_status=success means six paths written; not CI pass or executable orders. worth_taking_risk=false. wechat_escalate=false."
+  "permission_errors": [
+    "Yahoo finance chart API 403 (all symbols)",
+    "Stooq q/l 404/SSL EOF",
+    "China-Stock-Engine iFinD device exceed limit (-1303)",
+    "DCE night iFinD permission denied (-4226) for some contracts",
+    "Official Treasury CSV empty this run",
+    "DXY spot missing"
+  ],
+  "note": "archive_status=success means six paths written; not CI pass, not WeChat delivery, and not executable orders. worth_taking_risk=false. wechat_escalate=false. No 2026-11-05 morning file was created."
 }
