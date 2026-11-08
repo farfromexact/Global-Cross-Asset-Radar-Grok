@@ -23,7 +23,7 @@
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
   "hit_rate_triggered_among_resolved": 0.0,
   "regime": "w45_us_ai_crash_nasdaq_correction_nfp_165k_ue_4_1_msft_googl_pair_failed_ma_cu_and_failed_ec_contango_observe_bu_pullback_failed_china_week_up_friday_catchdown_worth_taking_risk_false",
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "95108305979eec3c35419e2dd944869977d590d3",
   "errors": [],
   "note": "archive_status=success means weekly paths written on box; not CI pass or executable orders. Cloud Agent must replace commit_sha=PENDING_MAIN_COMMIT with the real main SHA after push. Do not overwrite prompts/weekly_v1.md."
 }
