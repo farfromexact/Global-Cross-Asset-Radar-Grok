@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-06T19:58:00+08:00",
+  "updated_at_bjt": "2026-11-08T20:25:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -359,7 +359,30 @@
       "data_protocol_version": "core_2026-10-17_v1",
       "commit_sha": null,
       "revision": 1
+    },
+    {
+      "report_date": "2026-11-08",
+      "report_week": "2026-W45",
+      "edition": "weekly",
+      "generated_at_bjt": "2026-11-08T20:25:00+08:00",
+      "markdown_path": "reports/2026/11/2026-W45_weekly.md",
+      "json_path": "reports/2026/11/2026-W45_weekly.json",
+      "latest_markdown_path": "latest/weekly.md",
+      "latest_json_path": "latest/weekly.json",
+      "status_path": "status/weekly_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "w45_us_ai_crash_nasdaq_correction_nfp_165k_ue_4_1_msft_googl_pair_failed_ma_cu_and_failed_ec_contango_observe_bu_pullback_failed_china_week_up_friday_catchdown_worth_taking_risk_false",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "hit_rate_triggered_among_resolved": 0.0,
+      "prompt_version": "weekly_v1",
+      "commit_sha": null,
+      "revision": 1,
+      "coverage_note": "9/10 weekday archives present; 2026-11-05 morning missing. NFP and Friday US cash reviewed after the 11-06 evening cutoff."
     }
   ],
-  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, evening 2026-11-05, and morning 2026-11-06; upserted evening 2026-11-06. No 2026-11-05 morning entry because that archive does not exist. Do not invent a 2026-11-05 morning file."
+  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, evening 2026-11-05, morning and evening 2026-11-06; upserted weekly 2026-W45. No 2026-11-05 morning entry because that archive does not exist. Do not invent a 2026-11-05 morning file. Do not drop any existing morning/evening/weekly entries."
 }
