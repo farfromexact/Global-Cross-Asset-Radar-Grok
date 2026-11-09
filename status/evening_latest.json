@@ -142,6 +142,6 @@
     "Sina gb_* premarket field layout mixes Friday official and premarket — no precise MSFT/GOOGL/NVDA Monday premarket invented",
     "Sina CFFEX nf_ fields used for 15:00 close and implied OI only; official settle/volume/ΔOI/basis not independently confirmed"
   ],
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "f0cd95b8f90f0ab7f93c9ff06570c30f502336e2",
   "note": "archive_status=success is the intended committed status-file content after the parent/Cloud Agent pushes these six paths. Replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA after that commit exists. No 2026-11-05 morning file was created."
 }

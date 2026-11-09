@@ -2662,7 +2662,7 @@
     "status_path": "status/evening_latest.json",
     "manifest_path": "manifests/reports.json",
     "archive_status": "success",
-    "commit_sha": "PENDING_MAIN_COMMIT",
+    "commit_sha": "f0cd95b8f90f0ab7f93c9ff06570c30f502336e2",
     "ci_validation_status": "pending_or_unverified",
     "wechat_sent": false,
     "orders_sent": false,
