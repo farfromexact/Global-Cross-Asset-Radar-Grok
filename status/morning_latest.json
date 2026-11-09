@@ -132,6 +132,6 @@
     "Sina hf_DX and fx_sdxy empty — Monday Asia DXY missing",
     "DCE official dayQuotes HTTP 412 source_error (not an all-exchange price mismatch)"
   ],
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "098664cd495358de1080649a051d540eb1c21c50",
   "note": "archive_status=success means six paths written; not CI pass, not WeChat delivery, and not executable orders. worth_taking_risk=false. wechat_escalate=false. orders=false. No 2026-11-05 morning file was created. Replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA after that commit exists. Do not overwrite prompts/."
 }
