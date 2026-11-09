@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-08T20:25:00+08:00",
+  "updated_at_bjt": "2026-11-09T08:05:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -382,7 +382,57 @@
       "commit_sha": null,
       "revision": 1,
       "coverage_note": "9/10 weekday archives present; 2026-11-05 morning missing. NFP and Friday US cash reviewed after the 11-06 evening cutoff."
+    },
+    {
+      "report_date": "2026-11-09",
+      "edition": "morning",
+      "generated_at_bjt": "2026-11-09T08:05:00+08:00",
+      "as_of_bjt": "2026-11-09T07:50:38+08:00",
+      "research_cutoff_bjt": "2026-11-09T07:50:38+08:00",
+      "markdown_path": "reports/2026/11/2026-11-09_morning.md",
+      "json_path": "reports/2026/11/2026-11-09_morning.json",
+      "latest_markdown_path": "latest/morning.md",
+      "latest_json_path": "latest/morning.json",
+      "status_path": "status/morning_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "nfp_165k_ue_4_1_friday_us_bounce_msft_lags_googl_pair_false_sunday_night_not_published_friday_official_match_ma_cu_gates_false_china_day_not_open_no_risk",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "top5_scores": {
+        "AI": 44,
+        "EC": 40,
+        "CU": 33,
+        "MA": 31,
+        "BU": 19
+      },
+      "china_options_date": "2026-11-06",
+      "china_options_fresh": true,
+      "china_options_freshness_note": "data_fresh=true for Friday 2026-11-06 CFFEX 760 match 1.0; not Monday session",
+      "china_commodities_date": "2026-11-06",
+      "china_commodities_night_trading_date": "2026-11-09",
+      "china_commodities_night_session_date": "2026-11-06",
+      "china_commodities_fresh": true,
+      "china_commodities_freshness_note": "Monday 06:03 BJT refresh of Friday 2026-11-06. SHFE/INE/CZCE/GFEX official-matched. DCE official HTTP 412 source_error only. Not Monday day-session evidence. Sunday night not newly published.",
+      "china_commodities_official_complete": false,
+      "china_commodities_night_published": true,
+      "sunday_night_newly_published": false,
+      "china_stock_pin_is_code_merge": true,
+      "china_stock_last_valid_trade_date": "2026-11-06",
+      "china_stock_adjustment_coverage": 0.0,
+      "missing_morning_2026_11_05": true,
+      "weekend_dailies_absent_by_design": true,
+      "prior_evening_commit": "822792714b230edbba199643cda5a5438b5654ad",
+      "prior_weekly_content_commit": "95108305979eec3c35419e2dd944869977d590d3",
+      "nfp_released": true,
+      "us_cash_open": false,
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "commit_sha": null,
+      "revision": 1
     }
   ],
-  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, evening 2026-11-05, morning and evening 2026-11-06; upserted weekly 2026-W45. No 2026-11-05 morning entry because that archive does not exist. Do not invent a 2026-11-05 morning file. Do not drop any existing morning/evening/weekly entries."
+  "merge_note": "Preserved Oct29–30 morning/evening, W44 weekly, morning and evening 2026-11-02, morning and evening 2026-11-03, morning and evening 2026-11-04, evening 2026-11-05, morning and evening 2026-11-06, and weekly 2026-W45; appended morning 2026-11-09. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file. Do not drop any existing morning/evening/weekly entries."
 }
