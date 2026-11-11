@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "edition": "morning",
-  "archive_status": "pending_main_commit",
+  "archive_status": "success",
   "report_date": "2026-11-11",
   "generated_at_bjt": "2026-11-11T08:05:00+08:00",
   "as_of_bjt": "2026-11-11T07:47:20+08:00",
@@ -321,6 +321,6 @@
     "Tuesday night vendor snapshot official_night_close_verified=false; Wednesday 21:00 not started",
     "Japan/Korea Wednesday cash not open at cutoff (08:00 BJT)"
   ],
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "1becf5b0d23fd740fa03bfee18aa386ca14deb7b",
   "note": "archive_status=pending_main_commit locally; Cloud Agent should set archive_status=success after pushing these six paths and replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA. No 2026-11-05 morning file was created."
 }
