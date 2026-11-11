@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "edition": "evening",
-  "archive_status": "pending_main_commit",
+  "archive_status": "success",
   "report_date": "2026-11-11",
   "generated_at_bjt": "2026-11-11T20:05:00+08:00",
   "as_of_bjt": "2026-11-11T19:49:20+08:00",
@@ -335,6 +335,6 @@
     "China-Options-Engine snapshot remains Tuesday 2026-11-10, not Wednesday EOD",
     "Tuesday night vendor snapshot official_night_close_verified=false; Wednesday 21:00 not started"
   ],
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "ca906bc08b2f14f5346452d57a813deb382cd7ce",
   "note": "archive_status=pending_main_commit locally; Cloud Agent should set archive_status=success after pushing these six paths and replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA. No 2026-11-05 morning file was created."
 }
