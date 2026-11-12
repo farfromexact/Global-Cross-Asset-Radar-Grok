@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-11T20:05:00+08:00",
+  "updated_at_bjt": "2026-11-12T08:10:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -590,8 +590,30 @@
         "BU": 14
       },
       "prior_content_commit_expected_from": "563dbe5ba431fa525119c1454770136c9d40ff25"
+    },
+    {
+      "report_date": "2026-11-12",
+      "edition": "morning",
+      "generated_at_bjt": "2026-11-12T08:10:00+08:00",
+      "as_of_bjt": "2026-11-12T07:55:00+08:00",
+      "research_cutoff_bjt": "2026-11-12T07:55:00+08:00",
+      "markdown_path": "reports/2026/11/2026-11-12_morning.md",
+      "json_path": "reports/2026/11/2026-11-12_morning.json",
+      "latest_markdown_path": "latest/morning.md",
+      "latest_json_path": "latest/morning.json",
+      "status_path": "status/morning_latest.json",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top5_scores": {
+        "AI": 41,
+        "EC": 39,
+        "CU": 28,
+        "MA": 25,
+        "BU": 14
+      },
+      "prior_content_commit_expected_from": "b8af56c70b1983412f6bea63a811fb2c0a3b6245"
     }
   ],
   "merge_note": "Preserved every existing morning/evening/weekly entry from the remote main manifest at a0bdeed3535f7a30197bca00b026527d8d56419e (17 entries through 2026-11-09 evening). Appended 2026-11-10 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file.",
-  "note": "Appended 2026-11-11 evening. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file."
+  "note": "Appended 2026-11-12 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file."
 }
