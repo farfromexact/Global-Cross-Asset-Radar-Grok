@@ -259,6 +259,6 @@
     "Wednesday night session not in commodities pin",
     "Prior latest/evening not required beyond status; morning 2026-11-05 still missing"
   ],
-  "commit_sha": "",
+  "commit_sha": "d464148e8d73db8d8a8e24612889e94e8890129b",
   "note": "archive_status=success. commit_sha is filled with the content commit SHA in the follow-up commit. No 2026-11-05 morning file was created."
 }
