@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-12T08:10:00+08:00",
+  "updated_at_bjt": "2026-11-12T20:05:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -612,8 +612,39 @@
         "BU": 14
       },
       "prior_content_commit_expected_from": "b8af56c70b1983412f6bea63a811fb2c0a3b6245"
+    },
+    {
+      "report_date": "2026-11-12",
+      "edition": "evening",
+      "generated_at_bjt": "2026-11-12T20:05:00+08:00",
+      "as_of_bjt": "2026-11-12T19:50:13+08:00",
+      "research_cutoff_bjt": "2026-11-12T19:50:13+08:00",
+      "markdown_path": "reports/2026/11/2026-11-12_evening.md",
+      "json_path": "reports/2026/11/2026-11-12_evening.json",
+      "latest_markdown_path": "latest/evening.md",
+      "latest_json_path": "latest/evening.json",
+      "status_path": "status/evening_latest.json",
+      "status": "published",
+      "archive_status": "pending_main_commit",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "china_thu_eod_public_riskoff_chinext_down_wind_wed_vendor_close_wed_night_in_pin_not_official_ma_cu_gates_false_us_cash_not_open_no_risk",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "top5_scores": {
+        "AI": 40,
+        "EC": 38,
+        "CU": 27,
+        "MA": 25,
+        "BU": 14
+      },
+      "prompt_version": "radar_2026-10-12_stock_v1",
+      "data_protocol_version": "core_2026-10-17_v1",
+      "prior_content_commit_expected_from": "0410f2534cc00716d40dd409ce825ec8b459fa9b",
+      "commit_sha": null,
+      "revision": 1
     }
   ],
   "merge_note": "Preserved every existing morning/evening/weekly entry from the remote main manifest at a0bdeed3535f7a30197bca00b026527d8d56419e (17 entries through 2026-11-09 evening). Appended 2026-11-10 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file.",
-  "note": "Appended 2026-11-12 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file."
+  "note": "Appended 2026-11-12 evening. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file."
 }

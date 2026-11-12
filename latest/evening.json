@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "edition": "evening",
-  "report_date": "2026-11-11",
-  "generated_at_bjt": "2026-11-11T20:05:00+08:00",
-  "as_of_bjt": "2026-11-11T19:49:20+08:00",
-  "research_cutoff_bjt": "2026-11-11T19:49:20+08:00",
-  "research_cutoff_utc": "2026-11-11T11:49:20Z",
-  "routine_fired_bjt": "2026-11-11T19:49:02+08:00",
-  "routine_fired_utc": "2026-11-11T11:49:02.822Z",
-  "public_source_retrieval_bjt": "2026-11-11T19:52:05+08:00",
-  "public_source_retrieval_end_bjt": "2026-11-11T19:52:12+08:00",
+  "report_date": "2026-11-12",
+  "generated_at_bjt": "2026-11-12T20:05:00+08:00",
+  "as_of_bjt": "2026-11-12T19:50:13+08:00",
+  "research_cutoff_bjt": "2026-11-12T19:50:13+08:00",
+  "research_cutoff_utc": "2026-11-12T11:50:13Z",
+  "routine_fired_bjt": "2026-11-12T19:49:33+08:00",
+  "routine_fired_utc": "2026-11-12T11:49:33.304Z",
+  "public_source_retrieval_bjt": "2026-11-12T19:53:34+08:00",
+  "public_source_retrieval_end_bjt": "2026-11-12T19:53:49+08:00",
   "scheduled_slot_bjt": "19:50",
   "prompt_version": "radar_2026-10-12_stock_v1",
   "commodity_consumer_version": "core_2026-10-17_v1",
@@ -17,19 +17,19 @@
   "wechat_escalate": false,
   "orders": false,
   "holdings_status": "未核实",
-  "one_sentence_conclusion": "中国周三A股已完成（创业板公开源+3.11%、上证+0.46%），日经收61248.59（+1.31%）、KOSPI收5375.36（+2.60%），港股回落。商品引擎周三官方期货再次因iFinD额度失败，可核MA/CU门槛仍只能沿用周一且全灭（铜backwardation约−2.05%）；公开源甲醇3159、PX8410、铜105820仍远离门槛，EC公开源走强至2485.5但不能改写官方曲线。美股现金盘22:30未开，周二MSFT已落后GOOGL，今晚不建仓。",
-  "one_sentence_conclusion_en": "China Wednesday cash is complete (ChiNext +3.11%, SSE +0.46%), with Nikkei at 61248.59 (+1.31%) and KOSPI at 5375.36 (+2.60%) while Hong Kong fell. The commodities engine failed official Wednesday futures again after iFinD hit its monthly quota, so official-matched MA/CU gates remain Monday-only and closed (copper still about −2.05% backwardation); public prints MA 3159 / PX 8410 / CU 105820 stay far from the gates, and EC’s public bounce to 2485.5 does not rewrite the official curve. US cash is not open until 22:30 BJT, and Tuesday already saw MSFT lag GOOGL — no new risk.",
+  "one_sentence_conclusion": "中国周四A股已完成（公开源：上证3655.83−0.67%、创业板2509.43−2.44%、科创50+0.73%），日经公开源60819.14（−0.70%）、KOSPI公开源5342.73（−0.61%），恒生24008.55（−1.26%）。商品引擎针仍为周三Wind供应商收盘（official_complete=false）：MA2701收3159/结3114、PX收8410/结8324、CU2612收105820/结105230，MA/CU完整AND仍为假，铜对CU2701结算仍backwardation约−1.17%。周三夜盘已入针但非官方收盘、更不是今夜21:00。公开源周四商品MA3172/3163、CU104950/105140、EC2477.5/2448.5仍远离门槛。美股现金盘22:30未开，周三MSFT−2.26%已落后GOOGL+2.11%；今晚不建仓。",
+  "one_sentence_conclusion_en": "China Thursday cash is complete via public sources (SSE 3655.83 −0.67%, ChiNext 2509.43 −2.44%, STAR +0.73%), with public Nikkei 60819.14 (−0.70%), KOSPI 5342.73 (−0.61%) and HSI 24008.55 (−1.26%). The commodities pin is still Wednesday Wind vendor close (official_complete=false): MA2701 3159/3114, PX 8410/8324, CU2612 105820/105230, so MA/CU AND gates stay false and copper remains in backwardation (~−1.17% vs CU2701 settle). Wednesday night is in the pin but is not an official night close and is not tonight 21:00. Thursday public prints (MA 3172/3163, CU 104950/105140, EC 2477.5/2448.5) stay far from the gates. US cash is not open until 22:30 BJT, and Wednesday already saw MSFT −2.26% lag GOOGL +2.11% — no new risk.",
   "four_lines": [
-    "A. 今天没有应立即建立的新仓位（中国周三A股已完成：上证+0.46%、创业板+3.11%；日经收61248.59（+1.31%）、KOSPI收5375.36（+2.60%），恒生−0.98%；商品引擎周三官方期货再次因iFinD额度失败，可核MA/CU完整AND仍只能沿用周一且为假，铜维持backwardation约−2.05%；公开源甲醇3159、PX8410、铜105820、沥青4282仍远离门槛；EC公开源2485.5走强但不能改写周一官方曲线的高确信执行结论；美股现金盘22:30未开，周二MSFT−2.20%已落后GOOGL−0.27%，不能新触发；21:00夜盘尚未开始；商品/股指期权未execution_ready）。",
-    "B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850，且曲线门槛不再挡——目前官方仍为周一收3194/结3247、PX收8478/结8564，公开源周三仍弱于门槛）；CU完整AND（官方≥109600且contango≥0.65%，周一结算价差仍为backwardation约−2.05%，公开源周三仍为backwardation约−1.84%）；EC需能诚实辩护持续contango结构才考虑高确信执行，默认继续观察；MSFT/GOOGL若再讲相对强度需新的美股开盘后证据，不得把周一占优或周二落后写成今晚可触发。",
-    "C. 今天继续观察：今夜21:00商品夜盘对公开源周三油化反弹但仍弱、铜仍backwardation、EC走强的承接（尚未到期，不是缺失）；22:30美股开盘及23:00配对窗口（ES约7612、NQ约28358只是电子盘色差，不是现金开盘）；WTI约86.68、黄金现货约4047对SC/MA/AU的传导；创业板+3.11%与日韩上涨之后美股开盘是否接力，以及港股回落是否映射到美股科技。",
-    "D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把公开源周三盘或周二夜盘供应商快照当成官方期货收盘或当成今晚21:00；BU回撤多（公开源4282，较周一结算4459仍弱、5日约−15.5%、曲线仍陡）；复活IH/IM与SC旧空；裸卖波动（VIX本包无新打印，不得把周二19.46写成今晚新点，也不是低波动许可）；把股票引擎周一快照或期权引擎周二快照写成周三官方EOD；把Sina int_*陈旧国际指数当成美股或日经收盘（int_nikkei 44946.64已弃用；日经用公开报道61248.59，Sina b_NKY 61248.52仅作旁证）；勿虚构11-05晨报；商品/股指期权未execution_ready；持仓未核实。"
+    "A. 今天没有应立即建立的新仓位（中国周四A股已完成：公开源上证−0.67%、创业板−2.44%、科创50+0.73%；日经公开源60819.14（−0.70%）、KOSPI公开源5342.73（−0.61%），恒生−1.26%；商品引擎有效交易日仍为周三Wind供应商收盘且official_complete=false，可核MA/CU完整AND仍为假，铜维持backwardation；公开源周四甲醇3172/3163、PX8448/8384、铜104950/105140仍远离门槛；EC公开源周四小幅回吐不能改为高确信执行；美股现金盘22:30未开，周三MSFT已落后GOOGL，不能新触发；21:00夜盘尚未开始；商品/股指期权未execution_ready）。",
+    "B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850——Wind周三收3159/结3114、PX收8410/结8324，公开源周四仍为3172/3163与8448/8384，均未达标）；CU完整AND（官方≥109600且contango≥0.65%，Wind周三CU2612结算105230对CU2701为backwardation约−1.17%，对CU2611约−1.99%，公开源周四对CU2611仍约−2.41%）；EC需能诚实辩护持续contango结构才考虑高确信执行，默认继续观察；MSFT/GOOGL若再讲相对强度需新的美股开盘后证据，不得把周三落后或盘后二手报道写成今晚可触发。",
+    "C. 今天继续观察：美国22:30现金盘对周三AI分化与NVDA事件报道的映射、公开源股指期货已显示IM/IC弱于IH的风格翻转是否被美盘确认、今夜21:00商品夜盘（未到，不是缺失）、黄金多源价差（公开源现货约3944对周三收盘附近）、官方商品结算文件是否补上。",
+    "D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把Wind供应商收盘或公开源周四行情当官方结算；把周三夜盘（非官方、last_completed_bar_close）当成今夜21:00或官方夜盘收盘；BU回撤多（即便公开源周四反弹）；裸卖波动；在NVDA事件与美股开盘证据落地前建立半导体方向性重仓；复活IH/IM旧空；商品/股指期权未execution_ready。"
   ],
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
   "top5_scores": {
     "AI": 40,
-    "EC": 40,
-    "CU": 29,
+    "EC": 38,
+    "CU": 27,
     "MA": 25,
     "BU": 14
   },
@@ -41,27 +41,27 @@
       "R": 14,
       "E": 15,
       "X": 11,
-      "delta_vs_morning": 0,
+      "delta_vs_morning": -1,
       "direction": "observe"
     },
     {
       "id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
       "ticker": "EC2612",
-      "score": 40,
-      "R": 15,
-      "E": 15,
+      "score": 38,
+      "R": 14,
+      "E": 14,
       "X": 10,
-      "delta_vs_morning": 0,
+      "delta_vs_morning": -1,
       "direction": "observe"
     },
     {
       "id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
       "ticker": "CU2612",
-      "score": 29,
-      "R": 11,
+      "score": 27,
+      "R": 10,
       "E": 11,
-      "X": 7,
-      "delta_vs_morning": 0,
+      "X": 6,
+      "delta_vs_morning": -1,
       "direction": "observe"
     },
     {
@@ -72,7 +72,7 @@
       "E": 9,
       "X": 6,
       "delta_vs_morning": 0,
-      "direction": "suspended"
+      "direction": "observe"
     },
     {
       "id": "COM-C-BU2701-PULLBACK-LONG-20261022",
@@ -85,1321 +85,650 @@
       "direction": "avoid"
     }
   ],
-  "regime": "china_wed_eod_public_chinext_plus_3_11_nikkei_61248_59_kospi_5375_36_hk_down_cmdty_engine_wed_official_futures_failed_ifind_quota_again_monday_official_ma_cu_and_false_cu_backwardation_minus_2_05_sina_ma3159_px8410_cu105820_bu4282_ec2485_5_public_only_us_cash_2230_not_open_msft_lags_googl_tue_pair_failed_cpi_already_released_night_21_not_started_no_risk",
+  "regime": "china_thu_eod_public_riskoff_chinext_down_wind_wed_vendor_close_wed_night_in_pin_not_official_ma_cu_gates_false_us_cash_not_open_no_risk",
   "gates": {
     "MA_AND": false,
     "CU_AND": false,
     "MA_close_ge_3485": false,
     "MA_settle_ge_3485": false,
-    "PX_ge_9850": false,
+    "PX_close_ge_9850": false,
+    "PX_settle_ge_9850": false,
     "MA_curve_gap_retention_clearance": false,
-    "MA_curve_ge_4_50pct": false,
     "CU_close_ge_109600": false,
     "CU_settle_ge_109600": false,
     "CU_curve_contango_ge_0_65pct": false,
     "BU_pullback_long": false,
     "EC_high_conviction_execute": false,
+    "EC_execute": false,
+    "options_execution_ready": false,
     "us_cash_pair_trigger": false,
     "monday_us_cash_msft_outperformed_googl": true,
     "tuesday_us_cash_msft_outperformed_googl": false,
+    "wednesday_us_cash_msft_outperformed_googl": false,
+    "thursday_us_cash_open": false,
     "china_day_open": true,
     "china_day_complete": true,
-    "tuesday_china_day_complete": true,
-    "wednesday_china_day_complete": true,
-    "sunday_night_newly_published": false,
-    "monday_night_vendor_published": true,
-    "monday_night_official_close_verified": false,
-    "tuesday_night_vendor_published": true,
-    "tuesday_night_official_close_verified": false,
-    "tuesday_official_futures_available": false,
+    "thursday_china_day_complete_public": true,
+    "thursday_china_day_in_engines": false,
     "wednesday_official_futures_available": false,
-    "wednesday_night_21_started": false,
-    "nfp_released": true,
+    "wednesday_wind_vendor_close_in_pin": true,
+    "wednesday_night_in_pin": true,
+    "wednesday_night_official_close_verified": false,
+    "thursday_night_21_started": false,
     "us_cash_open": false,
-    "us_tuesday_cash_complete": true,
-    "us_wednesday_cash_open": false,
+    "us_wednesday_cash_complete": true,
     "us_cpi_released": true,
-    "japan_korea_wednesday_open": true,
-    "japan_korea_wednesday_complete": true
+    "nfp_released": true
   },
-  "official_commodity_trade_date": "2026-11-09",
-  "night_session_date": "2026-11-10",
-  "options_date": "2026-11-10",
-  "stock_engine_trade_date": "2026-11-09",
+  "official_commodity_trade_date": null,
+  "wind_vendor_commodity_trade_date": "2026-11-11",
+  "night_session_date": "2026-11-11",
+  "options_date": "2026-11-11",
+  "stock_engine_trade_date": "2026-11-11",
   "us_cpi": {
-    "status": "released",
-    "cpi_u_sa_mom_pct": 0.4,
-    "core_cpi_sa_mom_pct": 0.3,
-    "cpi_u_sa_mom_sep_pct": 0.6,
-    "food_sa_mom_pct": 0.5,
-    "energy_sa_mom_pct": 0.7,
-    "gasoline_sa_mom_pct": 1.0,
-    "shelter_sa_mom_pct": 0.3,
-    "source": "https://www.bls.gov/news.release/cpi.nr0.htm",
-    "release_id": "USDL-26-1685",
-    "cpi_u_nsa_index": 337.511,
-    "cpi_u_nsa_mom_pct": 0.2,
-    "cpi_w_nsa_index": 331.147,
-    "yoy_official": null,
-    "next_release": "2026-12-10 08:30 ET"
+    "released": true,
+    "note": "Official October CPI already released earlier this week; not a new 19:50 print"
   },
-  "us_cash_tuesday": {
-    "SPX": 7520.93,
-    "SPX_chg_pct": -0.38,
-    "NDX_COMP": 25065.8744,
-    "NDX_COMP_chg_pct": -0.74,
-    "DJIA": 52231.8906,
-    "DJIA_chg_pct": -0.3,
-    "MSFT": 533.16,
-    "MSFT_chg_pct": -2.2,
-    "GOOGL": 287.38,
-    "GOOGL_chg_pct": -0.27,
-    "NVDA": 168.89,
-    "NVDA_chg_pct": -5.47,
-    "VIX": 19.46,
-    "VIX_chg_pct": -2.31
+  "us_cash_wednesday": {
+    "SPX": {
+      "last": 7619.38,
+      "chg_pct": 1.31
+    },
+    "NDX_chg_pct": 2.28,
+    "Nasdaq_chg_pct": 1.6,
+    "Dow": {
+      "last": 52486.49,
+      "chg_pct": 0.49
+    },
+    "VIX": 17.58,
+    "MSFT": {
+      "last": 521.13,
+      "chg_pct": -2.26
+    },
+    "GOOGL": {
+      "last": 293.45,
+      "chg_pct": 2.11
+    },
+    "NVDA": {
+      "last": 173.73,
+      "chg_pct": 2.87
+    },
+    "note": "Wednesday cash last-good from this morning's report; not restated as Thursday cash"
   },
   "core_day_quotes": {
-    "MA2701": {
-      "contract": "MA2701",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 3194.0,
-      "settle": 3247.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
+    "source": "China-Commodities-Engine Wind vendor execution_prices + products",
+    "source_date": "2026-11-11",
+    "provider": "wind",
+    "official_complete": false,
+    "snapshot_id": "sha256:dc15c266629bf867613debef07ee3e438d1a65842a661f70f343b9b3621ebeb9",
+    "observed_at": "2026-11-11T22:07:47.725091+08:00",
+    "quotes": {
+      "MA2701": {
+        "close": 3159.0,
+        "settle": 3114.0,
+        "settle_return_1d_pct": -0.2242870874719638
+      },
+      "MA2612": {
+        "close": 3397.0,
+        "settle": 3344.0
+      },
+      "PX2701": {
+        "close": 8410.0,
+        "settle": 8324.0,
+        "settle_return_1d_pct": -0.35910940866650254
+      },
+      "CU2612": {
+        "close": 105820.0,
+        "settle": 105230.0,
+        "settle_return_1d_pct": -0.613902531167354
+      },
+      "CU2611": {
+        "close": 107800.0,
+        "settle": 107370.0
+      },
+      "CU2701": {
+        "close": 104600.0,
+        "settle": 104000.0
+      },
+      "EC2612": {
+        "close": 2485.5,
+        "settle": 2469.0,
+        "settle_return_1d_pct": 3.4786253143336054
+      },
+      "EC2611": {
+        "close": 2160.5,
+        "settle": 2167.0
+      },
+      "BU2701": {
+        "close": 4282.0,
+        "settle": 4226.0,
+        "settle_return_1d_pct": -1.6294227188081933
+      },
+      "BU2612": {
+        "close": 4495.0,
+        "settle": 4442.0
+      }
     },
-    "MA2612": {
-      "contract": "MA2612",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 3389.0,
-      "settle": 3439.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "MA2611": {
-      "contract": "MA2611",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 3511.0,
-      "settle": 3523.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "MA2702": {
-      "contract": "MA2702",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 3051.0,
-      "settle": 3106.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "PX2701": {
-      "contract": "PX2701",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 8478.0,
-      "settle": 8564.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "PX2612": {
-      "contract": "PX2612",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 8648.0,
-      "settle": 8730.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "PX2702": {
-      "contract": "PX2702",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 8352.0,
-      "settle": 8444.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "CU2612": {
-      "contract": "CU2612",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 105500.0,
-      "settle": 105350.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "CU2611": {
-      "contract": "CU2611",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 107430.0,
-      "settle": 107550.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "CU2701": {
-      "contract": "CU2701",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 104350.0,
-      "settle": 104200.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2612": {
-      "contract": "EC2612",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 2351.5,
-      "settle": 2317.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2611": {
-      "contract": "EC2611",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 2174.5,
-      "settle": 2174.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2701": {
-      "contract": "EC2701",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 2494.5,
-      "settle": 2459.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2703": {
-      "contract": "EC2703",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 1675.0,
-      "settle": 1680.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2704": {
-      "contract": "EC2704",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 1626.0,
-      "settle": 1642.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2706": {
-      "contract": "EC2706",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 2055.0,
-      "settle": 2043.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "EC2709": {
-      "contract": "EC2709",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 1702.0,
-      "settle": 1667.5,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "BU2701": {
-      "contract": "BU2701",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 4421.0,
-      "settle": 4459.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "BU2612": {
-      "contract": "BU2612",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 4610.0,
-      "settle": 4630.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "BU2611": {
-      "contract": "BU2611",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 4994.0,
-      "settle": 5089.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "BU2702": {
-      "contract": "BU2702",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 4354.0,
-      "settle": 4403.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AU2612": {
-      "contract": "AU2612",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 882.76,
-      "settle": 877.06,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AU2611": {
-      "contract": "AU2611",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 882.22,
-      "settle": 883.1,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AU2701": {
-      "contract": "AU2701",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 884.42,
-      "settle": 878.62,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AG2612": {
-      "contract": "AG2612",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 12593.0,
-      "settle": 12553.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AG2611": {
-      "contract": "AG2611",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 12579.0,
-      "settle": 12671.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "AG2702": {
-      "contract": "AG2702",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 12632.0,
-      "settle": 12610.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "SC2612": {
-      "contract": "SC2612",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 631.0,
-      "settle": 637.6,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "SC2701": {
-      "contract": "SC2701",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 624.0,
-      "settle": 630.7,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "TA2701": {
-      "contract": "TA2701",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 6050.0,
-      "settle": 6110.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "PF2701": {
-      "contract": "PF2701",
-      "exchange": "CZCE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 7714.0,
-      "settle": 7794.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "FU2701": {
-      "contract": "FU2701",
-      "exchange": "SHFE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 4140.0,
-      "settle": 4271.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    },
-    "LU2701": {
-      "contract": "LU2701",
-      "exchange": "INE",
-      "source": "ifind_http",
-      "source_date": "2026-11-09",
-      "close": 5086.0,
-      "settle": 5151.0,
-      "pre_settle": null,
-      "change": null,
-      "volume": null,
-      "oi": null,
-      "price_types_present": [
-        "close",
-        "settle"
-      ],
-      "note": "execution_prices snapshot contains close and settle only; pre_settle/volume/OI not in this day quote list",
-      "official_match_note": "Retained Monday 2026-11-09 official-matched execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (same bytes as this morning). This evening package futures_crosscheck trade_date=2026-11-11 state=unavailable (iFinD -4318). Do not treat as Wednesday official EOD."
-    }
+    "cu_contango_vs_cu2701_settle_pct": -1.1688681934809466,
+    "cu_contango_vs_cu2611_settle_pct": -1.9931079444910123
   },
   "core_night_quotes": {
-    "MA701": {
-      "contract": "MA701",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 3105.0,
-      "night_last_price": 3105.0,
-      "return_vs_settlement_pct": -4.373267631659994,
-      "source_timestamp": "2026-11-10T23:00:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "MA612": {
-      "contract": "MA612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 3328.0,
-      "night_last_price": 3328.0,
-      "return_vs_settlement_pct": -3.2276824658330927,
-      "source_timestamp": "2026-11-10T23:00:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "MA611": {
-      "contract": "MA611",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 3800.0,
-      "night_last_price": 3800.0,
-      "return_vs_settlement_pct": 7.862617087709345,
-      "source_timestamp": "2026-11-10T22:59:08+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "PX701": {
-      "contract": "PX701",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 8320.0,
-      "night_last_price": 8320.0,
-      "return_vs_settlement_pct": -2.84913591779542,
-      "source_timestamp": "2026-11-10T23:00:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "PX612": {
-      "contract": "PX612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 8474.0,
-      "night_last_price": 8474.0,
-      "return_vs_settlement_pct": -2.9324169530355104,
-      "source_timestamp": "2026-11-10T22:59:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "CU2612": {
-      "contract": "CU2612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 104510.0,
-      "night_last_price": 104510.0,
-      "return_vs_settlement_pct": -0.7973421926910307,
-      "source_timestamp": "2026-11-11T00:59:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "CU2611": {
-      "contract": "CU2611",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 106680.0,
-      "night_last_price": 106680.0,
-      "return_vs_settlement_pct": -0.8089260808926135,
-      "source_timestamp": "2026-11-11T00:59:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "CU2701": {
-      "contract": "CU2701",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 103210.0,
-      "night_last_price": 103210.0,
-      "return_vs_settlement_pct": -0.9500959692898325,
-      "source_timestamp": "2026-11-11T00:59:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "EC2612": {
-      "contract": "EC2612",
-      "record_state": "outside_night_window",
-      "quality_state": "not_applicable",
-      "night_close": 2406.0,
-      "night_last_price": 2406.0,
-      "return_vs_settlement_pct": null,
-      "source_timestamp": "2026-11-10T18:42:14+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "EC2611": {
-      "contract": "EC2611",
-      "record_state": "outside_night_window",
-      "quality_state": "not_applicable",
-      "night_close": 2173.0,
-      "night_last_price": 2173.0,
-      "return_vs_settlement_pct": null,
-      "source_timestamp": "2026-11-10T18:42:14+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "EC2701": {
-      "contract": "EC2701",
-      "record_state": "outside_night_window",
-      "quality_state": "not_applicable",
-      "night_close": 2587.5,
-      "night_last_price": 2587.5,
-      "return_vs_settlement_pct": null,
-      "source_timestamp": "2026-11-10T18:42:14+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "EC2703": {
-      "contract": "EC2703",
-      "record_state": "outside_night_window",
-      "quality_state": "not_applicable",
-      "night_close": 1660.5,
-      "night_last_price": 1660.5,
-      "return_vs_settlement_pct": null,
-      "source_timestamp": "2026-11-10T18:42:14+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "BU2701": {
-      "contract": "BU2701",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 4255.0,
-      "night_last_price": 4255.0,
-      "return_vs_settlement_pct": -4.575016819914779,
-      "source_timestamp": "2026-11-10T23:00:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "BU2612": {
-      "contract": "BU2612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 4463.0,
-      "night_last_price": 4463.0,
-      "return_vs_settlement_pct": -3.606911447084238,
-      "source_timestamp": "2026-11-10T22:59:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "BU2611": {
-      "contract": "BU2611",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 4900.0,
-      "night_last_price": 4900.0,
-      "return_vs_settlement_pct": -3.7138927097661645,
-      "source_timestamp": "2026-11-10T22:59:55+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "AU2612": {
-      "contract": "AU2612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 865.46,
-      "night_last_price": 865.46,
-      "return_vs_settlement_pct": -1.3226005062367374,
-      "source_timestamp": "2026-11-11T02:30:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "AU2611": {
-      "contract": "AU2611",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 888.06,
-      "night_last_price": 888.06,
-      "return_vs_settlement_pct": 0.561657796399051,
-      "source_timestamp": "2026-11-11T02:29:59+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "AG2612": {
-      "contract": "AG2612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 12265.0,
-      "night_last_price": 12265.0,
-      "return_vs_settlement_pct": -2.2942722855094355,
-      "source_timestamp": "2026-11-11T02:30:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "AG2702": {
-      "contract": "AG2702",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 12305.0,
-      "night_last_price": 12305.0,
-      "return_vs_settlement_pct": -2.418715305313246,
-      "source_timestamp": "2026-11-11T02:30:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "SC2612": {
-      "contract": "SC2612",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 604.4,
-      "night_last_price": 604.4,
-      "return_vs_settlement_pct": -5.207026348808041,
-      "source_timestamp": "2026-11-11T02:30:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
-    },
-    "SC2701": {
-      "contract": "SC2701",
-      "record_state": "night_session",
-      "quality_state": "fresh",
-      "night_close": 590.2,
-      "night_last_price": 590.2,
-      "return_vs_settlement_pct": -6.421436499127953,
-      "source_timestamp": "2026-11-11T02:30:00+08:00",
-      "official_night_close_verified": false,
-      "price_semantics": "vendor_latest_trade_asof_snapshot"
+    "source": "China-Commodities-Engine data/night_session/latest.json",
+    "price_semantics": "last_completed_bar_close",
+    "official_night_close_verified": false,
+    "trading_date": "2026-11-12",
+    "night_session_date": "2026-11-11",
+    "generated_at": "2026-11-12T09:49:29.290479+08:00",
+    "tonight_thursday_21_00": "not_started",
+    "quotes": {
+      "MA2701": {
+        "night_close": 3166.0,
+        "prior_eod_close": 3159.0,
+        "prior_eod_settle": 3114.0,
+        "return_vs_close_pct": 0.22158911047800434,
+        "volume": 1203036.0,
+        "source_timestamp": "2026-11-11T23:00:00+08:00"
+      },
+      "CU2612": {
+        "night_close": 105560.0,
+        "prior_eod_close": 105820.0,
+        "prior_eod_settle": 105230.0,
+        "return_vs_close_pct": -0.24570024570024218,
+        "volume": 28332.0,
+        "source_timestamp": "2026-11-12T01:00:00+08:00"
+      },
+      "EC2612": {
+        "record_state": "no_night_trade",
+        "night_close": null,
+        "prior_eod_close": 2485.5,
+        "prior_eod_settle": 2469.0
+      },
+      "BU2701": {
+        "night_close": 4295.0,
+        "prior_eod_close": 4282.0,
+        "prior_eod_settle": 4226.0,
+        "return_vs_close_pct": 0.3035964502568822,
+        "volume": 106604.0,
+        "source_timestamp": "2026-11-11T23:00:00+08:00"
+      }
     }
   },
-  "index_futures_official_tuesday": {
-    "IH": {
-      "symbol": "IH2612",
-      "close": 2751.2,
-      "settle": 2754.6,
-      "pre_settle": 2767.8,
-      "change_pct": -0.005997543175085036,
-      "volume": 22756.0,
-      "open_interest": 61472.0,
-      "oi_change": -1542.0,
-      "cash_index_code": "000016",
-      "cash_index_close": 2772.96,
-      "cash_index_change_pct": -0.0058,
-      "cash_basis_points": -21.76000000000022,
-      "front_symbol": "IH2611",
-      "front_close": 2771.0,
-      "front_settle": 2773.6
+  "index_futures_official_wednesday": {
+    "source": "China-Options-Engine official CFFEX 2026-11-11",
+    "IH2612": {
+      "close": 2742.2,
+      "settle": 2746.0,
+      "chg_pct": -0.004501561025194254,
+      "oi": 63192.0
     },
-    "IF": {
-      "symbol": "IF2612",
-      "close": 4024.6,
-      "settle": 4029.4,
-      "pre_settle": 4029.8,
-      "change_pct": -0.0012903866196834267,
-      "volume": 51996.0,
-      "open_interest": 173620.0,
-      "oi_change": -155.0,
-      "cash_index_code": "000300",
-      "cash_index_close": 4059.11,
-      "cash_index_change_pct": 0.0007000000000000001,
-      "cash_basis_points": -34.51000000000022,
-      "front_symbol": "IF2611",
-      "front_close": 4049.4,
-      "front_settle": 4055.2
+    "IF2612": {
+      "close": 4043.4,
+      "settle": 4048.6,
+      "chg_pct": 0.0034744626991611654
     },
-    "IC": {
-      "symbol": "IC2612",
-      "close": 6576.2,
-      "settle": 6595.6,
-      "pre_settle": 6549.4,
-      "change_pct": 0.004091977891104557,
-      "volume": 90676.0,
-      "open_interest": 169210.0,
-      "oi_change": -3813.0,
-      "cash_index_code": "000905",
-      "cash_index_close": 6645.89,
-      "cash_index_change_pct": 0.0091,
-      "cash_basis_points": -69.69000000000051,
-      "front_symbol": "IC2611",
-      "front_close": 6624.4,
-      "front_settle": 6637.0
+    "IC2612": {
+      "close": 6664.0,
+      "settle": 6671.8,
+      "chg_pct": 0.010370550063678761
     },
-    "IM": {
-      "symbol": "IM2612",
-      "close": 6516.6,
-      "settle": 6533.4,
-      "pre_settle": 6468.0,
-      "change_pct": 0.007513914656771856,
-      "volume": 165326.0,
-      "open_interest": 280266.0,
-      "oi_change": 430.0,
-      "cash_index_code": "000852",
-      "cash_index_close": 6579.36,
-      "cash_index_change_pct": 0.012199999999999999,
-      "cash_basis_points": -62.75999999999931,
-      "front_symbol": "IM2611",
-      "front_close": 6562.4,
-      "front_settle": 6575.0
+    "IM2612": {
+      "close": 6623.0,
+      "settle": 6628.4,
+      "chg_pct": 0.01371414577402277,
+      "oi": 290211.0
     }
   },
-  "public_wednesday": {
-    "china_equity": {
+  "public_thursday": {
+    "retrieved_bjt": "2026-11-12T19:53:34+08:00",
+    "retrieved_end_bjt": "2026-11-12T19:53:49+08:00",
+    "confirm_bjt": "2026-11-12T19:54:23+08:00",
+    "source": "Sina hq.sinajs.cn (public, not official engine/exchange file)",
+    "china_idx": {
       "s_sh000001": {
-        "last": 3680.6428,
-        "chg_pct": 0.46,
-        "name": "上证指数"
+        "name": "上证指数",
+        "last": 3655.8295,
+        "chg_pct": -0.67
       },
       "s_sz399001": {
-        "last": 11389.74,
-        "chg_pct": 1.32,
-        "name": "深证成指"
+        "name": "深证成指",
+        "last": 11197.98,
+        "chg_pct": -1.68
       },
       "s_sh000300": {
-        "last": 4075.7093,
-        "chg_pct": 0.41,
-        "name": "沪深300"
+        "name": "沪深300",
+        "last": 4043.9254,
+        "chg_pct": -0.78
       },
       "s_sz399006": {
-        "last": 2572.07,
-        "chg_pct": 3.11,
-        "name": "创业板指"
+        "name": "创业板指",
+        "last": 2509.43,
+        "chg_pct": -2.44
       },
       "s_sh000688": {
-        "last": 1300.3836,
-        "chg_pct": 2.8,
-        "name": "科创50"
+        "name": "科创50",
+        "last": 1309.8367,
+        "chg_pct": 0.73
       },
       "s_sh000905": {
-        "last": 6713.1819,
-        "chg_pct": 1.01,
-        "name": "中证500"
+        "name": "中证500",
+        "last": 6604.1534,
+        "chg_pct": -1.62
       },
       "s_sh000852": {
-        "last": 6669.5489,
-        "chg_pct": 1.37,
-        "name": "中证1000"
+        "name": "中证1000",
+        "last": 6537.8392,
+        "chg_pct": -1.97
+      },
+      "s_sz399673": {
+        "name": "创业板50",
+        "last": 2514.01,
+        "chg_pct": -2.75
       }
     },
     "hk": {
-      "HSI": {
-        "last": 24315.92,
-        "chg_pct": -0.98,
-        "date": "2026/11/11",
-        "time": "16:09:03"
-      },
-      "HSCEI": {
-        "last": 8171.45,
-        "chg_pct": -1.14,
-        "date": "2026/11/11",
-        "time": "16:08:28"
-      },
-      "HSTECH": {
-        "last": 4027.06,
-        "chg_pct": -1.41,
-        "date": "2026/11/11",
-        "time": "16:08:28"
-      }
+      "HSI": 24008.551,
+      "HSI_chg_pct": -1.26,
+      "HSCEI": 8056.76,
+      "HSCEI_chg_pct": -1.4,
+      "HSTECH": 3931.93,
+      "HSTECH_chg_pct": -2.36
     },
     "asia": {
-      "nikkei_official_reported": {
-        "last": 61248.59,
-        "chg": 789.01,
-        "chg_pct": 1.31,
-        "source": "public_news_money_today_ryt9_ilsole",
-        "sina_b_NKY": 61248.52
+      "nikkei_b_NKY": {
+        "last": 60819.14,
+        "chg": -429.45,
+        "chg_pct": -0.7,
+        "prev": 61248.59,
+        "date": "2026-11-12",
+        "time": "14:30:01",
+        "label": "public_source_not_exchange_official_page"
       },
-      "kospi": {
-        "last": 5375.36,
-        "chg": 136.23,
-        "chg_pct": 2.6,
-        "source": "Sina b_KOSPI; Yonhap close"
+      "kospi_b_KOSPI": {
+        "last": 5342.73,
+        "chg": -32.63,
+        "chg_pct": -0.61,
+        "prev": 5375.36,
+        "date": "2026-11-12",
+        "time": "14:32:50",
+        "label": "public_source_not_exchange_official_page"
       }
     },
-    "cmdty_sina_15_00": {
-      "MA2701": 3159.0,
-      "PX2701": 8410.0,
-      "CU2612": 105820.0,
-      "CU2611": 107800.0,
-      "EC2612": 2485.5,
-      "BU2701": 4282.0,
-      "SC2612": 604.0,
-      "AU2612": 873.3,
-      "date": "2026-11-11",
-      "time": "150000",
-      "attribute": "public_source_not_official_engine"
+    "cmdty_nf": {
+      "MA2701": {
+        "close": 3172.0,
+        "settle": 3163.0,
+        "pre_settle": 3114.0,
+        "date": "2026-11-12"
+      },
+      "PX2701": {
+        "close": 8448.0,
+        "settle": 8384.0,
+        "pre_settle": 8324.0,
+        "date": "2026-11-12"
+      },
+      "CU2612": {
+        "close": 104950.0,
+        "settle": 105140.0,
+        "pre_settle": 105230.0,
+        "date": "2026-11-12"
+      },
+      "CU2611": {
+        "close": 107870.0,
+        "settle": 107740.0,
+        "pre_settle": 107370.0,
+        "date": "2026-11-12"
+      },
+      "EC2612": {
+        "close": 2477.5,
+        "settle": 2448.5,
+        "pre_settle": 2469.0,
+        "date": "2026-11-12"
+      },
+      "BU2701": {
+        "close": 4330.0,
+        "settle": 4286.0,
+        "pre_settle": 4226.0,
+        "date": "2026-11-12"
+      },
+      "AU2612": {
+        "close": 852.5,
+        "settle": 860.46,
+        "pre_settle": 870.5,
+        "date": "2026-11-12"
+      }
     },
-    "cffex_sina_15_00_last_only": {
-      "IH2612": 2742.2,
-      "IF2612": 4043.4,
-      "IC2612": 6664.0,
-      "IM2612": 6623.0,
-      "date": "2026-11-11",
-      "time": "15:00:00",
-      "attribute": "public_last_not_official_settle"
+    "cu_public_contango_vs_cu2611_settle_pct": -2.4132170038982736,
+    "cffex_nf_last": {
+      "IH2612": 2739.4,
+      "IF2612": 4002.4,
+      "IC2612": 6538.4,
+      "IM2612": 6480.4
     },
-    "near_cutoff_fx_futures": {
-      "hf_ES": 7611.75,
-      "hf_NQ": 28358.0,
-      "hf_YM": 52433.0,
-      "hf_CL": 86.682,
-      "hf_XAU": 4047.21,
-      "fx_seurusd": 1.1136,
-      "fx_susdjpy": 159.12,
-      "fx_susdcnh": 6.6673
-    }
+    "fx_futures": {
+      "USDCNH": 6.6679,
+      "EURUSD": 1.1088,
+      "USDJPY": 159.71,
+      "XAU": 3944.5,
+      "GC": 3950.1,
+      "CL": 85.96,
+      "ES": 7607.75,
+      "ES_ref": 7616.75,
+      "NQ": 28226.75,
+      "NQ_ref": 28306.25,
+      "YM": 52571.0,
+      "YM_ref": 52574.0,
+      "DXY": null,
+      "VIX": null
+    },
+    "discarded": [
+      "int_dji/int_nasdaq/int_sp500 stale 46247.29/22484.07/6643.70",
+      "int_nikkei stale 44946.64",
+      "gb_* US names still show Wednesday cash with Thursday clock and are not Thursday session prints",
+      "hf_DXY/fx_sdxy empty",
+      "gb_vix/hf_VIX empty"
+    ]
   },
   "engine_notes": {
-    "commodities_day": "pin 61c89422880c91041c2c368c44036e0a989da28c NEW vs this morning cf22e05a…; committer 2026-11-11T11:13:46Z / 19:13:46 BJT. last_run_status generated_at 2026-11-11T19:03:55.121803+08:00 run_date 2026-11-11; IFindHTTPError -4318 all five exchanges again; official_complete=false data_fresh=false full_market_ready=false. report_input 1308224 bytes sha256 fd52b568a0919ee0f1d47f384dd1ba56275c9b5e99f49e13c7e1609d974fbc5d git_blob ea955a6245ab0d3f95322dd19b7b2f8826f2c234; generated_at 2026-11-11T19:13:45.763841+08:00; requested_date/futures.trade_date 2026-11-09; futures metadata contract_count=806 verified=true full_market_ready=true provider=ifind generated_at 2026-11-10T06:01:31.370692+08:00; futures object in this package has no contracts array (file smaller than this morning’s 2257567-byte package); official close/settle taken from retained execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 quotes=1492 rejected=60. futures_crosscheck trade_date 2026-11-11 state=unavailable. Commodity options trade_date 2026-11-10 record_count=1078 core_atm_ready_count=0 execution_ready=false. Official gates retained Monday: MA2701 3194/3247, PX2701 8478/8564, CU2612 105500/105350, CU2611 107430/107550, CU settle contango −2.0456%, EC2612 2351.5/2317.5, BU2701 4421/4459, SC2612 631.0/637.6, AU2612 882.76/877.06. MA_AND=false CU_AND=false. Public Sina Wednesday 15:00 (not official): MA2701 3159, PX2701 8410, CU2612 105820, CU2611 107800, public curve ≈ −1.84% backwardation, EC2612 2485.5, BU2701 4282, SC2612 604.0, AU2612 873.3.",
-    "commodities_night": "same pin; night latest 1613570 bytes sha256 d8061077799fac523a12981beb14d6a0da7dadc527338b36844a040bfcc6aaf2 git_blob 27310416c755e59afb6458fb09a2f532892de83a; BYTE-IDENTICAL to this morning. generated_at 2026-11-11T06:04:09.064202+08:00; trading_date 2026-11-11; night_session_date 2026-11-10; window Tue 20:00–Wed 03:45; coverage 51.737% (417 night_session / 214 query_error / 169 outside_night_window / 6 no_night_trade); official_night_close_verified=false; price_semantics=vendor_latest_trade_asof_snapshot; execution_usable=false; Wednesday 21:00 not_started / not_due and does not count as missing tonight data; EC2612 record_state=outside_night_window. Vendor prints observation-only, unchanged: MA701 3105, PX701 8320, CU2612 104510, CU2611 106680, night curve ≈ −2.03%, BU2701 4255, SC2612 604.4, AU2612 865.46.",
-    "stock": "pin 8e61b672d10566406a25bb437a2f46f01d36e2c8 NEW vs this morning 35894a84…; committer 2026-11-11T00:32:31Z / 08:32:31 BJT “data: attempt”. last_run_status state=failed_backfill data_fresh=false; requested 2026-11-10; IFindHTTPError -4318; last_valid_trade_date still 2026-11-09. manifest trade_date / quote_dates = 2026-11-09 (Monday), quotes 5573 coverage 0.998925 quality.ok=true, data_fresh=true means Monday not Tuesday or Wednesday; opportunity_radar rows=0 valid_zero; adjustment coverage 0.0 missing; industry/index_prices/tradability missing. Wednesday A-share/index EOD taken from public Sina s_* (15:00 complete) and labeled public-source, not China-Stock-Engine.",
-    "options": "pin a0e62a62c78b3fc3432303153408bfe4e818d69a UNCHANGED vs this morning; radar_latest 72829 bytes sha256 f4d712645fa5283377abbbf6050d2ffd948e888cb1c864484487cba4df88aafc git_blob a872b6e5fed5a9de57560b12fe86e82a9bc05aa3 BYTE-IDENTICAL to this morning. date 2026-11-10 generated_at 2026-11-11T07:21:19.035680+08:00; data_fresh=true means Tuesday not Wednesday; CFFEX official 760 match coverage 1.0; products HO/IO/MO; IC has no direct option. Tuesday official futures closes IH2612/IF2612/IC2612/IM2612 2751.2/4024.6/6576.2/6516.6, settles 2754.6/4029.4/6595.6/6533.4. Wednesday CFFEX 15:00 prints in this packet are Sina public last only (IH2612 2742.2, IF2612 4043.4, IC2612 6664.0, IM2612 6623.0) and are labeled separately; field-14 in the Sina packet matches Tuesday settle and is not used as Wednesday official settle."
+    "commodities_day": "pin 8a90894669b56b6f7975d44795b04ffa7c610e8a NEW vs this morning 7f596fae…; committer 2026-11-12T01:49:38Z / 09:49:38 BJT. last_run_status generated_at 2026-11-11T22:07:47.725091+08:00 run_date 2026-11-11; primary_provider=wind; official_complete=false; full_market_ready=true; five exchanges ok source_date 2026-11-11. report_input 1304997 bytes sha256 5e487bd5e31987b2b4b7adada85b63d3030309376d337a38d7e75e42cc2ae285 git_blob 512011f45d426aa13cd7b93c91d8b64d8c49cb92; generated_at 2026-11-12T09:49:31.280706+08:00; requested_date/futures.trade_date 2026-11-11; contract_count=806 verified=true provider=wind. execution_prices snapshot sha256:dc15c266629bf867613debef07ee3e438d1a65842a661f70f343b9b3621ebeb9 quotes=1612 rejected=0. futures_crosscheck state=unavailable. MA_AND=false CU_AND=false on vendor Wednesday and on Thursday public prints.",
+    "commodities_night": "night_session/latest 1572145 bytes sha256 9cd735482ec4d594abd1c4e4eb823a792f8ffc179db5459364e634ac9b4a5709 git_blob 82b1bf15c2c3b819596ba96bc512ac3a168a5b28; generated_at 2026-11-12T09:49:29.290479+08:00; price_semantics=last_completed_bar_close; official_night_close_verified=false; coverage 61.0422%; this is completed Wednesday night, not tonight 21:00.",
+    "stock": "pin unchanged 8b496efb…; success_wind_publication; trade_date=2026-11-11; quotes=5580 quality.ok=true; opportunity_radar rows=36; market_summary advancers=3538 decliners=1828 equal_weight +1.14% is Wednesday, not Thursday.",
+    "options": "pin unchanged a4c16a18…; date=2026-11-11; official CFFEX 760/760; data/radar_latest 72770 bytes sha256 6ae5f3be45f9e4d11faf0b3ea2da9438c9cfde45833a851b62bb8f25dfc460ad git_blob 27a4817628558a3fcb2d26bb2484319f12ac931a; execution_ready=false."
   },
   "engine_read_receipts": {
-    "schema_note": "Short real attempt receipts nested in existing JSON fields. Not a seventh archive file. read_status ok vs freshness recorded separately.",
-    "research_cutoff_bjt": "2026-11-11T19:49:20+08:00",
-    "research_cutoff_utc": "2026-11-11T11:49:20Z",
-    "receipts_written_bjt": "2026-11-11T20:05:00+08:00",
+    "schema_note": "Research-only engine/archive read receipts. Not a seventh formal archive file.",
+    "research_cutoff_bjt": "2026-11-12T19:50:13+08:00",
+    "research_cutoff_utc": "2026-11-12T11:50:13Z",
+    "receipts_written_bjt": "2026-11-12T20:05:00+08:00",
+    "helper_note": "helper_05fe583 fixture tests 17/17 passed. Helper handoff accepts only asset_path (no invented inline-JSON field). Large cores used write_to_file raw assets whose filename stem equals sha256 and which parsed as complete UTF-8 JSON with no source wrapper. Small write_to_file retries returned wrapped redacted artifacts (local_serialization_error, not used as raw/blob proof). Small-file fields come from the earlier complete inline get_file_contents JSON (field-validated; canonical re-encoding is not git-blob identity).",
     "method_default": "parent-pinned cursor-github get_file_contents; large files as raw UTF-8 assets hashed this run; small files complete inline JSON (field-validated, not git-blob identity).",
     "contents_transport": "contents",
     "head_changed_after_pin": false,
-    "pins": {
-      "China-Commodities-Engine": "61c89422880c91041c2c368c44036e0a989da28c",
-      "China-Stock-Engine": "8e61b672d10566406a25bb437a2f46f01d36e2c8",
-      "China-Options-Engine": "a0e62a62c78b3fc3432303153408bfe4e818d69a"
-    },
     "files": [
       {
         "repo": "farfromexact/China-Commodities-Engine",
         "path": "data/last_run_status.json",
-        "requested_ref": "61c89422880c91041c2c368c44036e0a989da28c",
+        "requested_ref": "8a90894669b56b6f7975d44795b04ffa7c610e8a",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents inline complete JSON",
-        "generated_at": "2026-11-11T19:03:55.121803+08:00",
+        "write_to_file_retry": "actual_local_serialization_error: saved artifact started with source wrapper; not used as raw proof",
+        "generated_at": "2026-11-11T22:07:47.725091+08:00",
         "run_date": "2026-11-11",
-        "data_fresh_flag": false,
+        "primary_provider": "wind",
+        "data_fresh_flag": true,
         "official_complete": false,
-        "full_market_ready": false,
-        "primary_error": "IFindHTTPError -4318 monthly usage exceeded all five exchanges",
+        "core_futures_official_complete": false,
+        "scope_official_complete": false,
+        "full_market_ready": true,
+        "futures_modules": "SHFE/INE/DCE/CZCE/GFEX all ok, source_trade_date=2026-11-11, source_date_match=true, WindPy.wsd",
         "research_usable": true,
         "execution_usable": false,
-        "freshness": "wednesday_official_futures_failed_quota_again_not_a_new_eod"
+        "freshness": "wednesday_2026-11-11_wind_vendor_close_not_official_exchange_file_not_thursday_eod"
       },
       {
         "repo": "farfromexact/China-Commodities-Engine",
         "path": "data/night_session/last_run_status.json",
-        "requested_ref": "61c89422880c91041c2c368c44036e0a989da28c",
+        "requested_ref": "8a90894669b56b6f7975d44795b04ffa7c610e8a",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents inline complete JSON",
-        "generated_at": "2026-11-11T06:04:09.064202+08:00",
-        "trading_date": "2026-11-11",
-        "night_session_date": "2026-11-10",
-        "coverage_pct": 51.737,
-        "official_night_close_verified": false,
+        "write_to_file_retry": "actual_local_serialization_error: saved artifact started with source wrapper; not used as raw proof",
+        "generated_at": "2026-11-12T09:49:29.290479+08:00",
+        "trading_date": "2026-11-12",
+        "night_session_date": "2026-11-11",
+        "coverage_pct": 61.0422,
         "data_fresh_flag": true,
+        "validation_passed": true,
         "published": true,
-        "tonight_wednesday_21_00": "not_started",
+        "coverage_complete": true,
+        "source_provider": "wind",
+        "official_night_close_verified": false,
+        "tonight_thursday_21_00": "not_started",
         "counts_as_missing_for_tonight": false,
         "research_usable": true,
         "execution_usable": false,
-        "freshness": "completed_tuesday_night_vendor_snapshot_not_official_close_unchanged_vs_morning"
+        "freshness": "completed_wednesday_night_thursday_morning_wind_session_not_official_close_and_not_tonight_21_00"
       },
       {
         "repo": "farfromexact/China-Commodities-Engine",
         "path": "data/report_input_latest.json",
-        "requested_ref": "61c89422880c91041c2c368c44036e0a989da28c",
+        "requested_ref": "8a90894669b56b6f7975d44795b04ffa7c610e8a",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents raw asset; UTF-8 length/sha256/git_blob/JSON verified",
-        "bytes": 1308224,
-        "sha256": "fd52b568a0919ee0f1d47f384dd1ba56275c9b5e99f49e13c7e1609d974fbc5d",
-        "git_blob": "ea955a6245ab0d3f95322dd19b7b2f8826f2c234",
+        "bytes": 1304997,
+        "sha256": "5e487bd5e31987b2b4b7adada85b63d3030309376d337a38d7e75e42cc2ae285",
+        "git_blob": "512011f45d426aa13cd7b93c91d8b64d8c49cb92",
         "wrapper_detected": false,
         "filename_matches_sha256": true,
-        "generated_at": "2026-11-11T19:13:45.763841+08:00",
-        "requested_date": "2026-11-09",
-        "futures_trade_date": "2026-11-09",
+        "generated_at": "2026-11-12T09:49:31.280706+08:00",
+        "requested_date": "2026-11-11",
+        "futures_trade_date": "2026-11-11",
         "futures_contract_count": 806,
-        "futures_block_note": "New Wednesday 19:13 package is smaller than this morning (1308224 vs 2257567) because the futures object no longer carries the full contract array; metadata still reports contract_count=806, trade_date=2026-11-09, generated_at=2026-11-10T06:01:31.370692+08:00, verified=true, provider=ifind. Official close/settle taken from retained execution_prices snapshot sha256:c2bb4f074876c94443ff04cfbdc426b9eaaacf8c67ec6675b1ec821fbe995881 (quotes=1492, rejected=60, identical snapshot id to this morning).",
+        "futures_provider": "wind",
+        "futures_verified": true,
+        "full_market_ready": true,
+        "official_complete": false,
+        "execution_snapshot_id": "sha256:dc15c266629bf867613debef07ee3e438d1a65842a661f70f343b9b3621ebeb9",
+        "execution_quotes": 1612,
+        "execution_rejected": 0,
+        "execution_usage": "dated_reference_only_revalidate_for_live_orders",
+        "futures_crosscheck_state": "unavailable",
         "research_usable": true,
         "execution_usable": false,
-        "freshness": "retained_monday_official_futures_in_wednesday_evening_package"
+        "freshness": "wednesday_2026-11-11_wind_vendor_eod_packaged_thursday_morning_not_thursday_day_session"
       },
       {
         "repo": "farfromexact/China-Commodities-Engine",
         "path": "data/night_session/latest.json",
-        "requested_ref": "61c89422880c91041c2c368c44036e0a989da28c",
+        "requested_ref": "8a90894669b56b6f7975d44795b04ffa7c610e8a",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents raw asset; UTF-8 length/sha256/git_blob/JSON verified",
-        "bytes": 1613570,
-        "sha256": "d8061077799fac523a12981beb14d6a0da7dadc527338b36844a040bfcc6aaf2",
-        "git_blob": "27310416c755e59afb6458fb09a2f532892de83a",
+        "bytes": 1572145,
+        "sha256": "9cd735482ec4d594abd1c4e4eb823a792f8ffc179db5459364e634ac9b4a5709",
+        "git_blob": "82b1bf15c2c3b819596ba96bc512ac3a168a5b28",
         "wrapper_detected": false,
         "filename_matches_sha256": true,
-        "identical_to_this_morning": true,
-        "price_semantics": "vendor_latest_trade_asof_snapshot",
+        "price_semantics": "last_completed_bar_close",
+        "ohlcv_scope": "completed_night_5min_bars",
         "official_night_close_verified": false,
-        "trading_date": "2026-11-11",
-        "night_session_date": "2026-11-10",
-        "generated_at": "2026-11-11T06:04:09.064202+08:00",
-        "tonight_wednesday_21_00": "not_started",
+        "trading_date": "2026-11-12",
+        "night_session_date": "2026-11-11",
+        "generated_at": "2026-11-12T09:49:29.290479+08:00",
+        "source_provider": "wind",
+        "source_endpoint": "WindPy.wsi",
+        "session_window": "2026-11-11T20:00:00+08:00/2026-11-12T03:45:00+08:00",
+        "tonight_thursday_21_00": "not_started",
         "research_usable": true,
         "execution_usable": false,
-        "freshness": "unchanged_tuesday_night_vendor_snapshot_not_official_close"
+        "freshness": "completed_wednesday_night_vendor_bars_not_official_close_not_tonight_21_00"
       },
       {
         "repo": "farfromexact/China-Stock-Engine",
         "path": "data/last_run_status.json",
-        "requested_ref": "8e61b672d10566406a25bb437a2f46f01d36e2c8",
+        "requested_ref": "8b496efb1a7ac54b901c223cb4a23e843ad37a65",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents inline complete JSON",
-        "state": "failed_backfill",
-        "last_valid_trade_date": "2026-11-09",
-        "requested_start": "2026-11-10",
-        "requested_end": "2026-11-10",
-        "data_fresh_flag": false,
-        "primary_error": "IFindHTTPError -4318 monthly usage exceeded",
-        "freshness": "monday_2026-11-09_eod_still_last_valid_tuesday_backfill_failed_not_wednesday",
-        "last_good": {
-          "sha": "35894a846deeef63b0b7501aeb98a9b184b01923",
-          "trade_date": "2026-11-09",
-          "reason": "Prior success_backfill remains the last validated official stock session; this pin's 08:32 BJT attempt to backfill 2026-11-10 failed and Wednesday cash had not closed at that commit time."
-        },
+        "write_to_file_retry": "actual_local_serialization_error: saved artifact started with source wrapper; not used as raw proof",
+        "state": "success_wind_publication",
+        "last_valid_trade_date": "2026-11-11",
+        "requested_trade_date": "2026-11-11",
+        "data_fresh_flag": true,
+        "provider": "windpy",
+        "completed_at_utc": "2026-11-11T14:19:43.935590+00:00",
+        "freshness": "wednesday_2026-11-11_wind_eod_not_thursday",
         "research_usable": true,
         "execution_usable": false
       },
       {
         "repo": "farfromexact/China-Stock-Engine",
         "path": "data/latest/manifest.json",
-        "requested_ref": "8e61b672d10566406a25bb437a2f46f01d36e2c8",
+        "requested_ref": "8b496efb1a7ac54b901c223cb4a23e843ad37a65",
         "read_status": "ok",
-        "read_method": "cursor-github get_file_contents inline complete JSON",
-        "trade_date": "2026-11-09",
+        "read_method": "cursor-github get_file_contents overflow raw asset; UTF-8 length/sha256/git_blob/JSON verified",
+        "bytes": 35426,
+        "sha256": "b275cc70c75bf89bb5222a3a2a10d9640a8edc559f962b428d5882b82020138a",
+        "git_blob": "235842771f8f594efa46f7beee900faa662601fd",
+        "wrapper_detected": false,
+        "filename_matches_sha256": true,
+        "trade_date": "2026-11-11",
+        "source_trade_date": "2026-11-11",
+        "requested_trade_date": "2026-11-11",
         "quote_dates": [
-          "2026-11-09"
+          "2026-11-11"
         ],
-        "quotes": 5573,
+        "quote_count": 5580,
         "quality_ok": true,
         "data_fresh_flag": true,
-        "opportunity_radar_rows": 0,
-        "opportunity_radar_note": "rows=0 is valid_zero, not actual_empty",
-        "freshness": "monday_2026-11-09_eod_not_tuesday_or_wednesday",
+        "verified": true,
+        "provider": "windpy",
+        "opportunity_radar_rows": 36,
+        "opportunity_radar_note": "rows=36 is a positive count, not valid_zero or actual_empty; research shards / parquet not fetched this run",
+        "freshness": "wednesday_2026-11-11_eod_not_thursday",
         "research_usable": true,
         "execution_usable": false
       },
       {
         "repo": "farfromexact/China-Options-Engine",
         "path": "data/last_run_status.json",
-        "requested_ref": "a0e62a62c78b3fc3432303153408bfe4e818d69a",
+        "requested_ref": "a4c16a18d16d039a30e9c162950096c9333a0a49",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents inline complete JSON",
-        "run_date": "2026-11-11",
-        "trade_date": "2026-11-10",
-        "generated_at": "2026-11-11T07:21:32.729286+08:00",
+        "write_to_file_retry": "actual_local_serialization_error: saved artifact started with source wrapper; not used as raw proof",
+        "run_date": "2026-11-12",
+        "trade_date": "2026-11-11",
+        "generated_at": "2026-11-12T07:16:54.027603+08:00",
         "data_fresh_flag": true,
         "official_quote_matches": 760,
         "official_quote_match_coverage": 1.0,
         "cffex_eod_status": "ok",
-        "freshness": "tuesday_2026-11-10_official_cffex_eod_unchanged_vs_morning",
+        "freshness": "wednesday_2026-11-11_official_cffex_eod_unchanged_vs_morning_not_thursday",
         "research_usable": true,
         "execution_usable": false
       },
       {
         "repo": "farfromexact/China-Options-Engine",
         "path": "data/radar_latest.json",
-        "requested_ref": "a0e62a62c78b3fc3432303153408bfe4e818d69a",
+        "requested_ref": "a4c16a18d16d039a30e9c162950096c9333a0a49",
         "read_status": "ok",
         "read_method": "cursor-github get_file_contents raw asset; UTF-8 length/sha256/git_blob/JSON verified",
-        "bytes": 72829,
-        "sha256": "f4d712645fa5283377abbbf6050d2ffd948e888cb1c864484487cba4df88aafc",
-        "git_blob": "a872b6e5fed5a9de57560b12fe86e82a9bc05aa3",
+        "bytes": 72770,
+        "sha256": "6ae5f3be45f9e4d11faf0b3ea2da9438c9cfde45833a851b62bb8f25dfc460ad",
+        "git_blob": "27a4817628558a3fcb2d26bb2484319f12ac931a",
         "wrapper_detected": false,
         "filename_matches_sha256": true,
         "identical_to_this_morning": true,
-        "date": "2026-11-10",
+        "date": "2026-11-11",
+        "previous_date": "2026-11-10",
         "data_fresh_flag": true,
-        "freshness": "tuesday_2026-11-10_not_wednesday",
+        "generated_at": "2026-11-12T07:16:37.887721+08:00",
+        "freshness": "wednesday_2026-11-11_not_thursday",
         "research_usable": true,
         "execution_usable": false
       }
     ]
   },
   "engine_pins": {
-    "China-Commodities-Engine": {
-      "sha": "61c89422880c91041c2c368c44036e0a989da28c",
-      "committer_utc": "2026-11-11T11:13:46Z",
-      "committer_bjt": "2026-11-11T19:13:46+08:00",
-      "message": "chore(data): update daily commodity snapshots",
-      "prior_sha": "cf22e05afc898efcc499b8756b90f561b25b56cd",
-      "prior_committer_utc": "2026-11-10T22:10:17Z",
-      "prior_committer_bjt": "2026-11-11T06:10:17+08:00",
-      "prior_note": "Last morning pin. This evening pin is NEW: Wednesday 19:13 BJT package retaining Monday official futures; official Wednesday futures failed quota again."
+    "research_cutoff_bjt": "2026-11-12T19:50:13+08:00",
+    "research_cutoff_utc": "2026-11-12T11:50:13Z",
+    "routine_fired_bjt": "2026-11-12T19:49:33+08:00",
+    "routine_fired_utc": "2026-11-12T11:49:33.304Z",
+    "edition": "evening",
+    "report_date": "2026-11-12",
+    "pin_rule": "latest main commit with committer timestamp <= cutoff; use pin SHA for all engine file reads",
+    "until_query_utc": "2026-11-12T11:50:14Z",
+    "until_note": "until is exclusive-before in GitHub API; eligibility filtered to committer_utc <= 2026-11-12T11:50:13Z",
+    "pins": {
+      "China-Commodities-Engine": {
+        "sha": "8a90894669b56b6f7975d44795b04ffa7c610e8a",
+        "committer_utc": "2026-11-12T01:49:38Z",
+        "committer_bjt": "2026-11-12T09:49:38+08:00",
+        "message": "chore(data): local Wind daily and catch-up",
+        "prior_sha_morning": "7f596faeaeaba5ae2da6b76e6d5540f1e5a6476a",
+        "prior_morning_committer_utc": "2026-11-11T15:34:19Z",
+        "prior_note": "NEW vs this morning pin 7f596fae…. This evening pin is Thursday 09:49 BJT catch-up that packages Wednesday Wind daily (generated 22:07 BJT) plus the completed Wednesday-night / Thursday-morning session (generated 09:49 BJT). No later commodities commit existed at cutoff; there is no Thursday official/vendor day-session package in this pin."
+      },
+      "China-Stock-Engine": {
+        "sha": "8b496efb1a7ac54b901c223cb4a23e843ad37a65",
+        "committer_utc": "2026-11-11T16:06:35Z",
+        "committer_bjt": "2026-11-12T00:06:35+08:00",
+        "message": "Merge incremental Wind updates and revision audits (#11) [skip ci]",
+        "note": "UNCHANGED vs this morning pin. Commit is after Wednesday cash close and before Thursday cash close, so effective trade date must come from the files. Files say last_valid_trade_date/trade_date=2026-11-11 (Wednesday Wind publication), not Thursday 2026-11-12 EOD."
+      },
+      "China-Options-Engine": {
+        "sha": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+        "committer_utc": "2026-11-11T23:16:58Z",
+        "committer_bjt": "2026-11-12T07:16:58+08:00",
+        "message": "data: update China options snapshot",
+        "note": "UNCHANGED vs this morning pin. File date/trade_date=2026-11-11 official CFFEX EOD, not Thursday."
+      }
     },
-    "China-Stock-Engine": {
-      "sha": "8e61b672d10566406a25bb437a2f46f01d36e2c8",
-      "committer_utc": "2026-11-11T00:32:31Z",
-      "committer_bjt": "2026-11-11T08:32:31+08:00",
-      "message": "data: attempt",
-      "note": "NEW vs morning pin 35894a84. Commit is failed_backfill of 2026-11-10; effective trade date in the files remains 2026-11-09. The 08:32 BJT Wednesday commit precedes the Wednesday cash close.",
-      "prior_sha": "35894a846deeef63b0b7501aeb98a9b184b01923",
-      "prior_committer_utc": "2026-11-10T00:43:09Z",
-      "prior_committer_bjt": "2026-11-10T08:43:09+08:00"
+    "archive_continuity": {
+      "repo": "farfromexact/Global-Cross-Asset-Radar-Grok",
+      "tip_at_cutoff": "0410f2534cc00716d40dd409ce825ec8b459fa9b",
+      "last_daily": {
+        "edition": "2026-11-12_morning",
+        "content_commit": "d464148e8d73db8d8a8e24612889e94e8890129b",
+        "status_tip": "0410f2534cc00716d40dd409ce825ec8b459fa9b",
+        "status_path": "status/morning_latest.json",
+        "archive_status": "success"
+      },
+      "last_same_edition_evening": {
+        "edition": "2026-11-11_evening",
+        "content_commit": "ca906bc08b2f14f5346452d57a813deb382cd7ce",
+        "status_tip": "b8af56c70b1983412f6bea63a811fb2c0a3b6245",
+        "status_path": "status/evening_latest.json",
+        "archive_status": "success"
+      },
+      "last_weekly": {
+        "edition": "2026-W45",
+        "content_commit": "95108305979eec3c35419e2dd944869977d590d3",
+        "status_sha_commit": "2ebf88b0e30fe61d9c0733f0482daec3a807520e"
+      },
+      "missing_by_design": [
+        "2026-11-07_morning",
+        "2026-11-07_evening",
+        "2026-11-08_morning",
+        "2026-11-08_evening"
+      ],
+      "still_missing_do_not_invent": [
+        "2026-11-05_morning"
+      ]
     },
-    "China-Options-Engine": {
-      "sha": "a0e62a62c78b3fc3432303153408bfe4e818d69a",
-      "committer_utc": "2026-11-10T23:21:37Z",
-      "committer_bjt": "2026-11-11T07:21:37+08:00",
-      "message": "data: update China options snapshot",
-      "note": "UNCHANGED vs this morning pin. Snapshot date in the file is 2026-11-10 (Tuesday official CFFEX EOD), not Wednesday.",
-      "prior_sha": "a0e62a62c78b3fc3432303153408bfe4e818d69a",
-      "prior_committer_utc": "2026-11-10T23:21:37Z",
-      "prior_committer_bjt": "2026-11-11T07:21:37+08:00"
-    }
+    "head_changed_after_pin": false,
+    "head_changed_after_pin_note": "Re-checked all three engines and farfromexact/Global-Cross-Asset-Radar-Grok main after reads and before archive write; tips still 8a90894669b56b6f7975d44795b04ffa7c610e8a / 8b496efb1a7ac54b901c223cb4a23e843ad37a65 / a4c16a18d16d039a30e9c162950096c9333a0a49 / 0410f2534cc00716d40dd409ce825ec8b459fa9b. Engine pins were not re-opened after this metadata check."
   },
   "head_changed_after_pin": false,
-  "markdown_cjk_chars": 2297,
+  "markdown_cjk_chars": 2364,
   "permission_errors": [
-    "Sina gb_vix and hf_VIX empty — no new VIX print this evening; Tuesday official 19.46 is retained and not restated as a 19:50 print",
-    "Sina hf_DXY and fx_sdxy empty — DXY missing (same failure mode as this morning)",
+    "Sina gb_vix and hf_VIX empty — no new VIX print this evening; Wednesday last-good 17.58 is retained and not restated as a 19:50 print",
+    "Sina hf_DXY and fx_sdxy empty — DXY missing (same failure mode as prior sessions)",
     "Sina hf_EURUSD and hf_USDJPY empty; used fx_seurusd / fx_susdjpy",
     "Sina int_dji/int_nasdaq/int_sp500 values (46247.29 / 22484.07 / 6643.70) remain stale/wrong and were discarded",
-    "Sina int_nikkei 44946.64 is stale versus Wednesday official 61248.59 and Tuesday official 60459.58 and was discarded",
-    "Sina int_kospi and int_sensex empty; KOSPI taken from Sina b_KOSPI (exact match to Yonhap close) and labeled public-source",
-    "Yahoo finance quote pages historically HTTP 403 this radar series; VIX not re-fetched this evening",
-    "Investing.com historically HTTP 403 this radar series",
+    "Sina int_nikkei 44946.64 is stale versus public b_NKY 60819.14 and Wednesday official 61248.59 and was discarded",
+    "Sina int_kospi empty; KOSPI taken from Sina b_KOSPI (prev 5375.36 matches Wednesday official) and labeled public-source; exchange official page not re-fetched",
+    "Nikkei taken from Sina b_NKY (prev 61248.59 matches Wednesday official) and labeled public-source; exchange official page not re-fetched",
+    "Yahoo finance quote pages historically HTTP 403 this radar series; not retried this evening",
+    "Investing.com historically HTTP 403 this radar series; not retried this evening",
     "US Treasury official CSV not re-fetched this evening; prior last-good not restated as a new 19:50 print",
-    "China-Commodities-Engine Wednesday official futures failed iFinD monthly quota again; official MA/CU gates remain Monday; Sina nf_ used only as public-source color",
-    "China-Stock-Engine effective trade date is Monday 2026-11-09; Tuesday backfill failed; not Wednesday EOD",
-    "China-Options-Engine snapshot remains Tuesday 2026-11-10, not Wednesday EOD",
-    "Tuesday night vendor snapshot official_night_close_verified=false; Wednesday 21:00 not started"
+    "China-Commodities-Engine pin is Wednesday Wind vendor close, official_complete=false, official crosscheck unavailable; official MA/CU gates cannot be marked true; Sina nf_ used only as Thursday public-source color",
+    "China-Stock-Engine effective trade date is Wednesday 2026-11-11, not Thursday EOD",
+    "China-Options-Engine snapshot remains Wednesday 2026-11-11, not Thursday EOD",
+    "Wednesday night vendor bars official_night_close_verified=false; Thursday 21:00 not started",
+    "Sina gb_* US tickers still display Wednesday cash and must not be treated as Thursday cash or a verified NVDA premarket print",
+    "Small-file write_to_file artifacts contained source wrappers (local_serialization_error) and were not used as git-blob proof; fields taken from complete inline JSON",
+    "Prior latest/evening not required beyond status; morning 2026-11-05 still missing"
   ],
   "missing_morning_2026_11_05": true,
   "weekend_dailies_absent_by_design": true,
-  "prior_morning_commit": "1becf5b0d23fd740fa03bfee18aa386ca14deb7b",
-  "prior_evening_commit": "036def8b0b65a30f5add46533111e112b548eb85",
+  "prior_morning_commit": "d464148e8d73db8d8a8e24612889e94e8890129b",
+  "prior_evening_commit": "ca906bc08b2f14f5346452d57a813deb382cd7ce",
   "prior_weekly_content_commit": "95108305979eec3c35419e2dd944869977d590d3",
   "prior_weekly_status_commit": "2ebf88b0e30fe61d9c0733f0482daec3a807520e",
-  "markdown_path": "reports/2026/11/2026-11-11_evening.md",
-  "json_path": "reports/2026/11/2026-11-11_evening.json",
+  "markdown_path": "reports/2026/11/2026-11-12_evening.md",
+  "json_path": "reports/2026/11/2026-11-12_evening.json",
   "latest_markdown_path": "latest/evening.md",
   "latest_json_path": "latest/evening.json",
   "status_path": "status/evening_latest.json",
   "manifest_path": "manifests/reports.json",
   "ci_validation_status": "pending_or_unverified",
-  "commit_sha": "ca906bc08b2f14f5346452d57a813deb382cd7ce",
+  "commit_sha": "PENDING_MAIN_COMMIT",
   "note": "archive_status=pending_main_commit locally; Cloud Agent should set archive_status=success after pushing these six paths and replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA. No 2026-11-05 morning file was created."
 }
