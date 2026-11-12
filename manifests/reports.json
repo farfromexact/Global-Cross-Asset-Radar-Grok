@@ -625,7 +625,7 @@
       "latest_json_path": "latest/evening.json",
       "status_path": "status/evening_latest.json",
       "status": "published",
-      "archive_status": "pending_main_commit",
+      "archive_status": "success",
       "ci_validation_status": "pending_or_unverified",
       "regime": "china_thu_eod_public_riskoff_chinext_down_wind_wed_vendor_close_wed_night_in_pin_not_official_ma_cu_gates_false_us_cash_not_open_no_risk",
       "worth_taking_risk": false,
@@ -641,7 +641,7 @@
       "prompt_version": "radar_2026-10-12_stock_v1",
       "data_protocol_version": "core_2026-10-17_v1",
       "prior_content_commit_expected_from": "0410f2534cc00716d40dd409ce825ec8b459fa9b",
-      "commit_sha": null,
+      "commit_sha": "5743ebab3845c3301d60908b15c44f5e7948cf31",
       "revision": 1
     }
   ],

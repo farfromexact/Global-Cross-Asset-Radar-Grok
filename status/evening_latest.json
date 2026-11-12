@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "edition": "evening",
-  "archive_status": "pending_main_commit",
+  "archive_status": "success",
   "report_date": "2026-11-12",
   "generated_at_bjt": "2026-11-12T20:05:00+08:00",
   "as_of_bjt": "2026-11-12T19:50:13+08:00",
@@ -359,6 +359,6 @@
     "Small-file write_to_file artifacts contained source wrappers (local_serialization_error) and were not used as git-blob proof; fields taken from complete inline JSON",
     "Prior latest/evening not required beyond status; morning 2026-11-05 still missing"
   ],
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "5743ebab3845c3301d60908b15c44f5e7948cf31",
   "note": "archive_status=pending_main_commit locally; Cloud Agent should set archive_status=success after pushing these six paths and replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA. No 2026-11-05 morning file was created."
 }

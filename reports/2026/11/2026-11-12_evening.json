@@ -729,6 +729,6 @@
   "status_path": "status/evening_latest.json",
   "manifest_path": "manifests/reports.json",
   "ci_validation_status": "pending_or_unverified",
-  "commit_sha": "PENDING_MAIN_COMMIT",
+  "commit_sha": "5743ebab3845c3301d60908b15c44f5e7948cf31",
   "note": "archive_status=pending_main_commit locally; Cloud Agent should set archive_status=success after pushing these six paths and replace commit_sha=PENDING_MAIN_COMMIT with the real main content SHA. No 2026-11-05 morning file was created."
 }
