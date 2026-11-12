@@ -1,62 +1,65 @@
-# 全球跨资产机会雷达·晨间版 2026-11-12（周四）
+# 全球跨资产机会雷达·晨间版 2026-11-13（周五）
 
 - prompt_version=radar_2026-10-12_stock_v1；commodity_consumer=core_2026-10-17_v1；edition=morning
-- 实际研究截点：2026-11-12 07:55 BJT（= 2026-11-11T23:55Z）；报告日期 2026-11-12；持仓未核实；不下单。
+- 实际研究截点：2026-11-13 07:55 BJT（= 2026-11-12T23:55:00Z）；报告日期 2026-11-13；公开行情检索 07:52–07:53 BJT；持仓未核实；不下单；不发微信。
 - 结论：worth_taking_risk=false，wechat_escalate=false。
 
 ## 一句话结论
-美国周三现金盘收涨（SPX +1.31% 7619.38、Nasdaq +1.60%、NDX +2.28%、VIX 17.58），AI/半导体全面反弹（MU +11.9%、AMD +7.3%、CoreWeave +24.7%），但MSFT −2.26% 与 GOOGL +2.11% 分化——周一MSFT占优、周二MSFT落后、周三再次MSFT落后，配对信号反复，不成立；收盘后NYT/WSJ报道英伟达董事会拟罢免黄仁勋，NVDA盘后约−8%、NDX期货约−0.8%至−1%，11/17财报前事件风险极高；中国商品供应商（Wind）周三收盘显示MA/CU门槛仍灭、CU仍backwardation；中国周四09:00/09:30尚未开盘，今早无新仓。
+美国周四现金盘收跌（SPX 7592.40 −0.35%、Nasdaq 25366.09 −0.39%、Dow 52297.09 −0.36%）：NVDA 因黄仁勋辞任CEO（CFO Kress任临时CEO）盘中一度跌逾13%、收166.19（−4.34%，52周新低），AMD +5.86%、AVGO +5.54%、MU −1.59%，MSFT +0.36% 再落后 GOOGL +1.79%（周二至周四连续三日落后，配对不成立）；10年美债约5.11–5.13%、Brent收95.82（+3.3%）、美联储12月加息预期近100%——风险偏好受压而非单边崩盘。中国商品引擎已补入周四Wind供应商日盘（official_complete=false）：MA2701结3163、CU2612结105140，MA/CU完整AND仍为假，铜继续backwardation；今早09:00/09:30尚未开盘，今早无新仓。
 
 ## 一、截点、日历与可比性
-- 07:55 BJT 时：美国周三（11-11）现金盘已收（退伍军人节，股市开市、债市休市，故无新的美债收益率官方收盘）；欧洲周三已收（DAX约+1.2%、FTSE约+0.8%、Stoxx600约+0.7%，来源为二手行情摘要）；日韩周四08:00尚未开；中国周四09:00商品/09:30股指尚未开盘；中国周三夜盘（11-11 21:00→11-12 02:30）引擎在pin时刻无该数据，不能用周二夜盘代替。
-- 今夜重要事件：美国初请/成屋销售（周四20:30/22:00 BJT）；11/17 NVDA财报；美联储12月加息预期约90%（周二CPI +0.4%、核心+0.3%，来源为二手引用，官方BLS数据在上期已读）。
+- 07:55 BJT 时：美国周四现金盘已收；日韩周五08:00/09:00 尚未开；中国周五09:00 商品/09:30 股指未开盘；周五21:30 BJT 美国PPI、21:00 商品夜盘均未到（not_started，不是缺失）。
+- 引擎口径：商品 Wind 供应商日盘 trade_date=2026-11-12（周四，generated 21:33:42 BJT，official_complete=false，官方交易所对账 unavailable，DCE 官方页 412）；周四夜盘在引擎针内**不存在**（针内夜盘文件为 night_session_date=2026-11-11 的周三夜盘，official_night_close_verified=false）；股票引擎有效交易日 2026-11-11（周三）；期权引擎 date=2026-11-11 官方 CFFEX EOD。周四中国现金盘仅用上期晚报已记的公开源（上证3655.83 −0.67%、创业板2509.43 −2.44%、科创50 1309.84 +0.73%，恒生24008.55 −1.26%），不当引擎数据。
 
-## 二、美国与全球 EOD（来源：AP/Investing/Sharecast/Yahoo等二手汇总，价格以收盘为准；官方交易所页面未直接取到，标secondary）
-- SPX 7619.38 (+1.31%)；Dow 52486.49 (+0.49%)；Nasdaq 25466.19 (+1.60%)；NDX 约28374 (+2.28%)；Russell 2000 2846.26 (+0.88%)；VIX 17.58（−9.66%）。
-- Mag7：NVDA 173.73 (+2.87%)、TSLA +2.91%、GOOGL 293.45 (+2.11%)、AAPL 355.63 (+2.04%)、AMZN 266.17 (−1.74%)、META 628.77 (−1.97%)、MSFT 521.13 (−2.26%)。
-- 半导体/AI硬件：MU 811.30 (+11.89%)、AMD 552.90 (+7.32%)、AVGO +3.99%、AMAT +6.05%、LRCX +6.07%、ORCL +8.8%；CRWV +24.7%（Q3营收36.6亿美元，全年指引上调至130–133亿美元）。
-- 盘后：NVDA约−4.5%至−8.4%（不同来源不同时点，写区间）；SMCI、ORCL、CRWV、INTC同步走弱，AMD +3.8%。
-- 日本Nikkei周三收 61248.59（+1.31%）、Taiex +3.62%、Kospi +2.60%、HSI 24315.92（−0.98%）、上证3680.64（+0.46%）。
-- 大宗/外汇（周四早盘二手快照，非结算）：Brent约92.6–93.0、WTI约86.9、黄金约3989–4063（不同来源差异大，标冲突）、DXY约102.48、USDJPY约158.97、EURUSD 1.1138。美国10年期约5.00%（二手，债市周三休市）。
+## 二、美国与全球（secondary：AP/CNBC/Investing/Reuters 转引 + 新浪 gb_*，官方交易所页未直取）
+- 美股周四收盘：SPX 7592.40（−0.35%）、Dow 52297.09（−0.36%）、Nasdaq 25366.09（−0.39%）、NDX 约28289（−0.30%）。VIX 公开源本轮为空，缺失不补。纽交所跌/涨家数 2225/644。能源板块 +1.5% 最强。
+- NVDA 事件：公司公告 Huang 辞任总裁/CEO/董事，CFO Colette Kress 临时CEO，Harvey Jones 任首位董事长；11/17 财报按期；11/18 全员会。NVDA 收166.19（−4.34%，成交量约7.4亿股，日内低148.80）；SMCI −11.3%、Nebius −16.8%、CoreWeave −6.9%。受益者：AMD 585.30（+5.86%）、AVGO 364.36（+5.54%）、ANET +5.06%；SMH −1.03%、MU 798.44（−1.59%）。
+- Mag7：MSFT 523.00（+0.36%）、GOOGL 298.70（+1.79%）、AAPL 354.88（−0.14%）、AMZN 267.44（+0.48%）、META 623.61（−0.82%）、TSLA 397.45（+1.69%）。周一 MSFT 占优、周二/三/四均落后：配对触发条件不成立。
+- 利率/大宗/外汇：10年美债约5.05–5.13%（盘中高于5%，创10/22以来高点）、2年约4.84–4.88%；Brent 95.82（+3.3%）、WTI 88.74（+2.6%）——特朗普称“不需要与伊朗达成协议”、沙特能源设施遭袭；美联储12月加息预期近100%、50bp约13%；今早公开源 Brent 约95.98、WTI 88.77、现货金约3880（周四晚报时约3944，连续回落）、USDCNH 6.6729、USDJPY 159.84、EURUSD 1.1049。
+- 周五早盘期货（新浪，07:52，非结算）：ES 7639.8（对期货前收7620.25约+0.26%）、NQ 28527（对前收28399.25约+0.45%）、YM 52497（前收52415）；亚洲指数期货混合，日韩略强、港澳偏弱。
 
-## 三、前序报告与想法台账
-上期晨报（2026-11-11 morning，commit 1becf5b0…）与晚报（ca906bc0…，status tip b8af56c7…）已读：Top5 AI40/EC40/CU29/MA25/BU14，均为observe/avoid，worth_taking_risk=false。本期变更只因新事实：AI因周三MSFT/GOOGL相对表现再度反向与NVDA盘后事件重估；商品因周三Wind收盘更新。
+## 三、中国商品与股指期货（引擎周四 Wind 供应商日盘，非官方）
+引擎针 China-Commodities-Engine 1db709dc（2026-11-12T14:50:28Z），report_input_latest generated 2026-11-12T21:40:33+08:00，requested_date/source_date=2026-11-12，execution snapshot sha256:6128a629…，quotes=1612，rejected=0，usage=dated_reference_only。
 
-## 四、三个引擎（pin与读取，详见JSON的engine_read_receipts）
-- China-Commodities-Engine pin 7f596fae…（2026-11-11T15:34:19Z，Cong提交“add local Wind daily collection”）；data/last_run_status.json 与 night_session/last_run_status.json、report_input_latest.json 读取成功并解析：run_date=2026-11-11，generated_at 22:07:47+08:00，provider=wind，五所futures源日期=2026-11-11，source_date_match 100%，data_fresh=true，但official_complete=false、core_futures_official_complete=false（Wind供应商口径，不是交易所官方结算文件）；contract_meta/warehouse/basis/member_rankings 均 skipped（unavailable）；options=core_available（466合约，execution_ready=false，bid_ask_coverage=0）。夜盘status：night_session_date=2026-11-10（周二夜盘），coverage 63.77%，official_night_close_verified=false；周三夜盘不在此pin内（不是缺失，是尚未被引擎采集）。night_session/latest.json 仅取得显示截断版本，未做完整字节验证（标 read_success_partial_display_truncated）。
-- China-Stock-Engine pin 8b496efb…（2026-11-11T16:06:35Z，PR #11合并）；data/last_run_status.json 状态 success_wind_publication，last_valid_trade_date=2026-11-11；data/latest/manifest.json 读取成功：5580只，行情/参考覆盖100%，opportunity_radar_latest 36行；opportunity_radar等大文件本轮未下钻（不影响六文件归档，标 not_deep_read，非读取失败）。
-- China-Options-Engine pin a4c16a18…（2026-11-11T23:16:58Z）；data/radar_latest.json 读取成功：date=2026-11-11，CFFEX官方EOD CSV 760条，匹配100%，无错误。head_changed_after_pin=false（仅在pin解析时点核验）。
+| 合约 | 收盘 | 结算 | 备注 |
+|---|---:|---:|---|
+| MA2701 | 3172 | 3163 | 1D结算 +1.57%；距门槛≥3485 仍差约10.2%；PX2701 收8448/结8384，距≥9850 差约17.5% |
+| CU2612 | 104950 | 105140 | 1D −0.09%；距≥109600 差约4.2%；对CU2701结算103690为backwardation约−1.38%，对CU2611结算107740约−2.41% |
+| EC2612 | 2477.5 | 2448.5 | 1D −0.83%、3D +5.65%、OI 1D −12.1%（价跌仓降）；EC2611结算2151.5 |
+| BU2701 | 4330 | 4286 | 1D +1.42%、3D −3.88%；曲线对BU2612为 backwardation |
+| AU2612 | 852.5 | 860.46 | 1D −1.15%（品种当前合约） |
 
-## 五、中国商品（周三 Wind 供应商收盘，非官方结算；MA/CU 门槛按官方口径需官方文件确认）
-- MA2701 收3159/结3114，PX2701 收8410/结8324——距离MA门槛（官方收盘与结算≥3485且PX≥9850）仍远，门槛为假。
-- CU2612 收105820/结105230；CU2611结107370，近远backwardation约−2.0%；CU门槛（≥109600且contango≥0.65%）为假。
-- EC2612 收2485.5/结2469.0（EC观察，不具执行条件，期权未execution_ready）；BU2701 收4282/结4226，BU2612 4495/4442，曲线仍陡；SC2612 604.0/598.1；AU2612 873.3/870.5；TA2701 6016/5952。
-- 由于周三官方期货文件缺失（iFinD配额问题此前持续，本轮Wind供应商替代），门槛判断仅为供应商口径，保持保守为假。
+MA完整AND（官方收盘与结算≥3485且PX≥9850）= 假；CU完整AND（≥109600且contango≥0.65%）= 假；Wind 供应商口径不能当官方结算，门槛不得因此改写为真。
 
-## 六、中国股指与期权（官方CFFEX周三EOD）
-- 现货：上证50 2765.54（−0.27%）、沪深300 4075.71（+0.41%）、中证500 6713.18（+1.01%）、中证1000 6669.55（+1.37%）。
-- 期货主力：IH2612 2742.2（−0.45%，OI 63192）、IF2612 4043.4（+0.35%）、IC2612 6664.0（+1.04%，OI +4705）、IM2612 6623.0（+1.37%，OI +9945）。风格：小盘强于大盘。
-- 期权：HO ATM IV约14.7%、IF约17.8%、MO2611 ATM约29.2%、MO2612约27.9%（RR25约−2.4%、PCR_OI 0.65）；本引擎质量边界内，非execution_ready，不裸卖波动。
+公开源周四夜盘（新浪 nf_*，非引擎针内，仅作着色）：MA2701 夜盘最新3216（对周四结算约+1.7%）、PX2701 8518（约+1.6%）、BU2701 4366（约+1.9%）、CU2612 105060（约−0.08%）、AU2612 835.78（约−2.9%），均**未触及**MA/CU门槛。周四夜盘官方收盘本轮未取得。
 
-## 七、AI 专题
-周三AI硬件强反弹，但软件/超大规模云（MSFT、META、AMZN）下跌，GOOGL上涨——“现金流龙头多/Capex Beta空”的MSFT/GOOGL配对三日分别为+2.75/+1.18、−2.20/−0.27、−2.26/+2.11，方向不稳，不是干净信号。NVDA盘后事件使11/17财报前不确定性飙升，Asian open（台韩日）先交易此事；无可核验结构化合约/权重，不称Beta-neutral，仅观察/条件挂单研究。
+股指期货：期权引擎官方 CFFEX 周三收盘（IH2612 2742.2 / IF2612 4043.4 / IC2612 6664.0 / IM2612 6623.0）；公开源周四收盘 IH2612 2739.4、IF2612 4002.4、IC2612 6538.4、IM2612 6480.4（对周三约 −0.10% / −1.01% / −1.89% / −2.15%）。期权质量不变：官方匹配760/760，execution_ready=false，bid/ask不足，不裸卖波动。
 
-## 八、Top5（均observe；无任何项通过执行条件）
-1. AI-CASHFLOW-VS-CAPEX-BETA-20261028（MSFT/GOOGL）41 — observe，条件：NVDA事件落地后配对重新同向+隔夜成交确认。
-2. COM-T-EC2612-TREND-CONTANGO-SHORT-20261028（EC2612）39 — observe。
-3. COM-M-CU2612-HVC-STRIKE-WATCH-20261025（CU2612）28 — observe。
-4. COM-C-MA2701-AND-PX-RECLAIM-20261024（MA2701）25 — observe。
-5. COM-C-BU2701-PULLBACK-LONG-20261022（BU2701）14 — avoid。
+周四 Wind 品种扫描（77个，结算1D，研究用）：涨幅 CZCE:AP +2.90%、DCE:EG +2.34%、INE:LU +2.08%、SHFE:BR +2.04%、INE:SC +2.02%；跌幅 GFEX:PT −1.46%、DCE:JM −1.38%、DCE:I −1.32%、SHFE:AU −1.15%。
 
-## 九、未来24小时/7天风险（BJT）
-- 今日09:00商品/09:30股指日盘开盘：映射周三美股AI反弹与NVDA盘后下挫；开盘后15/30/45分钟看IM/IC相对IH强度是否延续、CU/MA是否触及门槛。
-- 今晚：美国初请20:30、成屋销售22:00、商品夜盘21:00（未到，不是缺失）；11/17 NVDA财报；12月FOMC加息预期约90%。
+## 四、引擎读取回执（摘要）
+- 截点锁定 2026-11-13 07:55 BJT（2026-11-12T23:55:00Z）。各库 list_commits 解析 main 最新 committer≤截点：
+- China-Commodities-Engine **1db709dcf61a7f032747c1702673b3f78255ef8e**（2026-11-12T14:50:28Z = 22:50 BJT；“decouple commodity launcher…”）相对昨晚针 8a908946 为新针，含周四 Wind 日盘与周三夜盘（night_session_date=2026-11-11）。last_run_status / night last_run_status / report_input_latest / night_session/latest 均读到并可解析（大文件为 connector raw asset，无包装，已核UTF-8 与 git blob）。数据新鲜度：data_fresh=true，official_complete=false，contract_info/warehouse/basis/member_rankings=skipped(not_yet_mapped)。
+- China-Stock-Engine **f469c846c84defd0e2a9dfa01e54bf7265bcb54d**（2026-11-12T14:04:04Z；仅启动器变更）。last_run_status=success_wind_publication、manifest verified，有效交易日 2026-11-11，不是周四。
+- China-Options-Engine **a4c16a18d16d039a30e9c162950096c9333a0a49**（2026-11-11T23:16:58Z，与昨晚相同）。last_run_status/radar_latest 可读，date=2026-11-11 官方 CFFEX EOD；今日07:16 更新未在针内。
+- 小文件 write_to_file 带来源包装，记 local_serialization_error，不当作 blob 证明，字段取自 inline JSON。报告仓截点尖端 0815fd3bca16e9ef77d15b12ede23fd9f790fb24（昨晚归档）。2026-11-05 晨报仍缺，不编造；周末日报按设计不存在。
 
-## 十、最后严格四行
-A. 今天没有应立即建立的新仓位。
-B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850）；CU完整AND（≥109600且contango≥0.65%）；EC需可辩护的持续contango结构；MSFT/GOOGL需NVDA事件落地后重新同向。
-C. 今天继续观察：中国09:00/09:30开盘对美股AI反弹及NVDA盘后消息的映射、台韩日开盘对NVDA供应链的反应、周三夜盘官方收盘、IM/IC强于IH的持续性、油价约92–93与黄金的二手价差冲突。
-D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把Wind供应商收盘当官方结算；把周二夜盘当周三夜盘；BU回撤多；裸卖波动；在NVDA事件落地前建立半导体方向性重仓；复活IH/IM旧空；商品/股指期权未execution_ready。
+## 五、Top 5
+1. AI-CASHFLOW-VS-CAPEX-BETA-20261028（MSFT/GOOGL）40（较昨晨 41 −1、较昨晚 0）— observe。MSFT 连续三日落后；NVDA 治理冲击使AI链分化，不是干净配对。
+2. COM-T-EC2612-TREND-CONTANGO-SHORT-20261028（EC2612）37（较昨晚 38 −1）— observe。周四结算回吐、OI降12%，近远结构仍陡但无法诚实辩护持续contango。
+3. COM-M-CU2612-HVC-STRIKE-WATCH-20261025（CU2612）27（较昨晚 0）— observe。距109600约4.2%，仍backwardation。
+4. COM-C-MA2701-AND-PX-RECLAIM-20261024（MA2701）25（0）— observe。周四+1.57%但距3485仍约10%、PX更远。
+5. COM-C-BU2701-PULLBACK-LONG-20261022（BU2701）14（0）— avoid。周四反弹不改3D −3.9%与回避。
 
-## 附：局限
-美国/亚洲行情为二手汇总（AP、Investing.com、Sharecast、Yahoo、ABC、Reuters转引），官方交易所/Treasury/BLS页面本轮未逐个直取；黄金多源价格冲突；中国周三夜盘缺失于pin；商品官方期货文件未取得；本期正文约1,300汉字，深度低于完整万字版，缺口已披露，非省略研究结论。
+## 六、未来24小时/7天风险（BJT）
+- 今日09:00 商品 / 09:30 股指开盘：映射美股NVDA事件冲击、AMD/AVGO受益、10年美债>5%与油价；看 IM/IC 相对 IH 的弱势是否延续、MA/CU 是否触及门槛。
+- 今晚：21:00 商品夜盘（未到）、21:30 美国PPI；周末美伊局势（特朗普“不需要协议”）风险；11/17 NVDA财报、11/18 员工会；12月FOMC加息预期近100%。
+
+## 七、局限
+美股/亚洲/利率/油价为二手汇总（CNBC、AP、Investing/Reuters、Asia Business Daily 等），官方交易所/Treasury/BLS 页面未直取；VIX/DXY 公开源为空；周四夜盘不在引擎针内，仅有新浪公开源着色；商品官方结算文件仍缺，Wind 为供应商口径；股票研究分片/parquet 本轮未下钻；期权引擎今日更新未入针。
+
+## 八、最后严格四行
+A. 今天没有应立即建立的新仓位（美股周四收跌、NVDA治理冲击后分化；商品周四Wind收盘official_complete=false，MA/CU完整AND仍为假，铜backwardation；中国09:00/09:30未开盘，21:00夜盘与21:30 PPI未到；商品/股指期权未execution_ready）。
+B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850；Wind周四MA结3163、PX结8384，夜盘公开源MA约3216，均未达标）；CU完整AND（官方≥109600且contango≥0.65%；周四CU2612结算105140对CU2701约−1.38%为backwardation）；EC需能诚实辩护持续contango结构，默认观察；MSFT/GOOGL需NVDA事件落地、两者重新同向后才可再评。
+C. 今天继续观察：中国09:00/09:30对NVDA事件、AMD/AVGO受益与美债收益率>5%的映射、日韩开盘对NVDA供应链反应、IM/IC弱于IH的延续、周四夜盘官方收盘与官方商品结算文件、今晚21:30 PPI与21:00夜盘（未到，非缺失）、周末美伊与油价。
+D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把Wind供应商收盘或公开源夜盘当官方结算；把周三夜盘当周四夜盘；BU回撤多；裸卖波动；在NVDA财报(11/17)与CEO继任落地前建立半导体方向性重仓或追AMD/AVGO；复活IH/IM旧空；商品/股指期权未execution_ready。
