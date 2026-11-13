@@ -1,0 +1,6 @@
+{
+  "run_id": "20261113T210855+0800_ae4c9387946b4c8baa1946abedbddd2b",
+  "status": "partial",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "notes": "手动执行完成研究包。完整验收需进一步使用grok_publish.py。现有自动化不变。"
+}
