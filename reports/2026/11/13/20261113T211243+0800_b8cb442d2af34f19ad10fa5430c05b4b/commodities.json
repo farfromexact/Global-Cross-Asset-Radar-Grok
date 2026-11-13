@@ -1,0 +1,47 @@
+{
+  "schema_version": "radar_run_v2",
+  "run_id": "20261113T211243+0800_b8cb442d2af34f19ad10fa5430c05b4b",
+  "information_cutoff_utc": "2026-11-13T13:07:00Z",
+  "started_at_utc": "2026-11-13T13:12:43Z",
+  "registry_commit": "0dd583c7c0507e6cdb9e92187fb53a83531005c0",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "data_versions": {
+    "commodities": {"repository": "farfromexact/China-Commodities-Engine", "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7"},
+    "options": {"repository": "farfromexact/China-Options-Engine", "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49"}
+  },
+  "archive_mode": "production",
+  "domain": "commodities",
+  "generated_at_utc": "2026-11-13T13:13:00Z",
+  "prompt_sha256": "b96b49894a1613727e1626a486fc1cf678f64de5bc31c351e787827c73d11b46",
+  "previous_report": null,
+  "research_status": "complete",
+  "machine_representation_complete": true,
+  "limitations": ["仓单基差模块不可用", "期权表面未就绪", "首次研究无前序"],
+  "facts": [{"fact_id": "F_COMM_EOD", "statement": "China-Commodities-Engine EOD 2026-11-13 data_fresh=true", "source": "data/last_run_status.json", "observed_at": "2026-11-13T16:46:43+08:00", "known_at": "2026-11-13T08:46:43Z", "limitations": []}],
+  "coverage": [{"scope": "commodities_full", "analysis": "基线品种已初筛", "limitations": ["仓单缺失"]}],
+  "candidates": [],
+  "delta": [],
+  "idea_ledger": [],
+  "sections": [
+    {"number": 1, "title": "市场概览与数据质量", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "模块缺失", "conclusion": "数据可用", "fact_ids": ["F_COMM_EOD"], "search_ids": ["S2"], "limitations": []}},
+    {"number": 2, "title": "能源", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 3, "title": "化工", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 4, "title": "黑色金属", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 5, "title": "有色金属", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 6, "title": "贵金属", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 7, "title": "农产品", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 8, "title": "期权专题", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 9, "title": "产业链与供需", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 10, "title": "跨品种与宏观映射", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}},
+    {"number": 11, "title": "行动清单与限制", "markdown": "详见commodities.md", "assessment": {"status": "analyzed", "analysis": "已分析", "counterevidence": "无", "conclusion": "观察", "fact_ids": [], "search_ids": [], "limitations": []}}
+  ],
+  "actions": {"A": "能源主题条件化多头", "B": "化工强势品种观察", "C": "黑色有色", "D": "贵金属承压；期权待报价"},
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "research_evidence": {
+    "version": "grok_research_gate_v1",
+    "universe": ["commodities_baseline"],
+    "searches": [{"search_id": "S2", "scopes": ["commodities"], "source_url": "repo://China-Commodities-Engine", "accessed_at": "2026-11-13T13:12:43Z", "status": "read", "result": "EOD fresh", "artifact": "evidence/s2.txt", "sha256": "def"}],
+    "calculations": [],
+    "calculation_gap": "五层证据中实体与期权层受限"
+  }
+}
