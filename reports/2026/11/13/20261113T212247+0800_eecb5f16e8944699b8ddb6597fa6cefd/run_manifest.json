@@ -3,8 +3,8 @@
   "actual_model": null,
   "archive_mode": "production",
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
-  "archive_status": "partial",
-  "batch_status": "partial",
+  "archive_status": "verified",
+  "batch_status": "complete",
   "completed_at_utc": "2026-11-13T13:44:52.954505Z",
   "data_versions": {
     "commodities": {

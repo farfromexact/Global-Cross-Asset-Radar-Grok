@@ -1,0 +1,34 @@
+{
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "information_cutoff_utc": "2026-11-13T13:22:47.001031Z",
+  "manifest": {
+    "path": "reports/2026/11/13/20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd/run_manifest.json",
+    "sha256": "4ece7e4eaee332ba15d9cc4f60c42e0dc13b59dd8fb3b02b9ee5d8e417c999bc"
+  },
+  "reports": {
+    "commodities": {
+      "json": {
+        "path": "latest/commodities.json",
+        "sha256": "df21d1f1d9f7bcdbe6527dfea77ae4d8004b1b4b4a1cfdba40617ae330029bd3"
+      },
+      "markdown": {
+        "path": "latest/commodities.md",
+        "sha256": "3b4a87a1dd6359b499a2893011c5a556d73cd2d2fe3decd6ac9ddbb046e30912"
+      }
+    },
+    "global": {
+      "json": {
+        "path": "latest/global.json",
+        "sha256": "55708a33cd2f828757a84579d027f8c54bd9016b8f66f51f5330b995dde4283d"
+      },
+      "markdown": {
+        "path": "latest/global.md",
+        "sha256": "4b94c8e9b353ad6632a332ee1a2e76e0a6af8b7d9fb46e44cf79abcb7af9675d"
+      }
+    }
+  },
+  "run_id": "20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd",
+  "schema_version": "radar_latest_v1",
+  "started_at_utc": "2026-11-13T13:22:47.001031Z"
+}
