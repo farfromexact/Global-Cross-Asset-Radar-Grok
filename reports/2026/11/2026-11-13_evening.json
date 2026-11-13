@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "status": "published",
+  "edition": "evening",
+  "report_date": "2026-11-13",
+  "generated_at_bjt": "2026-11-13T17:30:00+08:00",
+  "one_sentence_conclusion": "中国周五A股已完成（公开源Xinhua：上证3634.35−0.59%、创业板2426.08−3.32%），成长继续承压。商品引擎已更新至2026-11-13（official_complete=false），MA/CU完整AND门槛仍未证实达标。美股周四收低，NVDA CEO事件，周五现金盘未开。今晚不建仓。",
+  "regime": "china_fri_eod_growth_selloff_commodities_engine_fri_vendor_official_incomplete_gates_unverified_us_cash_not_open_nvda_event_no_risk",
+  "worth_taking_risk": false,
+  "data_cutoff": {
+    "research_cutoff_bjt": "2026-11-13T17:13:00+08:00",
+    "research_cutoff_utc": "2026-11-13T09:13:00Z"
+  },
+  "input_snapshots": {
+    "china_options_repository": "farfromexact/China-Options-Engine",
+    "china_options_date": "2026-11-11",
+    "china_options_fresh": false,
+    "china_commodities": {
+      "repository": "farfromexact/China-Commodities-Engine",
+      "branch": "main",
+      "last_run_status_path": "data/last_run_status.json",
+      "radar_latest_path": "data/radar_latest.json",
+      "radar_history_path": "data/radar_history.json",
+      "trade_date": "2026-11-13",
+      "generated_at": "2026-11-13T16:46:43.242713+08:00",
+      "data_fresh": true,
+      "official_complete": false,
+      "source_date_match_pct": 100.0,
+      "full_market_ready": true,
+      "critical_module_errors": 0,
+      "history_record_count": null,
+      "module_quality": {
+        "futures": "verified_vendor_primary",
+        "options_surface": "not_ready"
+      },
+      "actual_read_paths": ["data/radar_latest.json"]
+    }
+  },
+  "top_opportunities": [
+    {"rank": 1, "name": "AI-CASHFLOW-VS-CAPEX-BETA-20261028", "score": 38, "direction": "observe"},
+    {"rank": 2, "name": "COM-C-MA2701-AND-PX-RECLAIM-20261024", "score": 26, "direction": "observe"},
+    {"rank": 3, "name": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025", "score": 25, "direction": "observe"},
+    {"rank": 4, "name": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028", "score": 35, "direction": "observe"},
+    {"rank": 5, "name": "COM-C-BU2701-PULLBACK-LONG-20261022", "score": 12, "direction": "avoid"}
+  ],
+  "action_list": {
+    "A": "今天没有应立即建立的新仓位（中国周五A股成长继续下跌；商品引擎official_complete=false且AND门槛未证实达标；美股未开且NVDA事件；21:00夜盘未开始；期权未execution_ready）。",
+    "B": "今天仅应挂条件的候选：MA完整AND官方达标且PX同步；CU官方≥109600且contango达标；AI配对需美股开盘后新证据。",
+    "C": "今天继续观察：美国22:30现金盘对NVDA事件与亚洲风险的映射、今夜21:00商品夜盘、官方商品结算是否补上。",
+    "D": "今天必须回避或若此前已建仓则有条件退出：逆门槛抄底；把供应商数据当官方结算；裸卖波动；在事件证据落地前重仓半导体方向。"
+  },
+  "sources": [
+    {"title": "Xinhua Chinese shares close lower Friday", "publisher": "Xinhua", "url": "https://english.news.cn/20261113/6bc6df5863834b5caefda9635aff5be7/c.html", "source_date": "2026-11-13", "accessed_at_bjt": "2026-11-13T17:15:00+08:00", "supported_claims": ["SSE 3634.35 -0.59%", "ChiNext 2426.08 -3.32%"]},
+    {"title": "China-Commodities-Engine radar_latest.json", "publisher": "farfromexact/China-Commodities-Engine", "source_date": "2026-11-13", "supported_claims": ["trade_date 2026-11-13", "official_complete false"]}
+  ],
+  "archive": {
+    "archive_status": "pending"
+  }
+}
