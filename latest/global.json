@@ -1,0 +1,561 @@
+{
+  "schema_version": "radar_run_v2",
+  "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+  "information_cutoff_utc": "2026-11-13T11:42:15.066300Z",
+  "started_at_utc": "2026-11-13T11:42:15.066300Z",
+  "registry_commit": "b55e566540c393cc9fffa01e5ae4f37b86a40d9b",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "data_versions": {
+    "commodities": {
+      "repository": "farfromexact/China-Commodities-Engine",
+      "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7"
+    },
+    "options": {
+      "repository": "farfromexact/China-Options-Engine",
+      "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49"
+    }
+  },
+  "archive_mode": "production",
+  "domain": "global",
+  "generated_at_utc": "2026-11-13T11:56:30.811Z",
+  "prompt_sha256": "e2dc82988b6d572230739b54f7d1eb5bcfee638d9cdacddbdb3a887ca8133176",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "previous_report": {
+    "kind": "legacy",
+    "path": "reports/2026/11/2026-11-13_morning.md",
+    "identity": "Grok legacy morning 2026-11-13; content commit a80db04d81f93ec41705cef334bec6ed62d67bd0; tip 6d322e87d0bbfd434f776f66e088b6c63463e39e; research_cutoff_bjt 2026-11-13T07:55:00+08:00",
+    "information_cutoff_utc": "2026-11-12T23:55:00Z",
+    "edition": "morning",
+    "content_commit": "a80db04d81f93ec41705cef334bec6ed62d67bd0",
+    "tip_commit": "6d322e87d0bbfd434f776f66e088b6c63463e39e"
+  },
+  "research_status": "complete",
+  "machine_representation_complete": false,
+  "limitations": [
+    "实际模型标识未从运行时测得，actual_model=null，不以产品名冒充。",
+    "中国商品官方结算文件与CFFEX官方XML未取得（官方对账unavailable，CFFEX HTTP 500），价格以Wind引擎与新浪交叉，不得称official_complete。",
+    "Yahoo Finance在本环境403；部分国际FX/原油/黄金报价读取晚于截点约6分钟，只作进行中会话背景。",
+    "VIX/MOVE/HY OAS缺少2026-11-12官方日序列；DFII10缺少11-12。",
+    "中国股指期权引擎停留在2026-11-11，周五HO/IO/MO ATM/Greeks缺证。",
+    "商品期权execution_ready=false且bid/ask覆盖为0，不得编造可成交权利金。",
+    "合约元数据日期为2026-11-09且部分参数覆盖偏低，乘数/保证金/涨跌停未作为已核执行输入。",
+    "未取得真实持仓、费用或成交回执；不自动下单，不发微信。",
+    "公司研究未使用已暂停的股票引擎；本批未对A股做全市场公告审计，相关公司检索为0条新增原件。",
+    "本子代理不执行GitHub正式归档，只冻结本地字节供父代理搬运。",
+    "复杂AND/OR、分批与退出细节以sections中的conditions原文为准，JSON未再复制全部压力情景路径。"
+  ],
+  "facts": [
+    {
+      "fact_id": "F-CUTOFF-SESSION",
+      "statement": "本批共享信息截点为2026-11-13 19:42:15 Asia/Shanghai（2026-11-13T11:42:15.066300Z）。此时中国商品与A股日盘已结束；多数品种下一夜盘21:00尚未开始（周五夜盘通常归属下一有效交易日2026-11-16，仍待官方安排核验）；美国周五现金交易尚未开盘（对应约06:42 EST）。因此最近完整美国股票/国债现金会话为周四2026-11-12（周三11-11为退伍军人节，国债市场休市、股票市场开市）；欧洲现金盘在截点时仍可能进行中。",
+      "source": "run lock clock Asia/Shanghai; session inference from official calendars cited in facts below",
+      "observed_at": "2026-11-13T11:42:15.066300Z",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "未逐交易所下载2026年官方日历原件，周五夜盘归属按规则的通常安排表述，执行前需再核官方通知。"
+      ]
+    },
+    {
+      "fact_id": "F-UST-PAR-20261112",
+      "statement": "美国财政部Daily Treasury Par Yield Curve Rate页面显示，2026-11-12（周四）名义收益率：2年4.86%、3年4.90%、5年4.95%、7年5.02%、10年5.10%、20年5.48%、30年5.43%。相较2026-11-10（节前最后国债交易日）的2年4.73%、5年4.81%、10年4.98%、30年5.35%，10年上升12bp并站上5%。据此计算：2s10s=5.10-4.86=0.24个百分点，2s30s=5.43-4.86=0.57个百分点，5s30s=5.43-4.95=0.48个百分点。",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "observed_at": "2026-11-12T21:00:00-05:00",
+      "known_at": "2026-11-13T02:00:00Z",
+      "limitations": [
+        "页面于截点后约4分钟读取；所摘为已公布的11-12收盘曲线，不是11-13盘中。20Y/30Y表头另有N/A列，本数字取同表短端与中长端所列par yield列，并与FRED DGS10在11-10的4.98相互印证。"
+      ]
+    },
+    {
+      "fact_id": "F-FRED-BEI-20261112",
+      "statement": "FRED序列T10YIE（10年盈亏平衡通胀）在2026-11-12为2.24（11-11因假期为空，11-10为2.20）。用同日名义10年5.10减去BEI得到简化实际利率代理2.86；这不是已公布的TIPS实际利率报价。FRED DFII10最后有效值为2026-11-10的2.78，尚未取得11-12官方实际利率。",
+      "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10YIE 及 DFII10、T10Y2Y",
+      "observed_at": "2026-11-12",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "FRED为二次发布，可能滞后修订；11-12 DFII10未取得，2.86仅为5.10-2.24的算术代理，不作已证实的TIPS实际利率。"
+      ]
+    },
+    {
+      "fact_id": "F-FRED-HY-VIX-LAG",
+      "statement": "FRED BAMLH0A0HYM2（ICE BofA美高收益OAS）最后值为2026-11-11的3.30（11-10为3.34，11-12尚未列出）。FRED VIXCLS最后值为2026-11-11的17.49（11-10为19.46，11-12尚未列出）。因此周四美股收盘对应的VIX与HY OAS官方日序列在本截点仍缺，不得用11-11值冒充11-12收盘。",
+      "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2 及 VIXCLS",
+      "observed_at": "2026-11-11",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "缺少周四VIX/MOVE/HY官方收盘，市场风险模块对波动与信用只能标缺证，不编造。"
+      ]
+    },
+    {
+      "fact_id": "F-TSY-AUCTION-NOV",
+      "statement": "财政部Tentative Auction Schedule：2026-11-10拍卖10年期国债、11-12拍卖30年期国债，结算多为11-16；11-11退伍军人节为标注假期。第三方日历转述10年拍卖高收益约5.02%、30年约5.441%，但本运行未下载拍卖结果官方HTML/PDF原件，高收益数字标为未核原件。",
+      "source": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+      "observed_at": "2026-11-12",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "时间表已核；具体中标收益率未在Treasury Auction Results页面落盘，不作已验证事实。"
+      ]
+    },
+    {
+      "fact_id": "F-US-CASH-20261112",
+      "statement": "新浪美股行情将周四常规交易收盘时点标记为Nov 12 04:00PM EST或指数的Nov 12 04:58/05:15PM EST，价格为：标普500 7592.3999（-0.35%，前收7619.3799）、纳斯达克综合25366.0929（-0.39%，前收25466.1889）、道琼斯52297.0898（-0.36%，前收52486.4883）；QQQ 688.17（-0.32%，前收690.38）；SOXX 154.99（-0.26%，前收155.40）；SMH 501.73（-1.03%，前收506.96）；NVDA 166.19（-4.34%，前收173.73，盘中低点148.80）；MSFT 523.00（+0.36%，前收521.125）；GOOGL 298.70（+1.79%，前收293.45）；AMD 585.30（+5.86%，前收552.90）；AVGO 364.36（+5.54%，前收345.22）；MU 798.44（-1.59%，前收811.30）；TSM 405.49（-1.90%，前收413.35）。",
+      "source": "https://hq.sinajs.cn/list=gb_dji,gb_ixic,gb_inx,gb_nvda,gb_msft,gb_googl,gb_amd,gb_avgo,gb_mu,gb_tsm,gb_qqq,gb_soxx,gb_smh",
+      "observed_at": "2026-11-12T16:00:00-05:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "来源为新浪转引美股行情，非交易所官方收盘文件；字段中同时出现周五06:48AM EST时间戳，但常规收盘标记与成交量量级支持将其解读为周四现金收盘。本读取发生在截点后约6分钟，不用周五盘前变动作为已完成现金收盘。Yahoo Finance在本环境被403，未能交叉验证。"
+      ]
+    },
+    {
+      "fact_id": "F-NVDA-CEO-PR-20261112",
+      "statement": "NVIDIA Newsroom 2026-11-12新闻稿《NVIDIA Announces CEO Transition》声明：董事会宣布Jensen Huang辞去President、CEO及董事，立即生效；现任执行副总裁兼CFO Colette Kress任Interim CEO并继续兼任CFO，董事会启动常任CEO搜寻；Harvey C. Jones被任命为董事会首位Chair。稿件并确认将于2026-11-17约13:20 PT发布2027财年第三季财报，14:00 PT召开电话会。本地保存页面SHA-256=1f0747f87b07a430b659d85d01672a5b83bcf336831ab0283d31ae5707a67226。SEC 8-K（最早事件日2026-11-11，Item 5.02）URL已定位，但本环境获取正文被403，8-K字节未落盘。",
+      "source": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition ；8-K未落盘URL https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "observed_at": "2026-11-12",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "官方新闻稿原因陈述未包含媒体关于个人事项或国家安全的报道，后者不作已核原件事实。8-K原文字节本次未取得。"
+      ]
+    },
+    {
+      "fact_id": "F-BLS-PPI-SCHEDULE",
+      "statement": "美国劳工统计局PPI发布日程列明：2026年10月PPI于2026-11-13 08:30 AM（ET，即北京时间21:30）发布。本截点19:42 Asia/Shanghai早于该发布时间，10月PPI尚未公布，不得把预测或“未到”写成缺失源故障。",
+      "source": "https://www.bls.gov/schedule/news_release/ppi.htm",
+      "observed_at": "2026-11-13",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "只核验了发布日程，未、也不能在截点前取得PPI数值。"
+      ]
+    },
+    {
+      "fact_id": "F-FX-GOLD-OIL-FRIDAY-LIVE",
+      "statement": "截点后约6分钟（约19:48 Asia/Shanghai）新浪显示的国际报价（非已完成美国日盘结算）：美元指数DINIW 103.2394；EURUSD约1.1050；USDJPY约159.94；USDCNH约6.6733；纽约原油hf_CL约88.367（对照参考88.740/88.790）；布伦特hf_OIL约96.027（对照95.820/95.840）；COMEX黄金hf_GC约3892.96（对照3885.3/3883.3）。这些是周五亚欧盘进行中或刚过截点的供应商报价，不能当作周四官方结算，也不能当作截点前精确成交。",
+      "source": "https://hq.sinajs.cn/list=fx_seurusd,fx_susdjpy,fx_susdcnh,DINIW,hf_CL,hf_GC,hf_OIL",
+      "observed_at": "2026-11-13T11:48:00Z",
+      "known_at": null,
+      "limitations": [
+        "读取晚于截点约6分钟，known_at为空，不得当作截点前已知精确成交；无周四官方CME/ICE结算原件；DXY官方Broad指数FRED DTWEXBGS只到2026-11-06。"
+      ]
+    },
+    {
+      "fact_id": "F-CN-SPOT-20261113",
+      "statement": "2026-11-13中国日盘结束（公开行情）：上证综指3634.3530（-0.59%）、深证成指10968.79（-2.05%）、沪深300 4016.2897（-0.68%）、上证50 2775.0228（+0.11%）、中证500 6465.4850（-2.10%）、中证1000 6357.2582（-2.76%）、创业板指2426.08（-3.32%）；恒生指数收报23637.600（-370.950，-1.55%，时间戳2026/11/13 16:08:40）。风格上大盘价值相对抗跌，中小盘/成长显著走弱。",
+      "source": "https://hq.sinajs.cn/list=s_sh000001,s_sz399001,s_sh000300,s_sh000016,s_sh000905,s_sh000852,s_sz399006,rt_hkHSI",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "为新浪指数快照，非上交所/深交所/港交所官方收市文件；涨跌家数、行业贡献与两融未取得。"
+      ]
+    },
+    {
+      "fact_id": "F-CFFEX-20261113-SINA",
+      "statement": "新浪CFFEX 2026-11-13 15:00报价（供应商，非中金所官方结算文件；CFFEX官网XML本次HTTP 500未取到）：主力大致在2612。IF2612开4011、高4023、低3954、收3956.6、量68383、仓173340，对照字段4002.4/4007.0，按结算对照4007计算日收益(3956.6-4007)/4007=−1.2578%，对沪深300现货4016.2897的价格差为3956.6-4016.2897=−59.69点。IH2612收2733.4、量30203、仓63167，对照2739.4/2741.0，(2733.4-2741)/2741=−0.2773%，对上证50现货差2733.4-2775.0228=−41.62点。IC2612收6375、量119076、仓170581，对照6538.4/6553.8，(6375-6553.8)/6553.8=−2.7282%，对中证500现货差6375-6465.485=−90.49点。IM2612收6276.8、量225869、仓295156，对照6480.4/6500.4，(6276.8-6500.4)/6500.4=−3.4398%，对中证1000现货差6276.8-6357.2582=−80.46点。T2612收110.045（15:15），对照110.115/110.105；TL2612收117.450，对照117.900/118.000。",
+      "source": "https://hq.sinajs.cn/list=nf_IF2612,nf_IH2612,nf_IC2612,nf_IM2612,nf_T2612,nf_TL2612 等",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "非中金所官方结算/持仓原件；前收/前结字段按新浪排列与收益印证推断；年化基差未用完整交易日与乘数精算，只报告价格差。HO/IO/MO精确合约未从该源取到。"
+      ]
+    },
+    {
+      "fact_id": "F-COMM-ENGINE-PIN",
+      "statement": "商品数据仓库farfromexact/China-Commodities-Engine在本批锁定并复核的默认分支尖端为908dbe6e76c03b99e92be559abccf14653b3fcc7（提交于2026-11-13T09:14:49Z，早于截点），说明为Add small lossless JSON exports for Chat research readers。data/chat/overview.json（sha256 ec5c162138da1f1e4be6c01e52e86b8056d04d4bc47ce4dc1cdcde36bf65986a）显示current_market_snapshot.mode=eod，trading_date=2026-11-13，as_of=2026-11-13T15:00:00+08:00，intraday=false，has_night_session=true。futures.trade_date=2026-11-13，generated_at=2026-11-13T16:46:43.242713+08:00，full_market_ready=true，五所齐，source_date_match_pct=100，contract_count=806，critical_module_errors=0。options_quality.trade_date=2026-11-13，expected/successful_product_count=64/64，product_coverage=1.0，collection_scope=core_v1，analytics_scope=sampled_strikes，execution_ready=false，surface_ready=false，positioning_ready=false，bid_ask_coverage=0，iv_coverage≈0.9295。contract_metadata.trade_date=2026-11-09，quality_state=partial。missing_sources含intraday/latest.json。报告输入generated_at=2026-11-13T17:07:45.377379+08:00，产品77个。",
+      "source": "China-Commodities-Engine@908dbe6e76c03b99e92be559abccf14653b3fcc7 data/chat/overview.json 及 report/index.json（哈希已独立核对）",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "引擎为Wind供应商口径；官方对账futures_crosscheck在report分片中state=unavailable、trade_date=2026-11-11，与周五期货日期不匹配，但不block发布。保存SHA不等于已完成全部研究。"
+      ]
+    },
+    {
+      "fact_id": "F-MA-CU-PX-PRICES-20261113",
+      "statement": "同一套Wind/新浪周五EOD（结算收益与引擎product扫描一致）：MA2701结算3222、收盘3266、前结3163，结算日收益+1.8653%，仓单/持仓变动引擎记录ΔOI=−45520（−4.93%），线索price_up_oi_down；MA2612结算3475、收盘3480、前结3419。PX2701结算8538、收盘8606、前结8384，结算日收益+1.8368%。CU2612结算105040、收盘105150、前结105140，结算日收益−0.0951%，ΔOI=−4784（−2.52%），线索price_down_oi_down；CU2611结算108320、收盘108180；CU2701结算102910、收盘102740。因此MA完整AND（官方收盘与结算≥3485且PX≥9850）为假；CU完整AND（官方≥109600且CU2612对CU2701 contango≥0.65%）为假，因(102910-105040)/105040=−2.0278%为backwardation。CU近月对次近(108320-105040)/105040=3.1226%，与引擎curve.current一致，为近月升水/backwardation，zscore=2.49。",
+      "source": "China-Commodities-Engine report products shards part-014/015/016（哈希已核）交叉 https://hq.sinajs.cn 对应nf_MA2701,nf_MA2612,nf_PX2701,nf_CU2611,nf_CU2612,nf_CU2701",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "官方交易所结算文件未直接下载；数字为Wind供应商与新浪交叉，不得称为official_complete。MA近月对MA701的curve因pair_roll_flag与nearest_next_liquid_pair_roll_detected不能当作稳定近远月z。"
+      ]
+    },
+    {
+      "fact_id": "F-EC-AU-AG-BU-20261113",
+      "statement": "EC2612结算2551、收盘2589.5、前结2448.5，结算日收益+4.1862%，ΔOI=−758（−4.96%），线索price_up_oi_down，5日+8.51%，但20日仍约−22.45%，RV20约50.9%。EC2611结算2154.5，对EC2612的(2154.5-2551)/2551=−15.5429%，近月低于远月，为陡峭contango；但EC2611持仓稀薄（新浪仓约199）。AU2702结算840.96、前结862.08，结算日收益−2.4499%，ΔOI=+5434，线索price_down_oi_up。AG2702结算12060、前结12495，结算日收益−3.4814%，ΔOI=+7346，线索price_down_oi_up。BU2701结算4375、前结4286，结算日收益+2.0765%，ΔOI=−5728，线索price_up_oi_down，5日仍约−3.95%。SC2701结算约607.1一带（新浪），LU/FU亦上涨但5日/20日能源品仍偏弱。",
+      "source": "Engine products + sina nf_EC2612,nf_EC2611,nf_AU2702,nf_AG2702,nf_BU2701",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "EC近月流动性差，不能把-15.5%结构自动写成可交易正套/反套；黄金白银下跌与美债收益率上升同日发生，但因果未由单一因子证明。"
+      ]
+    },
+    {
+      "fact_id": "F-OPTIONS-COMM-20261113",
+      "statement": "商品期权质量（同一商品仓周五EOD）：trade_date=2026-11-13，generated_at=2026-11-13T16:50:25.833396+08:00，64/64产品、468条、series_count=64，core_v1/sampled_strikes，core_atm_ready_count=62，skew_ready_count=1，surface_ready_count=0，positioning_ready=false，execution_ready=false，bid_ask_coverage=0（执行被明确阻断），iv_coverage≈0.9295，dealer_gamma_direction_known未就绪。可用于有限ATM研究，不能编造权利金、滑点或已证实限损成本。",
+      "source": "China-Commodities-Engine data/chat/report/part-021.json（sha256 9d87a4f3e29d1026671153c042685e09789ae8828f2af7d7887a5fa82978be16）",
+      "observed_at": "2026-11-13T15:00:00+08:00",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "采样链不是完整曲面；未选合约不是采集故障。"
+      ]
+    },
+    {
+      "fact_id": "F-OPTIONS-INDEX-STALE",
+      "statement": "中国股指期权仓库farfromexact/China-Options-Engine锁定尖端a4c16a18d16d039a30e9c162950096c9333a0a49提交于2026-11-11T23:16:58Z，快照日期为2026-11-11，早于本周五中国日盘，不能作为2026-11-13的HO/IO/MO ATM/skew/PCR/Gamma执行证据。本运行未另取得中金所/上交所期权官方链。",
+      "source": "China-Options-Engine commit metadata via cursor-github get_commit/list_commits at lock",
+      "observed_at": "2026-11-11T23:16:58Z",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "保存SHA不是完成引擎阅读；周五股指期权ATM标缺证，而非无机会。"
+      ]
+    },
+    {
+      "fact_id": "F-NO-COMM-PRIOR",
+      "statement": "Grok归档库farfromexact/Global-Cross-Asset-Radar-Grok的manifests/runs.json在默认分支不存在（新格式尚无合格记录）；manifests/reports.json仅有morning/evening/weekly全球晨晚索引，无commodities_morning/commodities_evening条目。故本商品报告为Grok首次商品研究。2026-11-13 evening旧路径被索引标为research_status=incomplete、validation_status=failed，不作为已验证前序。全球前序采用2026-11-13 morning（截点2026-11-13T07:55+08:00）。",
+      "source": "Global-Cross-Asset-Radar-Grok manifests/reports.json（完整字节sha256 775f3a3106ef5a9117976f2013e02fffb44a55e64938f7d3605fc986c12ff8ab）及runs.json 404",
+      "observed_at": "2026-11-13T10:57:21Z",
+      "known_at": "2026-11-13T11:42:15.066300Z",
+      "limitations": [
+        "旧全球稿中的商品数字须用本次允许源重核，不能把GPT商品报告或撤回晚报当商品前序。"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "scope": "asset:us_rates",
+      "status": "analyzed",
+      "analysis": "已读取Treasury 11-12官方par曲线2/5/10/30年及利差计算；BEI用FRED 11-12；实际利率官方TIPS缺11-12。财政供给只核验了拍卖日程，中标收益率未核原件。",
+      "limitations": [
+        "DFII10缺11-12",
+        "拍卖结果未下官方页"
+      ]
+    },
+    {
+      "scope": "asset:fx",
+      "status": "analyzed",
+      "analysis": "截点后数分钟新浪EURUSD/USDJPY/USDCNH与美元指数DINIW为周五进行中报价；无周四官方收盘原件，DXY广义指数FRED只到11-06。",
+      "limitations": [
+        "无CME/CFETS官方收盘文件",
+        "读取略晚于截点"
+      ]
+    },
+    {
+      "scope": "asset:ai_tech",
+      "status": "analyzed",
+      "analysis": "已核NVIDIA官方辞任新闻稿与周四美股收盘（NVDA/MSFT/GOOGL/AMD/AVGO/SOXX/SMH/QQQ）。未做完整半导体基本面审计或篮子权重中性组合。",
+      "limitations": [
+        "8-K正文403未落盘",
+        "无期权隐含报价"
+      ]
+    },
+    {
+      "scope": "asset:energy",
+      "status": "analyzed",
+      "analysis": "国内SC/FU/LU/BU有周五引擎结算扫描；国际WTI/Brent仅为截点附近供应商报价，无EIA库存原件、无官方期限结构结算。",
+      "limitations": [
+        "EIA周报未取",
+        "无CME/ICE官方曲线"
+      ]
+    },
+    {
+      "scope": "asset:gold",
+      "status": "analyzed",
+      "analysis": "AU2702/AG2702周五结算大幅下跌且仓增；国际COMEX为截点附近报价。ETF流量、央行购金、CFTC持仓本批未取到原件，故不作强因果归因。",
+      "limitations": [
+        "缺ETF flows/CFTC/COMEX官方结算"
+      ]
+    },
+    {
+      "scope": "asset:china_50_300_500_1000",
+      "status": "analyzed",
+      "analysis": "已分析现货四指数及创业板、以及IF/IH/IC/IM 2612供应商收盘、量仓与价格差。官方结算文件缺失。跨期有2611/2612/2703报价但未做完整roll成本。",
+      "limitations": [
+        "CFFEX官方文件缺失",
+        "无两融与涨跌家数原件"
+      ]
+    },
+    {
+      "scope": "asset:market_risk_liquidity",
+      "status": "data_missing",
+      "analysis": "VIX/MOVE/HY OAS缺少周四官方收盘，无法完成该模块的完整日度定价。中国侧用风格与股指期货跌幅作定性压力描述。",
+      "limitations": [
+        "FRED VIXCLS/HY OAS无11-12",
+        "无MOVE原件"
+      ]
+    },
+    {
+      "scope": "china_index_options",
+      "status": "data_missing",
+      "analysis": "期权引擎最新提交为11-11，不能代表周五会话；新浪未返回HO/IO/MO可用链。",
+      "limitations": [
+        "周五ATM/skew/PCR缺证"
+      ]
+    },
+    {
+      "scope": "commodities_screen",
+      "status": "analyzed",
+      "analysis": "对引擎77个产品（含原基线及15个动态代码）做了结算收益、ΔOI、线索与近远月curve初筛，并下钻MA/CU/PX/EC/AU/AG/BU等。",
+      "limitations": [
+        "官方对账不可用",
+        "curve个别品种因移仓警告不可用z"
+      ]
+    },
+    {
+      "scope": "company_discovery_cn",
+      "status": "analyzed",
+      "analysis": "按规则本批最多3个A股重点可为0。未发现足以改变上述结论的、已核交易所/IR原件的新经营披露；不做全市场审计，不复用旧价量当新信号。",
+      "limitations": [
+        "非全市场公告扫描",
+        "股票引擎禁用"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "research_judgment": "待验证优势",
+      "evidence_sufficiency": "中等（治理事实已有官方新闻稿，但定价与常任CEO路径未完成，工具参数不足）",
+      "execution_status": "等触发/待报价与参数",
+      "fact_ids": [
+        "F-NVDA-CEO-PR-20261112",
+        "F-US-CASH-20261112",
+        "F-CN-SPOT-20261113",
+        "F-UST-PAR-20261112",
+        "F-CUTOFF-SESSION"
+      ],
+      "conditions_markdown": "MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。",
+      "scores": {
+        "logic": 12,
+        "odds": 8,
+        "catalyst": 11,
+        "price_vol": 6,
+        "crowding": 6,
+        "total": 43,
+        "prior_total": 40
+      },
+      "score_notes": "官方辞任提升催化清晰度，但周四NVDA大跌与AMD/AVGO已实现分化降低赔率；不是胜率。"
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "research_judgment": "待验证优势",
+      "evidence_sufficiency": "中低（结构仍是陡峭contango，但单日大涨且仓降，短线空头拥挤或回补风险）",
+      "execution_status": "等触发",
+      "fact_ids": [
+        "F-EC-AU-AG-BU-20261113",
+        "F-COMM-ENGINE-PIN",
+        "F-CUTOFF-SESSION"
+      ],
+      "conditions_markdown": "EC默认观察，不因单日反弹改写方向：只有能够诚实辩护持续contango结构、且执行窗口、流动性与官方/可核结算齐备时才评估是否达到可执行；COM-T-EC2612-TREND-CONTANGO-SHORT不因今日结算+4.19%、持仓下降而自动翻多为新仓。当前EC2611结算2154.5对EC2612结算2551，(2154.5-2551)/2551=−15.5429%，近月低于远月，结构为陡峭contango，但EC2611持仓稀薄，且20日结算收益仍约−22.45%。",
+      "scores": {
+        "logic": 10,
+        "odds": 7,
+        "catalyst": 7,
+        "price_vol": 6,
+        "crowding": 5,
+        "total": 35,
+        "prior_total": 37
+      }
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "research_judgment": "证据不足/无当下优势",
+      "evidence_sufficiency": "门槛未满足，结构为加深的backwardation",
+      "execution_status": "等触发",
+      "fact_ids": [
+        "F-MA-CU-PX-PRICES-20261113"
+      ],
+      "conditions_markdown": "CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。",
+      "scores": {
+        "logic": 8,
+        "odds": 5,
+        "catalyst": 4,
+        "price_vol": 5,
+        "crowding": 4,
+        "total": 26,
+        "prior_total": 27
+      }
+    },
+    {
+      "idea_id": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "research_judgment": "证据不足/无当下优势",
+      "evidence_sufficiency": "价格与PX均远离AND门槛，今日上涨伴随持仓下降",
+      "execution_status": "等触发",
+      "fact_ids": [
+        "F-MA-CU-PX-PRICES-20261113"
+      ],
+      "conditions_markdown": "MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。",
+      "scores": {
+        "logic": 8,
+        "odds": 5,
+        "catalyst": 4,
+        "price_vol": 5,
+        "crowding": 4,
+        "total": 26,
+        "prior_total": 25
+      }
+    }
+  ],
+  "delta": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "change_type": "strengthened",
+      "previous": "晨报已根据公开源描述Huang辞任、NVDA周四收166.19（-4.34%），MSFT落后GOOGL。",
+      "current": "本批取得NVIDIA 2026-11-12官方新闻稿原件并计算哈希，确认辞任立即生效、Kress任interim CEO兼CFO、Jones任首位Chair、11-17财报仍按期；同时核验中国周五中小盘与IM/IC显著弱于IH，美债10年官方曲线5.10%。触发仍未满足。",
+      "reason": "官方原件使治理事实由转述升级为可核链接；市场映射新增中国日盘与利率曲线，但执行条件未放宽。",
+      "fact_ids": [
+        "F-NVDA-CEO-PR-20261112",
+        "F-US-CASH-20261112",
+        "F-CN-SPOT-20261113",
+        "F-UST-PAR-20261112"
+      ]
+    },
+    {
+      "idea_id": "RATES-10Y-ABOVE-5",
+      "change_type": "new",
+      "previous": "晨报提到关注美债收益率>5%，但当时Treasury页面未直取。",
+      "current": "已从Treasury官方11月曲线表读取11-12的10年par 5.10%、2年4.86%、30年5.43%。",
+      "reason": "这是相对晨报的关键新增已核利率事实，解释黄金/成长股压力的候选机制之一，但不是新的可执行交易。",
+      "fact_ids": [
+        "F-UST-PAR-20261112"
+      ]
+    },
+    {
+      "idea_id": "CN-STYLE-IM-IC-20261113",
+      "change_type": "new",
+      "previous": "晨报时中国周五日盘尚未开始。",
+      "current": "日盘已完成：创业板-3.32%、中证1000-2.76%、中证500-2.10%，上证50+0.11%；IM2612约-3.44%、IC2612约-2.73%、IH2612约-0.28%。",
+      "reason": "开盘映射已经发生，不能再建议在未发生的09:30按计划交易；下一窗口转为夜盘/周末/周一。",
+      "fact_ids": [
+        "F-CN-SPOT-20261113",
+        "F-CFFEX-20261113-SINA",
+        "F-CUTOFF-SESSION"
+      ]
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "change_type": "unchanged",
+      "previous": "AND为假，结构为backwardation。",
+      "current": "AND仍为假，backwardation加深至-2.0278%。",
+      "reason": "门槛与方向结论未变，数量更新。",
+      "fact_ids": [
+        "F-MA-CU-PX-PRICES-20261113"
+      ]
+    },
+    {
+      "idea_id": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "change_type": "unchanged",
+      "previous": "AND为假，MA结3163、PX结8384。",
+      "current": "AND仍为假，MA2701结3222、PX结8538。",
+      "reason": "价格上升但未接近门槛。",
+      "fact_ids": [
+        "F-MA-CU-PX-PRICES-20261113"
+      ]
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "change_type": "weakened",
+      "previous": "观察，需辩护持续contango。",
+      "current": "contango仍陡峭，但结算大涨且仓降，近端空头或回补风险上升，仍不执行。",
+      "reason": "结构支持仍在，短期价格路径不利原空头观察。",
+      "fact_ids": [
+        "F-EC-AU-AG-BU-20261113"
+      ]
+    }
+  ],
+  "idea_ledger": [
+    {
+      "idea_id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "first_proposed_at": "2026-10-28",
+      "original_plan_markdown": "比较现金流定价权龙头与Capex Beta，观察MSFT相对GOOGL及半导体链条，不在事件落地前重仓。",
+      "current_plan_markdown": "MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。",
+      "changes_markdown": "前序晨报已纳入Huang辞任与周四收盘；本批用NVIDIA官方新闻稿原件复核该事件，并补充中国周五中小盘/IM-IC大跌与美债10年5.10%的映射。触发条件未放宽。",
+      "actual_position_status": "真实账户持仓未提供、未知；所有持有、减仓、退出均为条件化表述，不冒称已调仓或已成交。"
+    },
+    {
+      "idea_id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "first_proposed_at": "2026-10-28",
+      "original_plan_markdown": "在可诚实辩护的持续contango结构下观察欧线集运，默认不执行。",
+      "current_plan_markdown": "EC默认观察，不因单日反弹改写方向：只有能够诚实辩护持续contango结构、且执行窗口、流动性与官方/可核结算齐备时才评估是否达到可执行；COM-T-EC2612-TREND-CONTANGO-SHORT不因今日结算+4.19%、持仓下降而自动翻多为新仓。当前EC2611结算2154.5对EC2612结算2551，(2154.5-2551)/2551=−15.5429%，近月低于远月，结构为陡峭contango，但EC2611持仓稀薄，且20日结算收益仍约−22.45%。",
+      "changes_markdown": "周五结算大涨但持仓下降，20日仍深负；近月对远月contango仍陡峭。不将方向改为新多，也不在夜盘前执行空头。",
+      "actual_position_status": "真实账户持仓未提供、未知；所有持有、减仓、退出均为条件化表述，不冒称已调仓或已成交。"
+    },
+    {
+      "idea_id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "first_proposed_at": "2026-10-25",
+      "original_plan_markdown": "CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。",
+      "current_plan_markdown": "CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。",
+      "changes_markdown": "门槛未改。周五CU2612结算由前结105140降至105040，对CU2701 backwardation由前序约−1.38%加深至−2.0278%。",
+      "actual_position_status": "真实账户持仓未提供、未知；所有持有、减仓、退出均为条件化表述，不冒称已调仓或已成交。"
+    },
+    {
+      "idea_id": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "first_proposed_at": "2026-10-24",
+      "original_plan_markdown": "MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。",
+      "current_plan_markdown": "MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。",
+      "changes_markdown": "门槛未改。MA2701结算由3163升至3222，PX2701由8384升至8538，仍远离3485/9850。",
+      "actual_position_status": "真实账户持仓未提供、未知；所有持有、减仓、退出均为条件化表述，不冒称已调仓或已成交。"
+    },
+    {
+      "idea_id": "COM-C-BU2701-PULLBACK-LONG-20261022",
+      "first_proposed_at": "2026-10-22",
+      "original_plan_markdown": "观察沥青回撤做多仅在趋势与持仓确认后。",
+      "current_plan_markdown": "不把BU2701回撤反弹当作已确认的回撤做多：今日结算虽上涨但5日仍为负、且价涨仓降，避免项不占机会榜，若此前已建仓则仅能有条件退出，不得加仓。",
+      "changes_markdown": "维持回避。周五结算反弹但5日仍负、价涨仓降。",
+      "actual_position_status": "真实账户持仓未提供、未知；所有持有、减仓、退出均为条件化表述，不冒称已调仓或已成交。"
+    }
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "title": "结论",
+      "markdown": "混合偏向增长担忧与利率再定价，而非单纯风险偏好修复。主驱动是美国周四现金温和收跌叠加NVIDIA官方CEO过渡、以及周四国债曲线10年升至5.10%；中国周五则表现为上证50相对抗跌、中小盘与IM/IC显著走弱。最重要跨资产背离是：美债名义收益率已站上5%，国内黄金/白银结算大跌，同时欧线集运与部分化工品上涨，且NVDA大跌与AMD/AVGO大涨并存。中国未因涨跌幅进入“应立即新仓”的全球前三，只是风格风险已经发生。结论：截至截点无可立即执行新仓。"
+    },
+    {
+      "number": 2,
+      "title": "全球仪表盘",
+      "markdown": "美国国债（Treasury官方2026-11-12）：2年4.86%、10年5.10%、30年5.43%，2s10s 0.24pp，10年实际利率代理（5.10-2.24）=2.86（非DFII10）。DXY/EUR/USD/USD/JPY/USD/CNH在截点附近为进行中报价（DINIW 103.24、EURUSD 1.1050、USDJPY 159.94、USDCNH 6.6733），不是周四官方收盘。Nasdaq 25366.09（-0.39%）、QQQ 688.17（-0.32%）、SOXX 154.99（-0.26%）、SMH 501.73（-1.03%）。WTI/Brent为周五进行中报价约88.37/96.03，缺官方结算。黄金国内AU2702结算840.96（-2.45%）。VIX/MOVE/HY OAS缺11-12官方值。IH2612 2733.4（约-0.28%，对现货-41.6点）、IF2612 3956.6（约-1.26%，-59.7点）、IC2612 6375（约-2.73%，-90.5点）、IM2612 6276.8（约-3.44%，-80.5点）。HO/IO/MO周五ATM缺证。商品附录：引擎周五EOD、五所就绪、期权64/64但execution_ready=false；官方crosscheck不可用；今夜盘未开始；公司公开资料本批无新增原件。"
+    },
+    {
+      "number": 3,
+      "title": "Delta Research",
+      "markdown": "相对2026-11-13 morning（截点07:55，日盘未开始）的真实变化：（1）NVIDIA辞任由转述升级为官方新闻稿原件；（2）Treasury官方曲线确认10年5.10%；（3）中国日盘与IM/IC大幅相对弱势已经发生，不再是开盘情景；（4）商品MA/CU门槛仍为假，但价格与铜结构已更新；（5）EC单日大涨使原空头观察弱化，仍不执行。未把撤回的11-13 evening当基准。旧夜盘不再作为本晚新行情。"
+    },
+    {
+      "number": 4,
+      "title": "统一Top5以内",
+      "markdown": "统一观察名单（不是必须交易的配额）：1）AI-CASHFLOW-VS-CAPEX-BETA-20261028，研究优先43（前序40），等触发，MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。 2）COM-T-EC2612-TREND-CONTANGO-SHORT-20261028，35（前序37），等触发，EC默认观察，不因单日反弹改写方向：只有能够诚实辩护持续contango结构、且执行窗口、流动性与官方/可核结算齐备时才评估是否达到可执行；COM-T-EC2612-TREND-CONTANGO-SHORT不因今日结算+4.19%、持仓下降而自动翻多为新仓。当前EC2611结算2154.5对EC2612结算2551，(2154.5-2551)/2551=−15.5429%，近月低于远月，结构为陡峭contango，但EC2611持仓稀薄，且20日结算收益仍约−22.45%。 3）COM-C-MA2701-AND-PX-RECLAIM-20261024与COM-M-CU2612-HVC-STRIKE-WATCH-20261025仍在门槛外（26附近），MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。 CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。 回避项BU不占机会榜。分数不是胜率。"
+    },
+    {
+      "number": 5,
+      "title": "最多3张完整卡",
+      "markdown": "完整卡只保留仍有研究价值且条件可核的主题，不凑满3张。卡1 AI现金流/治理：机制是龙头治理折价与Capex Beta重估；市场已定价部分包括NVDA周四-4.34%及AMD/AVGO大涨；分歧在于常任CEO与11-17财报是否改变中期需求。工具以现货或有限风险期权为候选，但无可用期权报价，故非执行卡。入场须满足：MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。 失效：若仅是情绪脉冲而利率与盈利路径未验证，或两者持续反向。预算仅能按NAV公式预留，未知账户不得给手数。卡2 利率-黄金联动：10年5.10%与AU/AG价跌仓增同日，竞争解释包括实际利率、美元、避险与昨日定价滞后；缺ETF/CFTC，不作新增多。压力：周末缺口与周五PPI。"
+    },
+    {
+      "number": 6,
+      "title": "黄金专题",
+      "markdown": "黄金专题：政策信用“期权”只是经济比喻。本批更强的竞争解释是名义/代理实际利率上升。国内AU2702结算-2.45%、AG-3.48%且仓增，倾向为新空或空头加仓线索，不是已证实的中期底部。ETF、央行、CFTC、COMEX期限与IV原件缺失，结论为证据不足、短期偏弱，不把3–6个月Call Spread或微型黄金期货当作可执行结构。前序若有黄金多头，需在下一可交易窗口按利率是否回落再审，而不是在已下跌后追空或抄底。"
+    },
+    {
+      "number": 7,
+      "title": "AI专题",
+      "markdown": "AI专题：现金流定价权与Capex Beta仍是主轴。官方事实是Huang辞任立即生效、Kress双肩CEO/CFO、11-17财报按期。周四定价是NVDA大跌、AMD/AVGO大涨、MSFT仅+0.36%而GOOGL+1.79%，半导体ETF并未全面转强（SMH-1.03%）。中国成长与中小盘周五大跌，可能映射该冲击与利率，但不能把创业板跌幅直接写成NVDA的一一对应Beta。缺篮子权重，不称中性组合。最强反证是：事件被迅速计价且11-17前出现空头回补；证伪则是财报或治理超预期恶化。"
+    },
+    {
+      "number": 8,
+      "title": "中国股指与公司专题",
+      "markdown": "中国股指与公司：现货与期货共同指向“强50、弱500/1000/创业板”。IH相对抗跌、IM/IC跌幅显著，基差为折价（供应商口径）。周五股指期权ATM缺证，不能比较RR/BF或Gamma节点。公司通道：本批重点A股检索为0，不声称全市场无机会，只说明没有已核原件足以改变指数或商品结论。未入榜理由：追打已实现的IM/IC下跌缺乏剩余赔率与下一窗口确认，复活旧空被明确列入回避。"
+    },
+    {
+      "number": 9,
+      "title": "未来24小时/7天风险与下一窗口地图",
+      "markdown": "未来24小时/7天与下一窗口：北京时间今晚21:00中国商品夜盘（尚未发生，属前瞻条件，通常归属下一有效交易日，执行前核官方安排）；21:30美国10月PPI（BLS日程，数值未出）。美国周五现金开盘约22:30北京时间。11-16前后关注国债拍卖结算与账单拍卖；11-17 NVIDIA财报；11-18 FOMC纪要与20年国债拍卖（日程已列，结果未出）。下一合法窗口地图：高开——先看美债收益率与NVDA盘前是否反向缓和，15/30/45分钟内若IM/IC继续单边且无量能确认则不得追空；低开——检查是否因PPI或外盘黄金续跌而扩大，避免在跌停附近新开；平开——维持门槛观察。已发生的中国09:30窗口不得再作为可下单计划。A50/HSI仅能作代理，存在错时风险。"
+    },
+    {
+      "number": 10,
+      "title": "最终行动四行",
+      "markdown": "归档状态：研究与本地校验在本目录完成，正式写入farfromexact/Global-Cross-Asset-Radar-Grok由父代理搬运冻结字节，本子代理未推送。持仓未知。\n\nA. 截至本次截点，没有应立即建立的新仓。美国周五现金盘尚未开盘；中国日盘已结束且下一夜盘未开始；MA/CU完整AND为假；商品与股指期权未execution_ready；真实持仓未知。\nB. 仅应挂条件的候选：MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。 CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。 EC默认观察，不因单日反弹改写方向：只有能够诚实辩护持续contango结构、且执行窗口、流动性与官方/可核结算齐备时才评估是否达到可执行；COM-T-EC2612-TREND-CONTANGO-SHORT不因今日结算+4.19%、持仓下降而自动翻多为新仓。当前EC2611结算2154.5对EC2612结算2551，(2154.5-2551)/2551=−15.5429%，近月低于远月，结构为陡峭contango，但EC2611持仓稀薄，且20日结算收益仍约−22.45%。 MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。\nC. 继续观察：美国周五21:30（北京时间）PPI及随后现金开盘对10年收益率、黄金与成长股的反应；中国商品21:00夜盘（尚未发生）对今日贵金属下跌与EC反弹的延续或回吐；11-17 NVIDIA财报与CEO搜寻；官方商品/CFFEX结算文件若可得后的门槛复核；IM/IC相对IH的折价能否在下一完整会话收敛。\nD. 必须回避或若此前已建仓则有条件退出：逆MA/CU门槛抄多；把Wind或新浪结算当作已核官方结算并市价追价；把旧夜盘当作本晚新行情；不把BU2701回撤反弹当作已确认的回撤做多：今日结算虽上涨但5日仍为负、且价涨仓降，避免项不占机会榜，若此前已建仓则仅能有条件退出，不得加仓。 裸卖波动；在财报与常任CEO落地前追AMD/AVGO或建立半导体方向性重仓；在IM/IC已大幅下跌后复活旧空或追打跌停附近；在没有报价的期权上假设合同限损。"
+    }
+  ],
+  "actions": {
+    "A": "截至本次截点，没有应立即建立的新仓。美国周五现金盘尚未开盘；中国日盘已结束且下一夜盘未开始；MA/CU完整AND为假；商品与股指期权未execution_ready；真实持仓未知。",
+    "B": "仅应挂条件的候选：MA完整AND仅在官方收盘与官方结算同时≥3485且同期PX官方结算≥9850时才可考虑新多；供应商/公开源报价只作对照，不得当作官方结算或立即执行价。当前Wind/新浪周五EOD：MA2701结算3222、收盘3266，MA2612结算3475、收盘3480，PX2701结算8538，三项门槛均未达标，完整AND为假，不得逆门槛做多。 CU完整AND仅在官方主力结算≥109600且近远月（CU2612对CU2701）contango≥0.65%时才可考虑新多。当前Wind/新浪周五EOD：CU2612结算105040、收盘105150，对CU2701结算102910的价差为(102910-105040)/105040=−2.0278%（backwardation，不是contango），价格与结构双门槛均未达标，完整AND为假，不得逆门槛抄多。 EC默认观察，不因单日反弹改写方向：只有能够诚实辩护持续contango结构、且执行窗口、流动性与官方/可核结算齐备时才评估是否达到可执行；COM-T-EC2612-TREND-CONTANGO-SHORT不因今日结算+4.19%、持仓下降而自动翻多为新仓。当前EC2611结算2154.5对EC2612结算2551，(2154.5-2551)/2551=−15.5429%，近月低于远月，结构为陡峭contango，但EC2611持仓稀薄，且20日结算收益仍约−22.45%。 MSFT/GOOGL及AI现金流对Capex Beta主题：需NVIDIA治理与财报路径落地、且MSFT与GOOGL重新同向后才可再评方向性新仓；在2026-11-17财报与常任CEO落地前，不建立半导体方向性重仓，不追AMD/AVGO已实现的周四反弹。周四现金收盘MSFT +0.36%、GOOGL +1.79%，仍未同向占优。",
+    "C": "继续观察：美国周五21:30（北京时间）PPI及随后现金开盘对10年收益率、黄金与成长股的反应；中国商品21:00夜盘（尚未发生）对今日贵金属下跌与EC反弹的延续或回吐；11-17 NVIDIA财报与CEO搜寻；官方商品/CFFEX结算文件若可得后的门槛复核；IM/IC相对IH的折价能否在下一完整会话收敛。",
+    "D": "必须回避或若此前已建仓则有条件退出：逆MA/CU门槛抄多；把Wind或新浪结算当作已核官方结算并市价追价；把旧夜盘当作本晚新行情；不把BU2701回撤反弹当作已确认的回撤做多：今日结算虽上涨但5日仍为负、且价涨仓降，避免项不占机会榜，若此前已建仓则仅能有条件退出，不得加仓。 裸卖波动；在财报与常任CEO落地前追AMD/AVGO或建立半导体方向性重仓；在IM/IC已大幅下跌后复活旧空或追打跌停附近；在没有报价的期权上假设合同限损。"
+  }
+}
