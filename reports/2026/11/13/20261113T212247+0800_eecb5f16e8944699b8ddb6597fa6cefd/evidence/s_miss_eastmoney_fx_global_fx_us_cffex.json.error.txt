@@ -1,0 +1,8 @@
+{
+  "url": "https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&invt=2&fields=f12,f13,f14,f2,f3,f4,f5,f6,f8,f18,f152,f15,f16,f17&secids=119.DINIW,133.USDCNH,119.USDJPY,119.EURUSD,100.NDX,100.SPX,100.DJIA,100.VIX,101.GC00Y,101.SI00Y,102.CL00Y,8.IF00,8.IH00,8.IC00,8.IM00,8.HO00,8.IO00,8.MO00",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:32:29.511056Z",
+  "error": "HTTPError: HTTP Error 502: Bad Gateway",
+  "ok": false,
+  "artifact": "downloads/public/eastmoney/global_fx_us_cffex.json"
+}

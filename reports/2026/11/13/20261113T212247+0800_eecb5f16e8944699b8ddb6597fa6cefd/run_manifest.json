@@ -1,0 +1,86 @@
+{
+  "actual_executor": "Grok Bot executor subagent on shared Linux box (Python 3.13.5); cursor-github MCP for private Registry reads; public curl for engine/public sources",
+  "actual_model": null,
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "archive_status": "partial",
+  "batch_status": "partial",
+  "completed_at_utc": "2026-11-13T13:44:52.954505Z",
+  "data_versions": {
+    "commodities": {
+      "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7",
+      "repository": "farfromexact/China-Commodities-Engine"
+    },
+    "options": {
+      "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+      "repository": "farfromexact/China-Options-Engine"
+    }
+  },
+  "information_cutoff_utc": "2026-11-13T13:22:47.001031Z",
+  "limitations": [
+    "machine_representation_complete=false: official exchange settlements, current Friday night session, official CFFEX/HO/IO/MO, official VIX/MOVE/DXY/FX, official US cash equities and official WTI/Brent/COMEX were not obtained.",
+    "China commodity prices are Wind vendor EOD from China-Commodities-Engine 908dbe6e, not official SHFE/DCE/CZCE/INE/GFEX settlement files.",
+    "The night module in the pin is Thursday night into Friday morning, not the Friday 21:00 session, even though cutoff is 21:22 Asia/Shanghai.",
+    "Friday commodity options come from the commodities-engine sampled core_v1 module (bid_ask_coverage=0). China-Options-Engine tip a4c16a18 predates Friday.",
+    "China cash index levels are Eastmoney delayed public quotes, not SSE/SZSE/CSI/HKEX official close files.",
+    "actual_model is null because the executor cannot confirm the underlying model name.",
+    "execution_enabled=false; no orders; no WeChat; existing automations were not changed.",
+    "Local batch_status=complete and archive_status=verified describe a publication proposal only. This executor does not push to GitHub; remote archive remains not_written until scripts/grok_publish.py succeeds.",
+    "Stooq, Yahoo and other blocked vendor bodies are retained as failed-attempt artifacts and are not used as prices.",
+    "Company research is limited-scope public originals; 11-14 dated 紫金/中远海控 list items are not pre-cutoff facts."
+  ],
+  "previous_reports": {
+    "commodities": {
+      "identity": "Verified legacy morning package for 2026-11-13; content commit a80db04d81f93ec41705cef334bec6ed62d67bd0; status/morning_latest.json archive_status=success; research cutoff 2026-11-13 07:55 Asia/Shanghai; not a verified on-demand predecessor (success index empty; prior on-demand runs withdrawn or unverified).",
+      "information_cutoff_utc": "2026-11-12T23:55:00Z",
+      "kind": "legacy",
+      "path": "latest/morning.md"
+    },
+    "global": {
+      "identity": "Verified legacy morning package for 2026-11-13; content commit a80db04d81f93ec41705cef334bec6ed62d67bd0; status/morning_latest.json archive_status=success; research cutoff 2026-11-13 07:55 Asia/Shanghai; not a verified on-demand predecessor (success index empty; prior on-demand runs withdrawn or unverified).",
+      "information_cutoff_utc": "2026-11-12T23:55:00Z",
+      "kind": "legacy",
+      "path": "latest/morning.md"
+    }
+  },
+  "prompt_sha256": {
+    "commodities_radar": "b96b49894a1613727e1626a486fc1cf678f64de5bc31c351e787827c73d11b46",
+    "global_radar": "e2dc82988b6d572230739b54f7d1eb5bcfee638d9cdacddbdb3a887ca8133176",
+    "radar_run": "4679421df2a955a57a0ef50bd0cd6be001bd98afc930ae0eb81c1758c54155b8"
+  },
+  "registry_commit": "0dd583c7c0507e6cdb9e92187fb53a83531005c0",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "reports": {
+    "commodities": {
+      "errors": [],
+      "generated_at_utc": "2026-11-13T13:44:50.164637Z",
+      "json": {
+        "path": "reports/2026/11/13/20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd/commodities.json",
+        "sha256": "df21d1f1d9f7bcdbe6527dfea77ae4d8004b1b4b4a1cfdba40617ae330029bd3"
+      },
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd/commodities.md",
+        "sha256": "3b4a87a1dd6359b499a2893011c5a556d73cd2d2fe3decd6ac9ddbb046e30912"
+      },
+      "state": "validated"
+    },
+    "global": {
+      "errors": [],
+      "generated_at_utc": "2026-11-13T13:44:50.164637Z",
+      "json": {
+        "path": "reports/2026/11/13/20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd/global.json",
+        "sha256": "55708a33cd2f828757a84579d027f8c54bd9016b8f66f51f5330b995dde4283d"
+      },
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd/global.md",
+        "sha256": "4b94c8e9b353ad6632a332ee1a2e76e0a6af8b7d9fb46e44cf79abcb7af9675d"
+      },
+      "state": "validated"
+    }
+  },
+  "run_id": "20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd",
+  "schema_version": "radar_run_v2",
+  "shared_checks_passed": true,
+  "started_at_utc": "2026-11-13T13:22:47.001031Z",
+  "supersedes_run_id": null
+}

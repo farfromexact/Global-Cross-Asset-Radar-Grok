@@ -1,0 +1,8 @@
+{
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MOVE",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:34.588990Z",
+  "artifact": "downloads/public/fred/MOVE.csv",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "ok": false
+}

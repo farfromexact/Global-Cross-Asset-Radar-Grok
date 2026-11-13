@@ -1,0 +1,8 @@
+{
+  "url": "https://www.shfe.com.cn/reports/tradedata/late/20261113.html",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:44.762994Z",
+  "artifact": "downloads/public/shfe/20261113.html",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "ok": false
+}

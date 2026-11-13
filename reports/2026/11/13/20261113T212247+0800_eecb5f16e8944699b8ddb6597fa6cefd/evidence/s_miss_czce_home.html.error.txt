@@ -1,0 +1,8 @@
+{
+  "url": "http://www.czce.com.cn/",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:45.373423Z",
+  "artifact": "downloads/public/czce/home.html",
+  "error": "HTTPError: HTTP Error 500: Internal Server Error",
+  "ok": false
+}

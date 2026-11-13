@@ -1,0 +1,8 @@
+{
+  "url": "https://www.sse.com.cn/market/sseindex/indexlist/c/index.shtml",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:44.751848Z",
+  "artifact": "downloads/public/sse/indexlist.html",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "ok": false
+}

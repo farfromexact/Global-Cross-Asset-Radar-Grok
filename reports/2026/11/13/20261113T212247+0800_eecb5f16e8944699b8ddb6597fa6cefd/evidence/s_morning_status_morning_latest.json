@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0",
+  "edition": "morning",
+  "archive_status": "success",
+  "report_date": "2026-11-13",
+  "generated_at_bjt": "2026-11-13T08:15:00+08:00",
+  "as_of_bjt": "2026-11-13T07:55:00+08:00",
+  "research_cutoff_bjt": "2026-11-13T07:55:00+08:00",
+  "research_cutoff_utc": "2026-11-12T23:55:00Z",
+  "routine_fired_bjt": null,
+  "routine_fired_utc": null,
+  "public_source_retrieval_bjt": "2026-11-13T07:52:00+08:00",
+  "scheduled_slot_bjt": "07:50",
+  "actual_generation_note": "Friday 2026-11-13 morning. Research cutoff locked 07:55 BJT (2026-11-12T23:55:00Z). Public source retrieval 07:52–07:53 BJT. Archive generated 08:15 BJT. Commodities pin 1db709dc has Thursday 2026-11-12 Wind vendor day session, official_complete=false. Thursday night session is NOT in the pin. Stock and options engines effective date is 2026-11-11. China Friday 09:00/09:30 has not started. No orders. No WeChat. 2026-11-05 morning still missing and not created.",
+  "markdown_path": "reports/2026/11/2026-11-13_morning.md",
+  "json_path": "reports/2026/11/2026-11-13_morning.json",
+  "latest_markdown_path": "latest/morning.md",
+  "latest_json_path": "latest/morning.json",
+  "status_path": "status/morning_latest.json",
+  "manifest_path": "manifests/reports.json",
+  "ci_validation_status": "pending_or_unverified",
+  "worth_taking_risk": false,
+  "wechat_escalate": false,
+  "orders": false,
+  "holdings_status": "未核实",
+  "prompt_version": "radar_2026-10-12_stock_v1",
+  "commodity_consumer_version": "core_2026-10-17_v1",
+  "missing_morning_2026_11_05": true,
+  "weekend_dailies_absent_by_design": true,
+  "prior_morning_commit": "d464148e8d73db8d8a8e24612889e94e8890129b",
+  "prior_evening_commit": "5743ebab3845c3301d60908b15c44f5e7948cf31",
+  "prior_weekly_content_commit": "95108305979eec3c35419e2dd944869977d590d3",
+  "prior_weekly_status_commit": "2ebf88b0e30fe61d9c0733f0482daec3a807520e",
+  "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+  "top5_scores": {
+    "AI": 40,
+    "EC": 37,
+    "CU": 27,
+    "MA": 25,
+    "BU": 14
+  },
+  "top5": [
+    {
+      "id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "ticker": "MSFT/GOOGL",
+      "score": 40,
+      "direction": "observe",
+      "delta_vs_prior_morning": -1,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "ticker": "EC2612",
+      "score": 37,
+      "direction": "observe",
+      "delta_vs_prior_morning": -2,
+      "delta_vs_evening": -1
+    },
+    {
+      "id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "ticker": "CU2612",
+      "score": 27,
+      "direction": "observe",
+      "delta_vs_prior_morning": -1,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "ticker": "MA2701",
+      "score": 25,
+      "direction": "observe",
+      "delta_vs_prior_morning": 0,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-C-BU2701-PULLBACK-LONG-20261022",
+      "ticker": "BU2701",
+      "score": 14,
+      "direction": "avoid",
+      "delta_vs_prior_morning": 0,
+      "delta_vs_evening": 0
+    }
+  ],
+  "one_sentence_conclusion": "美国周四现金盘收跌（SPX 7592.40 −0.35%、Nasdaq 25366.09 −0.39%、Dow 52297.09 −0.36%）：NVDA 因黄仁勋辞任CEO（CFO Kress任临时CEO）盘中一度跌逾13%、收166.19（−4.34%，52周新低），AMD +5.86%、AVGO +5.54%、MU −1.59%，MSFT +0.36% 再落后 GOOGL +1.79%（周二至周四连续三日落后，配对不成立）；10年美债约5.11–5.13%、Brent收95.82（+3.3%）、美联储12月加息预期近100%——风险偏好受压而非单边崩盘。中国商品引擎已补入周四Wind供应商日盘（official_complete=false）：MA2701结3163、CU2612结105140，MA/CU完整AND仍为假，铜继续backwardation；今早09:00/09:30尚未开盘，今早无新仓。",
+  "one_sentence_conclusion_en": "US Thursday cash closed lower (SPX 7592.40 −0.35%, Nasdaq 25366.09 −0.39%, Dow 52297.09 −0.36%): NVDA fell more than 13% intraday after Jensen Huang resigned as CEO (CFO Kress as interim CEO) and closed 166.19 (−4.34%, a 52-week low), while AMD +5.86%, AVGO +5.54%, MU −1.59%, and MSFT +0.36% lagged GOOGL +1.79% for a third straight day (Tuesday through Thursday), so the pair does not trigger. The 10-year yield was about 5.11–5.13%, Brent settled 95.82 (+3.3%), and a December Fed hike is priced near 100% — risk appetite is pressured, not a one-way crash. The China commodities engine now includes Thursday's Wind vendor day session (official_complete=false): MA2701 settle 3163, CU2612 settle 105140, MA/CU full AND still false, and copper still in backwardation. Friday 09:00/09:30 has not opened; no new positions.",
+  "four_lines": [
+    "A. 今天没有应立即建立的新仓位（美股周四收跌、NVDA治理冲击后分化；商品周四Wind收盘official_complete=false，MA/CU完整AND仍为假，铜backwardation；中国09:00/09:30未开盘，21:00夜盘与21:30 PPI未到；商品/股指期权未execution_ready）。",
+    "B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850；Wind周四MA结3163、PX结8384，夜盘公开源MA约3216，均未达标）；CU完整AND（官方≥109600且contango≥0.65%；周四CU2612结算105140对CU2701约−1.38%为backwardation）；EC需能诚实辩护持续contango结构，默认观察；MSFT/GOOGL需NVDA事件落地、两者重新同向后才可再评。",
+    "C. 今天继续观察：中国09:00/09:30对NVDA事件、AMD/AVGO受益与美债收益率>5%的映射、日韩开盘对NVDA供应链反应、IM/IC弱于IH的延续、周四夜盘官方收盘与官方商品结算文件、今晚21:30 PPI与21:00夜盘（未到，非缺失）、周末美伊与油价。",
+    "D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把Wind供应商收盘或公开源夜盘当官方结算；把周三夜盘当周四夜盘；BU回撤多；裸卖波动；在NVDA财报(11/17)与CEO继任落地前建立半导体方向性重仓或追AMD/AVGO；复活IH/IM旧空；商品/股指期权未execution_ready。"
+  ],
+  "regime": "us_thu_close_lower_nvda_huang_resigns_amd_avgo_up_msft_lags_googl_third_day_ust10y_gt5_brent_up_wind_vendor_thu_close_ma_cu_gates_false_thu_night_not_in_pin_china_fri_open_not_started_no_risk",
+  "engine_notes": {
+    "commodities_day": "pin 1db709dcf61a7f032747c1702673b3f78255ef8e; committer 2026-11-12T14:50:28Z (22:50 BJT), new versus last night's 8a908946. report_input_latest generated 2026-11-12T21:40:33+08:00; requested_date/source_date=2026-11-12; execution snapshot sha256:6128a629…; quotes=1612; rejected=0; usage=dated_reference_only. last_run_status read_ok. data_fresh=true, official_complete=false, contract_info/warehouse/basis/member_rankings=skipped(not_yet_mapped). Wind vendor Thursday day session, not an exchange official settlement. report_input blob cfae43c626b0484fcb689613406402cfbe11e36c 1302224B. MA2701 close 3172 / settle 3163; PX2701 close 8448 / settle 8384; CU2612 close 104950 / settle 105140. MA_AND=false CU_AND=false. DCE official page 412; official exchange reconciliation unavailable. Day file generated 21:33:42 BJT.",
+    "commodities_night": "same pin. night_session/last_run_status read_ok. night_session/latest blob d36765e1f4a71b28d38a096e3fba2a1d086fcb50 1572204B. In-pin night file is night_session_date=2026-11-11 (Wednesday night), official_night_close_verified=false. Thursday night is NOT in the pin (Sina public color only, not an engine print). Friday 21:00 has not started.",
+    "stock": "pin f469c846c84defd0e2a9dfa01e54bf7265bcb54d; committer 2026-11-12T14:04:04Z; launcher-only change. last_run_status=success_wind_publication and data/latest/manifest.json read_ok. Effective trade date 2026-11-11, not Thursday. Research slices/parquet were not deep-read this round.",
+    "options": "pin a4c16a18d16d039a30e9c162950096c9333a0a49; committer 2026-11-11T23:16:58Z, unchanged from last night. last_run_status and radar_latest read_ok; local asset parsed blob 27a4817628558a3fcb2d26bb2484319f12ac931a 72770B. date=2026-11-11 official CFFEX EOD, match 760/760, execution_ready=false, bid/ask insufficient. Today's 07:16 update is not in the pin."
+  },
+  "engine_read_receipts": {
+    "schema_note": "Short real attempt receipts nested in existing JSON fields. Not a seventh archive file. pins and per-engine receipts copied from the 2026-11-13 morning report JSON.",
+    "research_cutoff_bjt": "2026-11-13T07:55:00+08:00",
+    "research_cutoff_utc": "2026-11-12T23:55:00Z",
+    "receipts_written_bjt": "2026-11-13T08:15:00+08:00",
+    "method_default": "cursor-github list_commits + get_file_contents at pin",
+    "head_changed_after_pin": false,
+    "pins": {
+      "China-Commodities-Engine": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+      "China-Stock-Engine": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+      "China-Options-Engine": "a4c16a18d16d039a30e9c162950096c9333a0a49"
+    },
+    "receipts": {
+      "China-Commodities-Engine": {
+        "cutoff_utc": "2026-11-12T23:55:00Z",
+        "pin_sha": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+        "pin_committer_utc": "2026-11-12T14:50:28Z",
+        "method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+        "paths": {
+          "data/last_run_status.json": "read_ok",
+          "data/night_session/last_run_status.json": "read_ok",
+          "data/report_input_latest.json": "read_ok blob cfae43c626b0484fcb689613406402cfbe11e36c 1302224B",
+          "data/night_session/latest.json": "read_ok blob d36765e1f4a71b28d38a096e3fba2a1d086fcb50 1572204B"
+        },
+        "effective_trade_date": "2026-11-12",
+        "official_complete": false,
+        "head_changed_after_pin": false
+      },
+      "China-Stock-Engine": {
+        "cutoff_utc": "2026-11-12T23:55:00Z",
+        "pin_sha": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+        "pin_committer_utc": "2026-11-12T14:04:04Z",
+        "method": "cursor-github get_file_contents at pin",
+        "paths": {
+          "data/last_run_status.json": "read_ok",
+          "data/latest/manifest.json": "read_ok"
+        },
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      },
+      "China-Options-Engine": {
+        "cutoff_utc": "2026-11-12T23:55:00Z",
+        "pin_sha": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+        "pin_committer_utc": "2026-11-11T23:16:58Z",
+        "method": "cursor-github get_file_contents at pin; local asset parsed blob 27a4817628558a3fcb2d26bb2484319f12ac931a 72770B",
+        "paths": {
+          "data/last_run_status.json": "read_ok",
+          "data/radar_latest.json": "read_ok"
+        },
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      }
+    },
+    "files": [
+      {
+        "repo": "farfromexact/China-Commodities-Engine",
+        "path": "data/last_run_status.json",
+        "requested_ref": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+        "read_status": "read_ok",
+        "read_method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+        "pin_committer_utc": "2026-11-12T14:50:28Z",
+        "effective_trade_date": "2026-11-12",
+        "head_changed_after_pin": false,
+        "official_complete": false
+      },
+      {
+        "repo": "farfromexact/China-Commodities-Engine",
+        "path": "data/night_session/last_run_status.json",
+        "requested_ref": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+        "read_status": "read_ok",
+        "read_method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+        "pin_committer_utc": "2026-11-12T14:50:28Z",
+        "effective_trade_date": "2026-11-12",
+        "head_changed_after_pin": false
+      },
+      {
+        "repo": "farfromexact/China-Commodities-Engine",
+        "path": "data/report_input_latest.json",
+        "requested_ref": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+        "read_status": "read_ok blob cfae43c626b0484fcb689613406402cfbe11e36c 1302224B",
+        "read_method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+        "pin_committer_utc": "2026-11-12T14:50:28Z",
+        "effective_trade_date": "2026-11-12",
+        "head_changed_after_pin": false,
+        "official_complete": false
+      },
+      {
+        "repo": "farfromexact/China-Commodities-Engine",
+        "path": "data/night_session/latest.json",
+        "requested_ref": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+        "read_status": "read_ok blob d36765e1f4a71b28d38a096e3fba2a1d086fcb50 1572204B",
+        "read_method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+        "pin_committer_utc": "2026-11-12T14:50:28Z",
+        "effective_trade_date": "2026-11-12",
+        "head_changed_after_pin": false
+      },
+      {
+        "repo": "farfromexact/China-Stock-Engine",
+        "path": "data/last_run_status.json",
+        "requested_ref": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+        "read_status": "read_ok",
+        "read_method": "cursor-github get_file_contents at pin",
+        "pin_committer_utc": "2026-11-12T14:04:04Z",
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      },
+      {
+        "repo": "farfromexact/China-Stock-Engine",
+        "path": "data/latest/manifest.json",
+        "requested_ref": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+        "read_status": "read_ok",
+        "read_method": "cursor-github get_file_contents at pin",
+        "pin_committer_utc": "2026-11-12T14:04:04Z",
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      },
+      {
+        "repo": "farfromexact/China-Options-Engine",
+        "path": "data/last_run_status.json",
+        "requested_ref": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+        "read_status": "read_ok",
+        "read_method": "cursor-github get_file_contents at pin; local asset parsed blob 27a4817628558a3fcb2d26bb2484319f12ac931a 72770B",
+        "pin_committer_utc": "2026-11-11T23:16:58Z",
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      },
+      {
+        "repo": "farfromexact/China-Options-Engine",
+        "path": "data/radar_latest.json",
+        "requested_ref": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+        "read_status": "read_ok",
+        "read_method": "cursor-github get_file_contents at pin; local asset parsed blob 27a4817628558a3fcb2d26bb2484319f12ac931a 72770B",
+        "pin_committer_utc": "2026-11-11T23:16:58Z",
+        "effective_trade_date": "2026-11-11",
+        "head_changed_after_pin": false
+      }
+    ]
+  },
+  "gates": {
+    "MA_AND": false,
+    "CU_AND": false,
+    "MA_close_ge_3485": false,
+    "MA_settle_ge_3485": false,
+    "PX_ge_9850": false,
+    "CU_close_ge_109600": false,
+    "CU_settle_ge_109600": false,
+    "CU_curve_contango_ge_0_65pct": false,
+    "BU_pullback_long": false,
+    "EC_high_conviction_execute": false,
+    "EC_execute": false,
+    "options_execution_ready": false,
+    "us_cash_pair_trigger": false,
+    "monday_us_cash_msft_outperformed_googl": true,
+    "tuesday_us_cash_msft_outperformed_googl": false,
+    "wednesday_us_cash_msft_outperformed_googl": false,
+    "china_day_open": false,
+    "china_day_complete": false,
+    "wednesday_china_day_complete": true,
+    "tuesday_official_futures_available": false,
+    "wednesday_official_futures_available": false,
+    "wednesday_wind_vendor_close_in_pin": true,
+    "wednesday_night_in_pin": true,
+    "wednesday_night_official_close_verified": false,
+    "thursday_night_21_started": true,
+    "us_cash_open": false,
+    "us_wednesday_cash_complete": true,
+    "us_cpi_released": true,
+    "nfp_released": true,
+    "japan_korea_thursday_open": true,
+    "MA_and": false,
+    "CU_and": false,
+    "msft_outperformed_googl_thursday": false,
+    "thursday_official_futures_available": false,
+    "thursday_wind_vendor_close_in_pin": true,
+    "thursday_night_in_pin": false,
+    "friday_night_21_started": false,
+    "us_thursday_cash_complete": true,
+    "japan_korea_friday_open": false
+  },
+  "nfp_released": true,
+  "us_cash_open": false,
+  "us_cpi_released": true,
+  "monday_night_vendor_published": true,
+  "tuesday_night_vendor_published": true,
+  "tuesday_night_21_started": true,
+  "wednesday_night_21_started": true,
+  "thursday_night_21_started": true,
+  "friday_night_21_started": false,
+  "tuesday_official_futures_available": false,
+  "wednesday_official_futures_available": false,
+  "thursday_official_futures_available": false,
+  "thursday_wind_vendor_close_in_pin": true,
+  "thursday_night_in_pin": false,
+  "china_day_complete": false,
+  "errors": [],
+  "permission_errors": [
+    "Official Treasury/BLS/exchange pages not directly fetched; prices from secondary summaries",
+    "Small write_to_file assets carried source framing: local_serialization_error, inline JSON used",
+    "Thursday night session not in commodities pin; Sina public color only",
+    "Commodity official futures file not obtained; Wind vendor used, official_complete=false",
+    "VIX/DXY public source empty",
+    "Prior latest/evening not required beyond status; morning 2026-11-05 still missing"
+  ],
+  "commit_sha": "a80db04d81f93ec41705cef334bec6ed62d67bd0",
+  "note": "archive_status=success. commit_sha is filled with the content commit SHA in the follow-up commit. No 2026-11-05 morning file was created."
+}

@@ -1,0 +1,8 @@
+{
+  "url": "http://www.cffex.com.cn/",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:44.761391Z",
+  "artifact": "downloads/public/cffex/home.html",
+  "error": "HTTPError: HTTP Error 500: Internal Server Error",
+  "ok": false
+}

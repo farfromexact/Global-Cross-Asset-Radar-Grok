@@ -1,0 +1,8 @@
+{
+  "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:48.887681Z",
+  "artifact": "downloads/public/bls/cpi_schedule.html",
+  "error": "HTTPError: HTTP Error 403: Forbidden",
+  "ok": false
+}

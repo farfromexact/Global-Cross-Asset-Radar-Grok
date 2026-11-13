@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "calculations_and_risk": {
+      "evidence": "All calculations use audited operations and isclose-verified results, including official 2s10s/2s30s/BEI, index percent changes, prior-threshold gaps, and LC/SC close-versus-settle gaps. Candidates are unscored because live quotes and official settlements are missing, rather than filled with zero scores. worth_taking_risk=false, wechat_escalate=false, no risk budget allocated, no orders. Residual research gaps (official settlements, current Friday night, official VIX/FX/US cash) are recorded as limitations, not hidden; they do not undo the completed core scan.",
+      "status": "passed"
+    },
+    "counterevidence_and_pricing": {
+      "evidence": "Each candidate records pricing_gap, counterevidence, catalyst and invalidation. EC rebound is balanced against possible short-covering and an unverified curve sign; AU/AG against high official real yields and missing COMEX/DXY; SC against the EIA commercial-stock build and close/settle gap; LC against a truncated reserve table. No candidate is marked executable. Inherited MA/PX/CU thresholds remain untriggered (c_ma_vs_3485, c_px_vs_9850, c_cu_vs_109600).",
+      "status": "passed"
+    },
+    "coverage_and_discovery": {
+      "evidence": "Global universe 93 and commodities universe 85 include the 63-code baseline, discovered engine codes ['JR', 'PL', 'PM', 'RI', 'RS', 'WH', 'ZC', 'BZ', 'LG', 'PG', 'RR', 'PD', 'PT', 'OP', 'WR'], LPG/PG alias mapping, and limited company discoveries ['company:NVDA', 'company:002466', 'company:600547', 'company:601600', 'company:002460', 'company:601899', 'company:601919']. Every coverage row has actual retrievals; asset:fx is honestly data_missing after the 502 and a stale FRED dollar index. Company independent discovery is documented with real announcement bodies, not an empty scan. Core dashboards (global section 2, commodities section 3) are analyzed, not all-missing.",
+      "status": "passed"
+    },
+    "source_accuracy": {
+      "evidence": "Re-checked official Treasury 11-12 par/real yields against the saved HTML; FRED T10Y2Y/T10YIE cross-checks match c_2s10s and c_bei10. Eastmoney index last/prev_close percent changes were recomputed (c_sse_pct through c_hsi_pct). Wind Friday closes/settles for EC/AU/AG/SC/MA/PX/CU/LC/EG were re-read from execution_prices. NVIDIA facts were re-read against nvda-20261111.htm and Exhibit 99.1. EIA Table 1 week ending 11/6/2026 figures were taken as published without forcing rounded table differences into isclose calculations. Stooq/Yahoo/CBOE/official exchange failures remain unavailable artifacts and were not used as prices. Post-cutoff 11-14 紫金/中远 list rows were kept out of pre-cutoff facts.",
+      "status": "passed"
+    }
+  },
+  "report_sha256": {
+    "commodities": "df21d1f1d9f7bcdbe6527dfea77ae4d8004b1b4b4a1cfdba40617ae330029bd3",
+    "global": "55708a33cd2f828757a84579d027f8c54bd9016b8f66f51f5330b995dde4283d"
+  },
+  "reviewed_at": "2026-11-13T13:44:50.954505Z",
+  "reviewer": "Same Grok Bot executor that assembled the reports (second-pass research review, not a different model or a human sign-off)."
+}

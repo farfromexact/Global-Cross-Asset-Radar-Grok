@@ -1,0 +1,8 @@
+{
+  "url": "https://cdn.cboe.com/api/global/delayed_quotes/quotes/VIX.json",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:43.398298Z",
+  "artifact": "downloads/public/cboe/VIX.json",
+  "error": "HTTPError: HTTP Error 403: Forbidden",
+  "ok": false
+}

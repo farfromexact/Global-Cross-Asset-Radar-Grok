@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "edition": "morning",
+  "report_date": "2026-11-13",
+  "generated_at_bjt": "2026-11-13T08:15:00+08:00",
+  "as_of_bjt": "2026-11-13T07:55:00+08:00",
+  "research_cutoff_bjt": "2026-11-13T07:55:00+08:00",
+  "research_cutoff_utc": "2026-11-12T23:55:00Z",
+  "prompt_version": "radar_2026-10-12_stock_v1",
+  "commodity_consumer_version": "core_2026-10-17_v1",
+  "worth_taking_risk": false,
+  "wechat_escalate": false,
+  "orders": false,
+  "holdings_status": "未核实",
+  "one_sentence_conclusion": "美国周四现金盘收跌（SPX 7592.40 −0.35%、Nasdaq 25366.09 −0.39%、Dow 52297.09 −0.36%）：NVDA 因黄仁勋辞任CEO（CFO Kress任临时CEO）盘中一度跌逾13%、收166.19（−4.34%，52周新低），AMD +5.86%、AVGO +5.54%、MU −1.59%，MSFT +0.36% 再落后 GOOGL +1.79%（周二至周四连续三日落后，配对不成立）；10年美债约5.11–5.13%、Brent收95.82（+3.3%）、美联储12月加息预期近100%——风险偏好受压而非单边崩盘。中国商品引擎已补入周四Wind供应商日盘（official_complete=false）：MA2701结3163、CU2612结105140，MA/CU完整AND仍为假，铜继续backwardation；今早09:00/09:30尚未开盘，今早无新仓。",
+  "four_lines": [
+    "A. 今天没有应立即建立的新仓位（美股周四收跌、NVDA治理冲击后分化；商品周四Wind收盘official_complete=false，MA/CU完整AND仍为假，铜backwardation；中国09:00/09:30未开盘，21:00夜盘与21:30 PPI未到；商品/股指期权未execution_ready）。",
+    "B. 今天仅应挂条件的候选：MA完整AND（官方收盘与结算≥3485且PX≥9850；Wind周四MA结3163、PX结8384，夜盘公开源MA约3216，均未达标）；CU完整AND（官方≥109600且contango≥0.65%；周四CU2612结算105140对CU2701约−1.38%为backwardation）；EC需能诚实辩护持续contango结构，默认观察；MSFT/GOOGL需NVDA事件落地、两者重新同向后才可再评。",
+    "C. 今天继续观察：中国09:00/09:30对NVDA事件、AMD/AVGO受益与美债收益率>5%的映射、日韩开盘对NVDA供应链反应、IM/IC弱于IH的延续、周四夜盘官方收盘与官方商品结算文件、今晚21:30 PPI与21:00夜盘（未到，非缺失）、周末美伊与油价。",
+    "D. 今天必须回避或若此前已建仓则有条件退出：逆门槛抄铜甲醇；把Wind供应商收盘或公开源夜盘当官方结算；把周三夜盘当周四夜盘；BU回撤多；裸卖波动；在NVDA财报(11/17)与CEO继任落地前建立半导体方向性重仓或追AMD/AVGO；复活IH/IM旧空；商品/股指期权未execution_ready。"
+  ],
+  "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+  "top5_scores": {
+    "AI": 40,
+    "EC": 37,
+    "CU": 27,
+    "MA": 25,
+    "BU": 14
+  },
+  "top5": [
+    {
+      "id": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "ticker": "MSFT/GOOGL",
+      "score": 40,
+      "direction": "observe",
+      "delta_vs_prior_morning": -1,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "ticker": "EC2612",
+      "score": 37,
+      "direction": "observe",
+      "delta_vs_prior_morning": -2,
+      "delta_vs_evening": -1
+    },
+    {
+      "id": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "ticker": "CU2612",
+      "score": 27,
+      "direction": "observe",
+      "delta_vs_prior_morning": -1,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "ticker": "MA2701",
+      "score": 25,
+      "direction": "observe",
+      "delta_vs_prior_morning": 0,
+      "delta_vs_evening": 0
+    },
+    {
+      "id": "COM-C-BU2701-PULLBACK-LONG-20261022",
+      "ticker": "BU2701",
+      "score": 14,
+      "direction": "avoid",
+      "delta_vs_prior_morning": 0,
+      "delta_vs_evening": 0
+    }
+  ],
+  "regime": "us_thu_close_lower_nvda_huang_resigns_amd_avgo_up_msft_lags_googl_third_day_ust10y_gt5_brent_up_wind_vendor_thu_close_ma_cu_gates_false_thu_night_not_in_pin_china_fri_open_not_started_no_risk",
+  "us_cash_thursday": {
+    "SPX": 7592.4,
+    "SPX_pct": -0.35,
+    "DJI": 52297.09,
+    "DJI_pct": -0.36,
+    "IXIC": 25366.09,
+    "IXIC_pct": -0.39,
+    "NDX": 28289.19,
+    "NDX_pct": -0.3,
+    "VIX": null,
+    "MSFT": 523.0,
+    "MSFT_pct": 0.36,
+    "GOOGL": 298.7,
+    "GOOGL_pct": 1.79,
+    "NVDA": 166.19,
+    "NVDA_pct": -4.34,
+    "AMD_pct": 5.86,
+    "AVGO_pct": 5.54,
+    "MU_pct": -1.59,
+    "source_class": "secondary_CNBC_AP_Investing_Sina"
+  },
+  "rates_oil_fx": {
+    "UST10Y_pct_approx": "5.05-5.13",
+    "UST2Y_pct_approx": "4.84-4.88",
+    "Brent_settle": 95.82,
+    "WTI_settle": 88.74,
+    "gold_spot_public_0752": 3880.56,
+    "USDCNH": 6.6729,
+    "USDJPY": 159.84,
+    "EURUSD": 1.1049,
+    "source_class": "secondary"
+  },
+  "core_day_quotes_wind_vendor_2026_11_12": {
+    "MA2701": {
+      "close": 3172,
+      "settle": 3163
+    },
+    "PX2701": {
+      "close": 8448,
+      "settle": 8384
+    },
+    "CU2612": {
+      "close": 104950,
+      "settle": 105140
+    },
+    "CU2611": {
+      "close": 107870,
+      "settle": 107740
+    },
+    "CU2701": {
+      "close": 103270,
+      "settle": 103690
+    },
+    "EC2612": {
+      "close": 2477.5,
+      "settle": 2448.5
+    },
+    "EC2611": {
+      "close": 2150.5,
+      "settle": 2151.5
+    },
+    "BU2701": {
+      "close": 4330,
+      "settle": 4286
+    },
+    "AU2612": {
+      "close": 852.5,
+      "settle": 860.46
+    },
+    "official_exchange_settlement": false
+  },
+  "index_official_cffex_2026_11_11": {
+    "futures_main_close": {
+      "IH2612": 2742.2,
+      "IF2612": 4043.4,
+      "IC2612": 6664.0,
+      "IM2612": 6623.0
+    }
+  },
+  "gates": {
+    "MA_and": false,
+    "CU_and": false,
+    "EC_execute": false,
+    "options_execution_ready": false,
+    "us_cash_pair_trigger": false,
+    "msft_outperformed_googl_thursday": false,
+    "china_day_open": false,
+    "friday_night_21_started": false
+  },
+  "official_commodity_trade_date": "2026-11-12 (Wind vendor, official_complete=false)",
+  "night_session_date": "2026-11-11 (Wednesday night in pin; Thursday night not in pin)",
+  "options_date": "2026-11-11",
+  "stock_engine_trade_date": "2026-11-11",
+  "engine_pins": {
+    "China-Commodities-Engine": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+    "China-Stock-Engine": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+    "China-Options-Engine": "a4c16a18d16d039a30e9c162950096c9333a0a49"
+  },
+  "engine_read_receipts": {
+    "China-Commodities-Engine": {
+      "cutoff_utc": "2026-11-12T23:55:00Z",
+      "pin_sha": "1db709dcf61a7f032747c1702673b3f78255ef8e",
+      "pin_committer_utc": "2026-11-12T14:50:28Z",
+      "method": "cursor-github list_commits + get_file_contents at pin; large JSON via raw asset (unwrapped, blob sha1 computed locally); small files inline",
+      "paths": {
+        "data/last_run_status.json": "read_ok",
+        "data/night_session/last_run_status.json": "read_ok",
+        "data/report_input_latest.json": "read_ok blob cfae43c626b0484fcb689613406402cfbe11e36c 1302224B",
+        "data/night_session/latest.json": "read_ok blob d36765e1f4a71b28d38a096e3fba2a1d086fcb50 1572204B"
+      },
+      "effective_trade_date": "2026-11-12",
+      "official_complete": false,
+      "head_changed_after_pin": false
+    },
+    "China-Stock-Engine": {
+      "cutoff_utc": "2026-11-12T23:55:00Z",
+      "pin_sha": "f469c846c84defd0e2a9dfa01e54bf7265bcb54d",
+      "pin_committer_utc": "2026-11-12T14:04:04Z",
+      "method": "cursor-github get_file_contents at pin",
+      "paths": {
+        "data/last_run_status.json": "read_ok",
+        "data/latest/manifest.json": "read_ok"
+      },
+      "effective_trade_date": "2026-11-11",
+      "head_changed_after_pin": false
+    },
+    "China-Options-Engine": {
+      "cutoff_utc": "2026-11-12T23:55:00Z",
+      "pin_sha": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+      "pin_committer_utc": "2026-11-11T23:16:58Z",
+      "method": "cursor-github get_file_contents at pin; local asset parsed blob 27a4817628558a3fcb2d26bb2484319f12ac931a 72770B",
+      "paths": {
+        "data/last_run_status.json": "read_ok",
+        "data/radar_latest.json": "read_ok"
+      },
+      "effective_trade_date": "2026-11-11",
+      "head_changed_after_pin": false
+    }
+  },
+  "head_changed_after_pin": false,
+  "permission_errors": [
+    "Official Treasury/BLS/exchange pages not directly fetched; prices from secondary summaries",
+    "Small write_to_file assets carried source framing: local_serialization_error, inline JSON used",
+    "Thursday night session not in commodities pin; Sina public color only",
+    "Commodity official futures file not obtained; Wind vendor used, official_complete=false",
+    "VIX/DXY public source empty"
+  ],
+  "markdown_cjk_chars": 1440,
+  "commit_sha": "a80db04d81f93ec41705cef334bec6ed62d67bd0"
+}

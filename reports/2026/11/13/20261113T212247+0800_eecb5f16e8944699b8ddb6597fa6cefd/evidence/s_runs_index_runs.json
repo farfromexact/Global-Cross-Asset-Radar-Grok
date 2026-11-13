@@ -1,0 +1,6 @@
+{
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "runs": [],
+  "schema_version": "radar_runs_v1"
+}

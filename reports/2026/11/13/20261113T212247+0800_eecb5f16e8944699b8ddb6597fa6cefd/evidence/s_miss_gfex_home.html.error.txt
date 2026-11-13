@@ -1,0 +1,8 @@
+{
+  "url": "http://www.gfex.com.cn/",
+  "status": "unavailable",
+  "accessed_at": "2026-11-13T13:23:47.022728Z",
+  "artifact": "downloads/public/gfex/home.html",
+  "error": "HTTPError: HTTP Error 500: Internal Server Error",
+  "ok": false
+}
