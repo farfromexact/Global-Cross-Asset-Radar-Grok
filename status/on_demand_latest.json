@@ -1,0 +1,11 @@
+{
+  "status": "no_verified_on_demand_batch",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "latest_run_id": null,
+  "withdrawn_run_ids": [
+    "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+    "20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8",
+    "20261113T202000+0800_f65015d6c1524ec396757879717ac4b9"
+  ],
+  "reason": "Three 2026-11-13 on-demand batches withdrawn or pending research review; no earlier batch restored without acceptance."
+}

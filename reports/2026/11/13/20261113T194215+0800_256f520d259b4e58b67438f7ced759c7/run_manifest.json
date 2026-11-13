@@ -3,8 +3,8 @@
   "actual_model": null,
   "archive_mode": "production",
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
-  "archive_status": "verified",
-  "batch_status": "complete",
+  "archive_status": "failed",
+  "batch_status": "partial",
   "completed_at_utc": "2026-11-13T11:57:42.772Z",
   "data_versions": {
     "commodities": {
@@ -29,7 +29,8 @@
     "This is the first Grok commodities study; no qualified prior Grok commodities report exists. GPT commodities reports were not used as prior.",
     "farfromexact/China-Stock-Engine was not accessed (stock_repo_paused_2026-11-12). Company research used public originals only; this batch found no new verified A-share IR/exchange originals sufficient to change index or commodity conclusions.",
     "US Friday cash session and China Friday night session had not started at cutoff; do not treat later prints as pre-cutoff facts.",
-    "The 2026-11-13 evening Grok attempt (old six-file path, incomplete/failed) was not used as a verified prior."
+    "The 2026-11-13 evening Grok attempt (old six-file path, incomplete/failed) was not used as a verified prior.",
+    "Research acceptance withdrawn: Coverage records do not meet pinned baseline; company discovery and research depth require review. Not reinstated as a verified predecessor or latest. See review_status.json."
   ],
   "previous_reports": {
     "commodities": null,
@@ -52,7 +53,9 @@
   "registry_version": "on_demand_2026-11-12_v3",
   "reports": {
     "commodities": {
-      "errors": [],
+      "errors": [
+        "Research acceptance withdrawn; original report bytes retained."
+      ],
       "generated_at_utc": "2026-11-13T11:56:30.811Z",
       "json": {
         "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/commodities.json",
@@ -62,10 +65,12 @@
         "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/commodities.md",
         "sha256": "8b509167515c49684656b7a5fa219bfb202cd0b589a72f29b412130bcf0fc8b7"
       },
-      "state": "validated"
+      "state": "failed"
     },
     "global": {
-      "errors": [],
+      "errors": [
+        "Research acceptance withdrawn; original report bytes retained."
+      ],
       "generated_at_utc": "2026-11-13T11:56:30.811Z",
       "json": {
         "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/global.json",
@@ -75,12 +80,12 @@
         "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/global.md",
         "sha256": "316dcf7960e370031e3a1c09cfc58c76c6c70612504a1dd1f7400d0d64d4e74c"
       },
-      "state": "validated"
+      "state": "failed"
     }
   },
   "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
   "schema_version": "radar_run_v2",
-  "shared_checks_passed": true,
+  "shared_checks_passed": false,
   "started_at_utc": "2026-11-13T11:42:15.066300Z",
   "supersedes_run_id": null
 }

@@ -1,0 +1,70 @@
+{
+  "schema_version": "radar_run_v2",
+  "run_id": "20261113T202000+0800_f65015d6c1524ec396757879717ac4b9",
+  "information_cutoff_utc": "2026-11-13T12:20:00Z",
+  "started_at_utc": "2026-11-13T12:20:00Z",
+  "registry_commit": "b55e566540c393cc9fffa01e5ae4f37b86a40d9b",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "data_versions": {
+    "commodities": {
+      "repository": "farfromexact/China-Commodities-Engine",
+      "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7"
+    },
+    "options": {
+      "repository": "farfromexact/China-Options-Engine",
+      "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49"
+    }
+  },
+  "archive_mode": "production",
+  "completed_at_utc": "2026-11-13T12:31:18Z",
+  "prompt_sha256": {
+    "radar_run": "cddb4c4a29f4e6c9b32fbfe01a6b6dd0fdabf07c32f9a3fd541b0ebaf663a0fd",
+    "global_radar": "e2dc82988b6d572230739b54f7d1eb5bcfee638d9cdacddbdb3a887ca8133176",
+    "commodities_radar": "b96b49894a1613727e1626a486fc1cf678f64de5bc31c351e787827c73d11b46"
+  },
+  "actual_executor": "Grok Build interactive session; GitHub connector and gh API on locked commits; public web retrieval; local Python 3.10 jsonschema Draft 2020-12",
+  "actual_model": "Grok Build",
+  "supersedes_run_id": null,
+  "previous_reports": {
+    "global": null,
+    "commodities": null
+  },
+  "reports": {
+    "global": {
+      "state": "validated",
+      "generated_at_utc": "2026-11-13T12:29:32Z",
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/global.md",
+        "sha256": "7d36b8582e804f205f1360aab08245c1de1fad50e346c1085a0bba7b756b20f0"
+      },
+      "json": {
+        "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/global.json",
+        "sha256": "c69cd5113b78a67a53fd7962a23209857490bd34a999add655662c1bf6254e2c"
+      },
+      "errors": []
+    },
+    "commodities": {
+      "state": "validated",
+      "generated_at_utc": "2026-11-13T12:29:32Z",
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/commodities.md",
+        "sha256": "fb4671b6c02ec3e2e28cbd98899d4600e13e69c460ee423acd1c81653cfd78a7"
+      },
+      "json": {
+        "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/commodities.json",
+        "sha256": "74aedb30c4068d867f281712a2f01cb55d7a55444bcf6175ea243e3c58ebecc8"
+      },
+      "errors": []
+    }
+  },
+  "batch_status": "complete",
+  "archive_status": "verified",
+  "shared_checks_passed": true,
+  "limitations": [
+    "四份报告已按commit c3539c69f97849ea907339166c8e6ad9ceb1b6d0回读且SHA-256一致后才把archive_status标为verified。",
+    "CI结果另行记录，不由本manifest宣称通过。",
+    "前序索引记录因manifest不符合radar_run_v2且latest哈希为placeholder而未采用。",
+    "中金所11月13日官方行情、商品绝对价、期权买卖价和公司PDF原件仍然缺失。"
+  ],
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok"
+}

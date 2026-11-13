@@ -1,0 +1,22 @@
+{
+  "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+  "status": "withdrawn_pending_research_review",
+  "reason": "Coverage records do not meet pinned baseline; company discovery and research depth require review. Not reinstated as a verified predecessor or latest.",
+  "source_commit": "ac9e866f42a13ccb6d48b8666c46ebd1502e32bf",
+  "original_manifest": {
+    "path": "audit/grok-publication-20261113/194215_original_run_manifest.json",
+    "sha256": "bd65b9ab18de82b8f9cee1ba2b7acbc6b606d8135b11364c4730882875d7eb76"
+  },
+  "original_index_entry": {
+    "batch_status": "complete",
+    "completed_at_utc": "2026-11-13T11:57:42.772Z",
+    "information_cutoff_utc": "2026-11-13T11:42:15.066300Z",
+    "manifest": {
+      "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/run_manifest.json",
+      "sha256": "bd65b9ab18de82b8f9cee1ba2b7acbc6b606d8135b11364c4730882875d7eb76"
+    },
+    "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+    "started_at_utc": "2026-11-13T11:42:15.066300Z"
+  },
+  "report_bytes_preserved": true
+}

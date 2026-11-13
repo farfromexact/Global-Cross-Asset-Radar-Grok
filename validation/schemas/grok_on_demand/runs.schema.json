@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:radar:grok-on-demand:runs:v1",
+  "title": "Grok On-demand Radar runs",
+  "description": "Manual production archive contract; automatic execution stays disabled. Cross-file identity, hashes, chronology, uniqueness and semantic checks remain required.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "radar_runs_v1"
+    },
+    "archive_mode": {
+      "enum": [
+        "isolated",
+        "production"
+      ]
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "pattern": "^\\d{8}T\\d{6}\\+0800_[0-9a-f]{32}$"
+          },
+          "information_cutoff_utc": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "started_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "completed_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "manifest": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "additionalProperties": false
+          },
+          "batch_status": {
+            "const": "complete"
+          }
+        },
+        "required": [
+          "run_id",
+          "information_cutoff_utc",
+          "started_at_utc",
+          "completed_at_utc",
+          "manifest",
+          "batch_status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "archive_repository": {
+      "const": "farfromexact/Global-Cross-Asset-Radar-Grok"
+    }
+  },
+  "required": [
+    "schema_version",
+    "archive_mode",
+    "runs",
+    "archive_repository"
+  ],
+  "additionalProperties": false
+}

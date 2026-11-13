@@ -7,11 +7,25 @@
   "registry_commit": "b55e566540c393cc9fffa01e5ae4f37b86a40d9b",
   "commodities_commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7",
   "options_commit": "a4c16a18d16d039a30e9c162950096c9333a0a49",
-  "batch_status": "complete",
+  "batch_status": "partial",
   "domains": {
-    "global": {"status": "complete", "path_md": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/global.md", "path_json": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/global.json"},
-    "commodities": {"status": "complete", "path_md": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/commodities.md", "path_json": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/commodities.json"}
+    "global": {
+      "status": "incomplete",
+      "path_md": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/global.md",
+      "path_json": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/global.json"
+    },
+    "commodities": {
+      "status": "incomplete",
+      "path_md": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/commodities.md",
+      "path_json": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/commodities.json"
+    }
   },
-  "limitations": ["数据部分滞后", "期权执行未就绪", "公司公开资料缺口", "前序比较简化"],
-  "archive_status": "written"
+  "limitations": [
+    "数据部分滞后",
+    "期权执行未就绪",
+    "公司公开资料缺口",
+    "前序比较简化",
+    "Research acceptance withdrawn: Incomplete outline published as complete; 13 report-schema errors per domain, 14 manifest errors and placeholder latest hashes under the claimed Registry version. See review_status.json."
+  ],
+  "archive_status": "failed"
 }

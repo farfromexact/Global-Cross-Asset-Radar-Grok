@@ -1,0 +1,22 @@
+{
+  "run_id": "20261113T202000+0800_f65015d6c1524ec396757879717ac4b9",
+  "status": "withdrawn_pending_research_review",
+  "reason": "Concurrent newer run contains actual product scanning, but coverage identifiers do not match the pinned full-checkpoint contract; single-product options were not read and company primary disclosures were not obtained. Preserve research pending review; do not certify complete research.",
+  "source_commit": "ac9e866f42a13ccb6d48b8666c46ebd1502e32bf",
+  "original_manifest": {
+    "path": "audit/grok-publication-20261113/202000_original_run_manifest.json",
+    "sha256": "3b81259358bc46bf7feebfa6c20ba375ca42520f659d381dacb2128df4b7beb0"
+  },
+  "original_index_entry": {
+    "batch_status": "complete",
+    "completed_at_utc": "2026-11-13T12:31:18Z",
+    "information_cutoff_utc": "2026-11-13T12:20:00Z",
+    "manifest": {
+      "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/run_manifest.json",
+      "sha256": "3b81259358bc46bf7feebfa6c20ba375ca42520f659d381dacb2128df4b7beb0"
+    },
+    "run_id": "20261113T202000+0800_f65015d6c1524ec396757879717ac4b9",
+    "started_at_utc": "2026-11-13T12:20:00Z"
+  },
+  "report_bytes_preserved": true
+}

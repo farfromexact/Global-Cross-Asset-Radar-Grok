@@ -31,7 +31,7 @@
   },
   "reports": {
     "global": {
-      "state": "validated",
+      "state": "failed",
       "generated_at_utc": "2026-11-13T12:29:32Z",
       "markdown": {
         "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/global.md",
@@ -41,10 +41,12 @@
         "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/global.json",
         "sha256": "c69cd5113b78a67a53fd7962a23209857490bd34a999add655662c1bf6254e2c"
       },
-      "errors": []
+      "errors": [
+        "Research acceptance withdrawn; original report bytes retained."
+      ]
     },
     "commodities": {
-      "state": "validated",
+      "state": "failed",
       "generated_at_utc": "2026-11-13T12:29:32Z",
       "markdown": {
         "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/commodities.md",
@@ -54,17 +56,20 @@
         "path": "reports/2026/11/13/20261113T202000+0800_f65015d6c1524ec396757879717ac4b9/commodities.json",
         "sha256": "74aedb30c4068d867f281712a2f01cb55d7a55444bcf6175ea243e3c58ebecc8"
       },
-      "errors": []
+      "errors": [
+        "Research acceptance withdrawn; original report bytes retained."
+      ]
     }
   },
-  "batch_status": "complete",
-  "archive_status": "verified",
-  "shared_checks_passed": true,
+  "batch_status": "partial",
+  "archive_status": "failed",
+  "shared_checks_passed": false,
   "limitations": [
     "四份报告已按commit c3539c69f97849ea907339166c8e6ad9ceb1b6d0回读且SHA-256一致后才把archive_status标为verified。",
     "CI结果另行记录，不由本manifest宣称通过。",
     "前序索引记录因manifest不符合radar_run_v2且latest哈希为placeholder而未采用。",
-    "中金所11月13日官方行情、商品绝对价、期权买卖价和公司PDF原件仍然缺失。"
+    "中金所11月13日官方行情、商品绝对价、期权买卖价和公司PDF原件仍然缺失。",
+    "Research acceptance withdrawn: Concurrent newer run contains actual product scanning, but coverage identifiers do not match the pinned full-checkpoint contract; single-product options were not read and company primary disclosures were not obtained. Preserve research pending review; do not certify complete research. See review_status.json."
   ],
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok"
 }
