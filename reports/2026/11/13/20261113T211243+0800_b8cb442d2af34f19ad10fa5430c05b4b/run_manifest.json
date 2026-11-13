@@ -1,0 +1,32 @@
+{
+  "schema_version": "radar_run_v2",
+  "run_id": "20261113T211243+0800_b8cb442d2af34f19ad10fa5430c05b4b",
+  "information_cutoff_utc": "2026-11-13T13:07:00Z",
+  "started_at_utc": "2026-11-13T13:12:43Z",
+  "registry_commit": "0dd583c7c0507e6cdb9e92187fb53a83531005c0",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "data_versions": {
+    "commodities": {"repository": "farfromexact/China-Commodities-Engine", "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7"},
+    "options": {"repository": "farfromexact/China-Options-Engine", "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49"}
+  },
+  "archive_mode": "production",
+  "completed_at_utc": "2026-11-13T13:14:00Z",
+  "prompt_sha256": {
+    "radar_run": "4679421df2a955a57a0ef50bd0cd6be001bd98afc930ae0eb81c1758c54155b8",
+    "global_radar": "e2dc82988b6d572230739b54f7d1eb5bcfee638d9cdacddbdb3a887ca8133176",
+    "commodities_radar": "b96b49894a1613727e1626a486fc1cf678f64de5bc31c351e787827c73d11b46"
+  },
+  "actual_executor": "Grok manual session",
+  "actual_model": null,
+  "supersedes_run_id": null,
+  "previous_reports": {"global": null, "commodities": null},
+  "reports": {
+    "global": {"state": "generated", "generated_at_utc": "2026-11-13T13:13:00Z", "markdown": {"path": "global.md", "sha256": "placeholder"}, "json": {"path": "global.json", "sha256": "placeholder"}, "errors": []},
+    "commodities": {"state": "generated", "generated_at_utc": "2026-11-13T13:13:00Z", "markdown": {"path": "commodities.md", "sha256": "placeholder"}, "json": {"path": "commodities.json", "sha256": "placeholder"}, "errors": []}
+  },
+  "batch_status": "partial",
+  "archive_status": "partial",
+  "shared_checks_passed": true,
+  "limitations": ["完整grok_publish.py两阶段流程未在此手动会话完整跑通", "现有自动化不变"],
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok"
+}
