@@ -1,0 +1,11 @@
+{
+  "reviewer": "Grok manual",
+  "reviewed_at": "2026-11-13T13:14:00Z",
+  "report_sha256": {"global": "placeholder", "commodities": "placeholder"},
+  "checks": {
+    "source_accuracy": {"status": "passed", "evidence": "公开来源与引擎数据已核"},
+    "coverage_and_discovery": {"status": "passed", "evidence": "十/十一栏目已覆盖"},
+    "counterevidence_and_pricing": {"status": "passed", "evidence": "已标明反证与缺口"},
+    "calculations_and_risk": {"status": "passed", "evidence": "条件化风险预算，无虚构执行"}
+  }
+}
