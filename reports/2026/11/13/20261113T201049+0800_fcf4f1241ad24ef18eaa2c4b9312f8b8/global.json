@@ -1,0 +1,28 @@
+{
+  "run_id": "20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8",
+  "domain": "global",
+  "information_cutoff_utc": "2026-11-13T12:10:00Z",
+  "generated_at_utc": "2026-11-13T12:25:00Z",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "registry_commit": "b55e566540c393cc9fffa01e5ae4f37b86a40d9b",
+  "sections": [
+    {"number": 1, "title": "结论", "markdown": "当前市场呈现利率重新定价主导的混合风险状态..."},
+    {"number": 2, "title": "全球仪表盘", "markdown": "美国收益率高位..."},
+    {"number": 3, "title": "Delta Research", "markdown": "相较前序..."},
+    {"number": 4, "title": "统一Top5以内", "markdown": "黄金、油价..."},
+    {"number": 5, "title": "最多3张完整卡", "markdown": "卡1黄金..."},
+    {"number": 6, "title": "黄金专题", "markdown": "高实际利率..."},
+    {"number": 7, "title": "AI专题", "markdown": "利率压制..."},
+    {"number": 8, "title": "中国股指与公司专题", "markdown": "CSI300 4016..."},
+    {"number": 9, "title": "未来24小时/7天风险与下一窗口地图", "markdown": "下一窗口..."},
+    {"number": 10, "title": "最终行动四行", "markdown": "A. 没有..."}
+  ],
+  "actions": {
+    "A": "没有",
+    "B": "黄金回调多、油价突破",
+    "C": "中国权益、AI",
+    "D": "裸卖波动、未报价期权"
+  },
+  "machine_representation_complete": false,
+  "limitations": ["部分数据滞后", "期权执行未就绪", "公司资料缺口"]
+}
