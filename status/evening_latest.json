@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "edition": "evening",
-  "archive_status": "success",
+  "archive_status": "partial",
   "report_date": "2026-11-13",
   "generated_at_bjt": "2026-11-13T17:30:00+08:00",
   "research_cutoff_bjt": "2026-11-13T17:13:00+08:00",
@@ -19,5 +19,40 @@
   "china_options_commit": "a4c16a18d16d039a30e9c162950096c9333a0a49",
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
   "one_sentence_conclusion": "中国周五A股已完成（公开源Xinhua：上证3634.35−0.59%、创业板2426.08−3.32%），成长继续承压。商品引擎已更新至2026-11-13（official_complete=false），MA/CU完整AND门槛仍未证实达标。美股周四收低，NVDA CEO事件，周五现金盘未开。今晚不建仓。",
-  "regime": "china_fri_eod_growth_selloff_commodities_engine_fri_vendor_official_incomplete_gates_unverified_us_cash_not_open_nvda_event_no_risk"
+  "regime": "china_fri_eod_growth_selloff_commodities_engine_fri_vendor_official_incomplete_gates_unverified_us_cash_not_open_nvda_event_no_risk",
+  "research_status": "incomplete",
+  "validation_status": "failed",
+  "revision": 2,
+  "review_history": [
+    {
+      "reviewed_at_utc": "2026-11-13T10:57:21Z",
+      "review_status": "failed",
+      "research_status": "incomplete",
+      "source_commit": "c8626748013ce574440f6355ac1c06206dba6d2d",
+      "original_status": "published",
+      "original_archive_status": "pending",
+      "original_json_blob_sha": "ee227ca0753f34a73f610b18fa14172de5b315e2",
+      "original_markdown_blob_sha": "faf0f0e0fdeec04ffa85ce19c625c5a0ff14409e",
+      "schema_missing_fields": [
+        "title",
+        "source_status",
+        "dashboard",
+        "meaningful_changes",
+        "top_trade_cards",
+        "gold_tracking",
+        "ai_tracking",
+        "china_tracking",
+        "event_calendar",
+        "risk_budget"
+      ],
+      "findings": [
+        "Original manifest replacement omitted 24 prior entries; this repair restores them unchanged.",
+        "Original research did not deliver ten independent sections or auditable universe coverage.",
+        "Original report archive=pending conflicted with status/manifest=success.",
+        "Original generated_at 17:30 BJT was later than publication commit at 17:18:06 BJT; retained as an unverified original claim.",
+        "This is an audit correction, not a new market research run; original assertions are retained for traceability and are not revalidated here."
+      ],
+      "original_generated_at_verification": "unreliable_do_not_use_as_observed_generation_time"
+    }
+  ]
 }

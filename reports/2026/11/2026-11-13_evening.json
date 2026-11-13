@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "published",
+  "status": "not_published",
   "edition": "evening",
   "report_date": "2026-11-13",
   "generated_at_bjt": "2026-11-13T17:30:00+08:00",
@@ -25,7 +25,7 @@
       "generated_at": "2026-11-13T16:46:43.242713+08:00",
       "data_fresh": true,
       "official_complete": false,
-      "source_date_match_pct": 100.0,
+      "source_date_match_pct": 100,
       "full_market_ready": true,
       "critical_module_errors": 0,
       "history_record_count": null,
@@ -33,15 +33,42 @@
         "futures": "verified_vendor_primary",
         "options_surface": "not_ready"
       },
-      "actual_read_paths": ["data/radar_latest.json"]
+      "actual_read_paths": [
+        "data/radar_latest.json"
+      ]
     }
   },
   "top_opportunities": [
-    {"rank": 1, "name": "AI-CASHFLOW-VS-CAPEX-BETA-20261028", "score": 38, "direction": "observe"},
-    {"rank": 2, "name": "COM-C-MA2701-AND-PX-RECLAIM-20261024", "score": 26, "direction": "observe"},
-    {"rank": 3, "name": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025", "score": 25, "direction": "observe"},
-    {"rank": 4, "name": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028", "score": 35, "direction": "observe"},
-    {"rank": 5, "name": "COM-C-BU2701-PULLBACK-LONG-20261022", "score": 12, "direction": "avoid"}
+    {
+      "rank": 1,
+      "name": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "score": 38,
+      "direction": "observe"
+    },
+    {
+      "rank": 2,
+      "name": "COM-C-MA2701-AND-PX-RECLAIM-20261024",
+      "score": 26,
+      "direction": "observe"
+    },
+    {
+      "rank": 3,
+      "name": "COM-M-CU2612-HVC-STRIKE-WATCH-20261025",
+      "score": 25,
+      "direction": "observe"
+    },
+    {
+      "rank": 4,
+      "name": "COM-T-EC2612-TREND-CONTANGO-SHORT-20261028",
+      "score": 35,
+      "direction": "observe"
+    },
+    {
+      "rank": 5,
+      "name": "COM-C-BU2701-PULLBACK-LONG-20261022",
+      "score": 12,
+      "direction": "avoid"
+    }
   ],
   "action_list": {
     "A": "今天没有应立即建立的新仓位（中国周五A股成长继续下跌；商品引擎official_complete=false且AND门槛未证实达标；美股未开且NVDA事件；21:00夜盘未开始；期权未execution_ready）。",
@@ -50,10 +77,64 @@
     "D": "今天必须回避或若此前已建仓则有条件退出：逆门槛抄底；把供应商数据当官方结算；裸卖波动；在事件证据落地前重仓半导体方向。"
   },
   "sources": [
-    {"title": "Xinhua Chinese shares close lower Friday", "publisher": "Xinhua", "url": "https://english.news.cn/20261113/6bc6df5863834b5caefda9635aff5be7/c.html", "source_date": "2026-11-13", "accessed_at_bjt": "2026-11-13T17:15:00+08:00", "supported_claims": ["SSE 3634.35 -0.59%", "ChiNext 2426.08 -3.32%"]},
-    {"title": "China-Commodities-Engine radar_latest.json", "publisher": "farfromexact/China-Commodities-Engine", "source_date": "2026-11-13", "supported_claims": ["trade_date 2026-11-13", "official_complete false"]}
+    {
+      "title": "Xinhua Chinese shares close lower Friday",
+      "publisher": "Xinhua",
+      "url": "https://english.news.cn/20261113/6bc6df5863834b5caefda9635aff5be7/c.html",
+      "source_date": "2026-11-13",
+      "accessed_at_bjt": "2026-11-13T17:15:00+08:00",
+      "supported_claims": [
+        "SSE 3634.35 -0.59%",
+        "ChiNext 2426.08 -3.32%"
+      ]
+    },
+    {
+      "title": "China-Commodities-Engine radar_latest.json",
+      "publisher": "farfromexact/China-Commodities-Engine",
+      "source_date": "2026-11-13",
+      "supported_claims": [
+        "trade_date 2026-11-13",
+        "official_complete false"
+      ]
+    }
   ],
   "archive": {
-    "archive_status": "pending"
-  }
+    "archive_status": "partial",
+    "error": "Research acceptance withdrawn; see review_history. Original schema deficiencies preserved as audit evidence."
+  },
+  "revision": 2,
+  "research_status": "incomplete",
+  "validation_status": "failed",
+  "review_history": [
+    {
+      "reviewed_at_utc": "2026-11-13T10:57:21Z",
+      "review_status": "failed",
+      "research_status": "incomplete",
+      "source_commit": "c8626748013ce574440f6355ac1c06206dba6d2d",
+      "original_status": "published",
+      "original_archive_status": "pending",
+      "original_json_blob_sha": "ee227ca0753f34a73f610b18fa14172de5b315e2",
+      "original_markdown_blob_sha": "faf0f0e0fdeec04ffa85ce19c625c5a0ff14409e",
+      "schema_missing_fields": [
+        "title",
+        "source_status",
+        "dashboard",
+        "meaningful_changes",
+        "top_trade_cards",
+        "gold_tracking",
+        "ai_tracking",
+        "china_tracking",
+        "event_calendar",
+        "risk_budget"
+      ],
+      "findings": [
+        "Original manifest replacement omitted 24 prior entries; this repair restores them unchanged.",
+        "Original research did not deliver ten independent sections or auditable universe coverage.",
+        "Original report archive=pending conflicted with status/manifest=success.",
+        "Original generated_at 17:30 BJT was later than publication commit at 17:18:06 BJT; retained as an unverified original claim.",
+        "This is an audit correction, not a new market research run; original assertions are retained for traceability and are not revalidated here."
+      ],
+      "original_generated_at_verification": "unreliable_do_not_use_as_observed_generation_time"
+    }
+  ]
 }

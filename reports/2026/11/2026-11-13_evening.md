@@ -1,3 +1,6 @@
+> **研究验收未通过｜2026-11-13 审计修订**
+> 本文是原运行的不完整产物，不能作为已完成的全球研究或可执行交易依据。原文保留用于追溯；未补写行情或研究。缺少完整栏目、覆盖证据和 Schema 必填项；原生成时间不可信。research_status=incomplete；validation_status=failed；archive_status=partial。历史索引已恢复，原归档成功声明撤回。原始版本：[c862674](https://github.com/farfromexact/Global-Cross-Asset-Radar-Grok/tree/c8626748013ce574440f6355ac1c06206dba6d2d)。详细审计见同版 JSON 的 review_history。
+
 # 全球跨资产高风险机会雷达｜晚间版
 
 - 报告日期：2026-11-13（周五）｜edition=evening｜prompt_version=unified_2026-11-12_v2｜archive_edition=evening
