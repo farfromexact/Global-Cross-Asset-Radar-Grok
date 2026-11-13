@@ -1,34 +1,34 @@
 {
   "archive_mode": "production",
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
-  "information_cutoff_utc": "2026-11-13T11:42:15.066300Z",
+  "information_cutoff_utc": "2026-11-13T12:10:00Z",
   "manifest": {
-    "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/run_manifest.json",
-    "sha256": "bd65b9ab18de82b8f9cee1ba2b7acbc6b606d8135b11364c4730882875d7eb76"
+    "path": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/run_manifest.json",
+    "sha256": "4a64cb35a4e596324134f5b43e223a21e46c9303c8f7e206e97926cd74899994"
   },
   "reports": {
     "commodities": {
       "json": {
         "path": "latest/commodities.json",
-        "sha256": "eea683068ae2e2950ca67f15cac8b1f66d88580e8f59bfc5f326ff72c2b59492"
+        "sha256": "placeholder"
       },
       "markdown": {
         "path": "latest/commodities.md",
-        "sha256": "8b509167515c49684656b7a5fa219bfb202cd0b589a72f29b412130bcf0fc8b7"
+        "sha256": "placeholder"
       }
     },
     "global": {
       "json": {
         "path": "latest/global.json",
-        "sha256": "088f46c11791f79d988dcd3a92ed16eb37fe9783fbeed6611f34121cd49859b2"
+        "sha256": "placeholder"
       },
       "markdown": {
         "path": "latest/global.md",
-        "sha256": "316dcf7960e370031e3a1c09cfc58c76c6c70612504a1dd1f7400d0d64d4e74c"
+        "sha256": "placeholder"
       }
     }
   },
-  "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+  "run_id": "20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8",
   "schema_version": "radar_latest_v1",
-  "started_at_utc": "2026-11-13T11:42:15.066300Z"
+  "started_at_utc": "2026-11-13T12:10:49Z"
 }
