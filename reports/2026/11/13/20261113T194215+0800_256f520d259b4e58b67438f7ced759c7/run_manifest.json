@@ -1,0 +1,86 @@
+{
+  "actual_executor": "Grok Bot executor subagent on shared Linux box (Python 3.13.5); cursor-github MCP for private repo reads; no official GitHub archive in this subagent.",
+  "actual_model": null,
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "archive_status": "verified",
+  "batch_status": "complete",
+  "completed_at_utc": "2026-11-13T11:57:42.772Z",
+  "data_versions": {
+    "commodities": {
+      "commit": "908dbe6e76c03b99e92be559abccf14653b3fcc7",
+      "repository": "farfromexact/China-Commodities-Engine"
+    },
+    "options": {
+      "commit": "a4c16a18d16d039a30e9c162950096c9333a0a49",
+      "repository": "farfromexact/China-Options-Engine"
+    }
+  },
+  "information_cutoff_utc": "2026-11-13T11:42:15.066300Z",
+  "limitations": [
+    "Four report files were independently read back from farfromexact/Global-Cross-Asset-Radar-Grok commit a2678281f0fd4c5478755fb0fe5d9f4963cef7f7 (parent 1f30828a0333cdd797acc47dec98b9d013312c15; default-branch tip at readback). SHA-256 and sizes matched the frozen bytes; git blob SHAs also matched; the parent-to-tip diff contained only the four report paths. This manifest is marked complete/verified after that readback. Index and latest pointers are registered in later commits. CI validation remains pending_or_unverified.",
+    "actual_model is null because no confirmed runtime model id was measured; a Grok product name was not filled in as if measured.",
+    "machine_representation_complete is false on both reports; complex AND/OR paths and stress scenarios live in section conditions_markdown.",
+    "Commodity official futures_crosscheck is unavailable (engine trade_date 2026-11-11, not 2026-11-13); MA/CU/EC prices used for gates are vendor/Sina/Wind-style engine settlements, not landed official exchange settlement files.",
+    "CFFEX official XML was HTTP 500 this run; index futures prices are Sina vendor snapshots.",
+    "F-FX-GOLD-OIL-FRIDAY-LIVE quotes were read about 6 minutes after cutoff; known_at is null and they are not official Thursday settlements.",
+    "VIXCLS last official FRED value is 2026-11-11; HY OAS last 2026-11-11; no 11-12 print. DFII10 last 11-10; 10Y real used T10YIE proxy.",
+    "Full radar_chat_input.py report_input.json was not assembled; product research used verified chat product shards 014-016 covering all 77 product_keys plus overview and core indexes.",
+    "This is the first Grok commodities study; no qualified prior Grok commodities report exists. GPT commodities reports were not used as prior.",
+    "farfromexact/China-Stock-Engine was not accessed (stock_repo_paused_2026-11-12). Company research used public originals only; this batch found no new verified A-share IR/exchange originals sufficient to change index or commodity conclusions.",
+    "US Friday cash session and China Friday night session had not started at cutoff; do not treat later prints as pre-cutoff facts.",
+    "The 2026-11-13 evening Grok attempt (old six-file path, incomplete/failed) was not used as a verified prior."
+  ],
+  "previous_reports": {
+    "commodities": null,
+    "global": {
+      "content_commit": "a80db04d81f93ec41705cef334bec6ed62d67bd0",
+      "edition": "morning",
+      "identity": "Grok legacy morning 2026-11-13; content commit a80db04d81f93ec41705cef334bec6ed62d67bd0; tip 6d322e87d0bbfd434f776f66e088b6c63463e39e; research_cutoff_bjt 2026-11-13T07:55:00+08:00",
+      "information_cutoff_utc": "2026-11-12T23:55:00Z",
+      "kind": "legacy",
+      "path": "reports/2026/11/2026-11-13_morning.md",
+      "tip_commit": "6d322e87d0bbfd434f776f66e088b6c63463e39e"
+    }
+  },
+  "prompt_sha256": {
+    "commodities_radar": "b96b49894a1613727e1626a486fc1cf678f64de5bc31c351e787827c73d11b46",
+    "global_radar": "e2dc82988b6d572230739b54f7d1eb5bcfee638d9cdacddbdb3a887ca8133176",
+    "radar_run": "cddb4c4a29f4e6c9b32fbfe01a6b6dd0fdabf07c32f9a3fd541b0ebaf663a0fd"
+  },
+  "registry_commit": "b55e566540c393cc9fffa01e5ae4f37b86a40d9b",
+  "registry_version": "on_demand_2026-11-12_v3",
+  "reports": {
+    "commodities": {
+      "errors": [],
+      "generated_at_utc": "2026-11-13T11:56:30.811Z",
+      "json": {
+        "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/commodities.json",
+        "sha256": "eea683068ae2e2950ca67f15cac8b1f66d88580e8f59bfc5f326ff72c2b59492"
+      },
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/commodities.md",
+        "sha256": "8b509167515c49684656b7a5fa219bfb202cd0b589a72f29b412130bcf0fc8b7"
+      },
+      "state": "validated"
+    },
+    "global": {
+      "errors": [],
+      "generated_at_utc": "2026-11-13T11:56:30.811Z",
+      "json": {
+        "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/global.json",
+        "sha256": "088f46c11791f79d988dcd3a92ed16eb37fe9783fbeed6611f34121cd49859b2"
+      },
+      "markdown": {
+        "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/global.md",
+        "sha256": "316dcf7960e370031e3a1c09cfc58c76c6c70612504a1dd1f7400d0d64d4e74c"
+      },
+      "state": "validated"
+    }
+  },
+  "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+  "schema_version": "radar_run_v2",
+  "shared_checks_passed": true,
+  "started_at_utc": "2026-11-13T11:42:15.066300Z",
+  "supersedes_run_id": null
+}
