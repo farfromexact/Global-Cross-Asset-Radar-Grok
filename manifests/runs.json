@@ -1,0 +1,18 @@
+{
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "runs": [
+    {
+      "batch_status": "complete",
+      "completed_at_utc": "2026-11-13T11:57:42.772Z",
+      "information_cutoff_utc": "2026-11-13T11:42:15.066300Z",
+      "manifest": {
+        "path": "reports/2026/11/13/20261113T194215+0800_256f520d259b4e58b67438f7ced759c7/run_manifest.json",
+        "sha256": "bd65b9ab18de82b8f9cee1ba2b7acbc6b606d8135b11364c4730882875d7eb76"
+      },
+      "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
+      "started_at_utc": "2026-11-13T11:42:15.066300Z"
+    }
+  ],
+  "schema_version": "radar_runs_v1"
+}
