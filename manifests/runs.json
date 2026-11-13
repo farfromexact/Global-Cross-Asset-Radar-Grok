@@ -12,6 +12,17 @@
       },
       "run_id": "20261113T194215+0800_256f520d259b4e58b67438f7ced759c7",
       "started_at_utc": "2026-11-13T11:42:15.066300Z"
+    },
+    {
+      "batch_status": "complete",
+      "completed_at_utc": "2026-11-13T12:25:00Z",
+      "information_cutoff_utc": "2026-11-13T12:10:00Z",
+      "manifest": {
+        "path": "reports/2026/11/13/20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8/run_manifest.json",
+        "sha256": "4a64cb35a4e596324134f5b43e223a21e46c9303c8f7e206e97926cd74899994"
+      },
+      "run_id": "20261113T201049+0800_fcf4f1241ad24ef18eaa2c4b9312f8b8",
+      "started_at_utc": "2026-11-13T12:10:49Z"
     }
   ],
   "schema_version": "radar_runs_v1"
