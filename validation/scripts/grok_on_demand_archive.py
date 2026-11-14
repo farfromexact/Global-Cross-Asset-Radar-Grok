@@ -8,10 +8,30 @@ from grok_radar_validation import json_bytes, parse_json, require, sha256, times
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = 'farfromexact/Global-Cross-Asset-Radar-Grok'
+LEGACY_CONTRACT = 'audit/unified-data-source/legacy_grok_contract'
+LEGACY_HASHES = {
+    'report.schema.json': '0705d0d4dcc0ca442caa3274bbb3de696a9bc5bd8808d4d352b2a447b6125bbe',
+    'run_manifest.schema.json': '9335e4cc9fedcfb081709a0e358c798b4eec05915d1b8be613ff8384faee6c16',
+    'recovery_scopes.json': 'bdbb2e68df5cdb0312982cfa9f972e08212bae8a0f7ecbe4186e387b829bc9d7',
+}
 
 
-def schema(name):
+def legacy_contract(name):
+    raw = (ROOT / LEGACY_CONTRACT / name).read_bytes()
+    require(sha256(raw) == LEGACY_HASHES[name], 'Preserved Grok contract changed: ' + name)
+    return parse_json(raw)
+
+
+def schema(name, historical=False):
+    if historical and name in ('report', 'run_manifest'):
+        return legacy_contract(f'{name}.schema.json')
     return parse_json((ROOT / f'schemas/grok_on_demand/{name}.schema.json').read_bytes())
+
+
+def recovery_scopes(historical=False):
+    if historical:
+        return legacy_contract('recovery_scopes.json')
+    return parse_json((ROOT / 'config/recovery_scopes.json').read_bytes())
 
 
 def check_preserved(before, after):
@@ -24,11 +44,11 @@ def check_preserved(before, after):
             {k: v for k, v in after.items() if k != 'runs'}, 'Index metadata changed')
 
 
-def merge_index(before, manifest_raw, manifest_path, latest=None, now=None):
+def merge_index(before, manifest_raw, manifest_path, latest=None, now=None, historical=False):
     now = now or datetime.now(timezone.utc)
     validate_schema(before, schema('runs'))
     manifest = parse_json(manifest_raw)
-    validate_schema(manifest, schema('run_manifest'))
+    validate_schema(manifest, schema('run_manifest', historical=historical))
     require(before['archive_repository'] == manifest['archive_repository'] == REPO, 'Wrong archive repository')
     require(before['archive_mode'] == manifest['archive_mode'] == 'production', 'Production archive required')
     require(manifest['batch_status'] == 'complete' and manifest['archive_status'] == 'verified', 'Incomplete batch cannot enter success index')

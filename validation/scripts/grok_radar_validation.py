@@ -123,7 +123,7 @@ def validate_coverage(value, required_scopes):
             for s in ('analyzed', 'data_missing', 'not_applicable')}}
 
 
-def validate_report(report, identity, schema):
+def validate_report(report, identity, schema, coverage_scopes=None):
     validate_schema(report, schema)
     check_identity(report, identity)
     domain = report['domain']
@@ -145,7 +145,7 @@ def validate_report(report, identity, schema):
         require(item['conditions_markdown'] in section_text, 'Candidate conditions absent from full Markdown: ' + item['idea_id'])
     require(report['machine_representation_complete'] or report['limitations'], 'Incomplete machine representation needs limitations')
     from grok_research_gate import check_research
-    scopes = parse_json((Path(__file__).resolve().parents[1] / 'config/recovery_scopes.json').read_bytes())
+    scopes = coverage_scopes if coverage_scopes is not None else parse_json((Path(__file__).resolve().parents[1] / 'config/recovery_scopes.json').read_bytes())
     check_research(report, scopes[domain])
     return facts
 

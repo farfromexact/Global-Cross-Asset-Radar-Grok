@@ -1,0 +1,713 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:radar:grok-on-demand:report:v2",
+  "title": "Grok On-demand Radar report",
+  "description": "Manual production archive contract; automatic execution stays disabled. Cross-file identity, hashes, chronology, uniqueness and semantic checks remain required.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "radar_run_v2"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{8}T\\d{6}\\+0800_[0-9a-f]{32}$"
+    },
+    "information_cutoff_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "started_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "registry_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "registry_version": {
+      "const": "on_demand_2026-11-12_v3"
+    },
+    "data_versions": {
+      "type": "object",
+      "properties": {
+        "commodities": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "const": "farfromexact/China-Commodities-Engine"
+            },
+            "commit": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unavailable_reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "repository",
+            "commit"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "commit": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "unavailable_reason"
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "const": "farfromexact/China-Options-Engine"
+            },
+            "commit": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unavailable_reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "repository",
+            "commit"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "commit": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "unavailable_reason"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "commodities",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "archive_mode": {
+      "enum": [
+        "isolated",
+        "production"
+      ]
+    },
+    "domain": {
+      "enum": [
+        "global",
+        "commodities"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "prompt_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "previous_report": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "on_demand",
+                "legacy"
+              ]
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "identity": {
+              "type": "string",
+              "minLength": 1
+            },
+            "information_cutoff_utc": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            }
+          },
+          "required": [
+            "kind",
+            "path",
+            "identity",
+            "information_cutoff_utc"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "research_status": {
+      "enum": [
+        "complete",
+        "partial"
+      ]
+    },
+    "machine_representation_complete": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "known_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "fact_id",
+          "statement",
+          "source",
+          "observed_at",
+          "known_at",
+          "limitations"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "analysis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "scope",
+          "analysis",
+          "limitations"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "idea_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "research_judgment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficiency": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "conditions_markdown": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "idea_id",
+          "research_judgment",
+          "evidence_sufficiency",
+          "execution_status",
+          "fact_ids",
+          "conditions_markdown"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "delta": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "idea_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "change_type": {
+            "enum": [
+              "new",
+              "strengthened",
+              "weakened",
+              "invalidated",
+              "expired",
+              "unchanged",
+              "data_corrected",
+              "not_comparable"
+            ]
+          },
+          "previous": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "current": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "idea_id",
+          "change_type",
+          "previous",
+          "current",
+          "reason",
+          "fact_ids"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "idea_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "idea_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "first_proposed_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "original_plan_markdown": {
+            "type": "string",
+            "minLength": 1
+          },
+          "current_plan_markdown": {
+            "type": "string",
+            "minLength": 1
+          },
+          "changes_markdown": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actual_position_status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "idea_id",
+          "first_proposed_at",
+          "original_plan_markdown",
+          "current_plan_markdown",
+          "changes_markdown",
+          "actual_position_status"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assessment": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "analyzed",
+                  "data_missing",
+                  "not_applicable"
+                ]
+              },
+              "analysis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "counterevidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "conclusion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "fact_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "search_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "status",
+              "analysis",
+              "counterevidence",
+              "conclusion",
+              "fact_ids",
+              "search_ids",
+              "limitations"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "number",
+          "title",
+          "markdown",
+          "assessment"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 10,
+      "maxItems": 11
+    },
+    "actions": {
+      "type": "object",
+      "properties": {
+        "A": {
+          "type": "string",
+          "minLength": 1
+        },
+        "B": {
+          "type": "string",
+          "minLength": 1
+        },
+        "C": {
+          "type": "string",
+          "minLength": 1
+        },
+        "D": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "additionalProperties": false
+    },
+    "archive_repository": {
+      "const": "farfromexact/Global-Cross-Asset-Radar-Grok"
+    },
+    "research_evidence": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "grok_research_gate_v1"
+        },
+        "universe": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "searches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        },
+        "calculations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "calculation_gap": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "version",
+        "universe",
+        "searches",
+        "calculations"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "information_cutoff_utc",
+    "started_at_utc",
+    "registry_commit",
+    "registry_version",
+    "data_versions",
+    "archive_mode",
+    "domain",
+    "generated_at_utc",
+    "prompt_sha256",
+    "previous_report",
+    "research_status",
+    "machine_representation_complete",
+    "limitations",
+    "facts",
+    "coverage",
+    "candidates",
+    "delta",
+    "idea_ledger",
+    "sections",
+    "actions",
+    "archive_repository",
+    "research_evidence"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "domain": {
+            "const": "global"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "sections": {
+            "minItems": 10,
+            "maxItems": 10
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "domain": {
+            "const": "commodities"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "sections": {
+            "minItems": 11,
+            "maxItems": 11
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "research_status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data_versions": {
+            "properties": {
+              "commodities": {
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  }
+                }
+              },
+              "options": {
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "research_status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "facts": {
+            "minItems": 1
+          },
+          "coverage": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

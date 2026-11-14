@@ -15,7 +15,7 @@ import tempfile
 from grok_radar_validation import (require, parse_json, json_bytes, sha256, timestamp,
                                    validate_schema, validate_report, render_report, check_pair, check_archive)
 from grok_research_gate import check_research, VERSION
-from grok_on_demand_archive import merge_index, schema, REPO
+from grok_on_demand_archive import merge_index, schema, recovery_scopes, REPO
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = 'https://github.com/farfromexact/Global-Cross-Asset-Radar-Grok.git'
@@ -27,22 +27,26 @@ def prefix_for(manifest):
     return f"reports/{day}/{manifest['run_id']}"
 
 
-def validate_package(directory, registry_commit=None):
+def validate_package(directory, registry_commit=None, audit_history=False):
     directory = Path(directory).resolve()
     manifest = parse_json((directory / 'run_manifest.json').read_bytes())
-    validate_schema(manifest, schema('run_manifest'))
+    # Only archive audits may use the exact preserved v2 contract. New check /
+    # publish calls always require the current single-source schema.
+    historical = audit_history and registry_commit is None and manifest.get('schema_version') == 'radar_run_v2'
+    contract_schema = lambda name: schema(name, historical=historical)
+    validate_schema(manifest, contract_schema('run_manifest'))
     require(manifest['batch_status'] == 'complete' and manifest['archive_status'] == 'verified',
             'Package manifest must describe the proposed complete batch; it is not a publication receipt')
     require(manifest['archive_repository'] == REPO and manifest['archive_mode'] == 'production', 'Wrong archive target')
     if registry_commit is not None:
         require(manifest['registry_commit'] == registry_commit, 'Publisher must be the pinned Registry checkout')
-    scopes = parse_json((ROOT / 'config/recovery_scopes.json').read_bytes())
+    scopes = recovery_scopes(historical=historical)
     frozen, reports, artifacts = {}, {}, {}
     for domain in ('global', 'commodities'):
         raw = (directory / (domain + '.json')).read_bytes()
         report = parse_json(raw)
         require(report.get('domain') == domain, 'Wrong domain for report file: ' + domain)
-        validate_report(report, manifest, schema('report'))
+        validate_report(report, manifest, contract_schema('report'), coverage_scopes=scopes)
         if registry_commit is not None:
             for job, digest in manifest['prompt_sha256'].items():
                 require(sha256((ROOT / 'compiled/grok_on_demand' / (job + '.md')).read_bytes()) == digest, 'Pinned prompt mismatch')
@@ -69,11 +73,11 @@ def validate_package(directory, registry_commit=None):
     prefix = prefix_for(manifest)
     raw = json_bytes(manifest)
     empty = {'schema_version': 'radar_runs_v1', 'archive_repository': REPO, 'archive_mode': 'production', 'runs': []}
-    index, _ = merge_index(empty, raw, prefix + '/run_manifest.json')
+    index, _ = merge_index(empty, raw, prefix + '/run_manifest.json', historical=historical)
     # Reuse archive identity/hash/previous-report checks before any remote write.
     local = {prefix + '/' + n: value for n, value in frozen.items()}
     local.update({prefix + '/run_manifest.json': raw, 'manifests/runs.json': json_bytes(index)})
-    result = check_archive(manifest, frozen, local.__getitem__, {n: schema(n) for n in ('run_manifest', 'runs', 'latest')})
+    result = check_archive(manifest, frozen, local.__getitem__, {n: contract_schema(n) for n in ('run_manifest', 'runs', 'latest')})
     require(result['batch'] == result['index'] == 'verified', 'Package cross-file validation failed: ' + str(result['errors']))
     return manifest, frozen, artifacts
 
@@ -124,6 +128,7 @@ class GitStore:
 
 def publish_validated(manifest, reports, artifacts, store):
     """Called only after validate_package; no caller-provided status can skip it."""
+    validate_schema(manifest, schema('run_manifest'))  # Audit compatibility never permits old-format new writes.
     prefix = prefix_for(manifest)
     final_raw = json_bytes(manifest)
     immutable = {prefix + '/' + name: raw for name, raw in {**reports, **artifacts}.items()}
@@ -190,7 +195,7 @@ def audit_archive(directory):
         target = (root / path).resolve()
         require(target.is_relative_to(root.resolve()), 'Index path escapes archive')
         require(sha256(target.read_bytes()) == row['manifest']['sha256'], 'Indexed manifest hash mismatch')
-        manifest, reports, artifacts = validate_package(target.parent)
+        manifest, reports, artifacts = validate_package(target.parent, audit_history=True)
         require(path == prefix_for(manifest) + '/run_manifest.json', 'Wrong index path')
         for key in ('run_id', 'information_cutoff_utc', 'started_at_utc', 'completed_at_utc', 'batch_status'):
             require(row[key] == manifest[key], 'Index identity mismatch')
@@ -212,8 +217,10 @@ def audit_archive(directory):
     latest_path = root / 'latest/run.json'
     if index['runs']:
         newest = max(index['runs'], key=lambda r: (timestamp(r['information_cutoff_utc']), timestamp(r['started_at_utc']), r['run_id']))
-        manifest, reports, _ = validate_package((root / newest['manifest']['path']).parent)
-        result = check_archive(manifest, reports, lambda p: (root / p).read_bytes(), {n: schema(n) for n in ('run_manifest', 'runs', 'latest')})
+        manifest, reports, _ = validate_package((root / newest['manifest']['path']).parent, audit_history=True)
+        historical = manifest['schema_version'] == 'radar_run_v2'
+        result = check_archive(manifest, reports, lambda p: (root / p).read_bytes(),
+                               {n: schema(n, historical=historical) for n in ('run_manifest', 'runs', 'latest')})
         require(result['batch'] == result['index'] == result['latest'] == 'verified', str(result['errors']))
     else:
         require(not latest_path.exists() and not any((root / ('latest/' + d + '.' + ext)).exists()

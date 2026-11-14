@@ -1,0 +1,691 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:radar:grok-on-demand:run_manifest:v2",
+  "title": "Grok On-demand Radar run_manifest",
+  "description": "Manual production archive contract; automatic execution stays disabled. Cross-file identity, hashes, chronology, uniqueness and semantic checks remain required.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "radar_run_v2"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{8}T\\d{6}\\+0800_[0-9a-f]{32}$"
+    },
+    "information_cutoff_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "started_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "registry_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "registry_version": {
+      "const": "on_demand_2026-11-12_v3"
+    },
+    "data_versions": {
+      "type": "object",
+      "properties": {
+        "commodities": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "const": "farfromexact/China-Commodities-Engine"
+            },
+            "commit": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unavailable_reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "repository",
+            "commit"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "commit": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "unavailable_reason"
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "const": "farfromexact/China-Options-Engine"
+            },
+            "commit": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unavailable_reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "repository",
+            "commit"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "commit": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "unavailable_reason"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "commodities",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "archive_mode": {
+      "enum": [
+        "isolated",
+        "production"
+      ]
+    },
+    "completed_at_utc": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "prompt_sha256": {
+      "type": "object",
+      "properties": {
+        "radar_run": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "global_radar": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "commodities_radar": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "radar_run",
+        "global_radar",
+        "commodities_radar"
+      ],
+      "additionalProperties": false
+    },
+    "actual_executor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actual_model": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "supersedes_run_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{8}T\\d{6}\\+0800_[0-9a-f]{32}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "previous_reports": {
+      "type": "object",
+      "properties": {
+        "global": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "on_demand",
+                    "legacy"
+                  ]
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "identity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "information_cutoff_utc": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                }
+              },
+              "required": [
+                "kind",
+                "path",
+                "identity",
+                "information_cutoff_utc"
+              ],
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "commodities": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "on_demand",
+                    "legacy"
+                  ]
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "identity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "information_cutoff_utc": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                }
+              },
+              "required": [
+                "kind",
+                "path",
+                "identity",
+                "information_cutoff_utc"
+              ],
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "global",
+        "commodities"
+      ],
+      "additionalProperties": false
+    },
+    "reports": {
+      "type": "object",
+      "properties": {
+        "global": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "not_started",
+                "generated",
+                "validated",
+                "failed"
+              ]
+            },
+            "generated_at_utc": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "markdown": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "json": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "generated_at_utc",
+            "markdown",
+            "json",
+            "errors"
+          ],
+          "additionalProperties": false
+        },
+        "commodities": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "not_started",
+                "generated",
+                "validated",
+                "failed"
+              ]
+            },
+            "generated_at_utc": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "markdown": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "json": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "generated_at_utc",
+            "markdown",
+            "json",
+            "errors"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "global",
+        "commodities"
+      ],
+      "additionalProperties": false
+    },
+    "batch_status": {
+      "enum": [
+        "prepared",
+        "partial",
+        "complete",
+        "failed"
+      ]
+    },
+    "archive_status": {
+      "enum": [
+        "not_written",
+        "partial",
+        "verified",
+        "failed"
+      ]
+    },
+    "shared_checks_passed": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "archive_repository": {
+      "const": "farfromexact/Global-Cross-Asset-Radar-Grok"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "information_cutoff_utc",
+    "started_at_utc",
+    "registry_commit",
+    "registry_version",
+    "data_versions",
+    "archive_mode",
+    "completed_at_utc",
+    "prompt_sha256",
+    "actual_executor",
+    "actual_model",
+    "supersedes_run_id",
+    "previous_reports",
+    "reports",
+    "batch_status",
+    "archive_status",
+    "shared_checks_passed",
+    "limitations",
+    "archive_repository"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "batch_status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "completed_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "shared_checks_passed": {
+            "const": true
+          },
+          "archive_status": {
+            "const": "verified"
+          },
+          "reports": {
+            "properties": {
+              "global": {
+                "properties": {
+                  "state": {
+                    "const": "validated"
+                  },
+                  "generated_at_utc": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  },
+                  "markdown": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "json": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "errors": {
+                    "maxItems": 0
+                  }
+                }
+              },
+              "commodities": {
+                "properties": {
+                  "state": {
+                    "const": "validated"
+                  },
+                  "generated_at_utc": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  },
+                  "markdown": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "json": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "errors": {
+                    "maxItems": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "batch_status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data_versions": {
+            "properties": {
+              "commodities": {
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  }
+                }
+              },
+              "options": {
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
