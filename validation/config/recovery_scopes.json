@@ -7,6 +7,8 @@
     "asset:gold",
     "asset:china_indices",
     "asset:risk_liquidity",
+    "asset:china_treasury_futures",
+    "asset:china_funding",
     "company:independent_discovery",
     "commodity:I",
     "commodity:JM",
@@ -135,6 +137,9 @@
     "commodity:AP",
     "commodity:CJ",
     "commodity:PK",
-    "commodity:EC"
+    "commodity:EC",
+    "macro:china_index_derivatives",
+    "macro:china_treasury_futures",
+    "macro:china_funding"
   ]
 }

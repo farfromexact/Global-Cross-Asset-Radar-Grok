@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:radar:grok-on-demand:run_manifest:v2",
+  "$id": "urn:radar:grok-on-demand:run_manifest:v3",
   "title": "Grok On-demand Radar run_manifest",
   "description": "Manual production archive contract; automatic execution stays disabled. Cross-file identity, hashes, chronology, uniqueness and semantic checks remain required.",
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "radar_run_v2"
+      "const": "radar_run_v3"
     },
     "run_id": {
       "type": "string",
@@ -27,7 +27,7 @@
       "pattern": "^[a-f0-9]{40}$"
     },
     "registry_version": {
-      "const": "on_demand_2026-11-12_v3"
+      "const": "on_demand_2026-11-14_v4"
     },
     "data_versions": {
       "type": "object",
@@ -75,55 +75,10 @@
               }
             }
           ]
-        },
-        "options": {
-          "type": "object",
-          "properties": {
-            "repository": {
-              "const": "farfromexact/China-Options-Engine"
-            },
-            "commit": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "pattern": "^[a-f0-9]{40}$"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "unavailable_reason": {
-              "type": "string",
-              "minLength": 1
-            }
-          },
-          "required": [
-            "repository",
-            "commit"
-          ],
-          "additionalProperties": false,
-          "allOf": [
-            {
-              "if": {
-                "properties": {
-                  "commit": {
-                    "type": "null"
-                  }
-                }
-              },
-              "then": {
-                "required": [
-                  "unavailable_reason"
-                ]
-              }
-            }
-          ]
         }
       },
       "required": [
-        "commodities",
-        "options"
+        "commodities"
       ],
       "additionalProperties": false
     },
@@ -667,14 +622,6 @@
           "data_versions": {
             "properties": {
               "commodities": {
-                "properties": {
-                  "commit": {
-                    "type": "string",
-                    "pattern": "^[a-f0-9]{40}$"
-                  }
-                }
-              },
-              "options": {
                 "properties": {
                   "commit": {
                     "type": "string",
