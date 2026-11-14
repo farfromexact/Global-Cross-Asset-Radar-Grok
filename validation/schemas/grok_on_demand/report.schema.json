@@ -27,7 +27,7 @@
       "pattern": "^[a-f0-9]{40}$"
     },
     "registry_version": {
-      "const": "on_demand_2026-11-14_v4"
+      "const": "on_demand_2026-11-14_v5"
     },
     "data_versions": {
       "type": "object",

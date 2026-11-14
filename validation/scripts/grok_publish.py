@@ -30,10 +30,13 @@ def prefix_for(manifest):
 def validate_package(directory, registry_commit=None, audit_history=False):
     directory = Path(directory).resolve()
     manifest = parse_json((directory / 'run_manifest.json').read_bytes())
-    # Only archive audits may use the exact preserved v2 contract. New check /
-    # publish calls always require the current single-source schema.
+    # Historical contracts are read-only audit paths. New check / publish calls
+    # always require the current research release, even with the same data shape.
     historical = audit_history and registry_commit is None and manifest.get('schema_version') == 'radar_run_v2'
-    contract_schema = lambda name: schema(name, historical=historical)
+    prior_research = (audit_history and registry_commit is None and
+                      manifest.get('schema_version') == 'radar_run_v3' and
+                      manifest.get('registry_version') == 'on_demand_2026-11-14_v4')
+    contract_schema = lambda name: schema(name, historical=historical, prior_research=prior_research)
     validate_schema(manifest, contract_schema('run_manifest'))
     require(manifest['batch_status'] == 'complete' and manifest['archive_status'] == 'verified',
             'Package manifest must describe the proposed complete batch; it is not a publication receipt')
@@ -73,7 +76,8 @@ def validate_package(directory, registry_commit=None, audit_history=False):
     prefix = prefix_for(manifest)
     raw = json_bytes(manifest)
     empty = {'schema_version': 'radar_runs_v1', 'archive_repository': REPO, 'archive_mode': 'production', 'runs': []}
-    index, _ = merge_index(empty, raw, prefix + '/run_manifest.json', historical=historical)
+    index, _ = merge_index(empty, raw, prefix + '/run_manifest.json', historical=historical,
+                           prior_research=prior_research)
     # Reuse archive identity/hash/previous-report checks before any remote write.
     local = {prefix + '/' + n: value for n, value in frozen.items()}
     local.update({prefix + '/run_manifest.json': raw, 'manifests/runs.json': json_bytes(index)})
@@ -219,8 +223,10 @@ def audit_archive(directory):
         newest = max(index['runs'], key=lambda r: (timestamp(r['information_cutoff_utc']), timestamp(r['started_at_utc']), r['run_id']))
         manifest, reports, _ = validate_package((root / newest['manifest']['path']).parent, audit_history=True)
         historical = manifest['schema_version'] == 'radar_run_v2'
+        prior_research = manifest['registry_version'] == 'on_demand_2026-11-14_v4'
         result = check_archive(manifest, reports, lambda p: (root / p).read_bytes(),
-                               {n: schema(n, historical=historical) for n in ('run_manifest', 'runs', 'latest')})
+                               {n: schema(n, historical=historical, prior_research=prior_research)
+                                for n in ('run_manifest', 'runs', 'latest')})
         require(result['batch'] == result['index'] == result['latest'] == 'verified', str(result['errors']))
     else:
         require(not latest_path.exists() and not any((root / ('latest/' + d + '.' + ext)).exists()
