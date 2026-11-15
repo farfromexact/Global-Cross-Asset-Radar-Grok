@@ -9,6 +9,7 @@ import re
 from urllib.parse import urlparse
 
 VERSION = 'grok_research_gate_v1'
+LEGACY_VERSIONS = {'on_demand_2026-11-12_v3', 'on_demand_2026-11-14_v4', 'on_demand_2026-11-14_v5'}
 
 
 def check_research(report, required_scopes, evidence_root=None):
@@ -76,7 +77,14 @@ def check_research(report, required_scopes, evidence_root=None):
     for section in report['sections']:
         text = section['markdown'].strip()
         require(text and not re.search(r'\.\.\.|…|\bTODO\b|\bplaceholder\b|需从分片进一步提取', text, re.I), 'Outline/placeholder section')
-        require(not re.search(r'(?m)^\s*[ABCD][.、．]\s*', text), 'Actions belong only in structured actions; would render twice')
+        if report['registry_version'] in LEGACY_VERSIONS:
+            require(not re.search(r'(?m)^\s*[ABCD][.、．]\s*', text), 'Actions belong only in structured actions; would render twice')
+        else:
+            from report_render import action_text
+            if section['number'] == len(report['sections']):
+                require(text == action_text(report), 'Final section must equal canonical actions')
+            else:
+                require(not re.search(r'(?m)^\s*[ABCD][.、．]\s*', text), 'Actions would render twice')
         assessment = section.get('assessment', {})
         refs(assessment, 'section ' + str(section['number']))
         for key in ('analysis', 'counterevidence', 'conclusion'):
@@ -130,7 +138,10 @@ def check_research(report, required_scopes, evidence_root=None):
 
 
 def render_research(report):
-    """Include sources, scope records and calculation inputs; actions exactly once."""
+    """Render current readable prose; preserve old bytes for historical audits."""
+    if report['registry_version'] not in LEGACY_VERSIONS:
+        from report_render import render_report
+        return render_report(report)
     lines = [f"# {report['domain']} Radar", '']
     for key in ('run_id', 'information_cutoff_utc', 'generated_at_utc', 'registry_commit', 'archive_repository', 'prompt_sha256'):
         lines.extend([f'{key}: {report[key]}'])

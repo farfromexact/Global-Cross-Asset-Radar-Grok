@@ -36,7 +36,9 @@ def validate_package(directory, registry_commit=None, audit_history=False):
     prior_research = (audit_history and registry_commit is None and
                       manifest.get('schema_version') == 'radar_run_v3' and
                       manifest.get('registry_version') == 'on_demand_2026-11-14_v4')
-    contract_schema = lambda name: schema(name, historical=historical, prior_research=prior_research)
+    previous_long = (audit_history and registry_commit is None and
+                     manifest.get('registry_version') == 'on_demand_2026-11-14_v5')
+    contract_schema = lambda name: schema(name, historical=historical, prior_research=prior_research, previous_long=previous_long)
     validate_schema(manifest, contract_schema('run_manifest'))
     require(manifest['batch_status'] == 'complete' and manifest['archive_status'] == 'verified',
             'Package manifest must describe the proposed complete batch; it is not a publication receipt')
@@ -77,7 +79,7 @@ def validate_package(directory, registry_commit=None, audit_history=False):
     raw = json_bytes(manifest)
     empty = {'schema_version': 'radar_runs_v1', 'archive_repository': REPO, 'archive_mode': 'production', 'runs': []}
     index, _ = merge_index(empty, raw, prefix + '/run_manifest.json', historical=historical,
-                           prior_research=prior_research)
+                           prior_research=prior_research, previous_long=previous_long)
     # Reuse archive identity/hash/previous-report checks before any remote write.
     local = {prefix + '/' + n: value for n, value in frozen.items()}
     local.update({prefix + '/run_manifest.json': raw, 'manifests/runs.json': json_bytes(index)})
@@ -224,8 +226,9 @@ def audit_archive(directory):
         manifest, reports, _ = validate_package((root / newest['manifest']['path']).parent, audit_history=True)
         historical = manifest['schema_version'] == 'radar_run_v2'
         prior_research = manifest['registry_version'] == 'on_demand_2026-11-14_v4'
+        previous_long = manifest['registry_version'] == 'on_demand_2026-11-14_v5'
         result = check_archive(manifest, reports, lambda p: (root / p).read_bytes(),
-                               {n: schema(n, historical=historical, prior_research=prior_research)
+                               {n: schema(n, historical=historical, prior_research=prior_research, previous_long=previous_long)
                                 for n in ('run_manifest', 'runs', 'latest')})
         require(result['batch'] == result['index'] == result['latest'] == 'verified', str(result['errors']))
     else:

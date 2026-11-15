@@ -27,8 +27,8 @@ def legacy_contract(name):
     return parse_json(raw)
 
 
-def schema(name, historical=False, prior_research=False):
-    require(not (historical and prior_research), 'Ambiguous historical contract')
+def schema(name, historical=False, prior_research=False, previous_long=False):
+    require(sum((historical, prior_research, previous_long)) <= 1, 'Ambiguous historical contract')
     if historical and name in ('report', 'run_manifest'):
         return legacy_contract(f'{name}.schema.json')
     if prior_research and name in ('report', 'run_manifest'):
@@ -36,7 +36,10 @@ def schema(name, historical=False, prior_research=False):
         raw = (ROOT / PRIOR_RESEARCH_CONTRACT / filename).read_bytes()
         require(sha256(raw) == PRIOR_RESEARCH_HASHES[filename], 'Preserved prior research contract changed: ' + filename)
         return parse_json(raw)
-    return parse_json((ROOT / f'schemas/grok_on_demand/{name}.schema.json').read_bytes())
+    value = parse_json((ROOT / f'schemas/grok_on_demand/{name}.schema.json').read_bytes())
+    if previous_long and 'registry_version' in value['properties']:
+        value['properties']['registry_version'] = {'const': 'on_demand_2026-11-14_v5'}
+    return value
 
 
 def recovery_scopes(historical=False):
@@ -55,11 +58,11 @@ def check_preserved(before, after):
             {k: v for k, v in after.items() if k != 'runs'}, 'Index metadata changed')
 
 
-def merge_index(before, manifest_raw, manifest_path, latest=None, now=None, historical=False, prior_research=False):
+def merge_index(before, manifest_raw, manifest_path, latest=None, now=None, historical=False, prior_research=False, previous_long=False):
     now = now or datetime.now(timezone.utc)
     validate_schema(before, schema('runs'))
     manifest = parse_json(manifest_raw)
-    validate_schema(manifest, schema('run_manifest', historical=historical, prior_research=prior_research))
+    validate_schema(manifest, schema('run_manifest', historical=historical, prior_research=prior_research, previous_long=previous_long))
     require(before['archive_repository'] == manifest['archive_repository'] == REPO, 'Wrong archive repository')
     require(before['archive_mode'] == manifest['archive_mode'] == 'production', 'Production archive required')
     require(manifest['batch_status'] == 'complete' and manifest['archive_status'] == 'verified', 'Incomplete batch cannot enter success index')
