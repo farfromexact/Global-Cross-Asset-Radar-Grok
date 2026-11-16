@@ -188,9 +188,9 @@ def publish_validated(manifest, reports, artifacts, store):
             'remote_readback': 'verified', 'ci_validation_status': 'pending_or_unverified'}
 
 
-def audit_archive(directory):
-    root = Path(directory)
-    index = parse_json((root / 'manifests/runs.json').read_bytes())
+def audit_structured_rows(root, index):
+    """Preserve all historical schema, evidence, acceptance and ancestry checks."""
+    root = Path(root)
     validate_schema(index, schema('runs'))
     require(len({r['run_id'] for r in index['runs']}) == len(index['runs']), 'Duplicate success index ID')
     withdrawn_path = root / 'manifests/withdrawn_runs.json'
@@ -220,6 +220,16 @@ def audit_archive(directory):
             git('merge-base', '--is-ancestor', source_commit, 'HEAD')
             for path, digest in expected.items():
                 require(sha256(git('show', source_commit + ':' + path)) == digest, 'Acceptance source bytes differ')
+    return len(withdrawn)
+
+
+def audit_archive(directory):
+    root = Path(directory)
+    index = parse_json((root / 'manifests/runs.json').read_bytes())
+    if index.get('schema_version') == 'radar_runs_v2':
+        from grok_text_publish import audit_archive as audit_text_archive
+        return audit_text_archive(root, lambda rows: audit_structured_rows(root, rows))
+    withdrawn_count = audit_structured_rows(root, index)
     latest_path = root / 'latest/run.json'
     if index['runs']:
         newest = max(index['runs'], key=lambda r: (timestamp(r['information_cutoff_utc']), timestamp(r['started_at_utc']), r['run_id']))
@@ -234,7 +244,7 @@ def audit_archive(directory):
     else:
         require(not latest_path.exists() and not any((root / ('latest/' + d + '.' + ext)).exists()
                     for d in ('global', 'commodities') for ext in ('md', 'json')), 'Empty success index must not advertise latest')
-    return {'success_batches': len(index['runs']), 'withdrawn_batches': len(withdrawn), 'status': 'passed',
+    return {'success_batches': len(index['runs']), 'withdrawn_batches': withdrawn_count, 'status': 'passed',
             'scope': 'git_snapshot_and_acceptance_ancestry' if (root / '.git').exists() else 'local_snapshot_only'}
 
 

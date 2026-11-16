@@ -2,11 +2,12 @@
   "schema_version": 1,
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
   "registry_repository": "farfromexact/AI-prompt-repository",
-  "validator_registry_commit": "2f07ba3ffbda9f68b51bc5d421a0f0f63f9a8751",
+  "validator_registry_commit": "c92392b901c0609788ab2e8a93b1284da53d2657",
   "validation_mode": "audit_only",
   "validator_files_sha256": {
-    "validation/scripts/report_render.py": "515d5bf06dbdccc76aff25f6b2a2fa7350d88a36169a2338de6301904f2efede",
-    "validation/scripts/grok_publish.py": "01452e54efac61928d831a31d0122da8d51444bad0c98c7054886e6ec1ad1846",
+    "validation/scripts/grok_text_publish.py": "28834719739418b23357f9a5aeb5a119eaaa56dd8d6b724afa60cdf805a67e79",
+    "validation/scripts/report_render.py": "6edae6095e0825e6a88aaf83c3f877309d52f2b44cdef8985749f4ec57ce5c4b",
+    "validation/scripts/grok_publish.py": "52c32b6531635270a4f022c6eda2a4d594ae2e0d02d4ab509f32e9db86cc13a9",
     "validation/scripts/grok_research_gate.py": "4067345b52817aebb4fe1b17db0992cbf10851b0b28f72bdf652fc7b9ff1ed99",
     "validation/scripts/grok_radar_validation.py": "97baafca88be77f48c56e8888b80231865575f331bfb6590516c80efc451f412",
     "validation/scripts/grok_on_demand_archive.py": "19001e960984b37deaeb8bce2a8adc5d8a022bb00fa9577227885edbdc7e257c",
@@ -22,6 +23,7 @@
     "validation/audit/decision-research/legacy_grok_contract/report.schema.json": "fad5b4a8aa249e8e9a581066b2c171d886a71825cbc1e9e00d6f81ed8f46bbf3",
     "validation/audit/decision-research/legacy_grok_contract/run_manifest.schema.json": "ebf881bf427dc3acc8c7d67488eff02de16fa7898749da191987ba4bc9e1eaad"
   },
-  "publication": "Manual scripts/grok_publish.py from the complete locked Registry checkout",
+  "publication": "Manual inbox/grok Markdown archived by scripts/grok_text_publish.py",
+  "text_publisher_sha256": "28834719739418b23357f9a5aeb5a119eaaa56dd8d6b724afa60cdf805a67e79",
   "research_automation_enabled": false
 }

@@ -1,12 +1,17 @@
-# 当前 Grok 按需报告与验收
+# Grok 按需双报告归档
 
-Grok当前人工入口为 [Registry按需双报告](https://github.com/farfromexact/AI-prompt-repository/blob/main/compiled/grok_on_demand/radar_run.md)，一次生成全球跨资产与商品期货期权两份完整报告。按 [研究验收与发布合同](https://github.com/farfromexact/AI-prompt-repository/blob/main/docs/GROK_RESEARCH_ACCEPTANCE.md)执行，正式发布由grok_publish.py完成；下方晨晚政策作为旧入口兼容说明。
+当前人工入口见[Registry START_HERE](https://github.com/farfromexact/AI-prompt-repository/blob/main/START_HERE.md#grok)。Grok完成全球、商品两份完整正文，一次提交到`inbox/grok/<唯一英文或数字文件名>.md`，以`<!-- radar:global -->`和`<!-- radar:commodities -->`按顺序分隔。模型只做研究与交付，JSON、哈希、工程校验、回读、时间批次和索引由后台工具完成。
 
-**2026-11-13按需批次已撤回验收。** 19:42、20:10及并发新增的20:20三批原文保留，分别需要研究复核与补全；它们已移出成功索引，不能作为当前合格前序。暂时没有已验证的按需latest，不自动恢复早一版。见[撤回台账](manifests/withdrawn_runs.json)、[当前状态](status/on_demand_latest.json)。新的合格批次发布后由程序重新建立latest。
+`Archive Grok Inbox`只处理人工收件或手动重试，不定时生成研究，不采集，不下单。归档结果见`receipts/grok/<同名文件>.json`；仅`archived`表示完整批次已写入。工具保存原文，不虚构数据版本、研究截点或研究复核。
 
-发布先校验研究包，再写partial并实际回读，最后提交成功索引和一致latest。新增档案校验CI仅做事后复核，不触发研究/采集，不改变原有自动化。原始十二份报告、晨晚/周报latest和旧索引保留。校验配置固定Registry Commit，见config/grok-publication.json。
+新报告仍在`reports/YYYY/MM/DD/{run_id}/`；`manifests/runs.json`与`latest/run.json`在实际收到新报告时转为v2，旧记录和旧报告原样保留。撤回台账继续有效，旧结构化报告继续按原证据/Schema校验，新文本批次按字节、正文一致性、回执及索引校验。工程存档成功不认证投资判断。
+
+维护者可手动运行收件工作流的`check`模式：只在临时本地Git仓库测试合成正文，再只读审计已有档案，不把测试报告写入本仓。`publish`模式只重试已有人工提交。校验包固定Registry提交及文件哈希，见`config/grok-publication.json`。
+
+下方为历史晨晚流程说明，保留原自动化及报告入口；它不是当前按需启动步骤。
 
 ---
+
 
 # Global-Cross-Asset-Radar-Grok
 

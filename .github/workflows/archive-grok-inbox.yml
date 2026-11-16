@@ -1,0 +1,59 @@
+name: Archive Grok Inbox
+
+on:
+  push:
+    branches: [main]
+    paths: ['inbox/grok/*.md']
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Check without publishing, or retry pending manual submissions'
+        type: choice
+        options: [check, publish]
+        default: check
+
+concurrency:
+  group: grok-inbox-archive
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify deployed publisher
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json
+          from pathlib import Path
+          config = json.loads(Path('config/grok-publication.json').read_bytes())
+          raw = Path('scripts/grok_text_publish.py').read_bytes()
+          assert hashlib.sha256(raw).hexdigest() == config['text_publisher_sha256']
+          assert raw == Path('validation/scripts/grok_text_publish.py').read_bytes()
+          PYCODE
+      - name: Archive submitted Markdown or run isolated smoke test
+        env:
+          RADAR_ARCHIVE_TOKEN: ${{ github.token }}
+          ARCHIVE_MODE: ${{ github.event_name == 'push' && 'publish' || inputs.mode }}
+        shell: bash
+        run: |
+          if [ "$ARCHIVE_MODE" = "check" ]; then
+            python scripts/grok_text_publish.py --self-test
+          else
+            python scripts/grok_text_publish.py --publish-inbox
+            git fetch origin main
+            git merge --ff-only origin/main
+          fi
+      - run: python -m pip install -r validation/requirements-recovery.txt
+      - name: Audit mixed history without generating research
+        run: python validation/scripts/grok_publish.py audit --archive .
