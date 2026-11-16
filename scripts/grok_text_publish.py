@@ -1,4 +1,4 @@
-"""Publish two Markdown reports from the manual Grok inbox. Standard library only.
+"""Publish three Markdown reports from the manual Grok inbox. Standard library only.
 
 The same file is deployed to the report repository. No model, scheduler, data
 collector, or research-quality certification is involved.
@@ -16,8 +16,9 @@ import tempfile
 
 REPOSITORY = 'farfromexact/Global-Cross-Asset-Radar-Grok'
 REMOTE = 'https://github.com/' + REPOSITORY + '.git'
-DOMAINS = ('global', 'commodities')
-FORMAT = 'grok_text_archive_v1'
+DOMAINS = ('global', 'commodities', 'free')
+FORMAT = 'grok_text_archive_v2'
+FORMAT_DOMAINS = {'grok_text_archive_v1': ('global', 'commodities'), FORMAT: DOMAINS}
 BJT = timezone(timedelta(hours=8))
 MARKER = re.compile(r'^<!-- radar:(global|commodities|free) -->\r?\n', re.M)
 
@@ -45,13 +46,13 @@ def iso(value):
     return value.astimezone(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
 
 
-def parse_submission(raw):
+def parse_submission(raw, domains=DOMAINS):
     require(len(raw) <= 4_000_000, 'Submission exceeds 4 MB')
     text = raw.decode('utf-8-sig')
     require('\x00' not in text, 'NUL byte in report')
     markers = list(MARKER.finditer(text))
-    require([m.group(1) for m in markers] == list(DOMAINS),
-            'Expected exactly global, commodities report markers in that order')
+    require([m.group(1) for m in markers] == list(domains),
+            'Expected exactly ' + ', '.join(domains) + ' report markers in that order')
     require(not text[:markers[0].start()].strip(), 'Unexpected content before first report')
     reports = {}
     for i, match in enumerate(markers):
@@ -134,17 +135,22 @@ def read_json(store, path, default=None):
     return json.loads(raw) if raw is not None else default
 
 
+def archive_domains(manifest):
+    domains = FORMAT_DOMAINS.get(manifest.get('archive_format'))
+    require(domains is not None and set(manifest['reports']) == set(domains), 'Unknown archive format or report domains')
+    return domains
+
+
 def check_archived(store, manifest_ref):
     raw = store.read(manifest_ref['path'])
     require(raw is not None and digest(raw) == manifest_ref['sha256'], 'Archived manifest mismatch')
     manifest = json.loads(raw)
-    require(manifest['archive_format'] == FORMAT and manifest['archive_status'] == 'verified',
-            'Archive is not complete')
-    require(manifest['archive_repository'] == REPOSITORY and set(manifest['reports']) == set(DOMAINS),
-            'Wrong archive repository or report domains')
+    domains = archive_domains(manifest)
+    require(manifest['archive_status'] == 'verified', 'Archive is not complete')
+    require(manifest['archive_repository'] == REPOSITORY, 'Wrong archive repository')
     base = 'reports/' + utc(manifest['submitted_at_utc']).astimezone(BJT).strftime('%Y/%m/%d/') + manifest['run_id']
     require(manifest_ref['path'] == base + '/run_manifest.json', 'Wrong immutable manifest path')
-    for domain in DOMAINS:
+    for domain in domains:
         for kind in ('markdown', 'json'):
             ref = manifest['reports'][domain][kind]
             ext = 'md' if kind == 'markdown' else 'json'
@@ -167,19 +173,19 @@ def order(record):
 
 
 def make_receipt(manifest, manifest_ref, source_hash):
-    return {'status': 'archived', 'archive_format': FORMAT, 'archive_repository': REPOSITORY, 'run_id': manifest['run_id'],
+    domains = archive_domains(manifest)
+    return {'status': 'archived', 'archive_format': manifest['archive_format'], 'archive_repository': REPOSITORY, 'run_id': manifest['run_id'],
             'submission_sha256': source_hash, 'manifest': manifest_ref,
-            'verification': 'four_report_files_read_back',
+            'verification': 'six_report_files_read_back' if len(domains) == 3 else 'four_report_files_read_back',
             'research_quality': 'not_certified_by_archive_tool',
             'reports': {d: 'https://github.com/' + REPOSITORY + '/blob/main/' +
-                        manifest['reports'][d]['markdown']['path'] for d in DOMAINS}}
+                        manifest['reports'][d]['markdown']['path'] for d in domains}}
 
 
 def publish(store, path):
     receipt_name = receipt_path(path)
     raw = store.read(path)
     require(raw is not None, 'Submission not found')
-    bodies = parse_submission(raw)
     content_hash = digest(raw)
     before = read_json(store, 'manifests/runs.json',
                        {'schema_version': 'radar_runs_v2', 'archive_mode': 'production',
@@ -195,10 +201,15 @@ def publish(store, path):
     previous = read_json(store, receipt_name)
     if previous and previous.get('status') == 'archived':
         require(previous['submission_sha256'] == content_hash, 'Published inbox file changed; use a new filename')
-        check_archived(store, previous['manifest'])
+        archived = check_archived(store, previous['manifest'])
+        require(previous['run_id'] == archived['run_id'] and previous['archive_format'] == archived['archive_format']
+                and previous['submission_sha256'] == archived['submission_sha256'], 'Receipt identity mismatch')
+        parse_submission(raw, archive_domains(archived))
         require(any(row['run_id'] == previous['run_id'] and row['manifest'] == previous['manifest'] for row in rows),
                 'Published receipt missing from run index')
         return previous
+    # Archived v1 pairs are read-only above; every new submission needs all three.
+    bodies = parse_submission(raw)
     for row in rows:
         if row.get('submission_sha256') == content_hash:
             manifest = check_archived(store, row['manifest'])
@@ -281,20 +292,22 @@ def audit_archive(directory, legacy_checker):
     require(not ({r['run_id'] for r in rows} & {r['run_id'] for r in withdrawn}), 'Withdrawn batch in success index')
     legacy, manifests = [], {}
     for row in rows:
-        if row.get('archive_format') == FORMAT:
+        if row.get('archive_format') in FORMAT_DOMAINS:
             manifest = check_archived(store, row['manifest'])
+            require(row['archive_format'] == manifest['archive_format'], 'Index format mismatch')
             require(row['batch_status'] == 'complete', 'Incomplete text batch')
             for key in ('run_id', 'submitted_at_utc', 'archived_at_utc', 'submission_sha256'):
                 require(row[key] == manifest[key], 'Index identity mismatch: ' + key)
             submission = store.read(manifest['source']['path'])
             require(submission is not None and digest(submission) == manifest['submission_sha256'], 'Submission changed or missing')
-            bodies = parse_submission(submission)
+            bodies = parse_submission(submission, archive_domains(manifest))
             for domain, body in bodies.items():
                 require(body.encode('utf-8') == store.read(manifest['reports'][domain]['markdown']['path']),
                         'Archived prose differs from submission')
             receipt = read_json(store, receipt_path(manifest['source']['path']))
-            require(receipt is not None and receipt['status'] == 'archived' and receipt['manifest'] == row['manifest']
-                    and receipt['submission_sha256'] == row['submission_sha256'], 'Missing archive receipt')
+            expected_receipt = make_receipt(manifest, row['manifest'], row['submission_sha256'])
+            require(receipt is not None and all(receipt.get(key) == value for key, value in expected_receipt.items()),
+                    'Missing or inconsistent archive receipt')
         else:
             require('archive_format' not in row, 'Unknown archive format')
             legacy.append(row)
@@ -304,10 +317,11 @@ def audit_archive(directory, legacy_checker):
     latest = read_json(store, 'latest/run.json')
     if rows:
         newest = max(rows, key=order)
-        require(latest is not None and latest['run_id'] == newest['run_id'] and latest['manifest'] == newest['manifest']
-                and latest['archive_repository'] == REPOSITORY and set(latest['reports']) == set(DOMAINS), 'Latest and index disagree')
         manifest = manifests[newest['run_id']]
-        for domain in DOMAINS:
+        domains = archive_domains(manifest) if 'archive_format' in manifest else ('global', 'commodities')
+        require(latest is not None and latest['run_id'] == newest['run_id'] and latest['manifest'] == newest['manifest']
+                and latest['archive_repository'] == REPOSITORY and set(latest['reports']) == set(domains), 'Latest and index disagree')
+        for domain in domains:
             for kind, ext in (('markdown', 'md'), ('json', 'json')):
                 ref = latest['reports'][domain][kind]
                 original = manifest['reports'][domain][kind]
@@ -364,6 +378,7 @@ def smoke_test():
         store = GitStore(root / 'publisher', str(remote))
         first = process_inbox(store)
         require(not first['errors'], 'Synthetic publication failed')
+        require(first['receipts'][0]['verification'] == 'six_report_files_read_back', 'Incomplete three-report receipt')
         again = GitStore(root / 'retry', str(remote))
         second = process_inbox(again)
         require(first == second, 'Retry changed the receipt')

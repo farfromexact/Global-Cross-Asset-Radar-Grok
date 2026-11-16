@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Check without publishing, or retry pending manual submissions'
+        description: 'Check the three-report publisher without publishing, or retry manual submissions'
         type: choice
         options: [check, publish]
         default: check
@@ -41,7 +41,7 @@ jobs:
           assert hashlib.sha256(raw).hexdigest() == config['text_publisher_sha256']
           assert raw == Path('validation/scripts/grok_text_publish.py').read_bytes()
           PYCODE
-      - name: Archive submitted Markdown or run isolated smoke test
+      - name: Archive three reports or run isolated smoke test
         env:
           RADAR_ARCHIVE_TOKEN: ${{ github.token }}
           ARCHIVE_MODE: ${{ github.event_name == 'push' && 'publish' || inputs.mode }}
