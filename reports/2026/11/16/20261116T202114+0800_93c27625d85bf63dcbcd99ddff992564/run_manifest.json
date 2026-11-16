@@ -1,0 +1,53 @@
+{
+  "archive_format": "grok_text_archive_v2",
+  "run_id": "20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564",
+  "archive_mode": "production",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "submitted_at_utc": "2026-11-16T12:21:14Z",
+  "source": {
+    "path": "inbox/grok/radar_20261116_on_demand_v8.md",
+    "commit": "589191556c13d43952b93072e3a57956edeadec0",
+    "submitted_at_utc": "2026-11-16T12:21:14Z"
+  },
+  "submission_sha256": "93c27625d85bf63dcbcd99ddff992564dc9864f722ac7a8486db22cb7d8cfceb",
+  "archive_status": "prepared",
+  "research_provenance": {
+    "information_cutoff_utc": null,
+    "registry_commit": null,
+    "data_versions": null,
+    "note": "Research dates and citations remain in the original Markdown; not inferred from upload time."
+  },
+  "research_quality": "not_certified_by_archive_tool",
+  "reports": {
+    "global": {
+      "markdown": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/global.md",
+        "sha256": "029e29fc143ce3a462be069295ac4cd5e818163330de87ead1fdcd0269eb9d7e"
+      },
+      "json": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/global.json",
+        "sha256": "bac5adf08317ae1072b17c625a46d84d4bbc5778924e332b2d5ff1b3f9ffb34d"
+      }
+    },
+    "commodities": {
+      "markdown": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/commodities.md",
+        "sha256": "9905cb52aa0e4d6721ad6ce5f92de59d3c68c4721ec18ab32b7d1b03067cc29d"
+      },
+      "json": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/commodities.json",
+        "sha256": "eedd48387837d3f310d69b597707752d421d8214a2aa458c2c924dfa5421f24f"
+      }
+    },
+    "free": {
+      "markdown": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/free.md",
+        "sha256": "8a2a6c4f8a6276ccb4c09a5d5778aa806852ae16e97175403db8d5ee6e3d491a"
+      },
+      "json": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/free.json",
+        "sha256": "76596b8d3f0ba4c68d68b545f9d437178edf343aea1095fa014ec70c72f7d363"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "radar_text_report_v1",
+  "domain": "commodities",
+  "run_id": "20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564",
+  "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
+  "submitted_at_utc": "2026-11-16T12:21:14Z",
+  "markdown": "# 商品 Radar｜2026年11月16日\n\n研究日期：北京时间2026年11月16日。无合格前序。数据主要来自公开现货/期货报价与生意社等。\n\n## 1. 一句话结论\n\n商品主导矛盾是全球利率与美元压力下的黑色与有色承压，能源相对抗跌，基准判断等待，确信中等。改变决定的关键是中国需求数据或海外库存。\n\n## 2. 数据质量与覆盖数表\n\n仓库China-Commodities-Engine本次未完整逐分片读取，使用公开报价。实际品种覆盖黑色、有色、能化。日盘数据截至11月16日。外部现货检索部分获得。能支持趋势判断，不能支持精确套利。\n\n## 3. 商品仪表盘\n\n代表性：铜期货约104000元/吨附近（下跌），螺纹钢约3020，铁矿石约656，原油国内相关。强弱集中在有色与黑色下跌，能源相对坚挺。价格与曲线基本一致偏空。\n\n## 4. Delta Research\n\n无前序。当前关键：中国A股科技大跌传导至有色情绪；海外黄金白银走弱。\n\n## 5. 产业链图\n\n黑色：需求端房地产与基建预期弱。有色：全球宏观与中国库存。能源：地缘与库存。\n\n## 6. 统一机会榜\n\n最多：观察铜短或铁矿。评分因层数有限低于70。\n\n## 7. 交易卡\n\n暂无完整三张，因夜盘与期权样本不足。条件观察有色回调。\n\n## 8. 商品期权专项\n\n样本有限，IV与历史比较外部检索未充分。期货优于期权表达方向。\n\n## 9. 公司与产业利润\n\n暂无重点公司。\n\n## 10. 风险与窗口\n\n关注中国经济数据与海外库存。\n\n## 11. 最终行动四行\n\nA. 无立即新交易。  \nB. 等有色进一步确认。  \nC. 观察库存与需求。  \nD. 回避盲目追空。\n\n",
+  "research_provenance": {
+    "information_cutoff_utc": null,
+    "registry_commit": null,
+    "data_versions": null,
+    "note": "Research dates and citations remain in the original Markdown; not inferred from upload time."
+  }
+}
