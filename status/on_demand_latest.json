@@ -1,5 +1,7 @@
 {
+  "status": "archived",
+  "run_id": "20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564",
   "archive_repository": "farfromexact/Global-Cross-Asset-Radar-Grok",
-  "run_id": "20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd",
-  "status": "verified"
+  "archive_format": "grok_text_archive_v2",
+  "research_quality": "not_certified_by_archive_tool"
 }

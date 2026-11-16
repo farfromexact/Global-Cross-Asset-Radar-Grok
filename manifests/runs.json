@@ -12,7 +12,19 @@
       },
       "run_id": "20261113T212247+0800_eecb5f16e8944699b8ddb6597fa6cefd",
       "started_at_utc": "2026-11-13T13:22:47.001031Z"
+    },
+    {
+      "run_id": "20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564",
+      "submitted_at_utc": "2026-11-16T12:21:14Z",
+      "archived_at_utc": "2026-11-16T12:21:24Z",
+      "submission_sha256": "93c27625d85bf63dcbcd99ddff992564dc9864f722ac7a8486db22cb7d8cfceb",
+      "manifest": {
+        "path": "reports/2026/11/16/20261116T202114+0800_93c27625d85bf63dcbcd99ddff992564/run_manifest.json",
+        "sha256": "2efae8ffaa2afd4e7e217c5be70a260224d13d62324d95cf0195c490e5748228"
+      },
+      "batch_status": "complete",
+      "archive_format": "grok_text_archive_v2"
     }
   ],
-  "schema_version": "radar_runs_v1"
+  "schema_version": "radar_runs_v2"
 }

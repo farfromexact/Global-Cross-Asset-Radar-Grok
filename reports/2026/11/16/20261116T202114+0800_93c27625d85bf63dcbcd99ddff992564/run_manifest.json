@@ -10,7 +10,7 @@
     "submitted_at_utc": "2026-11-16T12:21:14Z"
   },
   "submission_sha256": "93c27625d85bf63dcbcd99ddff992564dc9864f722ac7a8486db22cb7d8cfceb",
-  "archive_status": "prepared",
+  "archive_status": "verified",
   "research_provenance": {
     "information_cutoff_utc": null,
     "registry_commit": null,
@@ -49,5 +49,6 @@
         "sha256": "76596b8d3f0ba4c68d68b545f9d437178edf343aea1095fa014ec70c72f7d363"
       }
     }
-  }
+  },
+  "archived_at_utc": "2026-11-16T12:21:24Z"
 }
