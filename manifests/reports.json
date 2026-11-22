@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_bjt": "2026-11-13T10:57:21Z",
+  "updated_at_bjt": "2026-11-22T20:30:00+08:00",
   "reports": [
     {
       "report_date": "2026-10-29",
@@ -738,8 +738,31 @@
           "original_generated_at_verification": "unreliable_do_not_use_as_observed_generation_time"
         }
       ]
+    },
+    {
+      "report_date": "2026-11-22",
+      "report_week": "2026-W47",
+      "edition": "weekly",
+      "generated_at_bjt": "2026-11-22T20:30:00+08:00",
+      "markdown_path": "reports/2026/11/2026-W47_weekly.md",
+      "json_path": "reports/2026/11/2026-W47_weekly.json",
+      "latest_markdown_path": "latest/weekly.md",
+      "latest_json_path": "latest/weekly.json",
+      "status_path": "status/weekly_latest.json",
+      "status": "published",
+      "archive_status": "success",
+      "ci_validation_status": "pending_or_unverified",
+      "regime": "w47_ai_capex_confidence_collapse_cross_asset_liquidation_spx_minus8_6_ndx_minus10_4_vix_35_9_nvda_minus22_9_sec_probe_ust_2y_minus25bp_gold_minus9_5_copper_minus9_8_cu_back_deepens_china_large_vs_small_polarization_all_top5_invalidated_worth_taking_risk_false",
+      "worth_taking_risk": false,
+      "wechat_escalate": false,
+      "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
+      "hit_rate_triggered_among_resolved": 0,
+      "prompt_version": "weekly_v1",
+      "commit_sha": null,
+      "revision": 1,
+      "coverage_note": "No W47 morning/evening archives (on-demand mode since 2026-11-13); candidates from 2026-11-13 reports; W46 weekly failed and not archived."
     }
   ],
   "merge_note": "Preserved every existing morning/evening/weekly entry from the remote main manifest at a0bdeed3535f7a30197bca00b026527d8d56419e (17 entries through 2026-11-09 evening). Appended 2026-11-10 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file.",
-  "note": "Appended 2026-11-13 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file."
+  "note": "Appended 2026-11-13 morning. No 2026-11-05 morning entry because that archive does not exist. No Saturday or Sunday daily entries. Do not invent a 2026-11-05 morning file. Appended 2026-W47 weekly (2026-11-22). No 2026-W46 weekly entry because that run failed and was never archived."
 }
