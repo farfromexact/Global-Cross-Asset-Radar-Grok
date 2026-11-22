@@ -2,16 +2,16 @@
   "schema_version": "1.0",
   "edition": "weekly",
   "archive_status": "success",
-  "report_week": "2026-W45",
-  "report_date": "2026-11-08",
-  "week_start": "2026-11-02",
-  "week_end": "2026-11-08",
-  "generated_at_bjt": "2026-11-08T20:25:00+08:00",
-  "as_of_bjt": "2026-11-08T20:25:00+08:00",
+  "report_week": "2026-W47",
+  "report_date": "2026-11-22",
+  "week_start": "2026-11-16",
+  "week_end": "2026-11-22",
+  "generated_at_bjt": "2026-11-22T20:30:00+08:00",
+  "as_of_bjt": "2026-11-22T20:30:00+08:00",
   "scheduled_slot_bjt": "20:00",
-  "actual_generation_note": "Sunday weekly ~20:00 Asia/Shanghai for ISO week 2026-W45. Nine of ten weekday archives present; 2026-11-05 morning missing. NFP and Friday US cash reviewed after the 11-06 evening cutoff.",
-  "markdown_path": "reports/2026/11/2026-W45_weekly.md",
-  "json_path": "reports/2026/11/2026-W45_weekly.json",
+  "actual_generation_note": "Sunday weekly ~20:30 Asia/Shanghai for ISO week 2026-W47. No morning/evening archives this week (on-demand mode since 2026-11-13); candidate set from 2026-11-13 reports. 2026-W46 weekly failed and was never archived (not backfilled).",
+  "markdown_path": "reports/2026/11/2026-W47_weekly.md",
+  "json_path": "reports/2026/11/2026-W47_weekly.json",
   "latest_markdown_path": "latest/weekly.md",
   "latest_json_path": "latest/weekly.json",
   "status_path": "status/weekly_latest.json",
@@ -22,8 +22,18 @@
   "wechat_escalate": false,
   "top_opportunity": "AI-CASHFLOW-VS-CAPEX-BETA-20261028",
   "hit_rate_triggered_among_resolved": 0.0,
-  "regime": "w45_us_ai_crash_nasdaq_correction_nfp_165k_ue_4_1_msft_googl_pair_failed_ma_cu_and_failed_ec_contango_observe_bu_pullback_failed_china_week_up_friday_catchdown_worth_taking_risk_false",
-  "commit_sha": "95108305979eec3c35419e2dd944869977d590d3",
+  "regime": "w47_ai_capex_confidence_collapse_cross_asset_liquidation_spx_minus8_6_ndx_minus10_4_vix_35_9_nvda_minus22_9_sec_probe_ust_2y_minus25bp_gold_minus9_5_copper_minus9_8_cu_back_deepens_china_large_vs_small_polarization_all_top5_invalidated_worth_taking_risk_false",
+  "commit_sha": "a7cbd0bfc8a42d64270cc679e6d1cb270183225a",
   "errors": [],
-  "note": "archive_status=success means weekly paths written on box; not CI pass or executable orders. Cloud Agent must replace commit_sha=PENDING_MAIN_COMMIT with the real main SHA after push. Do not overwrite prompts/weekly_v1.md."
+  "previous_weekly": {
+    "report_week": "2026-W45",
+    "commit_sha": "95108305979eec3c35419e2dd944869977d590d3"
+  },
+  "skipped_weeks": [
+    {
+      "report_week": "2026-W46",
+      "reason": "weekly run due 2026-11-15 failed; never archived"
+    }
+  ],
+  "note": "archive_status=success means weekly paths written to main; not CI pass or executable orders. commit_sha = content commit on main. Do not overwrite prompts/weekly_v1.md."
 }
